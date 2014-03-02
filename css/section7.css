@@ -1,0 +1,154 @@
+/* Section 7 */
+
+#section7  h2 {
+    margin-left: -4px;
+}
+
+#section7 .read-more a, #section7 .read-more a:hover {
+    color: #151515;
+}
+
+#section7 .content .span4, #section7 .content .span6 {
+    padding-right: 20px;
+}
+
+#section7 .content {
+    min-height: 300px;
+}
+
+#section7 .content .span8 {
+    display: none;
+}
+
+#section7 .content .span8.current {
+    display: block;
+}
+
+#section7 ul.article-tags {
+    border-top: 1px solid #151515;
+    margin: 0px 0 0;
+    padding-left: 0px;
+}
+
+#section7 ul.article-tags li {
+    border-bottom: 1px solid #151515;
+    cursor: pointer;
+    display: block;
+    font-size: 17px; font-size: 1.7rem;
+    height: 36px;
+    line-height: 36px;
+    overflow: hidden;
+    padding-left: 45px;
+    position: relative;
+}
+
+#section7 ul.article-tags li:hover, #section7 ul.article-tags li.current {
+    background-color: #1abc9c;
+    color:#ecf0f1;
+}
+
+#section7 ul.article-tags i {
+    left: 15px;
+    font-size: 16px; font-size: 1.6rem;
+    position: absolute;
+    top: 10px;
+}
+
+#section7 h4 {
+    border-bottom: 1px solid #151515;
+    height: 35px;
+    margin-bottom: 18px;
+}
+
+#section7 ul.social-icons {
+    list-style: none;
+    font-size: 0;
+}
+
+#section7 ul.social-icons li {
+    float: left;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+    opacity:1;
+    filter:alpha(opacity=100); /* For IE8 and earlier */
+}
+#section7 ul.social-icons li:hover {
+    float: left;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+    opacity:0.5;
+    filter:alpha(opacity=50); /* For IE8 and earlier */
+}
+
+.icon-facebook {
+    background-color: #3B5998;
+}
+
+.icon-twitter {
+    background-color: #00ACED;
+}
+
+.icon-github {
+    background-color: #4183C4;
+}
+
+.icon-linkedin {
+    background-color: #007FB1;
+}
+
+.icon-stackoverflow {
+    background-color: #F47920;
+}
+
+.icon-googleplus {
+    background-color: #D14836;
+}
+
+.icon-instagram {
+    background-color: #3F729B;
+}
+
+.icon-pinterest {
+    background-color: #CB2027;
+}
+
+.icon-flickr {
+    background-color: #0063DB;
+}
+
+.icon-coursera {
+    background-color: #3A6D8E;
+}
+
+.icon-foursquare {
+    background-color: #2398C9;
+}
+
+.icon-spotify {
+    background-color: #80B719;
+}
+
+.icon-viadeo {
+    background-color: #F4982B;
+}
+
+.icon-tripadvisor {
+    background-color: #589442;
+}
+
+.icon-youtube {
+    background-color: #CD332D;
+}
+
+.icon-vine {
+    background-color: #00A47A;
+}
+

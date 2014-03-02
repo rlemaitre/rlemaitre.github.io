@@ -1,0 +1,990 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Raphael Lemaitre - Senior Developer</title>
+    <meta name="description" content="">
+    <meta name="author" content="Raphaël Lemaitre">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+    <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet" media="screen">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet" media="screen">
+
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="js/modernizr.js"></script>
+
+</head>
+
+<body>
+<div id="wrapper">
+<div id="sidebar">
+    <a class="btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="fa fa-bars"></span>
+    </a>
+    <!-- <div id="logo"> <a href="/"><img src="img/logo.svg" alt="logo" /></a> </div> -->
+    <nav id="nav" class="navigation" role="navigation">
+        <ul class="unstyled">
+            <li data-section="1" class="active"><i class="fa fa-home"></i> <span>Home</span></li>
+            <li data-section="2" class=""><i class="fa fa-user"></i> <span>About</span></li>
+            <li data-section="3" class=""><i class="fa fa-clock-o"></i> <span>Experience</span></li>
+            <li data-section="4" class=""><i class="fa fa-laptop"></i> <span>Projects</span></li>
+            <li data-section="5" class=""><i class="fa fa-wrench"></i> <span>Skills</span></li>
+            <li data-section="6" class=""><i class="fa fa-quote-right"></i> <span>References</span></li>
+            <li data-section="7" class=""><i class="fa fa-pencil"></i> <span>Social</span></li>
+            <li data-section="8" class="last"><i class="fa fa-envelope"></i> <span>Contact</span></li>
+        </ul>
+    </nav>
+    <!-- /nav -->
+</div>
+<!-- /sidebar -->
+
+<div id="container">
+
+<section class="section" id="section1" data-section="1">
+    <div class="container-fluid">
+        <div class="row-fluid">
+
+            <div class="thumb">
+                <img src="img/thumb.jpg" alt="Raphael Lemaitre" class="img-circle">
+            </div>
+            <div class="span6 intro">
+                <hgroup>
+                    <h1>Hello There!</h1>
+
+                    <h3>I am a senior java developer living in Paris.</h3>
+                </hgroup>
+                <button class="btn-inverse" data-section="2">
+                    Learn <span>More</span>
+                    <i class="fa fa-arrow-circle-down"></i>
+                </button>
+            </div>
+            <!-- /span6 -->
+
+        </div>
+        <!-- /row-fluid -->
+    </div>
+    <!-- /container-fluid -->
+</section>
+<!-- /section home -->
+<section class="section" id="section2" data-section="2">
+    <div class="container-fluid">
+        <div class="row-fluid title">
+            <div class="span3">
+                <h2>About</h2>
+            </div>
+            <!-- /span3 -->
+            <div class="span9 hidden-phone">
+                <hr>
+            </div>
+            <!-- /span9 -->
+        </div>
+        <!-- /row-fluid -->
+
+        <div class="row-fluid desc">
+            <div class="span8">
+                <p>I am a senior java developer living in Paris, France. I started working in 2000
+                    and have worked mainly for software vendors.</p>
+
+                <p>Passionate about software development and by web, i always looking forward learning new
+                    technologies.</p>
+
+                <p>I am also greatly sensitive about code quality and testing in particular.</p>
+
+                <p>My others passions are music and gastronomy (go and see <a href="http://culinaireries.com"
+                                                                              rel="external">Culinaireries</a>, the blog
+                    i am writing with my wonderful wife)</p>
+            </div>
+            <!-- /span8 -->
+        </div>
+        <!-- /row-fluid -->
+
+        <div class="row-fluid content hidden-tablet">
+            <div class="span12 expand">
+                <h4>Life Stats</h4>
+
+                <div class="row-fluid">
+                    <div class="span4">
+
+                        <!-- CHART N 1 -->
+                        <script>
+                            jQuery(document).ready(function ($) {
+                                // Triggering only when it is inside viewport
+                                jQuery('.knob-4').waypoint(function () {
+                                            // Triggering now
+                                            jQuery('.knob-4').knob();
+                                            // Animating the value
+                                            if (jQuery('.knob-4').val() == 0) {
+                                                jQuery({value: 0}).animate({value: jQuery('.knob-4').attr("rel")}, {
+                                                    duration: 5000,
+                                                    easing: 'swing',
+                                                    step: function () {
+                                                        jQuery('.knob-4').val(Math.ceil(this.value)).trigger('change');
+                                                    }
+                                                })
+                                            }
+                                        }
+                                        , {
+                                            triggerOnce: true,
+                                            offset: function () {
+                                                return $(window).height() - $(this).outerHeight();
+                                            }
+                                        }
+                                );
+                            });
+                        </script>
+
+                        <div class="skill">
+                            <input data-readonly="true" data-fgcolor="#f1c40f" data-inputColor="#333" data-width="245"
+                                   data-height="122.5" class="knob-4" rel="25" value="0" readonly="readonly"
+                                   data-angleArc="180" data-angleOffset="-90" data-max="40">
+                            <h4 class="visible-phone">15</h4>
+                            <h6>cups of coffee per week</h6>
+                        </div>
+                        <!-- END CHART N 1 -->
+                    </div>
+                    <!-- /span4 -->
+
+
+                    <div class="span4">
+                        <!-- CHART N 2 -->
+                        <script>
+                            jQuery(document).ready(function ($) {
+                                // Triggering only when it is inside viewport
+                                jQuery('.knob-65').waypoint(function () {
+                                            // Triggering now
+                                            jQuery('.knob-65').knob();
+                                            // Animating the value
+                                            if (jQuery('.knob-65').val() == 0) {
+                                                jQuery({value: 0}).animate({value: jQuery('.knob-65').attr("rel")}, {
+                                                    duration: 5000,
+                                                    easing: 'swing',
+                                                    step: function () {
+                                                        jQuery('.knob-65').val(Math.ceil(this.value)).trigger('change');
+                                                    }
+                                                })
+                                            }
+                                        }
+                                        , {
+                                            triggerOnce: true,
+                                            offset: function () {
+                                                return $(window).height() - $(this).outerHeight();
+                                            }
+                                        }
+                                );
+                            });
+                        </script>
+
+                        <div class="skill">
+                            <input data-readonly="true" data-fgcolor="#f68e51" data-inputColor="#333" data-width="245"
+                                   data-height="122.5" class="knob-65" rel="12027" value="0" readonly="readonly"
+                                   data-angleArc="180" data-angleOffset="-90" data-max="15000">
+                            <h4 class="visible-phone">12027</h4>
+                            <h6>steps walked this week</h6>
+                        </div>
+                        <!-- END CHART N 2 -->
+                    </div>
+                    <!-- /span4 -->
+
+
+                    <div class="span4">
+                        <!-- CHART N 3 -->
+                        <script>
+                            jQuery(document).ready(function ($) {
+                                // Triggering only when it is inside viewport
+                                jQuery('.knob-85').waypoint(function () {
+                                            // Triggering now
+                                            jQuery('.knob-85').knob();
+                                            // Animating the value
+                                            if (jQuery('.knob-85').val() == 0) {
+                                                jQuery({value: 0}).animate({value: jQuery('.knob-85').attr("rel")}, {
+                                                    duration: 5000,
+                                                    easing: 'swing',
+                                                    step: function () {
+                                                        jQuery('.knob-85').val(Math.ceil(this.value)).trigger('change');
+                                                    }
+                                                })
+                                            }
+                                        }
+                                        , {
+                                            triggerOnce: true,
+                                            offset: function () {
+                                                return $(window).height() - $(this).outerHeight();
+                                            }
+                                        }
+                                );
+                            });
+                        </script>
+
+                        <div class="skill">
+                            <input data-readonly="true" data-fgcolor="#2c3e50" data-inputColor="#333" data-width="245"
+                                   data-height="122.5" class="knob-85" rel="1345" value="0" readonly="readonly"
+                                   data-angleArc="180" data-angleOffset="-90" data-max="2000">
+                            <h4 class="visible-phone">1345</h4>
+                            <h6>commits in my current job</h6>
+                        </div>
+                        <!-- END CHART N 3 -->
+                    </div>
+                    <!-- /span4 -->
+
+                </div>
+                <!-- /row-fluid -->
+            </div>
+            <!-- /span12 -->
+        </div>
+        <!-- /row-fluid -->
+    </div>
+    <!-- /container -->
+</section>
+<!-- /section about -->
+<section class="section" id="section3" data-section="3">
+<div class="container-fluid">
+<div class="row-fluid title">
+    <div class="span5">
+        <h2>Experience</h2>
+    </div>
+    <!-- /span4 -->
+    <div class="span7 hidden-phone alt">
+        <hr>
+    </div>
+    <!-- /span8 -->
+</div>
+<div class="row-fluid content">
+    <div class="span5">
+        <ul class="article-tags">
+            <li data-blog="systar" class="current">Senior R&D Developer, Systar</li>
+            <li data-blog="datadirect">R&D Engineer, Xcalia / Datadirect</li>
+            <li data-blog="capgemini">Software Architect, Capgemini</li>
+            <li data-blog="edeal3">Team Leader, E-Deal</li>
+            <li data-blog="edeal2">Project Manager, E-Deal</li>
+            <li data-blog="edeal1">Software Engineer, E-Deal</li>
+
+        </ul>
+    </div>
+    <!-- /span5 -->
+
+    <div class="span7 slide current" data-blog="systar">
+        <div class="row-fluid">
+            <div class="span12 expand">
+                <h4>Senior R&D Developer, <a href="http://www.systar.com" rel="external">Systar</a></h4>
+                <h5>Since November 2010</h5>
+
+                <div>
+                    Design and implementation of a monitoring application based on a custom distributed and
+                    bi-temporal
+                    NoSQL database
+                    <ul>
+                        <li>Calculated fields management (UI development, configuration, computation
+                            scheduling…)
+                        </li>
+                        <li>Optimization of aggregation computations (OLAP cube)</li>
+                    </ul>
+                    Scrum master in a team of 4 developers based in two locations (Paris and Lyon)
+                    <ul>
+                        <li>Sprint planning</li>
+                        <li>Retrospective animation</li>
+                    </ul>
+
+                    Hacking week projects
+                    <ul>
+                        <li>Implementation of a JDBC driver for this database</li>
+                        <li>Implementation of social aspect (dashboard sharing, comments, activity stream)</li>
+                        <li>Development of Quantified self monitoring application (data from Withings scale,
+                            Fitbit
+                            pedometer…)
+                        </li>
+                        <li>Play 2 application for agile meetings (daily meetings, retrospective) for
+                            distributed
+                            teams
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /span12 -->
+
+        </div>
+        <!-- /row-fluid -->
+    </div>
+    <!-- /span8 -->
+    <div class="span7 slide" data-blog="datadirect">
+        <div class="span12 expand">
+            <h4>R&D Engineer, <a href="http://www.datadirect.com" rel="external">Datadirect</a></h4>
+            <h5>May 2007 - November 2010</h5>
+
+            <div>
+                <p>Design and implementation of a data virtualization server dedicated to SOA environments</p>
+
+                <p>
+                    Member of the Kernel and Relational persistence team (until july 2009).
+                <ul>
+                    <li>Development of a multi-storage (RDBMS, webservices, etc.), datastore-agnostic
+                        persistence /
+                        query engine
+                    </li>
+                    <li>Implementation of compensation algorithms (joins, sort, union, etc.)</li>
+                    <li>Generation of datastore specific queries</li>
+                </ul>
+                </p>
+                <p>
+                    Member of services oriented storage
+                <ul>
+                    <li>Dynamic services orchestration</li>
+                    <li>Independence on the underlying service invocation technology (java, XQuery, etc.)</li>
+                </ul>
+                </p>
+            </div>
+        </div>
+        <!-- /span12 -->
+    </div>
+    <!-- /span8 -->
+    <div class="span7 slide" data-blog="capgemini">
+        <div class="span12 expand">
+            <h4>Software Architect, <a href="http://www.capgemini.com" rel="external">Capgemini</a></h4>
+            <h5>July 2006 - May 2007</h5>
+
+            <div>
+                <p>
+                    Response to a public call for bids:
+                <ul>
+                    <li>Conception of the architecture of a portal and directory solution based on Novell
+                        Identity
+                        Manager, Novell Access Manager and BEA AquaLogic User Interaction for the AP-HP
+                        (Parisian
+                        Hospitals Administration)
+                    </li>
+                </ul>
+                </p>
+                <p>
+                    Porting the application FICOBA (FIchier des COmptes BAncaires) for the DGI, the French
+                    Taxation
+                    service
+                <ul>
+                    <li>Porting the web interface from Oracle Application Server to JBoss</li>
+                    <li>Porting the PDF report generation system from Oracle Reports to JasperReports:
+                        Architecture and
+                        technical design.
+                    </li>
+                    <li>Analysis of variances brought by the change of version SSA-NAME.</li>
+                </ul>
+                </p>
+            </div>
+        </div>
+        <!-- /span12 -->
+    </div>
+    <!-- /span8 -->
+
+    <div class="span7 slide" data-blog="edeal3">
+        <div class="span12 expand">
+            <h4>Team Leader, <a href="http://www.e-deal.com" rel="external">E-Deal</a></h4>
+            <h5>March 2004 - June 2006</h5>
+
+            <div>
+                <p>Technical management of a 4 R&D developers</p>
+
+                <p>
+                    Design and development of new features for e-DEAL CRM software:
+                <ul>
+                    <li>Internationalization (multilingualism and Unicode support)</li>
+                    <li>Calendar and contacts synchronization between e-DEAL CRM, Microsoft Exchange and Lotus
+                        Domino
+                    </li>
+                    <li>Pervasive computing: Database replication and design of J2ME application</li>
+                    <li>Complete rewriting of presentation framework (MVC2)</li>
+                </ul>
+                </p>
+            </div>
+        </div>
+        <!-- /span12 -->
+    </div>
+    <!-- /span8 -->
+
+    <div class="span7 slide" data-blog="edeal2">
+        <div class="span12 expand">
+            <h4>Project Manager, <a href="http://www.e-deal.com" rel="external">E-Deal</a></h4>
+            <h5>January 2002 - March 2004</h5>
+
+            <div>
+                <p>Project Manager in charge of setting up the call-center version of e- DEAL CRM at U-Progress,
+                    a telemarketing company. 50 users.</p>
+
+                <p>
+                    Integration and application maintenance for several customers as:
+                <ul>
+                    <li>TF1 Publicité (Marketing campaigns and public relations)</li>
+                    <li>Pierre Fabre (Medical reps equipment, marketing management)</li>
+                    <li>Coloplast (Medical reps equipment)</li>
+                </ul>
+                </p>
+                <p>Pre-sales development</p>
+            </div>
+        </div>
+        <!-- /span12 -->
+    </div>
+    <!-- /span8 -->
+    <div class="span7 slide" data-blog="edeal1">
+        <div class="span12 expand">
+            <h4>Software Engineer, <a href="http://www.e-deal.com" rel="external">E-Deal</a></h4>
+            <h5>January 2000 - January 2002</h5>
+
+            <div>
+                <p>
+                    Development of the first J2EE version of e DEAL CRM :
+                <ul>
+                    <li>MVC Framework</li>
+                    <li>Persistence framework</li>
+                    <li>Sales Force module (Calendar, Contacts management, Sales Forecasts, Marketing
+                        management) and administration module
+                    </li>
+                </ul>
+                </p>
+            </div>
+        </div>
+        <!-- /span12 -->
+    </div>
+    <!-- /span8 -->
+</div>
+<!-- /row-fluid -->
+
+</div>
+<!-- /container -->
+</section>
+<!-- /section experience-->
+<section class="section" id="section4" data-section="4">
+    <div class="container-fluid">
+        <div class="row-fluid title">
+            <div class="span12">
+                <h2>Projects and meetups</h2>
+            </div>
+            <!-- /span4 -->
+        </div>
+        <div class="row-fluid desc">
+            <div class="span12">
+                <p>I work on several personal projects (either technical ones or blogs) and attend several meetups in
+                    paris.</p>
+            </div>
+            <!-- /span8 -->
+        </div>
+        <!-- /row -->
+
+        <div class="row-fluid content">
+            <div class="span5">
+                <ul class="article-tags">
+                    <li data-blog="culinaireries" class="current"><i class="fa fa-lightbulb-o"></i>Culinaireries</li>
+                    <li data-blog="mithingz"><i class="fa fa-lightbulb-o"></i>mithingz</li>
+                    <li data-blog="perfug"><i class="fa fa-comment-o"></i>PerfUG</li>
+                    <li data-blog="parisjug"><i class="fa fa-comment-o"></i>Paris JUG</li>
+                    <li data-blog="digitalfoodlab"><i class="fa fa-comment-o"></i>Digital Food Lab</li>
+
+                </ul>
+            </div>
+            <!-- /span5 -->
+            <div class="span7 slide current" data-blog="culinaireries">
+                <div class="row-fluid">
+                    <h4><a href="http://culinaireries.com" rel="external">culinaireries.com</a></h4>
+                    <h5>Le blog du miam-miam &agrave; deux</h5>
+
+                    <div class="span12 description">
+                        <img src="img/culinaireries.png" class="img-responsive center-block">
+                        In this blog, my wife and I write (in
+                        french) about one of our passion : food. We post reports
+                        about restaurants we love, about food events and some recipes.
+                    </div>
+                    <!-- /span12 -->
+                </div>
+                <!-- /row-fluid -->
+            </div>
+            <!-- /span8 -->
+            <div class="span7 slide" data-blog="mithingz">
+                <div class="row-fluid">
+                    <h4><a href="http://mithingz.com" rel="external">mithingz.com</a></h4>
+                    <h5>My thingz. Everywhere.</h5>
+
+                    <div class="span12 description">
+                        <img src="img/mithingz.png" class="img-responsive center-block">
+                        The next generation online application for managing personal collections.
+                        This project is currently in early stage.
+                    </div>
+                    <!-- /span12 -->
+                </div>
+                <!-- /row-fluid -->
+            </div>
+            <!-- /span8 -->
+            <div class="span7 slide" data-blog="perfug">
+                <div class="row-fluid">
+                    <h4><a href="http://perfug.github.io/" rel="external">Perfug</a></h4>
+                    <h5>Performance User Group Paris</h5>
+
+                    <div class="span12 description">
+                        <img src="img/perfug.png" class="img-responsive center-block">
+
+                        <p>This meetup offers a place where people, whatever their technical level is, can have informal
+                            exchange about performance and
+                            optimization.</p>
+
+                        <p>There are some presentations about the latest tools and techniques for mastering the
+                            performance of a system.</p>
+                    </div>
+                    <!-- /span12 -->
+                </div>
+                <!-- /row-fluid -->
+            </div>
+            <!-- /span8 -->
+            <div class="span7 slide" data-blog="parisjug">
+                <div class="row-fluid">
+                    <h4><a href="http://www.parisjug.org" rel="external">ParisJUG</a></h4>
+                    <h5>Paris Java User Group</h5>
+
+                    <div class="span12 description">
+                        <img src="img/parisjug.png" class="img-responsive center-block">
+
+                        <p>The Paris Java User Group (JUG) is a Java user group aimed at bringing together all actors
+                            to exchange ideas and discuss technological advances of the Java platform. These meetings
+                            consist of:
+                        <ul class="fa-ul">
+                            <li><i class="fa-li fa fa-arrow-circle-o-right"></i>technical presentations by French and international experts</li>
+                            <li><i class="fa-li fa fa-arrow-circle-o-right"></i>demonstrations of open source software and commercial</li>
+                            <li><i class="fa-li fa fa-arrow-circle-o-right"></i>round tables about architectural concepts</li>
+                            <li><i class="fa-li fa fa-arrow-circle-o-right"></i>and a buffet for us to meet informally</li>
+                        </ul>
+                        </p>
+                    </div>
+                    <!-- /span12 -->
+                </div>
+                <!-- /row-fluid -->
+            </div>
+            <!-- /span8 -->
+            <div class="span7 slide" data-blog="digitalfoodlab">
+                <div class="row-fluid">
+                    <h4><a href="http://www.digitalfoodlab.com" rel="external">Digital Food Lab</a></h4>
+                    <h5>Le rendez-vous de l'&eacute;cosyst&egrave;me Food &amp; Digital</h5>
+
+                    <div class="span12 description">
+                        <img src="img/digitalfoodlab.png" class="img-responsive center-block">
+
+                    </div>
+                    <!-- /span12 -->
+                </div>
+                <!-- /row-fluid -->
+            </div>
+            <!-- /span8 -->
+        </div>
+        <!-- /row-fluid -->
+
+    </div>
+    <!-- /container -->
+</section>
+<!-- /section projects -->
+<section class="section" id="section5" data-section="5">
+    <div class="container-fluid">
+        <div class="row-fluid title">
+            <div class="span4">
+                <h2>Skills</h2>
+            </div>
+            <!-- /span4 -->
+            <div class="span8 hidden-phone alt">
+                <hr>
+            </div>
+            <!-- /span8 -->
+        </div>
+        <div class="row-fluid desc">
+            <div class="span8">
+                <p>I am mainly a back-end developer but i am also greatly interresed by web development and agile
+                    methodologies..</p>
+            </div>
+            <!-- /span8 -->
+        </div>
+        <!-- /row -->
+
+        <div class="row-fluid content slide">
+            <div class="span5">
+                <ul class="skillset">
+                    <li class="skill-level">
+                        <div class="java">Java</div>
+                    </li>
+                    <li class="skill-level">
+                        <div class="web-development">Web development</div>
+                    </li>
+                    <li class="skill-level">
+                        <div class="refactoring">Refactoring</div>
+                    </li>
+                    <li class="skill-level">
+                        <div class="data">Data (persistence, Queries)</div>
+                    </li>
+                    <li class="skill-level">
+                        <div class="agile">Agile methodologies</div>
+                    </li>
+                </ul>
+            </div>
+            <!-- /span4 -->
+            <div class="span7">
+                <table class="table table-condensed">
+                    <tbody>
+                    <tr>
+                        <td class="right skill-group">Back-end dev</td>
+                        <td class="">
+                            <span class="skill-label">Java SE</span>
+                            <span class="skill-label">Scala</span>
+                            <span class="skill-label">Akka</span>
+                            <span class="skill-label">Google Guava</span>
+                            <span class="skill-label">Apache Commons</span>
+                            <span class="skill-label">TestNG</span>
+                            <span class="skill-label">JUnit</span>
+                            <span class="skill-label">JDBC</span>
+                            <span class="skill-label">Spring</span>
+                            <span class="skill-label">Hibernate</span>
+                            <span class="skill-label">Log4J</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="right skill-group">Front-end dev</td>
+                        <td class="">
+                            <span class="skill-label">Play 2</span>
+                            <span class="skill-label">HTML5</span>
+                            <span class="skill-label">CSS</span>
+                            <span class="skill-label">Javascript</span>
+                            <span class="skill-label">JQuery</span>
+                            <span class="skill-label">Less</span>
+                            <span class="skill-label">Twitter Bootstrap</span>
+                            <span class="skill-label">Semantic UI</span>
+                            <span class="skill-label">Flex</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="right skill-group">Methods</td>
+                        <td class="">
+                            <span class="skill-label">Scrum</span>
+                            <span class="skill-label">Kanban</span>
+                            <span class="skill-label">TDD</span>
+                            <span class="skill-label">UML</span>
+                            <span class="skill-label">Design Patterns</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="right skill-group">Tools</td>
+                        <td class="">
+                            <span class="skill-label">IntelliJ IDEA</span>
+                            <span class="skill-label">WebStorm</span>
+                            <span class="skill-label">Eclipse</span>
+                            <span class="skill-label">Git</span>
+                            <span class="skill-label">Mercurial</span>
+                            <span class="skill-label">Subversion</span>
+                            <span class="skill-label">Trello</span>
+                            <span class="skill-label">JIRA</span>
+                            <span class="skill-label">Confluence</span>
+                            <span class="skill-label">Jenkins</span>
+                            <span class="skill-label">TeamCity</span>
+                            <span class="skill-label">Crucible</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="right skill-group">DBMS</td>
+                        <td class="">
+                            <span class="skill-label">MongoDB</span>
+                            <span class="skill-label">Oracle</span>
+                            <span class="skill-label">MS SQL Server</span>
+                            <span class="skill-label">PostgreSQL</span>
+                            <span class="skill-label">MySQL</span>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- /span4 -->
+        </div>
+        <!-- /row-fluid -->
+
+    </div>
+    <!-- /container -->
+</section>
+<!-- /section skills -->
+<section class="section" id="section6" data-section="6">
+    <div class="container-fluid">
+        <div class="row-fluid title">
+            <div class="span10">
+                <h2>References</h2>
+            </div>
+            <!-- /span4 -->
+            <div class="span2 hidden-phone alt">
+                <hr>
+            </div>
+            <!-- /span8 -->
+        </div>
+
+        <div class="row-fluid content">
+            <div class="span6">
+                <blockquote>
+                    Imagination, rigueur, t&eacute;nacit&eacute; et bonne humeur. Un excellent cocktail !
+                    <cite>David Gotchac, e-DEAL</cite>
+                </blockquote>
+                <blockquote>
+                    Sa solide technique et son gout d'apprendre, ainsi que sa personnalit&eacute;, ont permis a Rapha&euml;l
+                    de contribuer massivement a l'&eacute;laboration des fondations de notre suite logicielle ainsi que
+                    de notre &eacute;quipe, et ensuite a leur d&eacute;veloppement et croissance.
+                    <cite>Antoine Houdaille, e-DEAL</cite>
+                </blockquote>
+                <blockquote>
+                    Rapha&euml;l is a skilled technical developper in Java technologies. And more, he well knows other
+                    technologies. His motivation in implementing well designed software solutions makes him an
+                    invaluable key person in a development team.
+                    <cite>R&eacute;gis Le Brettevillois, Xcalia/Datadirect</cite>
+                </blockquote>
+            </div>
+            <div class="span6">
+                <blockquote>
+                    Raphael is a very good software engineer who always shows a strong willingness in learning new
+                    technologies and in managing highly complex topics. His strong technical skills and his excellent
+                    team spirit make Raphael a key player in a development team.
+                    <cite>Christophe Boutard, Xcalia/Datadirect</cite>
+                </blockquote>
+                <blockquote>
+                    I enjoyed working with Rapha&euml;l a lot. Being a very good adviser (from technical, design point
+                    of views), as well as a go-to person when you need to discuss an issue, is not enough to describe
+                    Rapha&euml;l: he's also someone very easy to get along with and this is why I highly recommend Rapha&euml;l.
+                    <cite>Fran&ccedil;ois Huaulm&eacute;, Xcalia/Datadirect</cite>
+                </blockquote>
+            </div>
+            <!-- /span12 -->
+        </div>
+        <!-- /row-fluid -->
+
+    </div>
+    <!-- /container -->
+</section>
+<!-- /section references -->
+<section class="section" id="section7" data-section="7">
+    <div class="container-fluid">
+        <div class="row-fluid title">
+            <div class="span4">
+                <h2>Social</h2>
+            </div>
+            <!-- /span4 -->
+            <div class="span8 hidden-phone">
+                <hr>
+            </div>
+            <!-- /span8 -->
+        </div>
+        <!-- /row-fluid -->
+        <div class="row-fluid desc">
+            <div class="span12">
+                <ul class="social-icons">
+                    <li class="icon-facebook">
+                        <a href="http://www.facebook.com/raphael.lemaitre" rel="external"><img
+                                class="img-responsive"
+                                src="img/social/facebook.png" alt="Facebook" title="Facebook"></a>
+                    </li>
+                    <li class="icon-twitter">
+                        <a href="http://www.twitter.com/rlemaitre" rel="external"><img
+                                class="img-responsive"
+                                src="img/social/twitter.png" alt="Twitter" title="Twitter"></a>
+                    </li>
+                    <li class="icon-github">
+                        <a href="http://github.com/rlemaitre" rel="external"><img
+                                class="img-responsive"
+                                src="img/social/github.png" alt="Github" title="Github"></a>
+                    </li>
+                    <li class="icon-linkedin">
+                        <a href="http://www.linkedin.com/in/rlemaitr" rel="external"><img
+                                class="img-responsive"
+                                src="img/social/linkedin.png" alt="Linkedin" title="Linkedin"></a>
+                    </li>
+                    <li class="icon-stackoverflow">
+                        <a href="http://stackoverflow.com/users/592031/rlemaitre"
+                           rel="external"><img class="img-responsive"
+                                               src="img/social/stackoverflow.png"
+                                               alt="Stack Overflow"
+                                               title="Stack Overflow"></a>
+                    </li>
+                    <li class="icon-googleplus">
+                        <a href="http://plus.google.com/u/0/+RaphaelLemaitre"
+                           rel="external"><img class="img-responsive"
+                                               src="img/social/googleplus.png" alt="Google +" title="Google +"></a>
+                    </li>
+                    <li class="icon-instagram">
+                        <a href="http://instagram.com/rlemaitre" rel="external"><img
+                                class="img-responsive"
+                                src="img/social/instagram.png" alt="Instagram" title="Instagram"></a>
+                    </li>
+                    <li class="icon-pinterest">
+                        <a href="http://pinterest.com/rlemaitre" rel="external"><img
+                                class="img-responsive"
+                                src="img/social/pinterest.png" alt="Pinterest" title="Pinterest"></a>
+                    </li>
+                    <li class="icon-flickr">
+                        <a href="http://www.flickr.com/rlemaitre/" rel="external"><img
+                                class="img-responsive"
+                                src="img/social/flickr.png" alt="Flickr" title="Flickr"></a>
+                    </li>
+                    <li class="icon-coursera">
+                        <a href="http://www.coursera.org/user/i/ae3abb67c00f23bec8df94f080f8c567"
+                           rel="external"><img class="img-responsive"
+                                               src="img/social/coursera.png" alt="Coursera" title="Coursera"></a>
+                    </li>
+                    <li class="icon-foursquare">
+                        <a href="http://foursquare.com/rlemaitre" rel="external"><img
+                                class="img-responsive"
+                                src="img/social/foursquare.png" alt="Foursquare" title="Foursquare"></a>
+                    </li>
+                    <li class="icon-spotify">
+                        <a href="http://open.spotify.com/user/rlemaitre" rel="external"><img
+                                class="img-responsive"
+                                src="img/social/spotify.png" alt="Spotify" title="Spotify"></a>
+                    </li>
+                    <li class="icon-viadeo">
+                        <a href="http://www.viadeo.com/fr/profile/raphael.lemaitre" rel="external"><img
+                                class="img-responsive"
+                                src="img/social/viadeo.png" alt="Viadeo" title="Viadeo"></a>
+                    </li>
+                    <li class="icon-youtube">
+                        <a href="http://www.youtube.com/user/raphaellemaitre" rel="external"><img
+                                class="img-responsive"
+                                src="img/social/youtube.png" alt="Youtube" title="Youtube"></a>
+                    </li>
+                    <li class="icon-tripadvisor">
+                        <a href="http://www.tripadvisor.fr/members/rlemaitre" rel="external"><img
+                                class="img-responsive"
+                                src="img/social/tripadvisor.png" alt="Trip Advisor" title="Trip Advisor"></a>
+                    </li>
+                    <li class="icon-vine">
+                        <a href="http://vine.co/rlemaitre" rel="external"><img
+                                class="img-responsive"
+                                src="img/social/vine.png" alt="Vine" title="Vine"></a>
+                    </li>
+                </ul>
+
+
+            </div>
+            <!-- /span8 -->
+            <!-- /span8 -->
+        </div>
+        <!-- /row-fluid -->
+    </div>
+    <!-- /container -->
+</section>
+<!-- /section social -->
+<section class="section" id="section8" data-section="8">
+    <div class="container-fluid">
+        <div class="row-fluid title">
+            <div class="span4">
+                <h2>Contact</h2>
+            </div>
+            <!-- /span4 -->
+            <div class="span8 hidden-phone alt">
+                <hr>
+            </div>
+            <!-- /span8 -->
+        </div>
+        <!-- /row-fluid -->
+        <div class="row-fluid desc">
+            <div class="span8">
+                <p>Drop me a line if you want.</p>
+            </div>
+            <!-- /span8 -->
+        </div>
+        <!-- /row -->
+        <div class="row-fluid content">
+            <div class="span12">
+                <form method="POST"
+                      action="https://contact-raphy-net.herokuapp.com/user/8054b685-d32d-40d7-837c-e7127e6d996d">
+
+                    <div class="row-fluid">
+                        <div class="span6">
+                            <div class="control-group">
+                                <label for="name" class="control-label">Name:</label>
+
+                                <div class="controls">
+                                    <input class="span12" type="text" name="name" id="name" placeholder="Your name">
+                                </div>
+                                <!-- /controls -->
+                            </div>
+                            <!-- /control-group -->
+                        </div>
+                        <!-- /span6 -->
+                        <div class="span6">
+                            <div class="control-group">
+                                <label for="email" class="control-label">Email:</label>
+
+                                <div class="controls">
+                                    <input class="span12" type="email" name="email" id="email"
+                                           placeholder="Your e-mail address">
+                                </div>
+                                <!-- /controls -->
+                            </div>
+                            <!-- /control-group -->
+                        </div>
+                        <!-- /span6 -->
+                    </div>
+                    <!-- /row-fluid -->
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <div class="control-group">
+                                <label for="message" class="control-label">Your Message:</label>
+
+                                <div class="controls">
+                                    <textarea class="span12" type="text" name="message" id="message"
+                                              rows="8" placeholder="Enter your message here."></textarea>
+                                </div>
+                                <!-- /controls -->
+                            </div>
+                            <!-- /control-group -->
+                        </div>
+                        <!-- /span12 -->
+                    </div>
+                    <!-- /row-fluid -->
+
+                    <input type="hidden" name="save" value="contact">
+                    <button type="submit" class="btn-inverse pull-right">
+                        Send <span>Message</span>
+                        <i class="fa fa-arrow-circle-right"></i>
+                    </button>
+                </form>
+                <!-- /form -->
+            </div>
+            <!-- /span12 -->
+
+        </div>
+        <!-- /row-fluid -->
+        <!-- /container-fluid -->
+        <div id="row-fluid footer">
+            <div class="row-fluid">
+                <div class="span12 hidden-phone alt">
+                    <hr/>
+                </div>
+                <div class="span12">
+                    <p>This website has been done using <a href="http://getbootstrap.com" rel="external">Twitter
+                        Bootstrap</a>,
+                        <a href="http://jquery.com" rel="external">jQuery</a>, <a
+                                href="http://fortawesome.github.io/Font-Awesome" rel="external">Font Awesome</a> and the
+                        incredible <a href="http://www.jetbrains.com/webstorm/" rel="external">WebStorm</a>.</p>
+
+                    <p>Social media icons are made by using <a href="http://simpleicons.org/" rel="external">Simple
+                        Icons</a>.</p>
+
+                    <p>Thanks to <a href="http://samdobson.github.io/" rel="external">Sam Dobson</a> for <a
+                            href="http://samdobson.github.io/fwdform/" rel="external">FwdForm</a></p>
+                </div>
+                <!-- /span12 -->
+            </div>
+            <!-- /row-fluid -->
+        </div>
+        <!-- /footer -->
+    </div>
+</section>
+<!-- /section contact -->
+</div>
+<!-- /container -->
+</div>
+<!-- /wrapper -->
+
+<!-- JAVASCRIPTS -->
+<script type="text/javascript" src="js/waypoints.min.js"></script>
+<script type="text/javascript" src="js/jquery.knob.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

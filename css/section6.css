@@ -1,0 +1,97 @@
+/* Section 6 */
+
+
+#section6  h2 {
+    margin-left: -4px;
+}
+
+#section6 .read-more a, #section6 .read-more a:hover, #section6 a, #section6 a:hover {
+    color: #151515;
+}
+
+#section6 a, #section6 a:hover {
+    color: #16a085;
+}
+
+#section6 .content .span5, #section6 .content .span6 {
+    padding-right: 20px;
+}
+
+#section6 .content {
+    min-height: 300px;
+}
+
+#section6 .content .span7 {
+    display: none;
+}
+
+#section6 .content .span7.current {
+    display: block;
+}
+
+#section6 ul.article-tags {
+    border-top: 1px solid #151515;
+    margin: 0px 0 0;
+    padding-left: 0px;
+}
+
+#section6 ul.article-tags li {
+    border-bottom: 1px solid #151515;
+    cursor: pointer;
+    display: block;
+    font-size: 17px; font-size: 1.7rem;
+    height: 36px;
+    line-height: 36px;
+    overflow: hidden;
+    padding-left: 20px;
+    position: relative;
+}
+
+#section6 ul.article-tags li:hover, #section6 ul.article-tags li.current {
+    background-color: #1abc9c;
+    color:#ecf0f1;
+}
+
+#section6 ul.article-tags i {
+    font-size: 16px; font-size: 1.6rem;
+    position: absolute;
+    top: 10px;
+}
+
+#section6 h4 {
+    border-bottom: 1px solid #151515;
+    height: 35px;
+    margin-bottom: 18px;
+}
+
+#section6 blockquote {
+    font-family: Georgia, serif;
+    font-size: 18px;
+    font-style: italic;
+    margin: 0.25em 0;
+    padding: 0.25em 40px;
+    line-height: 1.45;
+    position: relative;
+    color: #383838;
+}
+
+#section6 blockquote:before {
+    display: block;
+    content: "\201C";
+    font-size: 80px;
+    position: absolute;
+    left: -20px;
+    top: -20px;
+    color: #7a7a7a;
+}
+
+#section6 blockquote cite {
+    color: #999999;
+    font-size: 14px;
+    display: block;
+    margin-top: 5px;
+}
+
+#section6 blockquote cite:before {
+    content: "\2014 \2009";
+}
