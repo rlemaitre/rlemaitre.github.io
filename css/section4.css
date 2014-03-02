@@ -42,7 +42,6 @@
     font-size: 17px; font-size: 1.7rem;
     height: 36px;
     line-height: 36px;
-    overflow: hidden;
     padding-left: 20px;
     position: relative;
 }
@@ -60,4 +59,8 @@
 
 #section4 .description img {
     margin-bottom: 20px;
+}
+
+.list-icon {
+    width: 25px;
 }
