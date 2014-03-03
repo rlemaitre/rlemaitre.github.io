@@ -143,9 +143,11 @@ $(document).ready(function ($) {
     }
 
     links.click(function (e) {
-        e.preventDefault();
         var datasection = $(this).attr('data-section');
-        goToByScroll(datasection);
+        if (datasection) {
+            e.preventDefault();
+            goToByScroll(datasection);
+        }
     });
 
     button.click(function (e) {
