@@ -1,0 +1,87 @@
+==================================================================
+https://keybase.io/rlemaitre
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://rlemaitre.com
+  * I am rlemaitre (https://keybase.io/rlemaitre) on keybase.
+  * I have a public key with fingerprint C71C 501E 93CE A356 EC9D  65EA 0E21 3C47 5C33 193E
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01010916496b6494828600ae23d468ca6979a8f1e40ff453fb8f7528e5368991912a0a",
+      "fingerprint": "c71c501e93cea356ec9d65ea0e213c475c33193e",
+      "host": "keybase.io",
+      "key_id": "0e213c475c33193e",
+      "kid": "01010916496b6494828600ae23d468ca6979a8f1e40ff453fb8f7528e5368991912a0a",
+      "uid": "580947a34fa8c864d22774d5dab19619",
+      "username": "rlemaitre"
+    },
+    "merkle_root": {
+      "ctime": 1512046473,
+      "hash_meta": "8c1c367a68cc30912a6219010fa841765d8a6d9bcc80fd6a6c756da3b933e0e7",
+      "seqno": 1765148
+    },
+    "revoke": {
+      "sig_ids": [
+        "4fd9ff06a19c1e7f2a4fc4d776dd7686a76f7642447dde809fcb2e5b3665a1de0f"
+      ]
+    },
+    "service": {
+      "hostname": "rlemaitre.com",
+      "protocol": "http:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1512046502,
+  "expire_in": 157680000,
+  "prev": "d25586cec8bdd8b418f932c034ed41108197768f3d56af48016d33ac37b2c4d4",
+  "seqno": 24,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.76
+Comment: https://keybase.io/crypto
+
+yMPMAnicrVN/bNVEHH9jOt2QX2bIj8ivJiwEFtLrXa/tgnOCjgERkIAbsOVxvbtu
+5W2vz763DRxgAIUBOsRNcDIxwDY3E0AMYSZCHAubmP0I45cKU9BJACEzQgDHYM8r
+aoz6r23Spu3n+/l1veODYn0JMYMnTJuZDUelxrQ2FRf6loyL1pZIpsNWSiklUoA/
+vPF8xsMRf8BmUookA3EaACMDm+KCdEXHsky4AhnCOiXY0AyiW4Aj2bKQCi1TtzRV
+0bkKsW4YwAAKkYmULFl2MJe7IdcORgQt1QBVZcANSDmBKubUYFjlROYKgBRpKoUQ
+GJCLwTwn7E0IcyYJ86m2I96JB/8f9v6L/599Fz6kU3XZQBqByCI61TFiiqJpiKmM
+mMDAwPCAYe4GSQEXaDefFxA74nJpdbJUwN1APve7jhPx2qUR28MAFSgywkiDIiEJ
+5/kLeISIUZ0CCrFGhEcKZc8FVoAhsghhBDSsMp1gZpiU6rLFMMFUUzEj0DQg5DLX
+hJEwfyXoCAUBBkgXDlxe5AS4Jx62c0VvYSllqYQsZliWjAkwKOCapRBkUcQ0DTOm
+YR0TDVsaRgpCGmNcxLeoqXDVhBirBDAuW1LOak/MLbLpQ3Jvof5dwFTqFAhLIdeJ
+ONTJF5/yIpFQitdLZGXIgxZz0/8nid+0g0z8JmKgiLth2wmKFAL5z8pUWUmW+IqQ
+7XK/7SFUYVcWhyfDiwQlU1RVx5RT3WRMNxHQLQMqVIaIMwSArANDxNQtyFRMLKTL
+ADMICYWaqYgK0N8dKkj4JLmCUzQXJJFCb0mbjmU/4otJ8MU9OsDbP76E+KF/7apA
+0pDoc0OTJk3+pcRJW3Z4TFvYXJk479S4OFaweUjC16Wvn4vdPHrXqHkHmn+NHwK1
+D6puH3m1Jwuk3FvQVN756dZzZ7f1bez6CZaya+sT+nPeuTG8+MhHoblvD1yyNL1x
+3Kyn8irSGpF9KVN6cOqHJQ0vq1VViwqnVNfMoLv3ds7ma/buee9gSzS94urku8tT
++xIz+nfHhozDy9Kerq9JfuP+gS8Ts2NOLYgpT9s/saPpR8tat6O8GlxszBlQWjN/
+XSpKLOt67Wog4ee6tpZBfbmjaxd+W7YivX7YpJaM04s+vHujZOfMoyNdjsoGX98m
+N+xoqzh79kHd2Ptxt25lrZpzp6Eb9MYfy7xpnIt2nyxGN+U7g5onVHZfn9u7dXF1
+eeuGxcMnVvbUfje2peSlhUn3tm7q/n7Lrm/iF7/le2J1AzsTrRjZGxN3/OT0E1/U
+P35huzZ6X/y0Y8svPrlnw/gRb+bsNJrGzq3OnrEWxu7cdDfv3ejsjtMbu4YvGH/0
+RPD9rMw78oXmuoPtIypB6GNt1d4X/JcOrfU/36+M/zy/n7UPC/f3XN4+59l90z+r
+/WrzVa4+c96pLh9clHNlUQ9L6Uj/rXrNisIWdjSjcf+ZvprzQ8uOb7pyqCp1S3dT
+VjCjYVo+ntdbOuX2wFnt6oOk7jGZZsP11llVt/Z/cmVMZRlen9nV3Hn5xei19R03
+5/sujsxofiww7Hf+8wQg
+=La+3
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/rlemaitre
+
+==================================================================
