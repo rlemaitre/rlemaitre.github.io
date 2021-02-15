@@ -25,7 +25,7 @@ disableReadOtherPosts = false
 enableSharingButtons = true
 
 # Metadata mostly used in document's head
-description = "My new homepage or blog"
+description = "Raphaël Lemaitre's website and blog."
 keywords = "homepage, blog"
 images = [""]
 
