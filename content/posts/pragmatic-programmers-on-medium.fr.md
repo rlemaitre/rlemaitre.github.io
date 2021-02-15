@@ -9,7 +9,7 @@ tags:
   - books
 ---
 
-Bonne nouvelle ! Les [Pragmatic Programmers](https://pragprog.com/) sont sur [Medium] (https://medium.com/pragmatic-programmers).
+Bonne nouvelle ! Les [Pragmatic Programmers](https://pragprog.com/) sont sur [Medium](https://medium.com/pragmatic-programmers).
 Ils y publient leur catalogue général.
 Les livres peuvent être assez anciens, mais certains sont encore très utiles.
 
