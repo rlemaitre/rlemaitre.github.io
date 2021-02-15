@@ -1,4 +1,63 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Raphaël Lemaitre</title><link>https://rlemaitre.com/fr/posts/</link><description>Recent content in Posts on Raphaël Lemaitre</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Thu, 11 Feb 2021 19:27:29 +0100</lastBuildDate><atom:link href="https://rlemaitre.com/fr/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Hello World!</title><link>https://rlemaitre.com/fr/posts/hello-world/</link><pubDate>Thu, 11 Feb 2021 19:27:29 +0100</pubDate><guid>https://rlemaitre.com/fr/posts/hello-world/</guid><description>Ça fait un long moment que je voulais avoir mon blog. Écrire plus et mieux est l&amp;rsquo;un de mes objectifs de cette année et le blog est un moyen assez simple d&amp;rsquo;y parvenir.
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Raphaël Lemaitre</title><link>https://rlemaitre.com/fr/posts/</link><description>Recent content in Posts on Raphaël Lemaitre</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Mon, 15 Feb 2021 22:15:49 +0100</lastBuildDate><atom:link href="https://rlemaitre.com/fr/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Pragmatic Programmers sur Medium</title><link>https://rlemaitre.com/fr/posts/pragmatic-programmers-on-medium/</link><pubDate>Mon, 15 Feb 2021 22:15:49 +0100</pubDate><guid>https://rlemaitre.com/fr/posts/pragmatic-programmers-on-medium/</guid><description>Bonne nouvelle ! Les Pragmatic Programmers sont sur [Medium] (https://medium.com/pragmatic-programmers). Ils y publient leur catalogue général. Les livres peuvent être assez anciens, mais certains sont encore très utiles.
+Les livres sont principalement destinés aux programmeurs (d&amp;rsquo;où leur nom 🙂 ), mais certains peuvent intéresser des personnes qui ne sont pas des programmeurs. La liste complète des livres se trouve ici.
+Une sélection rapide pour les non-programmeurs :
+Technical Blogging, Second Edition par Antonio Cangiano Software Estimation Without Guessing par George Dinwiddie Ship It!</description><content type="html"><![CDATA[<p>Bonne nouvelle ! Les <a href="https://pragprog.com/">Pragmatic Programmers</a> sont sur [Medium] (<a href="https://medium.com/pragmatic-programmers)">https://medium.com/pragmatic-programmers)</a>.
+Ils y publient leur catalogue général.
+Les livres peuvent être assez anciens, mais certains sont encore très utiles.</p>
+<p>Les livres sont principalement destinés aux programmeurs (d&rsquo;où leur nom 🙂 ), mais certains peuvent intéresser des personnes qui ne sont pas des programmeurs. La liste complète des livres se trouve <a href="https://medium.com/pragmatic-programmers/directory-of-pragmatic-programmer-books-on-medium-6a5cbadbd4b4">ici</a>.</p>
+<p>Une sélection rapide pour les non-programmeurs :</p>
+<ul>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-10982edb748f">Technical Blogging, Second Edition</a> par Antonio Cangiano</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-792c48921cbc">Software Estimation Without Guessing</a> par George Dinwiddie</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-bf557a5592e1">Ship It!</a> par Jared R. Richardson et William A. Gwaltney Jr.</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-ca8ca43c2443">Release It! Second Edition</a> par Michael T. Nygard</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-667e79ea8e4a">Pomodoro Technique Illustrated</a> par Staffan Nöteberg</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-42b7d4438ceb">Manage It!</a> par Johanna Rothman</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-48e7fee28df5">Learn to Program</a> par Chris Pine</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-67978e9d92fe">Lean from the Trenches</a> par Henrik Kniberg</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-96ddd6292057">Behind Closed Doors</a> par Johanna Rothman et Esther Derpar</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-e8bf453fe2b4">Become an Effective Software Engineering Manager</a> par James Stanier</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-9c853b563a92">Creating Great Teams</a> par Sandy Mamoli et David Mole</li>
+</ul>
+<p>Another selection for programmers:</p>
+<ul>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-323f1846e259">A Common-Sense Guide to Data Structures and Algorithms, Second Edition</a> par Jay Wengrow</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-1c47dfe47bf">Design It!</a> par Michael Keeling</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-24a9a0d6d60e">Exercises for Programmers</a> par Brian P. Hogan</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-5fe40b18c07a">Explore It!</a> par Elisabeth Hendrickson</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-bd8f1618a58b">Functional Programming in Java</a> par Venkat Subramaniam</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-29add20df224">Java par Comparison</a> par Simon Harrer, Jörg Lenhard, Linus Dietz</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-3134308e7195">Language Implementation Patterns</a> par Terence Parr</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-9e02e42cae02">Learn Functional Programming with Elixir</a> par Ulisses Almeida</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-ad06b9e5f047">Mazes for Programmers</a> par Jamis Buck</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-db1725cc47cd">Modern Vim</a> par Drew Neil</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-2ef01739377f">Practical Microservices</a> par Ethan Garofolo</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-cb11bf75ff3f">Practical Programming, Third Edition</a> par Paul Gries, Jennifer Campbell, et Jason Montojo</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-d7d01025d6ce">Practical Vim, Second Edition</a> par Drew Neil</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-3db54fa4761d">Pragmatic Scala</a> par Venkat Subramaniam</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-237ed2475b2e">Pragmatic Version Control</a> par Travis Swicegood</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-e77064623b93">Programming Groovy 2</a> par Venkat Subramaniam</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-1d85cc6347c0">Programming Kotlin</a> par Venkat Subramaniam</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-8fffbe0b7b6d">Rediscovering JavaScript</a> par Venkat Subramaniam</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-1eec0e33001">Remote Pairing</a> par Joe Kutner</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-5c00bfd17aa6">Seven Concurrency Models in Seven Weeks</a> par Paul Butcher</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-f3cb9ada3c82">Seven Databases in Seven Weeks, Second Edition</a> par Luc Perkins, avec Eric Redmond, et Jim R. Wilson</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-bf907a514a34">Seven Languages in Seven Weeks</a> par Bruce A. Tate</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-640644b1fe02">Seven More Languages in Seven Weeks</a> par Bruce A. Tate, Fred Daoud, Ian Dees, et Jack Moffitt</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-d5ed3e0ac475">Seven Mobile Apps in Seven Weeks</a> par Tony Hillerson</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-792c48921cbc">Software Estimation Without Guessing</a> par George Dinwiddie</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-bfed08449866">The Developer’s Code</a> par Ka Wai Cheung</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-23a75c7cba86">The Healthy Programmer</a> par Joe Kutner</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-49d578099203">The Passionate Programmer</a> par Chad Fowler</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-622967a31cb9">Your Code as a Crime Scene</a> par Adam Tornhill</li>
+</ul>
+<p>Je pense que je vais commencer par The Healthy Programmer, qui devrait être une bonne lecture en cette période de pandémie mondiale.</p>
+<p>Et vous ?
+Avez-vous lu un de ces livres ?
+Avez-vous aimé ?
+Lequel allez-vous lire ensuite ?
+Dites-le-moi dans les commentaires.</p>
+]]></content></item><item><title>Hello World!</title><link>https://rlemaitre.com/fr/posts/hello-world/</link><pubDate>Thu, 11 Feb 2021 19:27:29 +0100</pubDate><guid>https://rlemaitre.com/fr/posts/hello-world/</guid><description>Ça fait un long moment que je voulais avoir mon blog. Écrire plus et mieux est l&amp;rsquo;un de mes objectifs de cette année et le blog est un moyen assez simple d&amp;rsquo;y parvenir.
 Je vais essayer d&amp;rsquo;écrire à propos de sujets qui m&amp;rsquo;intéressent : le dev, l&amp;rsquo;apprentissage, les moyens de devenir plus efficace (aka productivité), les jeux de société et tout ce qui peut me passer par la tête et qui mérite d&amp;rsquo;être partagé.</description><content type="html"><![CDATA[<p>Ça fait un long moment que je voulais avoir mon blog.
 Écrire plus et mieux est l&rsquo;un de mes objectifs de cette année et le blog est un moyen assez simple d&rsquo;y parvenir.</p>
 <p>Je vais essayer d&rsquo;écrire à propos de sujets qui m&rsquo;intéressent : le dev, l&rsquo;apprentissage, les moyens de devenir plus efficace (aka productivité), les jeux de société et tout ce qui peut me passer par la tête et qui mérite d&rsquo;être partagé.</p>

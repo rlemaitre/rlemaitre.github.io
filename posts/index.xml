@@ -1,4 +1,63 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Raphaël Lemaitre</title><link>https://rlemaitre.com/posts/</link><description>Recent content in Posts on Raphaël Lemaitre</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Thu, 11 Feb 2021 19:27:29 +0100</lastBuildDate><atom:link href="https://rlemaitre.com/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Hello World!</title><link>https://rlemaitre.com/posts/hello-world/</link><pubDate>Thu, 11 Feb 2021 19:27:29 +0100</pubDate><guid>https://rlemaitre.com/posts/hello-world/</guid><description>It&amp;rsquo;s been a long time I wanted to have a blog. Writing more and better is one of my goals this year and the blog is a fairly simple way to achieve it.
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Raphaël Lemaitre</title><link>https://rlemaitre.com/posts/</link><description>Recent content in Posts on Raphaël Lemaitre</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Mon, 15 Feb 2021 22:15:49 +0100</lastBuildDate><atom:link href="https://rlemaitre.com/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Pragmatic Programmers on Medium</title><link>https://rlemaitre.com/posts/pragmatic-programmers-on-medium/</link><pubDate>Mon, 15 Feb 2021 22:15:49 +0100</pubDate><guid>https://rlemaitre.com/posts/pragmatic-programmers-on-medium/</guid><description>Good news! The Pragmatic Programmers are on Medium. They publish there their back catalogue. The books can be quite old, but some are still very useful.
+The books are mainly aimed to programmers (hence their name 🙂 ), but some can interest non programming people. The full book list can be found here.
+A quick selection for non-programmers:
+Technical Blogging, Second Edition by Antonio Cangiano Software Estimation Without Guessing by George Dinwiddie Ship It!</description><content type="html"><![CDATA[<p>Good news! The <a href="https://pragprog.com/">Pragmatic Programmers</a> are on <a href="https://medium.com/pragmatic-programmers">Medium</a>.
+They publish there their back catalogue.
+The books can be quite old, but some are still very useful.</p>
+<p>The books are mainly aimed to programmers (hence their name 🙂 ), but some can interest non programming people. The full book list can be found <a href="https://medium.com/pragmatic-programmers/directory-of-pragmatic-programmer-books-on-medium-6a5cbadbd4b4">here</a>.</p>
+<p>A quick selection for non-programmers:</p>
+<ul>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-10982edb748f">Technical Blogging, Second Edition</a> by Antonio Cangiano</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-792c48921cbc">Software Estimation Without Guessing</a> by George Dinwiddie</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-bf557a5592e1">Ship It!</a> by Jared R. Richardson and William A. Gwaltney Jr.</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-ca8ca43c2443">Release It! Second Edition</a> by Michael T. Nygard</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-667e79ea8e4a">Pomodoro Technique Illustrated</a> by Staffan Nöteberg</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-42b7d4438ceb">Manage It!</a> by Johanna Rothman</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-48e7fee28df5">Learn to Program</a> by Chris Pine</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-67978e9d92fe">Lean from the Trenches</a> by Henrik Kniberg</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-96ddd6292057">Behind Closed Doors</a> by Johanna Rothman and Esther Derby</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-e8bf453fe2b4">Become an Effective Software Engineering Manager</a> by James Stanier</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-9c853b563a92">Creating Great Teams</a> by Sandy Mamoli and David Mole</li>
+</ul>
+<p>Another selection for programmers:</p>
+<ul>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-323f1846e259">A Common-Sense Guide to Data Structures and Algorithms, Second Edition</a> by Jay Wengrow</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-1c47dfe47bf">Design It!</a> by Michael Keeling</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-24a9a0d6d60e">Exercises for Programmers</a> by Brian P. Hogan</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-5fe40b18c07a">Explore It!</a> by Elisabeth Hendrickson</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-bd8f1618a58b">Functional Programming in Java</a> by Venkat Subramaniam</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-29add20df224">Java by Comparison</a> by Simon Harrer, Jörg Lenhard, Linus Dietz</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-3134308e7195">Language Implementation Patterns</a> by Terence Parr</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-9e02e42cae02">Learn Functional Programming with Elixir</a> by Ulisses Almeida</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-ad06b9e5f047">Mazes for Programmers</a> by Jamis Buck</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-db1725cc47cd">Modern Vim</a> by Drew Neil</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-2ef01739377f">Practical Microservices</a> by Ethan Garofolo</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-cb11bf75ff3f">Practical Programming, Third Edition</a> by Paul Gries, Jennifer Campbell, and Jason Montojo</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-d7d01025d6ce">Practical Vim, Second Edition</a> by Drew Neil</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-3db54fa4761d">Pragmatic Scala</a> by Venkat Subramaniam</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-237ed2475b2e">Pragmatic Version Control</a> by Travis Swicegood</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-e77064623b93">Programming Groovy 2</a> by Venkat Subramaniam</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-1d85cc6347c0">Programming Kotlin</a> by Venkat Subramaniam</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-8fffbe0b7b6d">Rediscovering JavaScript</a> by Venkat Subramaniam</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-1eec0e33001">Remote Pairing</a> by Joe Kutner</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-5c00bfd17aa6">Seven Concurrency Models in Seven Weeks</a> by Paul Butcher</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-f3cb9ada3c82">Seven Databases in Seven Weeks, Second Edition</a> by Luc Perkins, with Eric Redmond, and Jim R. Wilson</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-bf907a514a34">Seven Languages in Seven Weeks</a> by Bruce A. Tate</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-640644b1fe02">Seven More Languages in Seven Weeks</a> by Bruce A. Tate, Fred Daoud, Ian Dees, and Jack Moffitt</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-d5ed3e0ac475">Seven Mobile Apps in Seven Weeks</a> by Tony Hillerson</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-792c48921cbc">Software Estimation Without Guessing</a> by George Dinwiddie</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-bfed08449866">The Developer’s Code</a> by Ka Wai Cheung</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-23a75c7cba86">The Healthy Programmer</a> by Joe Kutner</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-49d578099203">The Passionate Programmer</a> by Chad Fowler</li>
+<li><a href="https://medium.com/pragmatic-programmers/table-of-contents-622967a31cb9">Your Code as a Crime Scene</a> by Adam Tornhill</li>
+</ul>
+<p>I think I&rsquo;ll start with The Healthy Programmer, it should be a good read during these time of global pandemic.</p>
+<p>What about you?
+Did you read one of these books?
+Was it good?
+Which one will you read next?
+Please tell me in the comments.</p>
+]]></content></item><item><title>Hello World!</title><link>https://rlemaitre.com/posts/hello-world/</link><pubDate>Thu, 11 Feb 2021 19:27:29 +0100</pubDate><guid>https://rlemaitre.com/posts/hello-world/</guid><description>It&amp;rsquo;s been a long time I wanted to have a blog. Writing more and better is one of my goals this year and the blog is a fairly simple way to achieve it.
 I will try to write about subjects that interest me: dev, learning, ways to become more efficient (aka productivity), board games and anything else that comes into my mind that deserves to be shared.
 What is my blogging platform?</description><content type="html"><![CDATA[<p>It&rsquo;s been a long time I wanted to have a blog.
 Writing more and better is one of my goals this year and the blog is a fairly simple way to achieve it.</p>
