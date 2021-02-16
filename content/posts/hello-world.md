@@ -35,3 +35,7 @@ As this theme allows me to have the site and the blog written in several languag
 I wanted to have a comment system on the blog. However, because of [data protection issues](https://supunkavinda.blog/disqus), I didn't want to use disqus.
 I turned to [Utterances](https://utteranc.es/) which is open source, without any tracking and stores comments as GitHub issues.
 So don't hesitate to comment on articles, you just need to have a GitHub account to do so.
+
+---
+
+_✍️ Edit 16/02/2021: Add link to [Github repository](https://github.com/rlemaitre/rlemaitre.github.io)._

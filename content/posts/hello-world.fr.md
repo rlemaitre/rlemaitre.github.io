@@ -36,3 +36,7 @@ Ce thème permettant d'avoir des versions du site et du blog en plusieurs langue
 Je voulais qu'il y ait un système de commentaires sur le blog. Cependant, à cause de [problèmes de protection de données](https://supunkavinda.blog/disqus), je ne voulais pas utiliser disqus.
 Je me suis orienté vers [Utterances](https://utteranc.es/) qui lui est open source, sans aucun tracking et qui stocke les commentaires comme des issues GitHub.
 N'hésitez donc pas à commenter les articles, il suffit d'avoir un compte github pour le faire.
+
+---
+
+_✍️ Edit 16/02/2021: Ajout du lien vers le [dépôt Github](https://github.com/rlemaitre/rlemaitre.github.io)._
