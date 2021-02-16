@@ -8,7 +8,6 @@ images:
 tags:
   - blog
 ---
-
 Ça fait un long moment que je voulais avoir mon blog.
 Écrire plus et mieux est l'un de mes objectifs de cette année et le blog est un moyen assez simple d'y parvenir.
 
@@ -29,9 +28,11 @@ Je suis un dev, le choix du static site generator avec des articles écrits en M
 Cette solution permet même de garantir une meilleure durabilité dans le temps, [comme l'écrit @brandur](https://brandur.org/fragments/graceful-degradation-time).
 Je me suis tourné vers [Hugo](https://gohugo.io/) et le thème [Hello Friend NG](https://github.com/rhazdon/hugo-theme-hello-friend-ng) de [Djordje Atlialp](https://atlialp.com/).
 
+Le code source de ce site est hébergé dans un [dépôt Github](https://github.com/rlemaitre/rlemaitre.github.io).
+N'hésitez pas à créer une [issue](https://github.com/rlemaitre/rlemaitre.github.io/issues) ou une [pull request](https://github.com/rlemaitre/rlemaitre.github.io/pulls) si vous repérez un bug ou une coquille.
+
 Ce thème permettant d'avoir des versions du site et du blog en plusieurs langues, je vais essayer d'écrire au maximum mes articles [en français](/fr/posts/) et [en anglais](/posts/).
 
 Je voulais qu'il y ait un système de commentaires sur le blog. Cependant, à cause de [problèmes de protection de données](https://supunkavinda.blog/disqus), je ne voulais pas utiliser disqus.
 Je me suis orienté vers [Utterances](https://utteranc.es/) qui lui est open source, sans aucun tracking et qui stocke les commentaires comme des issues GitHub.
 N'hésitez donc pas à commenter les articles, il suffit d'avoir un compte github pour le faire.
-
