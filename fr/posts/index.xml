@@ -74,6 +74,8 @@ J&rsquo;avais plusieurs possibilités pour le faire :</p>
 Je suis un dev, le choix du static site generator avec des articles écrits en Markdown et un hébergement basé sur Git s&rsquo;est donc naturellement imposé à moi.
 Cette solution permet même de garantir une meilleure durabilité dans le temps, <a href="https://brandur.org/fragments/graceful-degradation-time">comme l&rsquo;écrit @brandur</a>.
 Je me suis tourné vers <a href="https://gohugo.io/">Hugo</a> et le thème <a href="https://github.com/rhazdon/hugo-theme-hello-friend-ng">Hello Friend NG</a> de <a href="https://atlialp.com/">Djordje Atlialp</a>.</p>
+<p>Le code source de ce site est hébergé dans un <a href="https://github.com/rlemaitre/rlemaitre.github.io">dépôt Github</a>.
+N&rsquo;hésitez pas à créer une <a href="https://github.com/rlemaitre/rlemaitre.github.io/issues">issue</a> ou une <a href="https://github.com/rlemaitre/rlemaitre.github.io/pulls">pull request</a> si vous repérez un bug ou une coquille.</p>
 <p>Ce thème permettant d&rsquo;avoir des versions du site et du blog en plusieurs langues, je vais essayer d&rsquo;écrire au maximum mes articles <a href="/fr/posts/">en français</a> et <a href="/posts/">en anglais</a>.</p>
 <p>Je voulais qu&rsquo;il y ait un système de commentaires sur le blog. Cependant, à cause de <a href="https://supunkavinda.blog/disqus">problèmes de protection de données</a>, je ne voulais pas utiliser disqus.
 Je me suis orienté vers <a href="https://utteranc.es/">Utterances</a> qui lui est open source, sans aucun tracking et qui stocke les commentaires comme des issues GitHub.
