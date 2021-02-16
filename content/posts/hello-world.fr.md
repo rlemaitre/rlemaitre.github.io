@@ -39,4 +39,4 @@ N'hésitez donc pas à commenter les articles, il suffit d'avoir un compte githu
 
 ---
 
-_✍️ Edit 16/02/2021: Ajout du lien vers le [dépôt Github](https://github.com/rlemaitre/rlemaitre.github.io)._
+_✍️ Edit 16/02/2021 : Ajout du lien vers le [dépôt Github](https://github.com/rlemaitre/rlemaitre.github.io)._
