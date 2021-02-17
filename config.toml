@@ -29,6 +29,9 @@ description = "Raphaël Lemaitre's website and blog."
 keywords = "homepage, blog"
 images = [""]
 
+[params.portrait]
+path = "/images/rlemaitre.jpeg"
+
 [[params.social]]
 name = "twitter"
 url  = "https://twitter.com/rlemaitre"
