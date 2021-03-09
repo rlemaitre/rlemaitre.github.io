@@ -33,7 +33,7 @@ tags:
 
 ### Installation
 
-L'installation de Joplin est simple sur macOs. Comme j'utilise [brew](https://brew.sh/) pour gérer mes applications (si il existe une formula ou un cask bien sûr), il m'a suffit d'exécuter
+L'installation de Joplin est simple sur macOs. Comme j'utilise [brew](https://brew.sh/) pour gérer mes applications (s’il existe une formula ou un cask bien sûr), il m'a suffit d'exécuter
 
 ```bash
 brew install --cask joplin
