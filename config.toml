@@ -27,7 +27,7 @@ enableSharingButtons = true
 # Metadata mostly used in document's head
 description = "Raphaël Lemaitre's website and blog."
 keywords = "homepage, blog"
-images = [""]
+images = ["/images/screenshot.png"]
 
 [params.portrait]
 path = "/images/rlemaitre.jpeg"
