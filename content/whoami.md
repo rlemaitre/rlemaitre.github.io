@@ -10,9 +10,9 @@ I am Raphaël Lemaitre, and it appears you landed on my website.
 
 {{< image src="/images/rlemaitre.jpeg" alt="It's me!" position="center" style="width: 50%;border-radius: 12px;" >}}
 
-According to my [twitter](https://twitter.com/rlemaitre) bio, I am
+According to my [twitter](https://twitter.com/rlemaitre) and [Bluesky](https://bsky.app/profile/rlemaitre.com) bio, I am
 
-> CTO of [@adventori](https://twitter.com/adventori); pragmatic coder; software craftsman; data lover; tech, soccer, golf, food and music enthusiast; proud dad
+> Back-end Staff Engineer @ledger.com // Pragmatic Coder // Software Craftsman //  Tech 💻 // Golf 🏌️‍♂️ // Food 🍲 and Music 🎶 enthusiast // Proud Dad
 
 This sums up well who am I, but I'll detail a bit more.
 
