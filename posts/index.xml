@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Raphaël Lemaitre</title><link>https://rlemaitre.com/posts/</link><description>Recent content in Posts on Raphaël Lemaitre</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Tue, 09 Mar 2021 23:10:56 +0100</lastBuildDate><atom:link href="https://rlemaitre.com/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>TIL: Trigger a Ci Pipeline From Command Line</title><link>https://rlemaitre.com/posts/til/trigger-a-ci-pipeline-from-command-line/</link><pubDate>Tue, 09 Mar 2021 23:10:56 +0100</pubDate><guid>https://rlemaitre.com/posts/til/trigger-a-ci-pipeline-from-command-line/</guid><description>At ADventori, we use Gitlab CI to deploy our staging environments when code changes in our main branch. This afternoon, I wanted to re-deploy one of our environments with the same code.
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Raphaël Lemaitre</title><link>https://rlemaitre.com/posts/</link><description>Recent content in Posts on Raphaël Lemaitre</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 09 Mar 2021 23:10:56 +0100</lastBuildDate><atom:link href="https://rlemaitre.com/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>TIL: Trigger a Ci Pipeline From Command Line</title><link>https://rlemaitre.com/posts/til/trigger-a-ci-pipeline-from-command-line/</link><pubDate>Tue, 09 Mar 2021 23:10:56 +0100</pubDate><guid>https://rlemaitre.com/posts/til/trigger-a-ci-pipeline-from-command-line/</guid><description>At ADventori, we use Gitlab CI to deploy our staging environments when code changes in our main branch. This afternoon, I wanted to re-deploy one of our environments with the same code.
 One solution I saw was to add a dummy modification to our codebase (for example adding a space in a comment), commit it, and push it to our main branch. This would trigger our CI/CD pipeline and would result to a new deployment.</description><content type="html"><![CDATA[<p>At <a href="https://adventori.com/">ADventori</a>, we use <a href="https://docs.gitlab.com/ee/ci/">Gitlab CI</a> to deploy our staging environments when code changes in our main branch.
 This afternoon, I wanted to re-deploy one of our environments with the same code.</p>
 <p>One solution I saw was to add a dummy modification to our codebase (for example adding a space in a comment), commit it, and push it to our main branch.
@@ -8,8 +8,8 @@ This solves my problem, but the code modification is artificial.</p>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </p>
 <p>Eventually, I ran the following command, pushed to our main branch and our staging environment was re-deployed.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git commit --allow-empty -m <span style="color:#e6db74">&#39;Redeploy staging environment&#39;</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git commit --allow-empty -m <span style="color:#e6db74">&#39;Redeploy staging environment&#39;</span>
+</span></span></code></pre></div>
     <img src="https://media.giphy.com/media/jS27LWasgUIYrXtP83/giphy.gif"  alt="Job done!"  class="center"  />
 
 
@@ -28,13 +28,13 @@ It appears it depends on the server architecture, the system memory and the VM t
 <p>For client configurations, as described in <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/parallel.html#default_heap_size">GC Tuning guide</a>, the default maximum heap size is half of the physical memory up to a physical memory size of 192 megabytes (MB) and otherwise one fourth of the physical memory up to a physical memory size of 1 gigabyte (GB).</p>
 <p>For server configurations, as described in <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/ergonomics.html#sthref5">the same guide</a>, the default maximum heap size is 1/4 of the physical memory up to 1 gigabyte for 32-bits JVMs and to 32 gigabytes for 64-bits JVMs.</p>
 <p>A simple way to know what is the default value for your JVM on your environment is to run the following command.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">java -XX:+PrintFlagsFinal -version | grep MaxHeapSize
-</code></pre></div><p>The result for our JVM inside the docker container is:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">    uintx MaxHeapSize                              := 16833839104                         {product}
-openjdk version &#34;1.8.0_242&#34;
-OpenJDK Runtime Environment (build 1.8.0_242-b08)
-OpenJDK 64-Bit Server VM (build 25.242-b08, mixed mode)
-</code></pre></div><p>The value is displayed in bytes.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>java -XX:+PrintFlagsFinal -version | grep MaxHeapSize
+</span></span></code></pre></div><p>The result for our JVM inside the docker container is:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>    uintx MaxHeapSize                              := 16833839104                         {product}
+</span></span><span style="display:flex;"><span>openjdk version &#34;1.8.0_242&#34;
+</span></span><span style="display:flex;"><span>OpenJDK Runtime Environment (build 1.8.0_242-b08)
+</span></span><span style="display:flex;"><span>OpenJDK 64-Bit Server VM (build 25.242-b08, mixed mode)
+</span></span></code></pre></div><p>The value is displayed in bytes.
 So, here, the default value is 16 GB which is one quarter of the host memory (64 GB).</p>
 <p>The <code>java -XX:+PrintFlagsFinal -version</code> command displays a lot of information (several hundreds of parameters), such as the heap space size and the selected garbage collector.</p>
 ]]></content></item><item><title>Pragmatic Programmers on Medium</title><link>https://rlemaitre.com/posts/pragmatic-programmers-on-medium/</link><pubDate>Mon, 15 Feb 2021 22:15:49 +0100</pubDate><guid>https://rlemaitre.com/posts/pragmatic-programmers-on-medium/</guid><description>Good news! The Pragmatic Programmers are on Medium. They publish there their back catalogue. The books can be quite old, but some are still very useful.
