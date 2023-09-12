@@ -17,7 +17,7 @@ One solution I saw was to add a dummy modification to our codebase (for example 
 This would trigger our CI/CD pipeline and would result to a new deployment.
 This solves my problem, but the code modification is artificial.
 
-Then, I discovered the `--allow-empty` option of `git commit` thanks to this tweet: {{< tweet 1366466258393161729 >}}
+Then, I discovered the `--allow-empty` option of `git commit` thanks to this tweet: {{< tweet user="meganesully" id="1366466258393161729" >}}
 
 Eventually, I ran the following command, pushed to our main branch and our staging environment was re-deployed.
 

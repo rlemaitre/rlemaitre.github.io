@@ -17,7 +17,7 @@ Une solution possible était de d'effectuer une modification factice sur notre b
 Cette modification déclencherait un build dans Gitlab CI et résulterait à un nouveau déploiement.
 Le problème serait résolu mais la modification du code est artificielle et superflue.
 
-Puis, j'ai découvert l'option `--allow-empty` de `git commit` grâce à ce tweet: {{< tweet 1366466258393161729 >}}
+Puis, j'ai découvert l'option `--allow-empty` de `git commit` grâce à ce tweet: < tweet user="meganesully" id="1366466258393161729" >
 
 Ainsi, j'ai exécuté la commande suivante, poussé sur noter branche principale et noter environnement de staging fut déployé.
 
