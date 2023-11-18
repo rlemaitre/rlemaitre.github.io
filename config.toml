@@ -2,7 +2,45 @@ baseurl      = "https://rlemaitre.com"
 title        = "Raphaël Lemaitre"
 languageCode = "en-us"
 theme        = "hello-friend-ng"
-paginate     = 10
+
+PygmentsCodeFences = true
+PygmentsStyle = "monokai"
+
+paginate  = 10
+rssLimit  = 10  # Maximum number of items in the RSS feed.
+copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License." # This message is only used by the RSS template.
+
+# googleAnalytics = ""
+# disqusShortname = ""
+
+archetypeDir = "archetypes"
+contentDir   = "content"
+dataDir      = "data"
+layoutDir    = "layouts"
+publishDir   = "public"
+
+buildDrafts  = false
+buildFuture  = false
+buildExpired = false
+canonifyURLs = true
+
+enableRobotsTXT = true
+enableGitInfo   = true
+enableEmoji     = true
+enableMissingTranslationPlaceholders = true
+disableRSS     = false
+disableSitemap = false
+disable404     = false
+disableHugoGeneratorInject = false
+
+[permalinks]
+posts = "/posts/:year/:month/:title/"
+
+[author]
+name = "Raphaël Lemaitre"
+
+[blackfriday]
+hrefTargetBlank = true
 
 [taxonomies]
 category = "blog"
@@ -15,103 +53,250 @@ series   = "series"
     dateformNum     = "2006-01-02"
     dateformNumTime = "2006-01-02 15:04"
 
-    # Subtitle for home
-    homeSubtitle = "Developer – Architect — Engineering Manager – CTO"
-
-    # Set disableReadOtherPosts to true in order to hide the links to other posts.
-    disableReadOtherPosts = false
-
-    # Enable sharing buttons, if you linke
-    enableSharingButtons = true
-
     # Metadata mostly used in document's head
+    #
     description = "Raphaël Lemaitre's website and blog."
     keywords = "homepage, blog"
     images = ["/images/screenshot.png"]
 
+    # Home subtitle of the index page.
+    #
+    homeSubtitle = "Developer – Architect"
+
+    # Set a background for the homepage
+    # backgroundImage = "assets/images/background.jpg"
+
+    # Prefix of link to the git commit detail page. GitInfo must be enabled.
+    #
+     gitUrl = "https://github.com/rlemaitre/rlemaitre.github.io/commit/"
+
+    # Set disableReadOtherPosts to true in order to hide the links to other posts.
+    #
+    disableReadOtherPosts = false
+
+    # Enable theme toggle
+    #
+    # This options enables the theme toggle for the theme.
+    # Per default, this option is off.
+    # The theme is respecting the prefers-color-scheme of the operating system.
+    # With this option on, the page user is able to set the scheme he wants.
+    enableThemeToggle = true
+
+    # Sharing buttons
+    #
+    # There are a lot of buttons preconfigured. If you want to change them,
+    # generate the buttons here: https://sharingbuttons.io
+    # and add them into your own `layouts/partials/sharing-buttons.html`
+    #
+    enableSharingButtons = true
+
+    # Global language menu
+    #
+    # Enables the global language menu.
+    #
+    enableGlobalLanguageMenu = true
+
+    # Integrate Javascript files or stylesheets by adding the url to the external assets or by
+    # linking local files with their path relative to the static folder, e.g. "css/styles.css"
+    #
+    customCSS = []
+    customJS  = []
+
+    # Toggle this option need to rebuild SCSS, requires extended version of Hugo
+    #
+    justifyContent = false  # Set "text-align: justify" to .post-content.
+
+    # Integrate Plausible.io
+    # plausibleDataDomain = 'test.com'
+    # plausibleScriptSource = 'https://plausible.io/js/script.js'
+
+    # Custom footer
+    # If you want, you can easily override the default footer with your own content.
+    #
+    [params.footer]
+        trademark = 2023
+        rss = true
+        copyright = true
+        author = true
+
+        topText = []
+        bottomText = [
+            "Powered by <a href=\"http://gohugo.io\">Hugo</a>",
+            "Made with &#10084; by <a href=\"https://github.com/rhazdon\">Djordje Atlialp</a>"
+        ]
+
+    # Colors for favicons
+    #
+    [params.favicon.color]
+        mask = "#1b1c1d"
+        msapplication = "#1b1c1d"
+        theme = "#1b1c1d"
+
+    [params.logo]
+        logoMark     = ">"
+        logoText     = "$ cd /home/"
+        logoHomeLink = "/"
+        # Set true to remove the logo cursor entirely.
+        # logoCursorDisabled = false
+        # Set to a valid CSS color to change the cursor in the logo.
+        # logoCursorColor    = "#67a2c9"
+        # Set to a valid CSS time value to change the animation duration, "0s" to disable.
+        # logoCursorAnimate  = "2s"
+        # Append the current url pathname to logoText
+         logoCursorPathname = true
+
+    # Commento is more than just a comments widget you can embed —
+    # it’s a return to the roots of the internet.
+    # An internet without the tracking and invasions of privacy.
+    # An internet that is simple and lightweight.
+    # An internet that is focused on interesting discussions, not ads.
+    # A better internet.
+    # Uncomment this to enable Commento.
+    #
+    # [params.commento]
+    #   url = ""
+
+    # Utteranc.es is a lightweight comments widget built on GitHub issues.
+    # See https://utteranc.es/ for documentation
+    # Uncomment this to enable Utteranc.es.
+    #
+     [params.utterances]
+    #   Your GitHub repository
+    #
+       repository = "rlemaitre/rlemaitre.github.io"
+
+    #   label used for GitHub issues
+    #
+       label      = "comment"
+
+    #   Blog Post <-> Issue mapping. This parameter is optional. Possible values are:
+    #      - pathname
+    #      - url
+    #      - title
+    #      - og:title
+    #      - issue number
+    #      - specific term
+    #
+       issueTerm  = "pathname"
+
+    #   Theme used: possible values are:
+    #      - github-light
+    #      - github-dark
+    #      - preferred-color-scheme
+    #      - github-dark-orange
+    #      - icy-dark
+    #      - dark-blue
+    #      - photon-dark
+    #      - boxy-light
+    #      - gruvbox-dark
+    #
+       theme      = "preferred-color-scheme"
+
+    # Uncomment this if you want a portrait on your start page
+    #
     [params.portrait]
-    path = "/images/rlemaitre.jpeg"
+        path = "/images/rlemaitre.jpeg"
+        alt      = "Portrait"
+        maxWidth = "300px"
+
+    # Social icons
+    [[params.social]]
+        name = "twitter"
+        url  = "https://twitter.com/rlemaitre"
 
     [[params.social]]
-    name = "twitter"
-    url  = "https://twitter.com/rlemaitre"
+        name = "github"
+        url  = "https://github.com/rlemaitre"
 
     [[params.social]]
-    name = "github"
-    url  = "https://github.com/rlemaitre"
+        name = "gitlab"
+        url  = "https://gitlab.com/rlemaitre"
 
     [[params.social]]
-    name = "gitlab"
-    url  = "https://gitlab.com/rlemaitre"
+        name = "linkedin"
+        url  = "https://linkedin.com/in/rlemaitre/"
 
     [[params.social]]
-    name = "linkedin"
-    url  = "https://linkedin.com/in/rlemaitre/"
+        name = "case"
+        url  = "https://ledger.com/"
 
     #[[params.social]]
-    #name = "dev"
-    #url  = "https://dev.to/rlemaitre/"
+    #   name = "dev"
+    #   url  = "https://dev.to/rlemaitre/"
     #
     #[params.social]
-    #name = "medium"
-    #url  = "https://medium.com/@rlemaitre/"
+    #   name = "medium"
+    #   url  = "https://medium.com/@rlemaitre/"
 
 [languages]
     [languages.en]
+        weight    = 1
+        copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
         title = "Raphaël Lemaitre"
 
-        [languages.en.params]
-            subtitle = "Developer – Architect"
-            homeSubtitle = "Developer – Architect"
-            keywords = "developer,architect"
-            copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
-            readOtherPosts = "Read other posts"
-            [languages.en.params.logo]
-            logoText = "cd ~"
-            logoHomeLink = "/"
-            # or
-            #
-            # path = "/img/your-example-logo.svg"
-            # alt = "Your example logo alt text"
+    [languages.en.params]
+        subtitle = "Developer – Architect"
+        homeSubtitle = "Developer – Architect"
+        keywords = "developer,architect"
+        copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
+        readOtherPosts = "Read other posts"
+        [languages.en.params.logo]
+        logoText = "cd ~/"
+        logoHomeLink = "/"
+        # or
+        #
+        # path = "/img/your-example-logo.svg"
+        # alt = "Your example logo alt text"
 
-        [languages.en.menu]
-            [[languages.en.menu.main]]
-            identifier = "whoami"
-            name       = "whoami"
-            url        = "/whoami/"
-            weight     = 1
-            [[languages.en.menu.main]]
-            identifier = "blog"
-            name       = "Blog"
-            url        = "/posts/"
-            weight     = 2
+    [languages.en.menu]
+        [[languages.en.menu.main]]
+        identifier = "whoami"
+        name       = "/whoami"
+        url        = "/whoami/"
+        weight     = 1
+        [[languages.en.menu.main]]
+        identifier = "blog"
+        name       = "/blog"
+        url        = "/posts/"
+        weight     = 2
 
     [languages.fr]
+        weight    = 1
+        copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
         title = "Raphaël Lemaitre"
 
-        [languages.fr.params]
-            subtitle = "Développeur – Architecte"
-            homeSubtitle = "Développeur – Architecte"
-            keywords = "developpeur,architecte"
-            copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
-            readOtherPosts = "Autres posts"
-            [languages.fr.params.logo]
-            logoText = "cd ~"
-            logoHomeLink = "/"
-            # or
-            #
-            # path = "/img/your-example-logo.svg"
-            # alt = "Your example logo alt text"
+    [languages.fr.params]
+        subtitle = "Développeur – Architecte"
+        homeSubtitle = "Développeur – Architecte"
+        keywords = "developpeur,architecte"
+        copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
+        readOtherPosts = "Autres posts"
+        [languages.fr.params.logo]
+        logoText = "cd ~/"
+        logoHomeLink = "/"
+        # or
+        #
+        # path = "/img/your-example-logo.svg"
+        # alt = "Your example logo alt text"
 
-        [languages.fr.menu]
-            [[languages.fr.menu.main]]
-            identifier = "whoami"
-            name       = "whoami"
-            url        = "/whoami/"
-            weight     = 1
-            [[languages.fr.menu.main]]
-            identifier = "blog"
-            name       = "Blog"
-            url        = "/posts/"
-            weight     = 2
+    [languages.fr.menu]
+        [[languages.fr.menu.main]]
+        identifier = "whoami"
+        name       = "/whoami"
+        url        = "/whoami/"
+        weight     = 1
+        [[languages.fr.menu.main]]
+        identifier = "/blog"
+        name       = "/blog"
+        url        = "/posts/"
+        weight     = 2
 
+#[menu]
+#    [[menu.main]]
+#        identifier = "about"
+#        name       = "About"
+#        url        = "about/"
+#    [[menu.main]]
+#        identifier = "posts"
+#        name       = "Posts"
+#        url        = "posts/"
