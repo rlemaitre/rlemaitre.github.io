@@ -99,8 +99,9 @@ series   = "series"
     # Integrate Javascript files or stylesheets by adding the url to the external assets or by
     # linking local files with their path relative to the static folder, e.g. "css/styles.css"
     #
-    customCSS = []
-    customJS  = []
+    customCSS        = []
+    customJS         = []
+    customJSModules  = ["/js/mermaid.js"]
 
     # Toggle this option need to rebuild SCSS, requires extended version of Hugo
     #
@@ -251,12 +252,12 @@ series   = "series"
     [languages.en.menu]
         [[languages.en.menu.main]]
         identifier = "whoami"
-        name       = "/whoami"
+        name       = "whoami"
         url        = "/whoami/"
         weight     = 1
         [[languages.en.menu.main]]
         identifier = "blog"
-        name       = "/blog"
+        name       = "blog"
         url        = "/posts/"
         weight     = 2
 
@@ -282,12 +283,12 @@ series   = "series"
     [languages.fr.menu]
         [[languages.fr.menu.main]]
         identifier = "whoami"
-        name       = "/whoami"
+        name       = "whoami"
         url        = "/whoami/"
         weight     = 1
         [[languages.fr.menu.main]]
-        identifier = "/blog"
-        name       = "/blog"
+        identifier = "blog"
+        name       = "blog"
         url        = "/posts/"
         weight     = 2
 

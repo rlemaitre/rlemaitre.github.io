@@ -4,13 +4,12 @@ date: 2023-11-17T10:13:20+01:00
 draft: false
 toc: true
 images:
+cover: "/images/blog/adhd/hacking-adhd-cover.webp"
 tags:
   - ADHD
   - Mental Health
   - Productivity
 ---
-{{< image src="/images/blog/adhd/hacking-adhd-cover.webp" alt="" position="center" style="width: 100%;" >}}
-
 _Cet article a initialement été publié sur le [blog de Ledger](https://www.ledger.com/blog/hacking-adhd-strategies-for-the-modern-developer), le 14 novembre 2023._
 
 ## Introduction
@@ -238,3 +237,5 @@ Votre bien-être mental est crucial, et les experts peuvent fournir une approche
 
 Chaque TDAH est différent, mais je pense que les outils et stratégies discutés ici peuvent être un bon point de départ pour les développeurs cherchant à tirer le meilleur parti de leurs journées de travail.
 N'oubliez pas qu'avec une approche et un environnement adaptés, le TDAH peut devenir une force, et pas seulement un défi.
+
+_Credits: Images générées par DALL-E de [OpenAI](https://openai.com/)._
