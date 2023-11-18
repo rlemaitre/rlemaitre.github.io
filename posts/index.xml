@@ -1,4 +1,212 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Raphaël Lemaitre</title><link>https://rlemaitre.com/posts/</link><description>Recent content in Posts on Raphaël Lemaitre</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 09 Mar 2021 23:10:56 +0100</lastBuildDate><atom:link href="https://rlemaitre.com/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>TIL: Trigger a Ci Pipeline From Command Line</title><link>https://rlemaitre.com/posts/til/trigger-a-ci-pipeline-from-command-line/</link><pubDate>Tue, 09 Mar 2021 23:10:56 +0100</pubDate><guid>https://rlemaitre.com/posts/til/trigger-a-ci-pipeline-from-command-line/</guid><description>At ADventori, we use Gitlab CI to deploy our staging environments when code changes in our main branch. This afternoon, I wanted to re-deploy one of our environments with the same code.
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Raphaël Lemaitre</title><link>https://rlemaitre.com/posts/</link><description>Recent content in Posts on Raphaël Lemaitre</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 17 Nov 2023 10:13:20 +0100</lastBuildDate><atom:link href="https://rlemaitre.com/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Hacking ADHD – Strategies for the Modern Developer</title><link>https://rlemaitre.com/posts/adhd/hacking-adhd-strategies-for-the-modern-developer/</link><pubDate>Fri, 17 Nov 2023 10:13:20 +0100</pubDate><guid>https://rlemaitre.com/posts/adhd/hacking-adhd-strategies-for-the-modern-developer/</guid><description>This article was initially published on Ledger blog, on November 14th, 2023.
+Introduction After struggling a lot with my mental health (anxiety, depressive condition) for several years, I was diagnosed with Attention-Deficit/Hyperactivity Disorder, commonly known as ADHD, at the age of 44. This diagnosis shocked me a lot: I wasn’t a wild child, in fact, I was even a good pupil. With the help of my therapist, I was able to understand that ADHD can take multiple forms and that it can go undiagnosed until adulthood.</description><content type="html"><![CDATA[
+    <img src="/images/blog/adhd/hacking-adhd-cover.webp"  class="center"  style="width: 100%;"  />
+
+
+<p><em>This article was initially published on <a href="https://www.ledger.com/blog/hacking-adhd-strategies-for-the-modern-developer">Ledger blog</a>, on November 14th, 2023.</em></p>
+<h2 id="introduction">Introduction</h2>
+<p>After struggling a lot with my mental health (anxiety, depressive condition) for several years,
+I was diagnosed with Attention-Deficit/Hyperactivity Disorder, commonly known as ADHD, at the age of 44.
+This diagnosis shocked me a lot: I wasn’t a wild child, in fact, I was even a good pupil.
+With the help of my therapist, I was able to understand that ADHD can take multiple forms and that it can go undiagnosed until adulthood.
+Since then, I’ve been trying many technics to overcome it and make the best of it in my professional life.
+This article sums up what I learned so far.</p>
+<h2 id="what-is-adhd">What is ADHD?</h2>
+<p><em>Disclaimer: I’m not a psychiatrist nor a neurologist, so this description is surely incomplete</em></p>
+<p>ADHD is a neurodevelopmental disorder that affects both children and adults.
+According to the American Psychiatric Association’s Diagnostic and Statistical Manual of Mental Disorders (DSM-5),
+ADHD is characterized by a persistent pattern of inattention and/or hyperactivity-impulsivity that interferes with functioning or development.</p>
+<p>ADHD manifests differently in individuals:</p>
+<ul>
+<li>Some people mainly have symptoms of inattention.</li>
+<li>Others mostly have symptoms of hyperactivity-impulsivity.</li>
+<li>Some have a combination of both.</li>
+</ul>
+<p>While everybody can occasionally experience some inattention, unfocused motor activity, and impulsivity,
+people with ADHD endure more severe and frequent occurrences of these behaviors.
+These manifestations can interfere with or reduce the quality of how they function socially, at school, or in a job.</p>
+
+    <img src="/images/blog/adhd/what-is-adhd.webp"  class="center"  style="width: 100%;"  />
+
+
+<p>Not diagnosing and managing ADHD can lead to a range of complications, including anxiety, burn-out or depression.</p>
+<p>It’s not uncommon for ADHD to go undiagnosed until adulthood, as my experience shows.
+Many adults discover they have ADHD only after their children are diagnosed, leading them to recognize similar patterns in their own behavior.</p>
+<p>Several factors contribute to late diagnosis:</p>
+<ul>
+<li>
+<p><strong>Coping Mechanisms</strong>:
+Over the years, adults develop various coping strategies that can mask ADHD symptoms.
+For instance, someone might excessively rely on calendars, to-do lists, or alarms to compensate for forgetfulness.</p>
+</li>
+<li>
+<p><strong>Different Environment</strong>:
+The transition from structured educational settings to less structured work environments can reveal hidden ADHD symptoms.
+In school, frequent tests and immediate deadlines can actually serve as scaffolding for people with ADHD.
+In contrast, long-term projects and self-management in a work environment can expose challenges in planning and sustained focus.</p>
+</li>
+<li>
+<p><strong>Less Oversight</strong>:
+Unlike children, who are constantly observed by teachers and parents, adults generally have less oversight.
+This means symptoms can go unnoticed, especially if they don’t manifest as disruptive behavior.</p>
+</li>
+<li>
+<p><strong>Societal Stigma</strong>:
+The stigma surrounding ADHD can discourage people from seeking diagnosis and treatment.
+There’s a common misconception that ADHD is a “childhood disorder,” or merely a lack of willpower, which can make adults hesitate to consult healthcare professionals.</p>
+</li>
+<li>
+<p><strong>Common Misdiagnoses</strong>:
+ADHD symptoms can sometimes be misinterpreted as signs of depression or anxiety disorders.
+The restlessness and difficulty in focusing associated with ADHD may result in a misdiagnosis, especially if other symptoms like impulsivity are less evident.
+A thorough evaluation is crucial for an accurate diagnosis.</p>
+</li>
+</ul>
+<h2 id="adhd-as-a-double-edged-sword-for-developers">ADHD as a Double-Edged Sword for Developers</h2>
+<p>ADHD is often viewed through a negative lens, yet it’s important to acknowledge that the disorder brings not only challenges but also its own set of benefits.</p>
+
+    <img src="/images/blog/adhd/double-edged-sword.webp"  class="center"  style="width: 100%;"  />
+
+
+<h3 id="benefits">Benefits</h3>
+<ul>
+<li><strong>Hyperfocus</strong>:
+One of the paradoxical advantages of ADHD is the ability to hyperfocus on tasks that you find genuinely interesting or rewarding.
+This can be especially beneficial in coding, where being “in the zone” can lead to high levels of productivity.</li>
+<li><strong>Creative Problem-Solving</strong>:
+The ADHD brain is often highly creative and capable of out-of-the-box thinking, which can be invaluable in software development where novel solutions are often needed.</li>
+<li><strong>Quick Adaptation</strong>:
+Many people with ADHD thrive in dynamic environments that would overwhelm others.
+The rapidly changing nature of technology can therefore be an ideal playground for developers with ADHD.</li>
+</ul>
+<h3 id="challenges">Challenges</h3>
+<ul>
+<li><strong>Time Management</strong>:
+ADHD can make it difficult to gauge how long a task will take, leading to procrastination and last-minute rushes.
+This can be particularly challenging in development projects with tight deadlines.</li>
+<li><strong>Organizational Skills</strong>:
+Keeping track of multiple codebases, debugging, and even remembering to comment code can be more challenging when you have ADHD.</li>
+<li><strong>Consistency</strong>:
+While you may excel at certain tasks, the variability in performance can be a concern.
+Some days might be incredibly productive, while others are marred by distractions and a lack of focus.</li>
+</ul>
+<p>Understanding the complexities of ADHD is crucial for adapting your work environment and strategies to leverage its strengths while mitigating its weaknesses.</p>
+<h2 id="understanding-the-adhd-brain">Understanding the ADHD brain</h2>
+
+    <img src="/images/blog/adhd/understanding-adhd-brain.webp"  class="center"  style="width: 100%;"  />
+
+
+<p>When it comes to ADHD, understanding the neurological factors at play can offer valuable insights into managing the condition effectively.
+One neurotransmitter that plays a significant role in ADHD is dopamine.
+This chemical is responsible for regulating mood, focus, and attention.
+In the ADHD brain, dopamine levels are often lower than average, which can result in a constant search for stimulation.</p>
+<h3 id="dopamine-and-motivation">Dopamine and Motivation</h3>
+<p>“<em>I have motivation issues until I have deadline ones</em>” is how I often describe my relationship with tasks.
+Dopamine acts as a motivator, urging us to achieve goals and complete tasks.
+However, its scarcity in the ADHD brain means that the urgency often kicks in only when a deadline approaches.
+This leads to last-minute rushes that can be either extremely productive or terribly stressful.</p>
+<h3 id="hyperfocus">Hyperfocus</h3>
+<p>Another common phenomenon among people with ADHD is hyperfocus.
+While it may seem counterintuitive, those with ADHD can sometimes focus so intensely on a task that they lose all track of time.
+I’ve found myself immersed in tasks, aiming for perfection, to the extent that hours fly by unnoticed.
+While this can be an asset in tasks requiring deep concentration, hyperfocus can also become a liability when you neglect other important tasks.</p>
+<h3 id="perfectionism">Perfectionism</h3>
+<p>In my experience, things must either be perfect or not done at all.
+This perfectionism can be attributed, in part, to how the ADHD brain is wired.
+We crave the dopamine hit that comes from completing a task perfectly, which often leads us to spend more time on a project than initially planned, fine-tuning every detail.</p>
+<p>By recognizing these traits and their underlying neurochemical causes, we can develop strategies and choose the right tools to help us manage our symptoms more effectively.</p>
+<h2 id="creating-and-navigating-an-adhd-friendly-work-environment">Creating and navigating an ADHD-friendly work environment</h2>
+<p>In a field like software development, where focus and attention to detail are critical, the work environment can either make or break your productivity.
+When you have ADHD, crafting an environment that suits your unique cognitive profile is not just beneficial but essential.</p>
+
+    <img src="/images/blog/adhd/adhd-work-environment.webp"  class="center"  style="width: 100%;"  />
+
+
+<h3 id="setting-up-a-stimulating-workspace">Setting up a Stimulating Workspace</h3>
+<p>The ideal workspace for someone with ADHD is not necessarily minimalist or clutter-free.
+It’s a space that provides stimulation without becoming distracting.
+For me, having multiple monitors has been a game-changer; it allows me to spread out my tasks visibly and switch between them as needed without losing track.</p>
+<h3 id="open-office-vs-remote-work-the-adhd-perspective">Open Office vs. Remote Work: The ADHD Perspective</h3>
+<p>While the open office layout is often praised for fostering collaboration, it can be a minefield of distractions for someone with ADHD.
+Remote work offers the freedom to tailor your environment to your needs but comes with its own set of challenges like isolation.</p>
+<h3 id="enter-the-hybrid-setup-the-best-of-both-worlds">Enter the Hybrid Setup: The Best of Both Worlds</h3>
+<p>A hybrid work setup can be the golden mean, allowing you the flexibility to work remotely when you need to hunker down and focus,
+while also offering the option to come into an office for teamwork and social interaction.
+For someone like me, who thrives in different settings depending on the task at hand, this is ideal.</p>
+<ul>
+<li><strong>Focus Days</strong>: Choose remote work on days when you need to dive deep into code or take on tasks requiring sustained attention.</li>
+<li><strong>Collaboration Days</strong>: Opt for the office environment when the agenda involves brainstorming sessions, team meetings, or project kick-offs.</li>
+</ul>
+<p>By actively selecting your work environment based on your daily or weekly needs, you take control of your productivity without sacrificing collaboration or focus.</p>
+<h3 id="asynchronous-communication">Asynchronous Communication</h3>
+<p>Immediate, synchronous communication might be efficient for quick decision-making, but can be a nightmare when you’re trying to focus.
+Consider these asynchronous communication methods that give you the time and space to concentrate without constant interruption:</p>
+<ul>
+<li><strong>Scheduled Updates</strong>: Replace frequent status meetings with scheduled written updates through platforms like Slack or Microsoft Teams.</li>
+<li><strong>Documentation</strong>: Use wikis, shared documents, or tools like Confluence to keep easily accessible and up-to-date information without requiring immediate attention.</li>
+<li><strong>Discussion Threads</strong>: Platforms allowing threaded conversations, like Slack threads or forum posts, can let you engage in discussions at your own pace.</li>
+<li><strong>Issue Trackers</strong>: Tools like JIRA or GitHub Issues can keep everyone updated without needing a meeting to discuss progress or blockers.</li>
+<li><strong>Video Messages</strong>: Recorded video updates are an underrated method for delivering complex information.
+Tools like <a href="https://loom.com/">Loom</a> allow you to create quick videos that team members can watch when it best suits them.</li>
+<li><strong>Amazon’s Silent Meeting Technique</strong>: Amazon has popularized the “Silent Meeting” approach, where participants read a six-page memo at the start of the meeting in complete silence.
+This allows for deep, focused thought before moving on to a discussion.
+It’s an excellent way to ensure everyone is on the same page (literally and figuratively) and it respects individual attention spans.</li>
+</ul>
+<p>By applying these asynchronous methods, you can keep the team in the loop without disrupting your or anyone else’s flow state.</p>
+<h3 id="managing-interruptions-in-team-settings">Managing Interruptions in Team Settings</h3>
+<p>Interruptions can wreak havoc on anyone’s focus, but they are especially detrimental for people with ADHD.
+In my team, we take a flexible approach that allows each individual to manage their own focus time.
+Team members are encouraged to block off periods in their calendars, switch off notifications, or do whatever else is necessary to maintain focus during work hours.</p>
+<p>To balance the need for individual focus with the benefits of team interaction, we have a standing “Virtual Coffee” appointment every day at 4PM.
+Attendance isn’t mandatory, but it’s an open invitation to pause, catch up, and discuss anything from work progress to the latest Netflix series.
+This approach fosters a sense of community without imposing on anyone’s focused work time.</p>
+<p>By adopting this strategy, we ensure that everyone has the latitude to work in a way that suits their attention span and cognitive style,
+while still maintaining the benefits of team cohesion.</p>
+<h2 id="self-management-strategies-and-tools-addressing-adhd-symptoms">Self-Management Strategies and Tools: Addressing ADHD Symptoms</h2>
+
+    <img src="/images/blog/adhd/adhd-strategies-and-tools.webp"  class="center"  style="width: 100%;"  />
+
+
+<p>Navigating ADHD’s unique challenges and benefits has led me to rely on an assortment of tools and strategies that make up my personal tech stack and self-management techniques.
+Let’s dive in:</p>
+<h3 id="obsidian-the-command-center-for-my-day">Obsidian: The Command Center for My Day</h3>
+<p><a href="http://obsidian.md">Obsidian</a> isn’t just a note-taking app for me; it’s the cornerstone of my daily organization.
+Here’s how I utilize its capabilities:</p>
+<ul>
+<li><strong>Daily Notes</strong>: Every morning, I start my day by planning it out in a custom template that displays my Google Calendar events and Todoist task list.</li>
+<li><strong>Jira Integration</strong>: Notes are auto-generated for each Jira ticket I work on, simplifying the process of logging work details.</li>
+<li><strong>Google Calendar Integration</strong>: Meeting notes are created automatically for every meeting I attend, keeping me organized.</li>
+<li><strong>Readwise &amp; Pocket</strong>: I keep track of book comments and articles-to-read via Readwise and Pocket integrations.</li>
+<li><strong>Google Contact</strong>: I can link people I work with in my notes, helping me make connections between tasks and stakeholders.</li>
+<li><strong>Other Subjects</strong>: I also make notes on a myriad of other topics (like drafts for this blog post) and link them to my daily note.</li>
+<li><strong>End-of-Day Review</strong>: At day’s end, I revisit my daily notes, shifting unfinished tasks and adding any overlooked items.</li>
+</ul>
+<h3 id="time-management-powering-through-with-reclaimai">Time Management: Powering Through with Reclaim.ai</h3>
+<p>I swear by <a href="https://reclaim.ai/">Reclaim.ai</a> for managing my time.
+It automatically schedules focus time for me—some sessions are ‘protected,’ meaning they can’t be deleted or moved, while others offer more flexibility.
+It even blocks out time for lunch and short “decompression” breaks after meetings.</p>
+<h3 id="communication-mastering-slack">Communication: Mastering Slack</h3>
+<p>I make the most of Slack’s “<a href="https://slack.com/help/articles/208423427-Set-a-reminder#set-a-message-reminder">remind me later</a>” feature.
+If I’m in the middle of something and get interrupted by a Slack message, I simply set a reminder to revisit it later.</p>
+<h3 id="focus-aid-tuning-in-with-brainfm">Focus Aid: Tuning in with Brain.fm</h3>
+<p>When it’s time to hunker down, I turn on <a href="https://brain.fm/">Brain.fm</a>.
+I’m even using it right now.
+I particularly love the “interval timer” feature, which uses the Pomodoro Technique to alternate between focus time and short breaks.</p>
+<p>By employing this tech stack and these strategies, I’ve been able to not just manage, but leverage my ADHD.
+Each piece of this puzzle addresses specific symptoms, transforming what some might see as challenges into opportunities for productivity and success.</p>
+<h2 id="conclusion-turning-adhd-challenges-into-strengths-in-software-development">Conclusion: Turning ADHD Challenges into Strengths in Software Development</h2>
+<p>As someone who was diagnosed with ADHD at 44, I’ve come to appreciate both the struggles and the advantages it brings to my professional life.
+By understanding the underlying neurology of ADHD and adopting a targeted set of tools and strategies,
+I’ve managed to turn what many perceive as a setback into a unique toolkit for success.
+From customized planning and asynchronous communication to harnessing focus and hyperfocus, my journey might resonate with many developers facing similar challenges.</p>
+<h3 id="the-importance-of-mental-health">The Importance of Mental Health</h3>
+<p>It’s essential to underline the critical role of mental health care.
+ADHD can often coexist with other mental health conditions like anxiety or depression, and the toll it takes can be considerable.
+Therefore, never hesitate to seek professional help from psychiatrists, psychologists, or therapists.
+Your mental well-being is crucial, and experts can provide a structured approach to managing ADHD symptoms.</p>
+<p>ADHD isn’t a “one-size-fits-all” condition, but the strategies and tools discussed here can offer a good starting point for software engineers looking to make the most out of their workdays.
+Remember, with the right approach and environment, ADHD can be a strength, not just a challenge.</p>
+]]></content></item><item><title>TIL: Trigger a Ci Pipeline From Command Line</title><link>https://rlemaitre.com/posts/til/trigger-a-ci-pipeline-from-command-line/</link><pubDate>Tue, 09 Mar 2021 23:10:56 +0100</pubDate><guid>https://rlemaitre.com/posts/til/trigger-a-ci-pipeline-from-command-line/</guid><description>At ADventori, we use Gitlab CI to deploy our staging environments when code changes in our main branch. This afternoon, I wanted to re-deploy one of our environments with the same code.
 One solution I saw was to add a dummy modification to our codebase (for example adding a space in a comment), commit it, and push it to our main branch. This would trigger our CI/CD pipeline and would result to a new deployment.</description><content type="html"><![CDATA[<p>At <a href="https://adventori.com/">ADventori</a>, we use <a href="https://docs.gitlab.com/ee/ci/">Gitlab CI</a> to deploy our staging environments when code changes in our main branch.
 This afternoon, I wanted to re-deploy one of our environments with the same code.</p>
 <p>One solution I saw was to add a dummy modification to our codebase (for example adding a space in a comment), commit it, and push it to our main branch.
