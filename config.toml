@@ -61,9 +61,9 @@ series   = "series"
         title = "Raphaël Lemaitre"
 
         [languages.en.params]
-            subtitle = "Developer – Architect – Engineering Manager – CTO"
-            homeSubtitle = "Developer – Architect – Engineering Manager – CTO"
-            keywords = "developer,architect,engineering manager,CTO"
+            subtitle = "Developer – Architect"
+            homeSubtitle = "Developer – Architect"
+            keywords = "developer,architect"
             copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
             readOtherPosts = "Read other posts"
             [languages.en.params.logo]
@@ -90,9 +90,9 @@ series   = "series"
         title = "Raphaël Lemaitre"
 
         [languages.fr.params]
-            subtitle = "Développeur – Architecte – Engineering Manager – CTO"
-            homeSubtitle = "Développeur – Architecte – Engineering Manager – CTO"
-            keywords = "developpeur,architecte,engineering manager,CTO"
+            subtitle = "Développeur – Architecte"
+            homeSubtitle = "Développeur – Architecte"
+            keywords = "developpeur,architecte"
             copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
             readOtherPosts = "Autres posts"
             [languages.fr.params.logo]

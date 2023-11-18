@@ -48,24 +48,24 @@ Many adults discover they have ADHD only after their children are diagnosed, lea
 
 Several factors contribute to late diagnosis:
 
-**Coping Mechanisms**:
+- **Coping Mechanisms**:
 Over the years, adults develop various coping strategies that can mask ADHD symptoms.
 For instance, someone might excessively rely on calendars, to-do lists, or alarms to compensate for forgetfulness.
 
-**Different Environment**:
+- **Different Environment**:
 The transition from structured educational settings to less structured work environments can reveal hidden ADHD symptoms.
 In school, frequent tests and immediate deadlines can actually serve as scaffolding for people with ADHD.
 In contrast, long-term projects and self-management in a work environment can expose challenges in planning and sustained focus.
 
-**Less Oversight**:
+- **Less Oversight**:
 Unlike children, who are constantly observed by teachers and parents, adults generally have less oversight.
 This means symptoms can go unnoticed, especially if they don’t manifest as disruptive behavior.
 
-**Societal Stigma**:
+- **Societal Stigma**:
 The stigma surrounding ADHD can discourage people from seeking diagnosis and treatment.
 There’s a common misconception that ADHD is a “childhood disorder,” or merely a lack of willpower, which can make adults hesitate to consult healthcare professionals.
 
-**Common Misdiagnoses**:
+- **Common Misdiagnoses**:
 ADHD symptoms can sometimes be misinterpreted as signs of depression or anxiety disorders.
 The restlessness and difficulty in focusing associated with ADHD may result in a misdiagnosis, especially if other symptoms like impulsivity are less evident.
 A thorough evaluation is crucial for an accurate diagnosis.
@@ -164,7 +164,7 @@ Consider these asynchronous communication methods that give you the time and spa
 - **Discussion Threads**: Platforms allowing threaded conversations, like Slack threads or forum posts, can let you engage in discussions at your own pace.
 - **Issue Trackers**: Tools like JIRA or GitHub Issues can keep everyone updated without needing a meeting to discuss progress or blockers.
 - **Video Messages**: Recorded video updates are an underrated method for delivering complex information.
-Tools like Loom allow you to create quick videos that team members can watch when it best suits them.
+Tools like [Loom](https://loom.com/) allow you to create quick videos that team members can watch when it best suits them.
 - **Amazon’s Silent Meeting Technique**: Amazon has popularized the “Silent Meeting” approach, where participants read a six-page memo at the start of the meeting in complete silence.
 This allows for deep, focused thought before moving on to a discussion.
 It’s an excellent way to ensure everyone is on the same page (literally and figuratively) and it respects individual attention spans.
