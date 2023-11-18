@@ -101,7 +101,6 @@ series   = "series"
     #
     customCSS        = []
     customJS         = []
-    customJSModules  = ["/js/mermaid.js"]
 
     # Toggle this option need to rebuild SCSS, requires extended version of Hugo
     #
