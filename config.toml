@@ -160,14 +160,14 @@ series   = "series"
     # See https://utteranc.es/ for documentation
     # Uncomment this to enable Utteranc.es.
     #
-     [params.utterances]
+#     [params.utterances]
     #   Your GitHub repository
     #
-       repository = "rlemaitre/rlemaitre.github.io"
+#       repository = "rlemaitre/rlemaitre.github.io"
 
     #   label used for GitHub issues
     #
-       label      = "comment"
+#       label      = "comment"
 
     #   Blog Post <-> Issue mapping. This parameter is optional. Possible values are:
     #      - pathname
@@ -177,7 +177,7 @@ series   = "series"
     #      - issue number
     #      - specific term
     #
-       issueTerm  = "pathname"
+#       issueTerm  = "pathname"
 
     #   Theme used: possible values are:
     #      - github-light
@@ -190,7 +190,7 @@ series   = "series"
     #      - boxy-light
     #      - gruvbox-dark
     #
-       theme      = "preferred-color-scheme"
+#       theme      = "preferred-color-scheme"
 
     # Uncomment this if you want a portrait on your start page
     #
