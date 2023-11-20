@@ -1,4 +1,24 @@
-# rlemaitre website
 
-This website uses [Hugo](https://gohugo.io/) and a modified version of the [Hello Friend NG](https://github.com/rhazdon/hugo-theme-hello-friend-ng) theme of [Djordje Atlialp](https://atlialp.com/). 
-The main font is Titillium Web by [Accademia di Belle Arti di Urbino](http://www.accademiadiurbino.it/aabb/)
+# rlemaitre.com
+
+This is the repository for my personal website and blog.
+
+
+## Screenshots
+
+![App Screenshot](static/images/screenshot.png)
+
+
+## Tech Stack
+
+- **Generator**: [Hugo](https://gohugo.io/)
+- **Theme**: [Custom fork](https://github.com/rlemaitre/hugo-theme-hello-friend-ng) of [`hello-friend-ng`](https://github.com/rhazdon/hugo-theme-hello-friend-ng)
+- **Comments**: [Giscuss](https://giscuss.app/)
+## Authors
+
+- [@rlemaitre](https://www.github.com/rlemaitre)
+
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
