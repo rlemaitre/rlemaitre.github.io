@@ -211,6 +211,7 @@ This would trigger our CI/CD pipeline and would result to a new deployment.
 This solves my problem, but the code modification is artificial.</p>
 <p>Then, I discovered the <code>--allow-empty</code> option of <code>git commit</code> thanks to this tweet: <blockquote class="twitter-tweet"><p lang="en" dir="ltr">TIL that you can do `git commit --allow-empty` to make a new commit with no actual changes to your files.<br><br>No more random whitespace changes to trigger new builds! 🥳</p>&mdash; Megan Sullivan (@meganesulli) <a href="https://twitter.com/meganesulli/status/1366466258393161729?ref_src=twsrc%5Etfw">March 1, 2021</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 </p>
 <p>Eventually, I ran the following command, pushed to our main branch and our staging environment was re-deployed.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git commit --allow-empty -m <span style="color:#e6db74">&#39;Redeploy staging environment&#39;</span>
