@@ -61,7 +61,7 @@ series   = "series"
 
     # Home subtitle of the index page.
     #
-    homeSubtitle = "Developer – Architect"
+    homeSubtitle = "Scala |> Developer |> Speaker"
 
     # Set a background for the homepage
     # backgroundImage = "assets/images/background.jpg"
@@ -114,7 +114,7 @@ series   = "series"
     # If you want, you can easily override the default footer with your own content.
     #
     [params.footer]
-        trademark = 2023
+        trademark = 2024
         rss = true
         copyright = true
         author = true
@@ -202,7 +202,11 @@ series   = "series"
     # Social icons
     [[params.social]]
         name = "twitter"
-        url  = "https://twitter.com/rlemaitre"
+        url  = "https://twitter.com/rlemaitre_com"
+
+    [[params.social]]
+        name = "bluesky"
+        url  = "https://bsky.app/profile/rlemaitre.com"
 
     [[params.social]]
         name = "github"
@@ -235,9 +239,9 @@ series   = "series"
         title = "Raphaël Lemaitre"
 
     [languages.en.params]
-        subtitle = "Developer – Architect"
-        homeSubtitle = "Developer – Architect"
-        keywords = "developer,architect"
+        subtitle = "Scala |> Developer |> Speaker"
+        homeSubtitle = "Scala |> Developer |> Speaker"
+        keywords = "developer,scala,speaker,pillars"
         copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
         readOtherPosts = "Read other posts"
         [languages.en.params.logo]
@@ -266,8 +270,8 @@ series   = "series"
         title = "Raphaël Lemaitre"
 
     [languages.fr.params]
-        subtitle = "Développeur – Architecte"
-        homeSubtitle = "Développeur – Architecte"
+        subtitle = "Scala |> Developpeur |> Speaker"
+        homeSubtitle = "Scala |> Developpeur |> Speaker"
         keywords = "developpeur,architecte"
         copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
         readOtherPosts = "Autres posts"
