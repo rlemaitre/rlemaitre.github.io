@@ -107,8 +107,8 @@ series   = "series"
     justifyContent = false  # Set "text-align: justify" to .post-content.
 
     # Integrate Plausible.io
-    # plausibleDataDomain = 'test.com'
-    # plausibleScriptSource = 'https://plausible.io/js/script.js'
+     plausibleDataDomain = 'rlemaitre.com'
+     plausibleScriptSource = 'https://analytics.lemaitre.me/js/script.js'
 
     # Custom footer
     # If you want, you can easily override the default footer with your own content.
