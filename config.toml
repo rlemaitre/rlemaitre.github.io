@@ -202,7 +202,7 @@ series   = "series"
     # Social icons
     [[params.social]]
         name = "twitter"
-        url  = "https://twitter.com/rlemaitre_com"
+        url  = "https://twitter.com/scaladdict"
 
     [[params.social]]
         name = "bluesky"
