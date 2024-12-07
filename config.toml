@@ -105,7 +105,7 @@ series   = "series"
 
     # Integrate Plausible.io
      plausibleDataDomain = 'rlemaitre.com'
-     plausibleScriptSource = 'https://analytics.lemaitre.me/js/script.js'
+     plausibleScriptSource = 'https://analytics.funktional.io/js/script.js'
 
     # Custom footer
     # If you want, you can easily override the default footer with your own content.
