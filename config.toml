@@ -6,7 +6,6 @@ theme        = "hello-friend-ng"
 PygmentsCodeFences = true
 PygmentsStyle = "monokai"
 
-paginate  = 10
 rssLimit  = 10  # Maximum number of items in the RSS feed.
 copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License." # This message is only used by the RSS template.
 
@@ -29,6 +28,8 @@ disableRSS     = false
 disableSitemap = false
 disable404     = false
 disableHugoGeneratorInject = false
+[pagination]
+pagerSize = 10
 
 [permalinks]
 posts = "/posts/:year/:month/:title/"
@@ -228,7 +229,7 @@ series   = "series"
     #[params.social]
     #   name = "medium"
     #   url  = "https://medium.com/@rlemaitre/"
-
+defaultContentLanguage = "en"
 [languages]
     [languages.en]
         weight    = 1
