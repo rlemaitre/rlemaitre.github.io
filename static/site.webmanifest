@@ -1,20 +1,21 @@
 {
-    "name": "rlemaitre.com",
-    "short_name": "rlemaitre.com",
-    "icons": [
-        {
-            "src": "/android-chrome-192x192.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "/android-chrome-512x512.png",
-            "sizes": "512x512",
-            "type": "image/png"
-        }
-    ],
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
-    "start_url": "https://rlemaitre.com",
-    "display": "standalone"
+  "name": "rlemaitre.com",
+  "short_name": "rlemaitre.com",
+  "icons": [
+    {
+      "src": "/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "theme_color": "#bf616a",
+  "background_color": "#2e3440",
+  "display": "standalone"
 }

@@ -1,0 +1,24 @@
+{{ if .Site.Params.education.enable | default false }}
+{{ $education := sort (where .Site.RegularPages "Section" (.Site.Params.education.section | default "education")) "Params.start" "desc" }}
+    {{ if gt (len $education) 0 }}
+<section id="education">
+    <h2>{{ T "education.title" | emojify | markdownify }}</h2>
+    <div id="#education-list">
+        {{ range $index, $xp := $education }}
+        <article>
+            <img src="{{ $xp.Params.image }}" alt="{{ $xp.Params.school.name }}">
+            <h3>
+                {{ $xp.Params.degree }} ({{ $xp.Params.field }})
+                <small>
+                    <time>{{ dateFormat "2006" (time $xp.Params.start) }}</time>
+                    - {{ if $xp.Params.end }}
+                    <time>{{ dateFormat "2006" (time $xp.Params.end) }}</time>{{ else }}{{ T "experiences.current" }}{{ end }}
+                </small>
+            </h3>
+            {{ if .Content }}<p>{{ .Content }}</p>{{ end }}
+        </article>
+        {{ end }}
+    </div>
+</section>
+{{ end }}
+{{ end }}

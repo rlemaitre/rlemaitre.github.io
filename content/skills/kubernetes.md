@@ -1,0 +1,8 @@
+---
+title: 'Kubernetes'
+date: 2025-03-02T18:12:49+01:00
+category: devops
+logo:
+    icon: devicon-kubernetes-plain colored
+weight: 10
+---

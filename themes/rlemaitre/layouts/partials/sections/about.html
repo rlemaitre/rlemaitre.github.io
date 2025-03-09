@@ -1,0 +1,8 @@
+{{ if .Site.Params.about.enable | default false }}
+{{ with .Site.GetPage .Site.Params.about.page | default "about" }}
+<section id="about-me">
+    <h2>{{ T "about.title" | emojify | markdownify }}</h2>
+    <article>{{ .Content }}</article>
+</section>
+{{ end }}
+{{ end }}

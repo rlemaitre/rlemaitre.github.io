@@ -1,0 +1,20 @@
+<div class="logo">
+    <span class="logo_symbol">|&gt;</span><span class="logo_text"> rlemaitre</span>
+</div>
+<div id="main-menu">
+<input type="checkbox" id="navcheck" role="button" title="menu">
+<label for="navcheck" aria-hidden="true" title="menu">
+        <span class="burger">
+            <span class="bar">
+                <span class="visuallyhidden">Menu</span>
+            </span>
+        </span>
+</label>
+<nav role="navigation">
+    <ul role="list">
+        {{ range .Site.Menus.main.ByWeight }}
+        <li><a href="{{ .URL }}">{{ T .Identifier }}</a></li>
+        {{ end }}
+    </ul>
+</nav>
+</div>

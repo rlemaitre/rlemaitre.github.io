@@ -1,0 +1,30 @@
+{{ if .Site.Params.projects.enable | default false }}
+{{ $projectPages := where .Site.RegularPages "Section" (.Site.Params.projects.section | default "projects") }}
+{{ $featuredProjects := where $projectPages ".Params.featured" true }}
+{{ if gt (len $featuredProjects) 0 }}
+<section id="projects">
+    <h2>{{ T "projects.title" | emojify | markdownify }}</h2>
+    <p>{{ T "projects.intro" | emojify | markdownify }}</p>
+    <p><a href="{{ relref . "/projects" }}">{{ T "projects.cta" }}</a></p>
+    <div id="project-list">
+        {{ range (first .Site.Params.projects.homeMaxCount $featuredProjects).ByWeight }}
+        <article>
+            <header>
+                <h3>{{ .Title }}</h3>
+                <em class="{{ .Params.icon }}"></em>
+            </header>
+            <main>
+                <img src="{{ .Params.image }}" alt="{{ .Params.name }}">
+                <p>{{ .Summary }}</p>
+            </main>
+            <footer>
+                <a href="{{ .RelPermalink }}" role="button">
+                    <span class="logo_symbol">|&gt;</span><span class="logo_text"> {{ T "projects.project.cta" }}</span>
+                </a>
+            </footer>
+        </article>
+        {{ end }}
+    </div>
+</section>
+{{ end }}
+{{ end }}

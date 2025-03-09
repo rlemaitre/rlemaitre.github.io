@@ -3,8 +3,7 @@ title: "Hacker le TDAH – Stratégies pour le Développeur Moderne"
 date: 2023-11-17T10:13:20+01:00
 draft: false
 toc: true
-images:
-cover: "/images/blog/adhd/hacking-adhd-cover.webp"
+image: "/images/blog/adhd/hacking-adhd-cover.webp"
 tags:
   - ADHD
   - Mental Health
@@ -38,7 +37,7 @@ Bien que tout le monde puisse parfois faire preuve d'un peu d'inattention, d'act
     les personnes atteintes de TDAH endurent des occurrences plus graves et plus fréquentes de ces comportements.
 Ces manifestations peuvent interférer ou réduire la qualité de leur fonctionnement social, scolaire ou professionnel.
 
-{{< image src="/images/blog/adhd/what-is-adhd.webp" alt="" position="center" style="width: 100%;" >}}
+{{< figure src="/images/blog/adhd/what-is-adhd.webp" alt="" position="center" style="width: 100%;" >}}
 
 L'absence de diagnostic et de prise en charge du TDAH peut entraîner toute une série de complications, notamment l'anxiété, le burn-out ou la dépression.
 
@@ -48,21 +47,14 @@ ce qui les amène à reconnaître des schémas similaires dans leur propre compo
 
 Plusieurs facteurs contribuent à un diagnostic tardif :
 
-- **Mécanismes d'adaptation** :
-  Au fil des ans, les adultes développent diverses stratégies d'adaptation qui peuvent masquer les symptômes du TDAH.
-  Par exemple, une personne peut s'appuyer de manière excessive sur des calendriers, des listes de choses à faire ou des alarmes pour compenser ses oublis.
+- **Mécanismes d'adaptation** : Au fil des ans, les adultes développent diverses stratégies d'adaptation qui peuvent masquer les symptômes du TDAH. Par exemple, une personne peut s'appuyer de manière excessive sur des calendriers, des listes de choses à faire ou des alarmes pour compenser ses oublis.
+- **Un environnement différent** : Le passage d'un environnement éducatif structuré à un environnement de travail moins structuré peut révéler des symptômes cachés de TDAH.
+À l'école, les tests fréquents et les échéances immédiates peuvent en fait servir de béquille aux personnes atteintes de TDAH.
+En revanche, les projets à long terme et l'autogestion dans un environnement de travail peuvent révéler des difficultés de planification et de concentration.
 
-- **Un environnement différent** :
-  Le passage d'un environnement éducatif structuré à un environnement de travail moins structuré peut révéler des symptômes cachés de TDAH.
-  À l'école, les tests fréquents et les échéances immédiates peuvent en fait servir de béquille aux personnes atteintes de TDAH.
-  En revanche, les projets à long terme et l'autogestion dans un environnement de travail peuvent révéler des difficultés de planification et de concentration.
-
-- **Moins de surveillance** :
-  Contrairement aux enfants, qui sont constamment observés par les enseignants et les parents, les adultes sont généralement moins surveillés.
+- **Moins de surveillance** : Contrairement aux enfants, qui sont constamment observés par les enseignants et les parents, les adultes sont généralement moins surveillés.
   Cela signifie que les symptômes peuvent passer inaperçus, surtout s'ils ne se manifestent pas par un comportement perturbateur.
-
-- **La stigmatisation sociale** :
-  La stigmatisation qui entoure le TDAH peut décourager les gens de chercher un diagnostic et un traitement.
+- **La stigmatisation sociale** : La stigmatisation qui entoure le TDAH peut décourager les gens de chercher un diagnostic et un traitement.
   On pense souvent à tort que le TDAH est un "trouble de l'enfance" ou simplement un manque de volonté, ce qui peut faire hésiter les adultes à consulter des professionnels de la santé.
 
 - **Les erreurs de diagnostic les plus courantes** :
@@ -74,7 +66,7 @@ Plusieurs facteurs contribuent à un diagnostic tardif :
 
 Le TDAH est souvent perçu de manière négative, mais il est important de reconnaître que ce trouble apporte non seulement des défis, mais également son lot d'avantages.
 
-{{< image src="/images/blog/adhd/double-edged-sword.webp" alt="" position="center" style="width: 100%;" >}}
+{{< figure src="/images/blog/adhd/double-edged-sword.webp" alt="" position="center" style="width: 100%;" >}}
 
 ### Avantages
 
@@ -102,7 +94,7 @@ Il est essentiel de comprendre les complexités du TDAH pour adapter son environ
 
 ## Plongée au coeur du cerveau TDAH
 
-{{< image src="/images/blog/adhd/understanding-adhd-brain.webp" alt="" position="center" style="width: 100%;" >}}
+{{< figure src="/images/blog/adhd/understanding-adhd-brain.webp" alt="" position="center" style="width: 100%;" >}}
 
 Quand il s'agit de TDAH, comprendre les facteurs neurologiques en jeu peut offrir des perspectives précieuses pour une gestion efficace de ce trouble.
 La dopamine est un neurotransmetteur qui joue un rôle significatif dans le TDAH.
@@ -132,7 +124,7 @@ En reconnaissant ces traits et leurs causes neurochimiques sous-jacentes, nous p
 Dans un domaine comme le développement logiciel, où la concentration et le souci du détail sont essentiels, l'environnement de travail peut favoriser ou détruire votre productivité.
 Lorsque vous souffrez de TDAH, créer un environnement adapté à votre profil cognitif unique n'est pas uniquement bénéfique, mais essentiel.
 
-{{< image src="/images/blog/adhd/adhd-work-environment.webp" alt="" position="center" style="width: 100%;" >}}
+{{< figure src="/images/blog/adhd/adhd-work-environment.webp" alt="" position="center" style="width: 100%;" >}}
 
 ### Mettre en place un espace de travail stimulant
 L'espace de travail idéal pour une personne atteinte de TDAH n'est pas nécessairement minimaliste ou désencombré.
@@ -184,7 +176,7 @@ tout en préservant les avantages de la cohésion d'équipe.
 
 ## SStratégies et outils d'autogestion : Faire face aux symptômes du TDAH
 
-{{< image src="/images/blog/adhd/adhd-strategies-and-tools.webp" alt="" position="center" style="width: 100%;" >}}
+{{< figure src="/images/blog/adhd/adhd-strategies-and-tools.webp" alt="" position="center" style="width: 100%;" >}}
 
 Pour faire face aux défis et aux avantages uniques du TDAH, je me suis appuyé sur un assortiment d'outils et de stratégies qui constituent ma stack technologique personnelle et mes techniques d'autogestion.
 Plongeons dans le vif du sujet :

@@ -1,0 +1,20 @@
+{{ define "main" }}
+  <section id="hero">
+    <div>
+      <h1>
+        <div>{{ T "home.greeting-start" }} <span>{{ .Params.name}}</span>{{ T "home.greeting-end" }}</div>
+        <div>{{ .Params.subtitle }}</div>
+      </h1>
+      <p>{{ .Content }}</p>
+    </div>
+    <img src="{{ .Site.Params.portrait.path }}" alt="{{ .Site.Params.portrait.alt }}"/>
+  </section>
+  {{ partial "sections/about.html" . }}
+  {{ partial "sections/projects.html" . }}
+  {{ partial "sections/talks.html" . }}
+  {{ partial "sections/experiences.html" . }}
+  {{ partial "sections/education.html" . }}
+  {{ partial "sections/skills.html" . }}
+  {{ partial "sections/blog.html" . }}
+  {{ partial "sections/contact.html" . }}
+{{ end }}

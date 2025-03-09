@@ -1,0 +1,36 @@
+{{ if .Site.Params.talks.enable | default false }}
+{{ $pages := where .Site.RegularPages "Section" (.Site.Params.talks.section | default "talks") }}
+{{ if gt (len $pages) 0 }}
+<section id="talks">
+    <h2>{{ T "talks.title" | emojify | markdownify }}</h2>
+    <p>{{ T "talks.intro" | emojify | markdownify }}</p>
+    <p><a href="{{ relref . "/talks" }}">{{ T "talks.cta" }}</a></p>
+    <div class="one-col-list">
+{{/*    <div id="talks-list">*/}}
+    {{ range first .Site.Params.talks.homeMaxCount $pages.ByWeight }}
+    <article itemscope itemtype="https://schema.org/TechArticle">
+        <header>
+            <img src="{{ .Params.image }}" alt="{{ .Params.name }}" title="{{ .Params.name }}" width="100%">
+        </header>
+        <main>
+            <h3 itemprop="name"><a href="{{ .RelPermalink }}}">{{ .Title | emojify | markdownify }}</a></h3>
+            <blockquote itemprop="description">{{ .Summary | emojify | markdownify }}</blockquote>
+            <small>
+                {{ if and (.Params.copresenters) (gt (len .Params.copresenters) 0) }}
+                This talk was given in English, either with <a href="https://vbergeron.github.io/">Valentin Bergeron</a> or alone.
+                {{ else }}
+                This talk was given in English.
+                {{ end }}
+            </small>
+            <div role="list">
+                {{ range .Params.venues }}
+                <img src="{{ .logo }}" alt="{{ .name }}" title="{{ .name }}" width="100%">
+                {{ end }}
+            </div>
+        </main>
+    </article>
+    {{ end }}
+    </div>
+</section>
+{{ end }}
+{{ end }}

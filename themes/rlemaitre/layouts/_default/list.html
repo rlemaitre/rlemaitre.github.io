@@ -1,0 +1,24 @@
+{{ define "main" }}
+    <section id="hero">
+        <div>
+            <h1>{{ .Title }}</h1>
+            <p>{{ .Content }}</p>
+        </div>
+    </section>
+    <section>
+        <div class="one-col-list">
+            {{ range .Pages }}
+
+                    <article>
+                        <header>
+                            <img src="{{ if .Params.image }}{{ .Params.image }}{{else}}/placeholder.jpg{{ end }}" alt="{{ .Title }}">
+                        </header>
+                        <main>
+                            <a href="{{ .RelPermalink }}"><h3>{{ .Title }}</h3></a>
+                            {{ .Summary }}
+                        </main>
+                    </article>
+            {{ end }}
+        </div>
+    </section>
+{{ end }}

@@ -1,0 +1,32 @@
+{{ define "main" }}
+  <section id="hero">
+    <div>
+      <h1>{{ .Title }}</h1>
+      {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+      {{ $dateHuman := .Date | time.Format ":date_long" }}
+      <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+    </div>
+    {{ if .Params.image }}
+      <img class="cover" src="{{ .Params.image }}" alt="{{ .Title }}">
+    {{ end }}
+  </section>
+  <section id="single">
+  <div class="single-content">
+  {{ .Content }}
+  </div>
+  <div class="sidebar">
+  {{ if .Params.toc | default true}}
+    <aside class="toc">
+      <h5>
+        {{ .Site.Params.terms.toc | default "Table Of Contents" }}
+      </h5>
+      <div class="toc-content">
+        {{.TableOfContents}}
+      </div>
+    </aside>
+  {{ end }}
+
+  {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+  </div>
+  </section>
+{{ end }}

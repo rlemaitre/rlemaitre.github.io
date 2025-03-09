@@ -1,0 +1,47 @@
+# Menus
+en: English
+fr: French
+menu:
+  home: "Home"
+  about: "About me"
+  projects: "Projects"
+  talks: "Talks"
+  blog: "Thoughts"
+  resume: "Resume"
+  contact: "Contact"
+  rss: "RSS"
+  sitemap: "Sitemap"
+  sourcecode: "Source code"
+# Home
+home:
+  greeting-start: "Hi! I'm"
+  greeting-end: "."
+about:
+  title: "About me"
+projects:
+  title: "Projects"
+  intro: "Here are some of the projects I’ve been working on lately. From open-source libraries to personal experiments, each project reflects my passion for functional programming and building tools that make developers’ lives easier."
+  cta: "View all projects"
+  project:
+    cta: More
+talks:
+  title: "Talks at conferences"
+  intro: "I love sharing my knowledge and ideas with the community. Here are some of the talks I’ve given at conferences or meetups. If you’d like me to speak at your event, feel free to get in touch."
+  cta: "View all talks"
+experiences:
+  title: "Experiences"
+  current: "Current"
+education:
+  title: "Education"
+skills:
+  title: "Skills"
+blog:
+  title: "Thoughts"
+  intro: "I write about programming, functional programming, and software engineering. Here are some of my latest posts."
+  cta: "View all posts"
+contact:
+  title: "Contact"
+  intro: "Want to get in touch? Feel free to send me an email or connect with me on social media."
+  cta: "Get in touch"
+footer:
+  title: "Footer"

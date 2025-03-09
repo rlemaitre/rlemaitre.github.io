@@ -1,0 +1,115 @@
+baseURL: "https://rlemaitre.com"
+title: "rlemaitre.com"
+theme: "rlemaitre"
+
+enableEmoji: true
+# Language configuration
+enableMissingTranslationPlaceholders: true
+defaultContentLanguage: "en"
+defaultContentLanguageInSubdir: false
+languages:
+  en:
+    languageCode: "en-us"
+    languageName: "English"
+    languageDirection: "ltr"
+    weight: 1
+    title: "rlemaitre.com"
+    params:
+      description: "Raphaël Lemaitre. Developer. Scala lover. FP enthusiast. Speaker."
+  fr:
+    languageCode: "fr-fr"
+    languageName: "Français"
+    languageDirection: "ltr"
+    weight: 2
+    title: "rlemaitre.com"
+    params:
+      description: "Raphaël Lemaitre. Développeur. Amoureux de Scala. Fan de FP. Speaker."
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  tableOfContents:
+    startLevel: 2
+    endLevel: 3
+    ordered: true
+menus:
+  main:
+    - identifier: menu.home
+      pageRef: "/"
+      weight: 10
+    - identifier: menu.about
+      url: "/whoami"
+      weight: 20
+    - identifier: menu.projects
+      pageRef: "/projects"
+      weight: 30
+    - identifier: menu.talks
+      pageRef: "/talks"
+      weight: 40
+    - identifier: menu.blog
+      pageRef: "/posts"
+      weight: 50
+    - identifier: menu.resume
+      pageRef: "/resume"
+      weight: 70
+    - identifier: menu.contact
+      pageRef: "/contact"
+      weight: 70
+  footer:
+    - identifier: menu.home
+      pageRef: "/"
+      weight: 10
+    - identifier: menu.projects
+      pageRef: "/projects"
+      weight: 20
+    - identifier: menu.talks
+      pageRef: "/talks"
+      weight: 30
+    - identifier: menu.blog
+      pageRef: "/posts"
+      weight: 40
+    - identifier: menu.contact
+      pageRef: "/#contact"
+      weight: 50
+    - identifier: menu.rss
+      pageRef: "/index.xml"
+      weight: 60
+    - identifier: menu.sitemap
+      pageRef: "/sitemap.xml"
+      weight: 70
+    - identifier: menu.sourcecode
+      url: "https://github.com/rlemaitre/rlemaitre.github.io"
+      weight: 80
+
+params:
+  portrait:
+    path: "/images/rlemaitre.jpeg"
+    alt: "Raphaël Lemaitre"
+  about:
+    enable: true
+    page: whoami
+  projects:
+    enable: true
+    section: projects
+    homeMaxCount: 3
+  talks:
+    enable: true
+    section: talks
+    homeMaxCount: 4
+  experiences:
+    enable: true
+    section: experiences
+  education:
+    enable: true
+    section: education
+  skills:
+    enable: false
+    section: skills
+  blog:
+    enable: true
+    section: posts
+    homeMaxCount: 6
+  contact:
+    enable: true
+    email: contact@lemaitre.com

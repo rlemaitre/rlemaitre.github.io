@@ -25,4 +25,4 @@ Eventually, I ran the following command, pushed to our main branch and our stagi
 git commit --allow-empty -m 'Redeploy staging environment'
 ```
 
-{{< image src="https://media.giphy.com/media/jS27LWasgUIYrXtP83/giphy.gif" alt="Job done!" position="center" >}}
+{{< figure src="https://media.giphy.com/media/jS27LWasgUIYrXtP83/giphy.gif" alt="Job done!" position="center" >}}

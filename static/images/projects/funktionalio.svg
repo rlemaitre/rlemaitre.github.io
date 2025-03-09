@@ -1,0 +1,9 @@
+<svg width="765" height="765" viewBox="0 0 1120 1120" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <style>#funktional_logo_background { fill: #FF9500; } <!-- pumpkin 300 -->        #funktional_logo_shadow { fill:
+        #D27B01; } <!-- pumpkin 400 -->        #funktional_logo_lambda { fill: #FEB670; }  <!-- pumpkin 200 --></style>
+    <rect id="funktional_logo_background" width="1120" height="1120"/>
+    <use id="funktional_logo_shadow" href="#template" class="shadow" transform="translate(0, 125)"/>
+    <use id="funktional_logo_lambda" href="#template" class="lambda"/>
+    <path id="template"
+          d="M861.176 533.766L860.374 799.675L556.675 503.714L256 797.814L256.803 531.905L557.489 233.923L861.176 533.766Z"/>
+</svg>

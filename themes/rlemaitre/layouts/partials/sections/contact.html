@@ -1,0 +1,7 @@
+{{ if .Site.Params.contact.enable | default false }}
+<section id="contact">
+    <h2>{{ T "contact.title" | emojify | markdownify }}</h2>
+    <p>{{ T "contact.intro" | emojify | markdownify }}</p>
+    <a href="mailto:{{ .Site.Params.contact.email }}" role="button">{{ T "contact.cta" }}</a>
+</section>
+{{ end }}

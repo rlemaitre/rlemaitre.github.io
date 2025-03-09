@@ -8,7 +8,7 @@ Bonjour,
 
 Je suis Raphaël Lemaitre et vous avez atterri sur mon site web.
 
-{{< image src="/images/rlemaitre.jpeg" alt="It's me!" position="center" style="width: 50%;border-radius: 12px;" >}}
+{{< figure src="/images/rlemaitre.jpeg" alt="It's me!" position="center" style="width: 50%;border-radius: 12px;" >}}
 
 D'après ma bio [twitter](https://twitter.com/rlemaitre) et [Bluesky](https://bsky.app/profile/rlemaitre.com), je suis
 

@@ -3,8 +3,7 @@ title: "Hacking ADHD – Strategies for the Modern Developer"
 date: 2023-11-17T10:13:20+01:00
 draft: false
 toc: true
-images:
-cover: "/images/blog/adhd/hacking-adhd-cover.webp"
+image: "/images/blog/adhd/hacking-adhd-cover.webp"
 tags:
   - ADHD
   - Mental Health
@@ -37,7 +36,7 @@ While everybody can occasionally experience some inattention, unfocused motor ac
     people with ADHD endure more severe and frequent occurrences of these behaviors.
 These manifestations can interfere with or reduce the quality of how they function socially, at school, or in a job.
 
-{{< image src="/images/blog/adhd/what-is-adhd.webp" alt="" position="center" style="width: 100%;" >}}
+{{< figure src="/images/blog/adhd/what-is-adhd.webp" alt="" position="center" style="width: 100%;" >}}
 
 Not diagnosing and managing ADHD can lead to a range of complications, including anxiety, burn-out or depression.
 
@@ -73,7 +72,7 @@ A thorough evaluation is crucial for an accurate diagnosis.
 ADHD is often viewed through a negative lens, yet it’s important to acknowledge that the disorder brings not only challenges but also its own set of benefits.
 
 
-{{< image src="/images/blog/adhd/double-edged-sword.webp" alt="" position="center" style="width: 100%;" >}}
+{{< figure src="/images/blog/adhd/double-edged-sword.webp" alt="" position="center" style="width: 100%;" >}}
 
 ### Benefits
 
@@ -101,7 +100,7 @@ Understanding the complexities of ADHD is crucial for adapting your work environ
 
 ## Understanding the ADHD brain
 
-{{< image src="/images/blog/adhd/understanding-adhd-brain.webp" alt="" position="center" style="width: 100%;" >}}
+{{< figure src="/images/blog/adhd/understanding-adhd-brain.webp" alt="" position="center" style="width: 100%;" >}}
 
 When it comes to ADHD, understanding the neurological factors at play can offer valuable insights into managing the condition effectively.
 One neurotransmitter that plays a significant role in ADHD is dopamine.
@@ -131,7 +130,7 @@ By recognizing these traits and their underlying neurochemical causes, we can de
 In a field like software development, where focus and attention to detail are critical, the work environment can either make or break your productivity.
 When you have ADHD, crafting an environment that suits your unique cognitive profile is not just beneficial but essential.
 
-{{< image src="/images/blog/adhd/adhd-work-environment.webp" alt="" position="center" style="width: 100%;" >}}
+{{< figure src="/images/blog/adhd/adhd-work-environment.webp" alt="" position="center" style="width: 100%;" >}}
 
 ### Setting up a Stimulating Workspace
 The ideal workspace for someone with ADHD is not necessarily minimalist or clutter-free.
@@ -185,7 +184,7 @@ By adopting this strategy, we ensure that everyone has the latitude to work in a
 
 ## Self-Management Strategies and Tools: Addressing ADHD Symptoms
 
-{{< image src="/images/blog/adhd/adhd-strategies-and-tools.webp" alt="" position="center" style="width: 100%;" >}}
+{{< figure src="/images/blog/adhd/adhd-strategies-and-tools.webp" alt="" position="center" style="width: 100%;" >}}
 
 Navigating ADHD’s unique challenges and benefits has led me to rely on an assortment of tools and strategies that make up my personal tech stack and self-management techniques.
 Let’s dive in:

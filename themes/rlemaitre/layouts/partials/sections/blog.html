@@ -1,0 +1,25 @@
+{{ if .Site.Params.blog.enable | default false }}
+{{ $pages := where .Site.RegularPages "Section" (.Site.Params.blog.section | default "posts") }}
+{{ if gt (len $pages) 0 }}
+<section id="blog">
+    <h2>{{ T "blog.title" | emojify | markdownify }}</h2>
+    <p>{{ T "blog.intro" | emojify | markdownify }}</p>
+    <p><a href="{{ relref . "/posts" }}">{{ T "blog.cta" }}</a></p>
+    <div id="blog-list">
+        {{ range (first .Site.Params.blog.homeMaxCount $pages).ByWeight }}
+        <a href="{{ .RelPermalink }}">
+        <article>
+            <header>
+                <img src="{{ if .Params.image }}{{ .Params.image }}{{else}}/placeholder.jpg{{ end }}" alt="{{ .Title }}">
+            </header>
+            <main>
+                <h3>{{ .Title }}</h3>
+                {{ .Summary }}
+            </main>
+        </article>
+        </a>
+        {{ end }}
+    </div>
+</section>
+{{ end }}
+{{ end }}

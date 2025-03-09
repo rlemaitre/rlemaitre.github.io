@@ -25,4 +25,4 @@ Ainsi, j'ai exécuté la commande suivante, poussé sur noter branche principale
 git commit --allow-empty -m 'Redeploy staging environment'
 ```
 
-{{< image src="https://media.giphy.com/media/jS27LWasgUIYrXtP83/giphy.gif" alt="Job done!" position="center" >}}
+{{< figure src="https://media.giphy.com/media/jS27LWasgUIYrXtP83/giphy.gif" alt="Job done!" position="center" >}}

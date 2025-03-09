@@ -1,0 +1,8 @@
+{{ if .Site.Params.skills.enable | default false }}
+{{ $skills := sort (where .Site.RegularPages "Section" (.Site.Params.skills.section | default "skills")) "Params.start" "desc" }}
+{{ if gt (len $skills) 0 }}
+<section id="skills">
+    <h2>{{ T "skills.title" | emojify | markdownify }}</h2>
+</section>
+{{ end }}
+{{ end }}

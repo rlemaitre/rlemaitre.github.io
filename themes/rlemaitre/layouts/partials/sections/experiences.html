@@ -1,0 +1,27 @@
+{{ if .Site.Params.experiences.enable | default false }}
+{{ $experiences := sort (where .Site.RegularPages "Section" (.Site.Params.experiences.section | default "experiences")) "Params.start" "desc" }}
+{{ if gt (len $experiences) 0 }}
+<section id="experiences">
+    <h2>{{ T "experiences.title" | emojify | markdownify }}</h2>
+    <div class="tabset">
+        {{ range $index, $xp := $experiences }}
+        <input type="radio" name="tabset" id="{{ .File.UniqueID }}" aria-controls="{{ .File.UniqueID }}" {{ if eq $index 0 }}checked{{ end }}>
+        <label for="{{ .File.UniqueID }}">
+            <img src="{{ $xp.Params.company.logo }}" alt="{{ $xp.Params.company.name }}" title="{{ $xp.Params.company.name }}" width="100"/>
+        </label>
+        {{ end }}
+        <div class="tab-panels">
+            {{ range $index, $xp := $experiences }}
+            <article id="{{ $xp.File.UniqueID }}" class="tab-panel">
+                <h3>
+                    {{ $xp.Params.job }} @ <a href="{{ $xp.Params.company.url }}">{{ $xp.Params.company.name }}</a>
+                    <small><time>{{ dateFormat "January 2006" (time $xp.Params.start) }}</time> - {{ if $xp.Params.end }}<time>{{ dateFormat "January 2006" (time $xp.Params.end) }}</time>{{ else }}{{ T "experiences.current" }}{{ end }}</small>
+                </h3>
+                <p>{{ $xp.Summary }}</p>
+            </article>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}
+{{ end }}

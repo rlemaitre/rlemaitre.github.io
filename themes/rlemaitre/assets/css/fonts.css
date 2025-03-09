@@ -1,0 +1,238 @@
+@font-face {
+    font-family: 'Fira Code';
+    src: url('fonts/subset-FiraCode-Bold.eot');
+    src: local('Fira Code Bold'), local('FiraCode-Bold'),
+        url('fonts/subset-FiraCode-Bold.eot?#iefix') format('embedded-opentype'),
+        url('fonts/subset-FiraCode-Bold.woff2') format('woff2'),
+        url('fonts/subset-FiraCode-Bold.woff') format('woff'),
+        url('fonts/subset-FiraCode-Bold.ttf') format('truetype'),
+        url('fonts/subset-FiraCode-Bold.svg#FiraCode-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fira Code';
+    src: url('fonts/subset-FiraCode-Retina.eot');
+    src: local('Fira Code Retina'), local('FiraCode-Retina'),
+        url('fonts/subset-FiraCode-Retina.eot?#iefix') format('embedded-opentype'),
+        url('fonts/subset-FiraCode-Retina.woff2') format('woff2'),
+        url('fonts/subset-FiraCode-Retina.woff') format('woff'),
+        url('fonts/subset-FiraCode-Retina.ttf') format('truetype'),
+        url('fonts/subset-FiraCode-Retina.svg#FiraCode-Retina') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fira Code';
+    src: url('fonts/subset-FiraCode-Medium.eot');
+    src: local('Fira Code Medium'), local('FiraCode-Medium'),
+        url('fonts/subset-FiraCode-Medium.eot?#iefix') format('embedded-opentype'),
+        url('fonts/subset-FiraCode-Medium.woff2') format('woff2'),
+        url('fonts/subset-FiraCode-Medium.woff') format('woff'),
+        url('fonts/subset-FiraCode-Medium.ttf') format('truetype'),
+        url('fonts/subset-FiraCode-Medium.svg#FiraCode-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fira Code';
+    src: url('fonts/subset-FiraCode-Light.eot');
+    src: local('Fira Code Light'), local('FiraCode-Light'),
+        url('fonts/subset-FiraCode-Light.eot?#iefix') format('embedded-opentype'),
+        url('fonts/subset-FiraCode-Light.woff2') format('woff2'),
+        url('fonts/subset-FiraCode-Light.woff') format('woff'),
+        url('fonts/subset-FiraCode-Light.ttf') format('truetype'),
+        url('fonts/subset-FiraCode-Light.svg#FiraCode-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fira Code';
+    src: url('fonts/subset-FiraCode-Regular.eot');
+    src: local('Fira Code Regular'), local('FiraCode-Regular'),
+        url('fonts/subset-FiraCode-Regular.eot?#iefix') format('embedded-opentype'),
+        url('fonts/subset-FiraCode-Regular.woff2') format('woff2'),
+        url('fonts/subset-FiraCode-Regular.woff') format('woff'),
+        url('fonts/subset-FiraCode-Regular.ttf') format('truetype'),
+        url('fonts/subset-FiraCode-Regular.svg#FiraCode-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Arvo';
+    src: url('fonts/subset-Arvo.eot');
+    src: local('Arvo'),
+        url('fonts/subset-Arvo.eot?#iefix') format('embedded-opentype'),
+        url('fonts/subset-Arvo.woff2') format('woff2'),
+        url('fonts/subset-Arvo.woff') format('woff'),
+        url('fonts/subset-Arvo.ttf') format('truetype'),
+        url('fonts/subset-Arvo.svg#Arvo') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Arvo';
+    src: url('fonts/subset-Arvo-Italic.eot');
+    src: local('Arvo-Italic'),
+        url('fonts/subset-Arvo-Italic.eot?#iefix') format('embedded-opentype'),
+        url('fonts/subset-Arvo-Italic.woff2') format('woff2'),
+        url('fonts/subset-Arvo-Italic.woff') format('woff'),
+        url('fonts/subset-Arvo-Italic.ttf') format('truetype'),
+        url('fonts/subset-Arvo-Italic.svg#Arvo-Italic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Arvo';
+    src: url('fonts/subset-Arvo-BoldItalic.eot');
+    src: local('Arvo Bold Italic'), local('Arvo-BoldItalic'),
+        url('fonts/subset-Arvo-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('fonts/subset-Arvo-BoldItalic.woff2') format('woff2'),
+        url('fonts/subset-Arvo-BoldItalic.woff') format('woff'),
+        url('fonts/subset-Arvo-BoldItalic.ttf') format('truetype'),
+        url('fonts/subset-Arvo-BoldItalic.svg#Arvo-BoldItalic') format('svg');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Arvo';
+    src: url('fonts/subset-Arvo-Bold.eot');
+    src: local('Arvo Bold'), local('Arvo-Bold'),
+        url('fonts/subset-Arvo-Bold.eot?#iefix') format('embedded-opentype'),
+        url('fonts/subset-Arvo-Bold.woff2') format('woff2'),
+        url('fonts/subset-Arvo-Bold.woff') format('woff'),
+        url('fonts/subset-Arvo-Bold.ttf') format('truetype'),
+        url('fonts/subset-Arvo-Bold.svg#Arvo-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lexend';
+    src: url('fonts/subset-Lexend-Regular.eot');
+    src: local('Lexend Regular'), local('Lexend-Regular'),
+        url('fonts/subset-Lexend-Regular.eot?#iefix') format('embedded-opentype'),
+        url('fonts/subset-Lexend-Regular.woff2') format('woff2'),
+        url('fonts/subset-Lexend-Regular.woff') format('woff'),
+        url('fonts/subset-Lexend-Regular.ttf') format('truetype'),
+        url('fonts/subset-Lexend-Regular.svg#Lexend-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Quicksand';
+    src: url('fonts/subset-Quicksand-LightItalic.eot');
+    src: local('Quicksand Light Italic'), local('Quicksand-LightItalic'),
+    url('fonts/subset-Quicksand-LightItalic.eot?#iefix') format('embedded-opentype'),
+    url('fonts/subset-Quicksand-LightItalic.woff2') format('woff2'),
+    url('fonts/subset-Quicksand-LightItalic.woff') format('woff'),
+    url('fonts/subset-Quicksand-LightItalic.ttf') format('truetype'),
+    url('fonts/subset-Quicksand-LightItalic.svg#Quicksand-LightItalic') format('svg');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Quicksand';
+    src: url('fonts/subset-Quicksand-BoldItalic.eot');
+    src: local('Quicksand Bold Italic'), local('Quicksand-BoldItalic'),
+    url('fonts/subset-Quicksand-BoldItalic.eot?#iefix') format('embedded-opentype'),
+    url('fonts/subset-Quicksand-BoldItalic.woff2') format('woff2'),
+    url('fonts/subset-Quicksand-BoldItalic.woff') format('woff'),
+    url('fonts/subset-Quicksand-BoldItalic.ttf') format('truetype'),
+    url('fonts/subset-Quicksand-BoldItalic.svg#Quicksand-BoldItalic') format('svg');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Quicksand Dash';
+    src: url('fonts/subset-QuicksandDash-Regular.eot');
+    src: local('Quicksand Dash Regular'), local('QuicksandDash-Regular'),
+    url('fonts/subset-QuicksandDash-Regular.eot?#iefix') format('embedded-opentype'),
+    url('fonts/subset-QuicksandDash-Regular.woff2') format('woff2'),
+    url('fonts/subset-QuicksandDash-Regular.woff') format('woff'),
+    url('fonts/subset-QuicksandDash-Regular.ttf') format('truetype'),
+    url('fonts/subset-QuicksandDash-Regular.svg#QuicksandDash-Regular') format('svg');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Quicksand';
+    src: url('fonts/subset-Quicksand-Light.eot');
+    src: local('Quicksand Light'), local('Quicksand-Light'),
+    url('fonts/subset-Quicksand-Light.eot?#iefix') format('embedded-opentype'),
+    url('fonts/subset-Quicksand-Light.woff2') format('woff2'),
+    url('fonts/subset-Quicksand-Light.woff') format('woff'),
+    url('fonts/subset-Quicksand-Light.ttf') format('truetype'),
+    url('fonts/subset-Quicksand-Light.svg#Quicksand-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Quicksand';
+    src: url('fonts/subset-Quicksand-Italic.eot');
+    src: local('Quicksand Italic'), local('Quicksand-Italic'),
+    url('fonts/subset-Quicksand-Italic.eot?#iefix') format('embedded-opentype'),
+    url('fonts/subset-Quicksand-Italic.woff2') format('woff2'),
+    url('fonts/subset-Quicksand-Italic.woff') format('woff'),
+    url('fonts/subset-Quicksand-Italic.ttf') format('truetype'),
+    url('fonts/subset-Quicksand-Italic.svg#Quicksand-Italic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Quicksand';
+    src: url('fonts/subset-Quicksand-Bold.eot');
+    src: local('Quicksand Bold'), local('Quicksand-Bold'),
+    url('fonts/subset-Quicksand-Bold.eot?#iefix') format('embedded-opentype'),
+    url('fonts/subset-Quicksand-Bold.woff2') format('woff2'),
+    url('fonts/subset-Quicksand-Bold.woff') format('woff'),
+    url('fonts/subset-Quicksand-Bold.ttf') format('truetype'),
+    url('fonts/subset-Quicksand-Bold.svg#Quicksand-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Quicksand';
+    src: url('fonts/subset-Quicksand-Regular.eot');
+    src: local('Quicksand Regular'), local('Quicksand-Regular'),
+    url('fonts/subset-Quicksand-Regular.eot?#iefix') format('embedded-opentype'),
+    url('fonts/subset-Quicksand-Regular.woff2') format('woff2'),
+    url('fonts/subset-Quicksand-Regular.woff') format('woff'),
+    url('fonts/subset-Quicksand-Regular.ttf') format('truetype'),
+    url('fonts/subset-Quicksand-Regular.svg#Quicksand-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+

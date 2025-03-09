@@ -1,0 +1,46 @@
+en: anglais
+fr: français
+#menus
+menu:
+  home: "Accueil"
+  about: "À propos"
+  projects: "Projets"
+  talks: "Talks"
+  blog: "Réflexions"
+  resume: "CV"
+  contact: "Contact"
+  rss: "RSS"
+  sitemap: "Sitemap"
+  sourcecode: "Source"
+# Home page
+home:
+  greeting-start: "Salut! Je suis"
+  greeting-end: "."
+about:
+  title: "À propos de moi"
+projects:
+  title: "Projets"
+  intro: "Voici quelques-uns des projets sur lesquels j'ai travaillé dernièrement. Des bibliothèques open-source aux expériences personnelles, chaque projet reflète ma passion pour la programmation fonctionnelle et la construction d'outils qui facilitent la vie des développeurs."
+  project:
+    cta: En savoir plus
+talks:
+    title: "Talks dans des conférences"
+    intro: "J'aime partager mes connaissances et idées avec la communauté. Voici donc quelques-uns des talks que j'ai donnés lors de conférences ou de meetups. Si vous souhaitez que je parle lors de votre événement, n'hésitez pas à me contacter."
+    cta: "Voir tous les talks"
+experiences:
+  title: "Expériences"
+  current: "Présent"
+education:
+  title: "Éducation"
+skills:
+  title: "Compétences"
+blog:
+  title: "Réflexions"
+  intro: "J'écris sur la programmation, la programmation fonctionnelle et l'ingénierie logicielle. Voici quelques-uns de mes derniers articles."
+  cta: "Voir tous les articles"
+contact:
+  title: "Contact"
+  intro: "Vous souhaitez me contacter? N'hésitez pas à m'envoyer un email ou à me contacter sur les réseaux sociaux."
+  cta: "Me contacter"
+footer:
+  title: "Pied de page"
