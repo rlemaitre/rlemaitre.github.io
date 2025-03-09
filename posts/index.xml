@@ -239,8 +239,7 @@ The purpose of all this is to make it easier for me to remember things and, of c
 We haven&rsquo;t set any particular tomcat configuration, except for our app deployment, so the default one is used.</p>
 <p>So, now, the question is:</p>
 <blockquote>
-<p>What is the default heap configuration of an OpenJDK 8 JVM?</p>
-</blockquote>
+<p>What is the default heap configuration of an OpenJDK 8 JVM?</p></blockquote>
 <p>According to <a href="https://docs.oracle.com/javase/8/docs/technotes/tools/windows/java.html">Oracle documentation</a>, <em>the default value is chosen at runtime based on system configuration.</em>
 It appears it depends on the server architecture, the system memory and the VM type (server or client).</p>
 <p>For client configurations, as described in <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/parallel.html#default_heap_size">GC Tuning guide</a>, the default maximum heap size is half of the physical memory up to a physical memory size of 192 megabytes (MB) and otherwise one fourth of the physical memory up to a physical memory size of 1 gigabyte (GB).</p>

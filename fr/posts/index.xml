@@ -235,8 +235,7 @@ Le but de tout cela est de me permettre de me souvenir plus facilement de certai
 Nous n&rsquo;avons pas défini de configuration particulière pour le tomcat, à l&rsquo;exception du déploiement de notre application, donc la configuration par défaut est utilisée.</p>
 <p>Donc, la question est devenue :</p>
 <blockquote>
-<p>Quelle est la configuration mémoire par défaut d&rsquo;une JVM OpenJDK 8 ?</p>
-</blockquote>
+<p>Quelle est la configuration mémoire par défaut d&rsquo;une JVM OpenJDK 8 ?</p></blockquote>
 <p>D&rsquo;après la <a href="https://docs.oracle.com/javase/8/docs/technotes/tools/windows/java.html">documentation Oracle</a>, <em>la valeur par défaut est choisie au runtime selon la configuration du système.</em></p>
 <p>Il semble que cela dépende de l&rsquo;architecture du serveur, de la mémoire système et du type de VM (serveur ou client).</p>
 <p>Pour les configurations client, comme décrit dans le <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/parallel.html#sthref30">Guide de tuning du GC</a>, la taille maximale de la heap est la moitié de la mémoire physique si celle-ci est inférieure à 192 mégaoctets (Mo) et sinon à un quart de la mémoire physique si celle-ci est inférieure à 1 gigaoctet (Go).</p>
