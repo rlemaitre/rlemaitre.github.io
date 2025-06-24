@@ -1,3 +1,17 @@
 @use "./base.scss";
 
 // put your custom CSS here!
+a {
+    font-weight: 300;
+}
+h1, h2, h3, h4, h5, h6, thead {
+    font-weight: 300;
+}
+
+.folder-container div>a {
+    font-weight: 300;
+}
+
+ul li {
+    margin-bottom: 0.5rem;
+}
