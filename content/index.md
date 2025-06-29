@@ -21,3 +21,10 @@ Writing this page, I find that my Bluesky bio misses something: I love learning.
 > An investment in knowledge always pays the best interest.
 
 ## My projects
+| Experience                                           | Position | Company |
+| ---------------------------------------------------- | -------- | ------- |
+| [[xx_system/templates/Project Template\|\- – \-]] | \-       | \-      |
+| [[Projects/funktionalio\|\- – \-]]                | \-       | \-      |
+| [[Projects/mason\|\- – \-]]                       | \-       | \-      |
+| [[Projects/pillars\|\- – \-]]                     | \-       | \-      |
+| [[Projects/riskmatrix\|\- – \-]]                  | \-       | \-      |
