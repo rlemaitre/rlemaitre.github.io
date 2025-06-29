@@ -1,17 +1,12 @@
 ---
-title: Welcome to my Mind Palace
-draft: false
-tags: 
-created: 2025-06-22T10:58:29+02:00
-updated: 2025-06-23T22:28:24+02:00
-aliases:
-  - index
+{"publish":true,"permalink":"/index.md","aliases":"index","title":"Welcome to my Mind Palace","created":"2025-06-22T10:58:29+02:00","cssclasses":""}
 ---
+
 Hi,
 
 I am Raphaël Lemaitre, and it appears you landed on my website.
 
-![[f9490f5f5c3eb6684227bdbe511543f6_MD5.jpg]]
+![[xx_system/attachments/f9490f5f5c3eb6684227bdbe511543f6_MD5.jpg]]
 
 According to my [Bluesky](https://bsky.app/profile/rlemaitre.com) bio, I am
 
