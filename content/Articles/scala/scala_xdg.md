@@ -28,7 +28,7 @@ Every tool dumps files in the root. It's hard to find your actual code. Your `.g
 
 ## A Better Way
 
-What if we organized everything like this instead?
+What if we organized everything like this instead (obviously inspired by [XDG](https://specifications.freedesktop.org/basedir-spec/latest/))?
 
 ```
 my-scala-project/
