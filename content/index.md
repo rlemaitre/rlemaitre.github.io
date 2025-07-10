@@ -1,5 +1,11 @@
 ---
-{"publish":true,"permalink":"/index.md","aliases":"i n d e x","title":"Welcome to my Mind Palace","created":"2025-06-22T10:58:29+02:00","cssclasses":""}
+publish: true
+permalink: /index.md
+aliases: index
+title: Welcome to my Mind Palace
+created: 2025-06-22T10:58:29+02:00
+cssclasses: ""
+updated: 2025-07-10T22:09:10+02:00
 ---
 
 
@@ -23,10 +29,10 @@ Writing this page, I find that my Bluesky bio misses something: I love learning.
 
 ## My projects
 
-Some of my projects are published on my [personal GitHub](https://github.com/rlemaitre), some are published in my OSS organisation [[projects/funktionalio\|funktional.io]]
+Some of my projects are published on my [personal GitHub](https://github.com/rlemaitre), some are published in my OSS organisation [[funktionalio|funktional.io]]
 
 Here are some:
 
-- [[projects/pillars]]
-- [[projects/mason]]
-- [[projects/riskmatrix]]
+- [[pillars]]
+- [[mason]]
+- [[riskmatrix]]
