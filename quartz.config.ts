@@ -25,48 +25,48 @@ const config: QuartzConfig = {
       cdnCaching: true,
       typography: {
         title: {
-          name: "Matangi",
-          weights: [400],
+          name: "Atkinson Hyperlegible Next",
+          weights: [800],
           includeItalic: true,
         },
         header: {
-          name: "Matangi",
-          weights: [300, 500],
+          name: "Atkinson Hyperlegible Next",
+          weights: [600],
           includeItalic: true,
         },
         body: {
-          name: "Matangi",
-          weights: [300],
+          name: "Atkinson Hyperlegible Next",
+          weights: [800],
           includeItalic: true,
         },
         code: {
-          name: "Fira Code",
-          weights: [400, 600],
+          name: "Atkinson Hyperlegible Mono",
+          weights: [400],
           includeItalic: false,
         },
       },
       colors: {
         lightMode: {
-          light: "#ECEFF4",
-          lightgray: "#E5E9F0",
-          gray: "#D8DEE9",
-          darkgray: "#4C566A",
-          dark: "#3B4252",
-          secondary: "#81A1C1",
-          tertiary: "#8FBCBB",
-          highlight: "rgba(143, 159, 169, 0.15)",
-          textHighlight: "#fff23688",
+          light: "#eceff4", // Page background (Nord6)
+          lightgray: "#d8dee9", // Borders (Nord4)
+          gray: "#4c566a", // Graph links, heavier borders (Nord3)
+          darkgray: "#2e3440", // Body text (Nord0)
+          dark: "#2e3440", // Header text and icons (Nord0)
+          secondary: "#5e81ac", // Link colour, current graph node (Nord10)
+          tertiary: "#8fbcbb", // Hover states - Nord7 Teal (couleur pleine)
+          highlight: "#8fbcbb20", // Internal link background (Nord7 + opacity)
+          textHighlight: "#ebcb8b40", // Markdown highlighted text (Nord13 + opacity)
         },
         darkMode: {
-          light: "#161618",
-          lightgray: "#393639",
-          gray: "#646464",
-          darkgray: "#d4d4d4",
-          dark: "#ebebec",
-          secondary: "#bf616a",
-          tertiary: "#D08770",
-          highlight: "rgba(143, 159, 169, 0.15)",
-          textHighlight: "#b3aa0288",
+          light: "#2e3440", // Page background (Nord0)
+          lightgray: "#434c5e", // Borders (Nord2)
+          gray: "#d8dee9", // Graph links, heavier borders (Nord4)
+          darkgray: "#eceff4", // Body text (Nord6)
+          dark: "#eceff4", // Header text and icons (Nord6)
+          secondary: "#81a1c1", // Link colour, current graph node (Nord9)
+          tertiary: "#5e81ac", // Hover states - Nord10 Blue (couleur pleine)
+          highlight: "#88c0d020", // Internal link background (Nord8 + opacity)
+          textHighlight: "#ebcb8b40", // Markdown highlighted text (Nord13 + opacity)
         },
       },
     },
