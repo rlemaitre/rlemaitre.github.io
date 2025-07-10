@@ -1,6 +1,7 @@
 ---
-{"publish":true,"permalink":"/index.md","aliases":"index","title":"Welcome to my Mind Palace","created":"2025-06-22T10:58:29+02:00","cssclasses":""}
+{"publish":true,"permalink":"/index.md","aliases":"i n d e x","title":"Welcome to my Mind Palace","created":"2025-06-22T10:58:29+02:00","cssclasses":""}
 ---
+
 
 Hi,
 
@@ -24,7 +25,7 @@ Writing this page, I find that my Bluesky bio misses something: I love learning.
 | Experience                                           | Position | Company |
 | ---------------------------------------------------- | -------- | ------- |
 | [[xx_system/templates/Project Template\|\- – \-]] | \-       | \-      |
-| [[Projects/funktionalio\|\- – \-]]                | \-       | \-      |
-| [[Projects/mason\|\- – \-]]                       | \-       | \-      |
-| [[Projects/pillars\|\- – \-]]                     | \-       | \-      |
-| [[Projects/riskmatrix\|\- – \-]]                  | \-       | \-      |
+| [[projects/funktionalio\|\- – \-]]                | \-       | \-      |
+| [[projects/mason\|\- – \-]]                       | \-       | \-      |
+| [[projects/pillars\|\- – \-]]                     | \-       | \-      |
+| [[projects/riskmatrix\|\- – \-]]                  | \-       | \-      |
