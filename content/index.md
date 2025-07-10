@@ -1,7 +1,6 @@
 ---
 publish: true
 permalink: /index.md
-aliases: index
 title: Welcome to my Mind Palace
 created: 2025-06-22T10:58:29+02:00
 cssclasses: ""

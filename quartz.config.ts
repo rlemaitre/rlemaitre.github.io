@@ -18,7 +18,7 @@ const config: QuartzConfig = {
     },
     locale: "en-US",
     baseUrl: "rlemaitre.com",
-    ignorePatterns: ["private", "xx_system/templates", ".obsidian", "Entities"],
+    ignorePatterns: ["private", "xx_system/templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
       fontOrigin: "googleFonts",
@@ -79,8 +79,8 @@ const config: QuartzConfig = {
       }),
       Plugin.SyntaxHighlighting({
         theme: {
-          light: "github-light",
-          dark: "github-dark",
+          light: "nord",
+          dark: "nord",
         },
         keepBackground: false,
       }),
