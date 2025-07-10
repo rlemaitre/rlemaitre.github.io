@@ -22,10 +22,11 @@ Writing this page, I find that my Bluesky bio misses something: I love learning.
 > An investment in knowledge always pays the best interest.
 
 ## My projects
-| Experience                                           | Position | Company |
-| ---------------------------------------------------- | -------- | ------- |
-| [[xx_system/templates/Project Template\|\- – \-]] | \-       | \-      |
-| [[projects/funktionalio\|\- – \-]]                | \-       | \-      |
-| [[projects/mason\|\- – \-]]                       | \-       | \-      |
-| [[projects/pillars\|\- – \-]]                     | \-       | \-      |
-| [[projects/riskmatrix\|\- – \-]]                  | \-       | \-      |
+
+Some of my projects are published on my [personal GitHub](https://github.com/rlemaitre), some are published in my OSS organisation [[projects/funktionalio\|funktional.io]]
+
+Here are some:
+
+- [[projects/pillars]]
+- [[projects/mason]]
+- [[projects/riskmatrix]]

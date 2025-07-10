@@ -4,6 +4,7 @@
 
 
 ## Experiences
+
 | Experience                                                                      | Company                                                      | When              |
 | ------------------------------------------------------------------------------- | ------------------------------------------------------------ | ----------------- |
 | [[resume/Experiences/Senior Staff Engineer @ Ledger\|Senior Staff Engineer]] | [[resume/Experiences/Organizations/Ledger\|Ledger]]       | 03/2022 – \-      |
@@ -18,6 +19,6 @@
 ## Skills
 
 ## Talks
-| Experience | Position | Company |
+| Talk | Position | Company |
 | ---------- | -------- | ------- |
 
