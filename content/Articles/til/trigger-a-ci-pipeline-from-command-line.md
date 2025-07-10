@@ -1,5 +1,14 @@
 ---
-{"publish":true,"permalink":"/Articles/til/trigger-a-ci-pipeline-from-command-line.md","title":"TIL: Trigger a Ci Pipeline From Command Line","created":"2025-06-22T11:38:51+02:00","tags":["git","ci","today-i-learnt"],"cssclasses":""}
+title: "Trigger a Ci Pipeline From Command Line"
+aliases:
+  - "TIL: Trigger a Ci Pipeline From Command Line"
+created: "2025-06-22T11:38:51+02:00"
+updated: "2025-06-22T11:38:51+02:00"
+tags:
+  - git
+  - ci
+  - today-i-learned
+cssclasses:
 ---
 
 
@@ -10,7 +19,9 @@ One solution I saw was to add a dummy modification to our codebase (for example 
 This would trigger our CI/CD pipeline and would result to a new deployment.
 This solves my problem, but the code modification is artificial.
 
-Then, I discovered the `--allow-empty` option of `git commit` thanks to this tweet: {{< tweet user="meganesully" id="1366466258393161729" >}}
+Then, I discovered the `--allow-empty` option of `git commit` thanks to this tweet: 
+
+![[tweet-1366466258393161729.png]]
 
 Eventually, I ran the following command, pushed to our main branch and our staging environment was re-deployed.
 
@@ -18,4 +29,4 @@ Eventually, I ran the following command, pushed to our main branch and our stagi
 git commit --allow-empty -m 'Redeploy staging environment'
 ```
 
-![](https://media.giphy.com/media/jS27LWasgUIYrXtP83/giphy.gif)
+![Job done!](https://media.giphy.com/media/jS27LWasgUIYrXtP83/giphy.gif)

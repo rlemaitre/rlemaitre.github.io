@@ -1,24 +1,34 @@
 ---
-{"publish":true,"permalink":"/Articles/adhd/hacking-adhd-strategies-for-the-modern-developer.md","title":"Hacking ADHD – Strategies for the Modern Developer","created":"2025-06-22T11:38:51+02:00","tags":["ADHD","Mental","Health","Productivity"],"cssclasses":"","socialImage":"xx_system/attachments/hacking-adhd-cover.webp"}
+title: "Hacking ADHD: Strategies for the Modern Developer"
+created: 2025-07-10T11:22:20+02:00
+updated: 2025-07-10T20:32:09+02:00
+published: true
+aliases:
 ---
 
-_This article was initially published on [Ledger blog](https://www.ledger.com/blog/hacking-adhd-strategies-for-the-modern-developer), on November 14th, 2023._
+> [!info]
+>
+> This article was initially published on [Ledger blog](https://www.ledger.com/blog/hacking-adhd-strategies-for-the-modern-developer), on November 14th, 2023.
 
 ![[xx_system/attachments/hacking-adhd-cover.webp]]
+
 ## Introduction
 After struggling a lot with my mental health (anxiety, depressive condition) for several years,
-    I was diagnosed with Attention-Deficit/Hyperactivity Disorder, commonly known as ADHD, at the age of 44.
+I was diagnosed with Attention-Deficit/Hyperactivity Disorder, commonly known as ADHD, at the age of 44.
 This diagnosis shocked me a lot: I wasn’t a wild child, in fact, I was even a good pupil.
 With the help of my therapist, I was able to understand that ADHD can take multiple forms and that it can go undiagnosed until adulthood.
 Since then, I’ve been trying many technics to overcome it and make the best of it in my professional life.
 This article sums up what I learned so far.
 
 ## What is ADHD?
-_Disclaimer: I’m not a psychiatrist nor a neurologist, so this description is surely incomplete_
+
+> [!warning] Disclaimer
+>
+> I’m not a psychiatrist nor a neurologist, so this description is surely incomplete
 
 ADHD is a neurodevelopmental disorder that affects both children and adults.
 According to the American Psychiatric Association’s Diagnostic and Statistical Manual of Mental Disorders (DSM-5),
-    ADHD is characterized by a persistent pattern of inattention and/or hyperactivity-impulsivity that interferes with functioning or development.
+ADHD is characterized by a persistent pattern of inattention and/or hyperactivity-impulsivity that interferes with functioning or development.
 
 ADHD manifests differently in individuals:
 
@@ -26,8 +36,7 @@ ADHD manifests differently in individuals:
 - Others mostly have symptoms of hyperactivity-impulsivity.
 - Some have a combination of both.
 
-While everybody can occasionally experience some inattention, unfocused motor activity, and impulsivity,
-    people with ADHD endure more severe and frequent occurrences of these behaviors.
+While everybody can occasionally experience some inattention, unfocused motor activity, and impulsivity, people with ADHD endure more severe and frequent occurrences of these behaviors.
 These manifestations can interfere with or reduce the quality of how they function socially, at school, or in a job.
 
 ![[xx_system/attachments/what-is-adhd.webp]]
@@ -137,8 +146,7 @@ Remote work offers the freedom to tailor your environment to your needs but come
 
 ### Enter the Hybrid Setup: The Best of Both Worlds
 
-A hybrid work setup can be the golden mean, allowing you the flexibility to work remotely when you need to hunker down and focus,
-    while also offering the option to come into an office for teamwork and social interaction.
+A hybrid work setup can be the golden mean, allowing you the flexibility to work remotely when you need to hunker down and focus, while also offering the option to come into an office for teamwork and social interaction.
 For someone like me, who thrives in different settings depending on the task at hand, this is ideal.
 
 - **Focus Days**: Choose remote work on days when you need to dive deep into code or take on tasks requiring sustained attention.
@@ -173,8 +181,7 @@ To balance the need for individual focus with the benefits of team interaction, 
 Attendance isn’t mandatory, but it’s an open invitation to pause, catch up, and discuss anything from work progress to the latest Netflix series.
 This approach fosters a sense of community without imposing on anyone’s focused work time.
 
-By adopting this strategy, we ensure that everyone has the latitude to work in a way that suits their attention span and cognitive style,
-    while still maintaining the benefits of team cohesion.
+By adopting this strategy, we ensure that everyone has the latitude to work in a way that suits their attention span and cognitive style, while still maintaining the benefits of team cohesion.
 
 ## Self-Management Strategies and Tools: Addressing ADHD Symptoms
 
@@ -214,8 +221,7 @@ Each piece of this puzzle addresses specific symptoms, transforming what some mi
 
 ## Conclusion: Turning ADHD Challenges into Strengths in Software Development
 As someone who was diagnosed with ADHD at 44, I’ve come to appreciate both the struggles and the advantages it brings to my professional life.
-By understanding the underlying neurology of ADHD and adopting a targeted set of tools and strategies,
-    I’ve managed to turn what many perceive as a setback into a unique toolkit for success.
+By understanding the underlying neurology of ADHD and adopting a targeted set of tools and strategies, I’ve managed to turn what many perceive as a setback into a unique toolkit for success.
 From customized planning and asynchronous communication to harnessing focus and hyperfocus, my journey might resonate with many developers facing similar challenges.
 
 ### The Importance of Mental Health

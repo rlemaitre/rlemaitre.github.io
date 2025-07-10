@@ -1,5 +1,14 @@
 ---
-{"publish":true,"permalink":"/Articles/scala/scala_xdg.md","title":"Cleaning Up Scala Projects: A Simple Proposal","created":"2025-06-22T11:38:51+02:00","tags":["scala","xdg","developer-experience"],"cssclasses":""}
+title: "Cleaning Up Scala Projects: A Simple Proposal"
+created: 2025-06-22T11:38:51+02:00
+updated: 2025-06-22T11:38:51+02:00
+tags:
+  - scala
+  - xdg
+  - developer-experience
+cssclasses:
+publish: true
+permalink: "/Articles/scala/scala_xdg.md"
 ---
 
 Scala projects are messy. Every tool creates its own folder or config file, and soon your project looks like this mess. A [LinkedIn post](https://www.linkedin.com/posts/matejcerny_scala-activity-7348626678878728193-L9R1) and [Bluesky thread](https://bsky.app/profile/matejcerny.bsky.social/post/3ltjeyhj2ec2m) by Matej Cerny got me thinking about a solution.
