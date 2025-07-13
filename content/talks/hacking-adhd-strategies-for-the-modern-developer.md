@@ -3,6 +3,7 @@
 ---
 
 
+
 In this talk, I share my experience with ADHD and how I’ve learned to manage it as a developer.
 I discuss strategies for staying focused, managing stress, and finding balance in a fast-paced industry.
 

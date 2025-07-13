@@ -4,6 +4,7 @@
 
 
 
+
 - Architect and develop the ATLAS solution for secure and efficient blockchain indexing, enabling fast access to transaction and balance data
 - Build and maintain high-availability backend services in Scala to support Ledger’s core products, focusing on performance and reliability
 - Manage PostgreSQL deployments for scalability and handle large data volumes efficiently

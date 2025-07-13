@@ -3,6 +3,7 @@
 ---
 
 
+
 Scala projects are messy. Every tool creates its own folder or config file, and soon your project looks like this mess. A [LinkedIn post](https://www.linkedin.com/posts/matejcerny_scala-activity-7348626678878728193-L9R1) and [Bluesky thread](https://bsky.app/profile/matejcerny.bsky.social/post/3ltjeyhj2ec2m) by Matej Cerny got me thinking about a solution.
 
 ## The Problem

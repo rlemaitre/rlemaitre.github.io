@@ -3,6 +3,7 @@
 ---
 
 
+
 Mason is a Pillars-based application generator that helps you kickstart new Pillars projects with minimal configuration.
 With Mason, you can create a new Scala project, set up a REST API, and generate documentation in a matter of minutes.
 Mason takes care of the boilerplate code, so you can focus on building features and delivering value to your users.

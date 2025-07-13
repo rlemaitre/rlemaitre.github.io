@@ -1,6 +1,7 @@
 ---
-{"publish":true,"permalink":"/articles/adhd/hacking-adhd-strategies-for-the-modern-developer.md","aliases":"/posts/2023/11/hacking-adhd-strategies-for-the-modern-developer/","title":"Hacking ADHD: Strategies for the Modern Developer","created":"2025-07-10T11:22:20+02:00","cssclasses":""}
+{"publish":true,"permalink":"/articles/adhd/hacking-adhd-strategies-for-the-modern-developer.md","aliases":"/ p o s t s / 2 0 2 3 / 1 1 / h a c k i n g - a d h d - s t r a t e g i e s - f o r - t h e - m o d e r n - d e v e l o p e r /","title":"Hacking ADHD: Strategies for the Modern Developer","created":"2025-07-10T11:22:20+02:00","cssclasses":""}
 ---
+
 
 
 > [!info]

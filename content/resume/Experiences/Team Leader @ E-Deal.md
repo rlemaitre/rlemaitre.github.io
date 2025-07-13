@@ -3,6 +3,7 @@
 ---
 
 
+
 Technical Management of a Team of 4 R&D Developers
 
 Development of the first J2EE version of e-DEAL CRM :

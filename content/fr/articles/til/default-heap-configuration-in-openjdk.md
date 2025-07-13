@@ -1,16 +1,7 @@
 ---
-title: Configuration de la mémoire par défaut dans OpenJDK
-aliases:
-  - "TIL : Configuration de la mémoire par défaut dans OpenJDK"
-created: 2021-02-16T17:11:50+01:00
-updated: 2025-07-10T22:44:21+02:00
-publish: true
-toc: false
-images: 
-tags:
-  - java
-  - today-i-learned
+{"publish":true,"permalink":"/fr/articles/til/default-heap-configuration-in-openjdk.md","aliases":"TIL : Configuration de la mémoire par défaut dans OpenJDK","title":"Configuration de la mémoire par défaut dans OpenJDK","created":"2021-02-16T17:11:50+01:00","tags":["java","today-i-learned"],"cssclasses":""}
 ---
+
 
 
 Il s'agit du premier billet de la série "Today I learned" (TIL, ou aujourd'hui j'ai appris en français).

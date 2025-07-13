@@ -3,6 +3,7 @@
 ---
 
 
+
 20 billion served ads on 15 servers/yearly with 99.9% of availability. 400GB ingested data on 20 servers/daily
 
 - Manage a team of 9 people, the Tech Lab including Devs, DevOps, Data Engineer and Integrator profiles

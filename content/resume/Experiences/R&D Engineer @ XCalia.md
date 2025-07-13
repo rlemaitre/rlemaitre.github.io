@@ -3,6 +3,7 @@
 ---
 
 
+
 Member of the Kernel and Relational persistence team (until July 2009) :
 - Development of a multi-storage (RDBMS, webservices, etc) datastore-agnostic persistence/query engine
 - Implementation of compensation algorithms (Joins. sort. union. etc)

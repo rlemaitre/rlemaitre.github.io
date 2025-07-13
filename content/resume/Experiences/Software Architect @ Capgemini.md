@@ -3,6 +3,7 @@
 ---
 
 
+
 Response to a public call for bids :
 - Conception of the architecture of a portal and directory solution based on Novell ldentity Manager. Novell Access Manager and BEA Aqualogic User Interaction for the AP-HP (Parisian Hospitals Administration)
 

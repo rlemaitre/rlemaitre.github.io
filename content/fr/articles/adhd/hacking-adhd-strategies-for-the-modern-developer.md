@@ -1,6 +1,7 @@
 ---
-{"publish":true,"permalink":"/fr/articles/adhd/hacking-adhd-strategies-for-the-modern-developer.md","aliases":"/fr/posts/2023/11/hacker-le-tdah-stratégies-pour-le-développeur-moderne/","title":"Hacker le TDAH – Stratégies pour le Développeur Moderne","created":"2025-07-10T21:30:28+02:00","tags":["ADHD","mental-health","productivity"],"cssclasses":"","socialImage":"/images/blog/adhd/hacking-adhd-cover.webp"}
+{"publish":true,"permalink":"/fr/articles/adhd/hacking-adhd-strategies-for-the-modern-developer.md","aliases":"/ f r / p o s t s / 2 0 2 3 / 1 1 / h a c k e r - l e - t d a h - s t r a t é g i e s - p o u r - l e - d é v e l o p p e u r - m o d e r n e /","title":"Hacker le TDAH – Stratégies pour le Développeur Moderne","created":"2025-07-10T21:30:28+02:00","tags":["ADHD","mental-health","productivity"],"cssclasses":"","socialImage":"/images/blog/adhd/hacking-adhd-cover.webp"}
 ---
+
 
 > [!info]
 >

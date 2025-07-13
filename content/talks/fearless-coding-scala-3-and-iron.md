@@ -3,6 +3,7 @@
 ---
 
 
+
 Welcome to the world of fearless coding, where Scala 3 and the Iron library are the true heroes of reliability.
 This talk explores how Scala 3 enriches the functional programming ecosystem with its subtle enhancements, while Iron brings an extra dimension of precision and safety to type management.
 Together, they form a powerful duo that transforms software development into a more intuitive and secure experience.

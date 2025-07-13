@@ -1,6 +1,7 @@
 ---
-{"publish":true,"permalink":"/articles/til/default-heap-configuration-in-openjdk.md","aliases":"TIL: Default Heap Configuration in OpenJDK","title":"Default Heap Configuration in OpenJDK","created":"2025-06-22T11:38:51+02:00","tags":["java","jvm","today-i-learned"],"cssclasses":""}
+{"publish":true,"permalink":"/articles/til/default-heap-configuration-in-openjdk.md","aliases":"T I L : D e f a u l t H e a p C o n f i g u r a t i o n i n O p e n J D K","title":"Default Heap Configuration in OpenJDK","created":"2025-06-22T11:38:51+02:00","tags":["java","jvm","today-i-learned"],"cssclasses":""}
 ---
+
 
 
 This is the first blog post in the "Today I learnt" (TIL) series.

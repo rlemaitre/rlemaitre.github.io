@@ -1,15 +1,7 @@
 ---
-title: Déclencher un build du CI depuis la ligne de commandes
-aliases:
-  - "TIL: Déclencher un build du CI depuis la ligne de commandes"
-created: 2021-03-09T23:10:56+01:00
-updated: 2025-07-10T22:44:38+02:00
-tags:
-  - git
-  - ci
-  - today-i-learned
-publish: true
+{"publish":true,"permalink":"/fr/articles/til/trigger-a-ci-pipeline-from-command-line.md","aliases":"TIL: Déclencher un build du CI depuis la ligne de commandes","title":"Déclencher un build du CI depuis la ligne de commandes","created":"2021-03-09T23:10:56+01:00","tags":["git","ci","today-i-learned"],"cssclasses":""}
 ---
+
 
 
 Chez [ADventori](https://adventori.com/), nous utilisons [Gitlab CI](https://docs.gitlab.com/ee/ci/) pour déployer nos environnements de staging quand le code change sur notre branche principale.

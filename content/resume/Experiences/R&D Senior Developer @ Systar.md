@@ -3,6 +3,7 @@
 ---
 
 
+
 Design and implementation of a monitoring application based on a custom distributed and bi-temporal NoSQL database :
 - Calculated fields management (UI development, configuration, computation scheduling ... )
 - Optimization of aggregation computations (OLAP cube)

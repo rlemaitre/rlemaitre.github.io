@@ -1,6 +1,7 @@
 ---
-{"publish":true,"permalink":"/articles/til/trigger-a-ci-pipeline-from-command-line.md","aliases":"TIL: Trigger a Ci Pipeline From Command Line","title":"Trigger a Ci Pipeline From Command Line","created":"2025-06-22T11:38:51+02:00","tags":["git","ci","today-i-learned"],"cssclasses":""}
+{"publish":true,"permalink":"/articles/til/trigger-a-ci-pipeline-from-command-line.md","aliases":"T I L : T r i g g e r a C i P i p e l i n e F r o m C o m m a n d L i n e","title":"Trigger a Ci Pipeline From Command Line","created":"2025-06-22T11:38:51+02:00","tags":["git","ci","today-i-learned"],"cssclasses":""}
 ---
+
 
 
 
