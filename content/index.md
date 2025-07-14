@@ -29,6 +29,7 @@ Apart from here, you can find me online at:
 * <a href="https://github.com/rlemaitre" rel="me authn">Github</a>
 * <a href="https://bsky.app/profile/rlemaitre.com" rel="me">Bluesky</a>
 * <a href="https://www.linkedin.com/in/rlemaitre" rel="me">LinkedIn</a>
+* <a href="https://social.treehouse.systems/@rlemaitre" rel="me">Mastodon</a>
 ## My projects
 
 Some of my projects are published on my [personal GitHub](https://github.com/rlemaitre), some are published in my OSS organisation [[projects/funktionalio\|funktional.io]]
