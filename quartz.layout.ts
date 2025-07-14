@@ -26,7 +26,7 @@ export const sharedPageComponents: SharedLayout = {
     links: {
       GitHub: "https://github.com/rlemaitre",
       LinkedIn: "https://linkedin.com/in/rlemaitre/",
-      Bluesky: "https://bsky.app/profile/rlemaitre",
+      Bluesky: "https://bsky.app/profile/rlemaitre.com",
     },
   }),
 }

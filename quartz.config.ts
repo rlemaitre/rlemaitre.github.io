@@ -1,5 +1,6 @@
 import { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
+import { Webmentions } from "./quartz/plugins/transformers/webmentions"
 
 /**
  * Quartz 4 Configuration
@@ -90,6 +91,14 @@ const config: QuartzConfig = {
       Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
       Plugin.Description(),
       Plugin.Latex({ renderEngine: "katex" }),
+      Webmentions({
+        webmentionEndpoint: "https://webmention.io/rlemaitre.com/webmention",
+        pingbackEndpoint: "https://webmention.io/rlemaitre.com/xmlrpc",
+        authorName: "Raphaël Lemaitre",
+        authorUrl: "https://rlemaitre.com",
+        authorPhoto: "https://rlemaitre.com/avatar.jpg",
+        enableMicroformats: true,
+      }),
     ],
     filters: [Plugin.RemoveDrafts()],
     emitters: [
