@@ -61,7 +61,7 @@
     "mdast-util-to-hast": "^13.2.0",
     "mdast-util-to-string": "^4.0.0",
     "micromorph": "^0.4.5",
-    "minimatch": "^10.0.1",
+    "minimatch": "^10.0.3",
     "npm-force-resolutions": "^0.0.10",
     "pixi.js": "^8.9.2",
     "preact": "^10.26.7",
