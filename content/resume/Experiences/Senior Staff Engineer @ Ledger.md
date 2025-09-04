@@ -1,9 +1,6 @@
 ---
-{"publish":true,"permalink":"/Resume/Experiences/Senior Staff Engineer @ Ledger.md","title":"Senior Staff Engineer @ Ledger","created":"2025-06-23T13:24:23+02:00","tags":["experiences"],"cssclasses":""}
+{"publish":true,"permalink":"/Resume/Experiences/Senior Staff Engineer @ Ledger.md","title":"Since 2022-03: Senior Staff Engineer @ Ledger","created":"2025-06-23T13:24:23+02:00","tags":["experiences"],"cssclasses":""}
 ---
-
-
-
 
 - Architect and develop the ATLAS solution for secure and efficient blockchain indexing, enabling fast access to transaction and balance data
 - Build and maintain high-availability backend services in Scala to support Ledger’s core products, focusing on performance and reliability

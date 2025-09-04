@@ -2,6 +2,7 @@
 {"publish":true,"permalink":"/notes/index.md","title":"Notes","created":"2025-07-13T13:05:21+02:00","cssclasses":""}
 ---
 
+
 This is my [Digital Garden](https://nesslabs.com/digital-garden-set-up), my personal space where I cultivate and organise my thoughts, ideas, and knowledge over time. Unlike a traditional blog, my digital garden is dynamic and non-linear, allowing for continuous growth and evolution of content.
 
 > [!quote] Tom Critchlow

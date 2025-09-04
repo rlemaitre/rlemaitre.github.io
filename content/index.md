@@ -2,6 +2,7 @@
 {"publish":true,"permalink":"/index.md","title":"Welcome to my Mind Palace","created":"2025-06-22T10:58:29+02:00","cssclasses":""}
 ---
 
+
 Hi,
 
 I am Raphaël Lemaitre, and it appears you landed on my website.

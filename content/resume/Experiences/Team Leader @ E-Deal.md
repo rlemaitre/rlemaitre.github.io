@@ -1,8 +1,6 @@
 ---
-{"publish":true,"permalink":"/Resume/Experiences/Team Leader @ E-Deal.md","title":"Team Leader @ E-Deal","created":"2025-06-23T13:24:23+02:00","tags":["experiences"],"cssclasses":""}
+{"publish":true,"permalink":"/Resume/Experiences/Team Leader @ E-Deal.md","title":"2000-01 – 2006-06: Team Leader @ E-Deal","created":"2025-06-23T13:24:23+02:00","tags":["experiences"],"cssclasses":""}
 ---
-
-
 
 Technical Management of a Team of 4 R&D Developers
 

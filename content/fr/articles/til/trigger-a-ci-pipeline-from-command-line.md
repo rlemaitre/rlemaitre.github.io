@@ -1,6 +1,7 @@
 ---
-{"publish":true,"permalink":"/fr/articles/til/trigger-a-ci-pipeline-from-command-line.md","aliases":"TIL: Déclencher un build du CI depuis la ligne de commandes","title":"Déclencher un build du CI depuis la ligne de commandes","created":"2021-03-09T23:10:56+01:00","tags":["git","ci","today-i-learned"],"cssclasses":""}
+{"publish":true,"permalink":"/fr/articles/til/trigger-a-ci-pipeline-from-command-line.md","aliases":"T I L : D é c l e n c h e r u n b u i l d d u C I d e p u i s l a l i g n e d e c o m m a n d e s","title":"Déclencher un build du CI depuis la ligne de commandes","created":"2021-03-09T23:10:56+01:00","tags":["git","ci","today-i-learned"],"cssclasses":""}
 ---
+
 
 
 

@@ -1,8 +1,6 @@
 ---
-{"publish":true,"permalink":"/Resume/Experiences/CTO @ Adventori.md","title":"CTO @ Adventori","created":"2025-06-23T13:24:23+02:00","tags":["experiences"],"cssclasses":""}
+{"publish":true,"permalink":"/Resume/Experiences/CTO @ Adventori.md","title":"2017-04 - 2022-03: CTO @ Adventori","created":"2025-06-23T13:24:23+02:00","tags":["experiences"],"cssclasses":""}
 ---
-
-
 
 20 billion served ads on 15 servers/yearly with 99.9% of availability. 400GB ingested data on 20 servers/daily
 

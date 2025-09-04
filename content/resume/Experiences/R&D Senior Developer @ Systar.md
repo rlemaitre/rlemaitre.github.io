@@ -1,8 +1,6 @@
 ---
-{"publish":true,"permalink":"/Resume/Experiences/R&D Senior Developer @ Systar.md","title":"R&D Senior Developer @ Systar","created":"2025-06-23T13:24:23+02:00","tags":["experiences"],"cssclasses":""}
+{"publish":true,"permalink":"/Resume/Experiences/R&D Senior Developer @ Systar.md","title":"2010-10 - 2014-06: R&D Senior Developer @ Systar","created":"2025-06-23T13:24:23+02:00","tags":["experiences"],"cssclasses":""}
 ---
-
-
 
 Design and implementation of a monitoring application based on a custom distributed and bi-temporal NoSQL database :
 - Calculated fields management (UI development, configuration, computation scheduling ... )

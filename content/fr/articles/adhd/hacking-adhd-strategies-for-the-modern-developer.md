@@ -3,6 +3,7 @@
 ---
 
 
+
 > [!info]
 >
 > Cet article a initialement été publié sur le [blog de Ledger](https://www.ledger.com/blog/hacking-adhd-strategies-for-the-modern-developer), le 14 novembre 2023.

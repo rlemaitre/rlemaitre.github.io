@@ -1,8 +1,6 @@
 ---
-{"publish":true,"permalink":"/Resume/Experiences/Lead Developer @ Adventori.md","title":"Lead Developer @ Adventori","created":"2025-06-23T13:24:23+02:00","tags":["experiences"],"cssclasses":""}
+{"publish":true,"permalink":"/Resume/Experiences/Lead Developer @ Adventori.md","title":"2014-06 - 2017-04: Lead Developer @ Adventori","created":"2025-06-23T13:24:23+02:00","tags":["experiences"],"cssclasses":""}
 ---
-
-
 
 Design and implementation of the ad server, Data Warehouse, Reporting System & Data Integration Service for customers
 

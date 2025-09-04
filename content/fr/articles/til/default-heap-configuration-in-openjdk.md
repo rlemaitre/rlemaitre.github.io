@@ -1,6 +1,7 @@
 ---
-{"publish":true,"permalink":"/fr/articles/til/default-heap-configuration-in-openjdk.md","aliases":"TIL : Configuration de la mémoire par défaut dans OpenJDK","title":"Configuration de la mémoire par défaut dans OpenJDK","created":"2021-02-16T17:11:50+01:00","tags":["java","today-i-learned"],"cssclasses":""}
+{"publish":true,"permalink":"/fr/articles/til/default-heap-configuration-in-openjdk.md","aliases":"T I L : C o n f i g u r a t i o n d e l a m é m o i r e p a r d é f a u t d a n s O p e n J D K","title":"Configuration de la mémoire par défaut dans OpenJDK","created":"2021-02-16T17:11:50+01:00","tags":["java","today-i-learned"],"cssclasses":""}
 ---
+
 
 
 

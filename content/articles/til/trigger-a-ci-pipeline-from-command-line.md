@@ -5,6 +5,7 @@
 
 
 
+
 At [ADventori](https://adventori.com/), we use [Gitlab CI](https://docs.gitlab.com/ee/ci/) to deploy our staging environments when code changes in our main branch.
 This afternoon, I wanted to re-deploy one of our environments with the same code.
 
