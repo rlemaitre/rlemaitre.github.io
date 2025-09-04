@@ -30,6 +30,7 @@
 - [[resume/Skills/cassandra\|Apache Cassandra]]
 - [[resume/Skills/spark\|Apache Spark]]
 ### Tools
+- [[resume/Skills/obsidian\|Obsidian]]
 - [[resume/Skills/kubernetes\|Kubernetes]]
 - [[resume/Skills/docker\|Docker]]
 - [[resume/Skills/gatling\|Gatling]]
