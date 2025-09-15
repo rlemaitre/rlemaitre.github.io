@@ -21,4 +21,3 @@ This talk has been given several times:
   ![](https://www.youtube.com/watch?v=_ijvE3kj6po)
 * 2025-03-28: [Scalar](https://typeville-56ef49ad5026668-676eb62906315.webflow.io/talk/from-zero-to-production-faster-than-your-average-meeting-with-pillars) in Warsaw, Poland 🇵🇱
   ![](https://www.youtube.com/watch?v=27WO7qAvH04)
-* 2025-10-17: [ScalaIO](https://scala.io/) in Paris, France 🇫🇷
