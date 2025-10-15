@@ -1,5 +1,10 @@
 ---
-{"publish":true,"permalink":"/index.md","title":"Welcome to my Mind Palace","created":"2025-06-22T10:58:29+02:00","cssclasses":""}
+publish: true
+permalink: /index.md
+title: Welcome to my Mind Palace
+created: 2025-06-22T10:58:29+02:00
+cssclasses: ""
+updated: 2025-09-04T18:09:25+02:00
 ---
 
 

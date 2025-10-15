@@ -1,5 +1,11 @@
 ---
-{"publish":true,"permalink":"/Talks/from-zero-to-production-faster-than-your-average-meeting-with-pillars.md","title":"From Zero to Production Faster Than Your Average Meeting With Pillars","created":"2025-06-23T13:24:23+02:00","cssclasses":"","socialImage":"/images/talks/pillars.svg"}
+publish: true
+permalink: /Talks/from-zero-to-production-faster-than-your-average-meeting-with-pillars.md
+title: From Zero to Production Faster Than Your Average Meeting With Pillars
+created: 2025-06-23T13:24:23+02:00
+cssclasses: ""
+socialImage: /images/talks/pillars.svg
+updated: 2025-09-15T16:01:30+02:00
 ---
 
 ## Abstract

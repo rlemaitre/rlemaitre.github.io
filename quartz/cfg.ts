@@ -33,6 +33,7 @@ export type Analytics =
   | {
       provider: "tinylytics"
       siteId: string
+      kudos: boolean
     }
   | {
       provider: "cabin"

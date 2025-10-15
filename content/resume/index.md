@@ -1,5 +1,11 @@
 ---
-{"publish":true,"permalink":"/Resume/index.md","aliases":"C V","title":"Resume","created":"2025-06-22T19:49:05+02:00","cssclasses":""}
+publish: true
+permalink: /Resume/index.md
+aliases: C V
+title: Resume
+created: 2025-06-22T19:49:05+02:00
+cssclasses: ""
+updated: 2025-09-04T18:01:39+02:00
 ---
 
 ## Experiences

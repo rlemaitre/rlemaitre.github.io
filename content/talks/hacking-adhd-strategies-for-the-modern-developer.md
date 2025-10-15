@@ -1,5 +1,11 @@
 ---
-{"publish":true,"permalink":"/Talks/hacking-adhd-strategies-for-the-modern-developer.md","title":"Hacking ADHD: Strategies for the Modern Developer","created":"2025-06-23T13:24:23+02:00","cssclasses":"","socialImage":"/images/talks/hacking-adhd.png"}
+publish: true
+permalink: /Talks/hacking-adhd-strategies-for-the-modern-developer.md
+title: "Hacking ADHD: Strategies for the Modern Developer"
+created: 2025-06-23T13:24:23+02:00
+cssclasses: ""
+socialImage: /images/talks/hacking-adhd.png
+updated: 2025-09-04T16:37:38+02:00
 ---
 
 ## Abstract

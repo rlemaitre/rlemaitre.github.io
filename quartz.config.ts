@@ -16,6 +16,7 @@ const config: QuartzConfig = {
     analytics: {
       provider: "tinylytics",
       siteId: "UKo7ysT1y9ouVGcZtHMp",
+      kudos: true,
     },
     locale: "en-US",
     baseUrl: "rlemaitre.com",

@@ -168,9 +168,10 @@ function addGlobalPageResources(ctx: BuildCtx, componentResources: ComponentReso
     `)
   } else if (cfg.analytics?.provider === "tinylytics") {
     const siteId = cfg.analytics.siteId
+    const scriptUrl = cfg.analytics.kudos ? `https://tinylytics.app/embed/${siteId}.js?spa&kudos` : `https://tinylytics.app/embed/${siteId}.js?spa`
     componentResources.afterDOMLoaded.push(`
       const tinylyticsScript = document.createElement('script');
-      tinylyticsScript.src = 'https://tinylytics.app/embed/${siteId}.js?spa';
+      tinylyticsScript.src = '${scriptUrl}';
       tinylyticsScript.defer = true;
       tinylyticsScript.onload = () => {
         window.tinylytics.triggerUpdate();

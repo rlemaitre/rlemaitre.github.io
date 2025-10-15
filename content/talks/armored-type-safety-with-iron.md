@@ -1,5 +1,11 @@
 ---
-{"publish":true,"permalink":"/Talks/armored-type-safety-with-iron.md","title":"Armored Type Safety With Iron","created":"2025-06-23T13:24:23+02:00","cssclasses":"","socialImage":"/images/talks/armored-type-safety-with-iron.png"}
+publish: true
+permalink: /Talks/armored-type-safety-with-iron.md
+title: Armored Type Safety With Iron
+created: 2025-06-23T13:24:23+02:00
+cssclasses: ""
+socialImage: /images/talks/armored-type-safety-with-iron.png
+updated: 2025-09-04T16:30:41+02:00
 ---
 
 ## Abstract

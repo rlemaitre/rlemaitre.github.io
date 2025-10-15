@@ -1,5 +1,11 @@
 ---
-{"publish":true,"permalink":"/Talks/fearless-coding-scala-3-and-iron.md","title":"Fearless Coding: Scala 3 and Iron, the New Heroes of Reliability in Functional Programming","created":"2025-06-23T13:24:23+02:00","cssclasses":"","socialImage":"/images/talks/scala.svg"}
+publish: true
+permalink: /Talks/fearless-coding-scala-3-and-iron.md
+title: "Fearless Coding: Scala 3 and Iron, the New Heroes of Reliability in Functional Programming"
+created: 2025-06-23T13:24:23+02:00
+cssclasses: ""
+socialImage: /images/talks/scala.svg
+updated: 2025-09-04T16:15:13+02:00
 ---
 
 ## Abstract
