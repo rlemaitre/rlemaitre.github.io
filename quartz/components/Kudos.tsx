@@ -1,16 +1,16 @@
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 
 type Options = {
-  provider: "tinylitics"
+  provider: "tinylytics"
   options: {
     className: string
   }
 }
 
 const defaultOptions: Options = {
-    provider: "tinylitics",
+    provider: "tinylytics",
     options: {
-        className: "tinylitics_kudos"
+        className: "tinylytics_kudos"
     }
 } 
 
