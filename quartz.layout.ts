@@ -20,6 +20,7 @@ export const sharedPageComponents: SharedLayout = {
         categoryId: "MDE4OkRpc2N1c3Npb25DYXRlZ29yeTMyNTc0MTA2",
         // from data-lang
         lang: "en",
+        reactionsEnabled: false,
       },
     }),
   ],
