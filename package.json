@@ -64,7 +64,7 @@
     "minimatch": "^10.0.3",
     "npm-force-resolutions": "^0.0.10",
     "pixi.js": "^8.9.2",
-    "preact": "^10.26.7",
+    "preact": "^10.28.2",
     "preact-render-to-string": "^6.5.13",
     "pretty-bytes": "^7.0.0",
     "pretty-time": "^1.1.0",
