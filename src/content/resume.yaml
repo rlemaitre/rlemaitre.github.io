@@ -24,6 +24,7 @@
         - Architected ATLAS, Ledger's blockchain indexing platform for fast transaction and balance access.
         - Built high-availability Scala backend services for Ledger's core products.
         - Ran PostgreSQL at scale and a fleet of blockchain nodes.
+        - Analyzed and optimized cryptocurrency protocols to improve data indexing and query speeds.
         - Benchmarked services to find and fix bottlenecks, with CI/CD and monitoring behind every deployment.
       compact: false
     - role: CTO, previously Lead Developer
