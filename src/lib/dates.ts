@@ -9,3 +9,9 @@ export function formatDate(d: Date): string {
 export function formatYearMonth(d: Date): string {
   return `${d.getUTCFullYear()}.${pad(d.getUTCMonth() + 1)}`
 }
+
+/** Parses a `YYYY-MM` string as the first of that month, in UTC. */
+export function parseYearMonth(s: string): Date {
+  if (!/^\d{4}-(0[1-9]|1[0-2])$/.test(s)) throw new Error(`Expected YYYY-MM, got "${s}"`)
+  return new Date(`${s}-01T00:00:00Z`)
+}

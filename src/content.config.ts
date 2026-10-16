@@ -1,5 +1,5 @@
 import { defineCollection, reference } from 'astro:content'
-import { glob } from 'astro/loaders'
+import { file, glob } from 'astro/loaders'
 import { z } from 'astro/zod'
 
 const articles = defineCollection({
@@ -59,4 +59,29 @@ const projects = defineCollection({
   }),
 })
 
-export const collections = { articles, talks, projects }
+const resume = defineCollection({
+  loader: file('./src/content/resume.yaml'),
+  schema: z.object({
+    pitch: z.string(),
+    location: z.string(),
+    languages: z.array(z.string()),
+    experience: z.array(
+      z.object({
+        role: z.string(),
+        company: z.string(),
+        team: z.string().optional(),
+        start: z.string().regex(/^\d{4}-\d{2}$/),
+        end: z
+          .string()
+          .regex(/^\d{4}-\d{2}$/)
+          .optional(),
+        bullets: z.array(z.string()),
+        compact: z.boolean(),
+      }),
+    ),
+    skills: z.array(z.object({ group: z.enum(['Languages', 'Data', 'Ops & tools']), items: z.array(z.string()) })),
+    education: z.array(z.object({ degree: z.string(), school: z.string(), url: z.url(), start: z.number(), end: z.number() })),
+  }),
+})
+
+export const collections = { articles, talks, projects, resume }

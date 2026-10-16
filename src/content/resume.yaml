@@ -1,0 +1,69 @@
+- id: resume
+  pitch: >-
+    Backend engineer with 26 years on the JVM, mostly Scala for the last decade. I'm a Senior Backend Engineer at Nabla,
+    working on the real-time dictation backend. I have been a CTO and went back to coding by choice. I care about type
+    safety, simple systems and teams that ship. I speak at Scala conferences and maintain open-source libraries.
+  location: Paris area, FR
+  languages: [EN, FR]
+  experience:
+    - role: Senior Backend Engineer
+      company: Nabla
+      team: Dictation squad
+      start: 2025-11
+      bullets:
+        - Real-time dictation transcription pipeline backend.
+        - Formatting post-processing.
+      compact: false
+    - role: Senior Staff Engineer
+      company: Ledger
+      start: 2022-03
+      end: 2025-10
+      bullets:
+        - Architected ATLAS, Ledger's blockchain indexing platform for fast transaction and balance access.
+        - Built high-availability Scala backend services for Ledger's core products.
+        - Ran PostgreSQL at scale and a fleet of blockchain nodes.
+        - Benchmarked services to find and fix bottlenecks, with CI/CD and monitoring behind every deployment.
+      compact: false
+    - role: CTO, previously Lead Developer
+      company: Adventori
+      start: 2014-06
+      end: 2022-03
+      bullets: []
+      compact: false
+    - role: R&D Senior Developer
+      company: Systar
+      start: 2010-10
+      end: 2014-06
+      bullets: []
+      compact: true
+    - role: R&D Engineer
+      company: Xcalia
+      start: 2007-05
+      end: 2010-08
+      bullets: []
+      compact: true
+    - role: Software Architect
+      company: Capgemini
+      start: 2006-07
+      end: 2007-05
+      bullets: []
+      compact: true
+    - role: Team Leader
+      company: E-Deal
+      start: 2000-01
+      end: 2006-06
+      bullets: []
+      compact: true
+  skills:
+    - group: Languages
+      items: [Scala, Kotlin, Java, Groovy, SQL, TypeScript, JavaScript, HTML, CSS]
+    - group: Data
+      items: [PostgreSQL, SQLite, Apache Cassandra, Apache Spark]
+    - group: Ops & tools
+      items: [Kubernetes, Docker, Gatling, Git, GitHub, GitLab, CI/CD]
+  education:
+    - degree: Master in Engineering, Computer Science
+      school: ENSIIE
+      url: https://www.ensiie.fr
+      start: 1997
+      end: 2001
