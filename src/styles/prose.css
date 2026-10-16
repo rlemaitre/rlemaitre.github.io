@@ -4,6 +4,8 @@
   font-family: var(--font-body);
   font-size: 18px;
   line-height: 1.65;
+  /* Long URLs and identifiers break instead of widening the page; also counts in min-content sizing. */
+  overflow-wrap: anywhere;
 }
 
 .prose > :first-child {
@@ -176,6 +178,8 @@
   font-size: 13.5px;
   line-height: 1.55;
   tab-size: 2;
+  /* Code blocks keep their lines and scroll inside the block. */
+  overflow-wrap: normal;
 }
 
 .prose pre code {

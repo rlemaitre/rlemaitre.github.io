@@ -50,3 +50,20 @@ test('a heading with inline code keeps its spaces', async ({ page }) => {
   })
   expect(text.toLowerCase()).toBe('using val and more today')
 })
+
+test.describe('long inline tokens at phone width', () => {
+  test.use({ viewport: { width: 375, height: 800 } })
+
+  test('do not cause horizontal scroll', async ({ page }) => {
+    await page.goto(XDG)
+    await page.evaluate(() => {
+      const p = document.createElement('p')
+      const token = 'averyveryverylongidentifierwithoutanybreakopportunity'.repeat(3)
+      p.innerHTML = `See <code>-XX:${token}</code> and <a href="#">https://example.com/${token}</a>.`
+      const h2 = document.createElement('h2')
+      h2.innerHTML = `Set <code>${token}</code>`
+      document.querySelector('.prose')?.append(p, h2)
+    })
+    await expectNoHorizontalScroll(page)
+  })
+})
