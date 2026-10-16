@@ -1,8 +1,9 @@
 - id: resume
   pitch: >-
-    Backend engineer with 26 years on the JVM, mostly Scala for the last decade. I'm a Senior Backend Engineer at Nabla,
-    working on the real-time dictation backend. I have been a CTO and went back to coding by choice. I care about type
-    safety, simple systems and teams that ship. I speak at Scala conferences and maintain open-source libraries.
+    Backend engineer with 26 years on the JVM, including about ten years of functional Scala. I'm a Senior Backend
+    Engineer at Nabla, building the real-time dictation backend in Kotlin. I have been a CTO and went back to coding by
+    choice. I care about type safety, simple systems and teams that ship. On the side, I speak at Scala conferences and
+    maintain open-source Scala libraries.
   location: Paris area, FR
   languages: [EN, FR]
   experience:
@@ -13,6 +14,7 @@
       bullets:
         - Real-time dictation transcription pipeline backend.
         - Formatting post-processing.
+        - Written in Kotlin.
       compact: false
     - role: Senior Staff Engineer
       company: Ledger

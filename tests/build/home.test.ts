@@ -43,8 +43,9 @@ describe('English home page', () => {
     expect(dates).toEqual(dates.toSorted().toReversed())
   })
 
-  it('mentions Nabla in the intro', () => {
+  it('mentions Nabla and Kotlin in the intro', () => {
     expect(text(doc.querySelector('.lede'))).toContain('Nabla')
+    expect(text(doc.querySelector('.lede'))).toContain('Kotlin')
   })
 
   it('links to social profiles with rel="me"', () => {
@@ -69,6 +70,7 @@ describe('French home page', () => {
     expect(doc.documentElement.getAttribute('lang')).toBe('fr')
     expect(text(doc.querySelector('.lede'))).toMatch(/\bje\b|\bj’|\bj'/i)
     expect(text(doc.querySelector('.lede'))).toContain('Nabla')
+    expect(text(doc.querySelector('.lede'))).toContain('Kotlin')
   })
 
   it('lists French articles only, newest first', () => {

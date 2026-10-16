@@ -19,6 +19,12 @@ describe('resume page', () => {
     expect(first).toContain('Formatting post-processing.')
   })
 
+  it('says Kotlin at Nabla and Scala on the side in the pitch', () => {
+    const pitch = text(doc.querySelector('.pitch'))
+    expect(pitch).toMatch(/Nabla[^.]*Kotlin/)
+    expect(pitch).not.toMatch(/mostly Scala/)
+  })
+
   it('dates the Ledger role 2022.03 to 2025.10, not as current', () => {
     const ledger = jobs.find((j) => text(j).includes('Ledger'))
     expect(text(ledger)).toContain('2022.03')
