@@ -25,7 +25,7 @@ describe('article pages', () => {
 
   it('links the EN / FR cell to the translation when one exists', () => {
     const href = load(ADHD).querySelector('nav .lang a')?.getAttribute('href')
-    expect(href).toBe(`/fr/${ADHD}`)
+    expect(href).toBe(`/fr/${ADHD}/`)
   })
 
   it('links the EN / FR cell to the French home when there is no translation', () => {
@@ -86,7 +86,7 @@ describe('writing index', () => {
   it('lists the 4 English articles, newest first', () => {
     const rows = rowsOf('articles')
     expect(rows).toHaveLength(4)
-    expect(rows[0]?.href).toBe(`/${XDG}`)
+    expect(rows[0]?.href).toBe(`/${XDG}/`)
     const dates = rows.map((r) => r.date)
     expect(dates).toEqual([...dates].sort().reverse())
   })

@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content'
 import IndexRow from '../../components/IndexRow.astro'
 import Base from '../../layouts/Base.astro'
-import { t } from '../../lib/i18n'
+import { talkUrl, t } from '../../lib/i18n'
 import { talkTotals, venueSummary } from '../../lib/talks'
 
 const talks = (await getCollection('talks'))
@@ -23,7 +23,7 @@ const span = ({ firstYear, lastYear }: { firstYear: number; lastYear: number }) 
     {
       talks.map(({ talk, summary }) => (
         <IndexRow
-          href={`/talks/${talk.id}`}
+          href={talkUrl(talk.id)}
           title={talk.data.title}
           meta={`${span(summary)} / ${summary.places.join(', ')}`}
           tag={`×${summary.count}`}

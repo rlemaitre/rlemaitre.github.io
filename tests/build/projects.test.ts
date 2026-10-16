@@ -8,10 +8,10 @@ describe('projects', () => {
   it('lists four projects in order', () => {
     const rows = [...load('projects').querySelectorAll('.rows a.row')]
     expect(rows.map((a) => a.getAttribute('href'))).toEqual([
-      '/projects/pillars',
-      '/projects/mason',
-      '/projects/riskmatrix',
-      '/projects/funktionalio',
+      '/projects/pillars/',
+      '/projects/mason/',
+      '/projects/riskmatrix/',
+      '/projects/funktionalio/',
     ])
   })
 

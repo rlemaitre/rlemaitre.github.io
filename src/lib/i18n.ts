@@ -88,7 +88,11 @@ export const articleSlug = (id: string): string => id.slice(id.indexOf('/') + 1)
 export const homeUrl = (lang: Lang): string => (lang === 'fr' ? '/fr/' : '/')
 
 export const articleUrl = (id: string): string =>
-  `${articleLang(id) === 'fr' ? '/fr' : ''}/articles/${articleSlug(id)}`
+  `${articleLang(id) === 'fr' ? '/fr' : ''}/articles/${articleSlug(id)}/`
+
+export const talkUrl = (id: string): string => `/talks/${id}/`
+
+export const projectUrl = (id: string): string => `/projects/${id}/`
 
 /** URL of the translation of an article, or the other language's home when none exists. */
 export function altLangUrl(id: string, allIds: string[]): string {

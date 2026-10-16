@@ -3,7 +3,7 @@ import { parseHTML } from 'linkedom'
 import { describe, expect, it } from 'vitest'
 
 const IRON = 'talks/armored-type-safety-with-iron'
-const ADHD_TALK = '/talks/hacking-adhd-strategies-for-the-modern-developer'
+const ADHD_TALK = '/talks/hacking-adhd-strategies-for-the-modern-developer/'
 
 const load = (path: string): Document =>
   parseHTML(readFileSync(`dist/${path}/index.html`, 'utf8')).document

@@ -8,7 +8,7 @@ import { articleCategory } from '../lib/articles'
 import { getEntry } from 'astro:content'
 import type { Article } from '../lib/collections'
 import { formatDate } from '../lib/dates'
-import { articleLang, articleUrl, homeUrl, t, type Lang } from '../lib/i18n'
+import { articleLang, articleUrl, homeUrl, t, talkUrl, type Lang } from '../lib/i18n'
 import { readingMinutes } from '../lib/reading-time'
 import { SITE, SOCIALS } from '../lib/site'
 import Base from './Base.astro'
@@ -79,7 +79,7 @@ const [titleHead, titleTail] = colon === -1 ? [title, ''] : [title.slice(0, colo
           talk && (
             <>
               <dt>{t(lang, 'linkedTalk')}</dt>
-              <dd><a href={`/talks/${talk.id}`}>{talk.data.title}</a></dd>
+              <dd><a href={talkUrl(talk.id)}>{talk.data.title}</a></dd>
             </>
           )
         }

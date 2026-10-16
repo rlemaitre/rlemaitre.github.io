@@ -12,7 +12,7 @@ for (const width of [1280, 375]) {
     })
 
     test('project pages have no horizontal scroll', async ({ page }) => {
-      for (const path of ['/projects/', '/projects/pillars', '/projects/funktionalio']) {
+      for (const path of ['/projects/', '/projects/pillars/', '/projects/funktionalio/']) {
         await page.goto(path)
         await expectNoHorizontalScroll(page)
       }

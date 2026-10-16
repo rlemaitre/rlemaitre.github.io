@@ -1,8 +1,8 @@
 import { expect, test } from '@playwright/test'
 import { expectNoHorizontalScroll } from './helpers'
 
-const ADHD = '/articles/adhd/hacking-adhd-strategies-for-the-modern-developer'
-const XDG = '/articles/scala/scala_xdg'
+const ADHD = '/articles/adhd/hacking-adhd-strategies-for-the-modern-developer/'
+const XDG = '/articles/scala/scala_xdg/'
 
 test.describe('article at phone width', () => {
   test.use({ viewport: { width: 375, height: 800 } })

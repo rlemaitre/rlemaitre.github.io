@@ -10,8 +10,8 @@ describe('article ids', () => {
     expect(articleSlug('fr/til/x')).toBe('til/x')
   })
   it('builds urls without trailing slash', () => {
-    expect(articleUrl('en/scala/scala_xdg')).toBe('/articles/scala/scala_xdg')
-    expect(articleUrl('fr/til/x')).toBe('/fr/articles/til/x')
+    expect(articleUrl('en/scala/scala_xdg')).toBe('/articles/scala/scala_xdg/')
+    expect(articleUrl('fr/til/x')).toBe('/fr/articles/til/x/')
   })
   it('builds home urls', () => {
     expect(homeUrl('en')).toBe('/')
@@ -22,8 +22,8 @@ describe('article ids', () => {
 describe('altLangUrl', () => {
   const both = ['en/til/x', 'fr/til/x']
   it('links to the translation when it exists', () => {
-    expect(altLangUrl('en/til/x', both)).toBe('/fr/articles/til/x')
-    expect(altLangUrl('fr/til/x', both)).toBe('/articles/til/x')
+    expect(altLangUrl('en/til/x', both)).toBe('/fr/articles/til/x/')
+    expect(altLangUrl('fr/til/x', both)).toBe('/articles/til/x/')
   })
   it('falls back to the other language home', () => {
     expect(altLangUrl('en/scala/scala_xdg', ['en/scala/scala_xdg'])).toBe('/fr/')

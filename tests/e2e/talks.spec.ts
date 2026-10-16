@@ -5,7 +5,7 @@ test('video facade loads nothing from YouTube until clicked', async ({ page }) =
   page.on('request', (request) => {
     if (/youtube|ytimg/.test(request.url())) external.push(request.url())
   })
-  await page.goto('/talks/armored-type-safety-with-iron')
+  await page.goto('/talks/armored-type-safety-with-iron/')
   await page.waitForLoadState('networkidle')
   expect(external).toEqual([])
   await expect(page.locator('iframe')).toHaveCount(0)

@@ -15,10 +15,15 @@ describe('RSS feeds', () => {
     const items = feedItems('index.xml')
     expect(items).toHaveLength(4)
     for (const item of items) {
-      expect(item.querySelector('link')?.textContent).toMatch(/^https:\/\/rlemaitre\.com\/articles\/.+[^/]$/)
+      expect(item.querySelector('link')?.textContent).toMatch(/^https:\/\/rlemaitre\.com\/articles\/.+\/$/)
       expect(item.querySelector('description')?.textContent?.trim()).toBeTruthy()
       expect(item.querySelector('pubDate')?.textContent?.trim()).toBeTruthy()
     }
+  })
+
+  it('lists items newest first', () => {
+    const dates = feedItems('index.xml').map((i) => Date.parse(i.querySelector('pubDate')?.textContent ?? ''))
+    expect(dates).toEqual([...dates].sort((a, b) => b - a))
   })
 
   it('serves the French feed at /fr/index.xml with 3 items', () => {
@@ -35,6 +40,7 @@ describe('RSS feeds', () => {
     expect(en.querySelector('channel > title')?.textContent).toBe('Raphaël Lemaitre — Writing')
     expect(en.querySelector('channel > language')?.textContent).toBe('en')
     expect(fr.querySelector('channel > title')?.textContent).toBe('Raphaël Lemaitre — Articles')
+    expect(fr.querySelector('channel > link')?.textContent).toBe('https://rlemaitre.com/fr/')
     expect(fr.querySelector('channel > language')?.textContent).toBe('fr')
   })
 
@@ -60,5 +66,15 @@ describe('sitemap', () => {
 
   it('excludes the 404 page', () => {
     expect(read('sitemap-0.xml')).not.toContain('/404')
+  })
+
+  it('uses the same absolute URL in the feed, the sitemap and the canonical tag', () => {
+    const path = 'articles/scala/scala_xdg/'
+    const url = `https://rlemaitre.com/${path}`
+    const links = feedItems('index.xml').map((i) => i.querySelector('link')?.textContent)
+    const canonical = parseHTML(read(`${path}index.html`)).document.querySelector('link[rel="canonical"]')
+    expect(links).toContain(url)
+    expect(read('sitemap-0.xml')).toContain(`<loc>${url}</loc>`)
+    expect(canonical?.getAttribute('href')).toBe(url)
   })
 })

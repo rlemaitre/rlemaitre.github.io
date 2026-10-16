@@ -4,7 +4,7 @@ import { expectNoHorizontalScroll } from './helpers'
 test.describe('layout at phone width', () => {
   test.use({ viewport: { width: 375, height: 800 } })
 
-  for (const path of ['/', '/fr/', '/404', '/talks/', '/talks/armored-type-safety-with-iron', '/talks/fearless-coding-scala-3-and-iron']) {
+  for (const path of ['/', '/fr/', '/404', '/talks/', '/talks/armored-type-safety-with-iron/', '/talks/fearless-coding-scala-3-and-iron/']) {
     test(`${path} has no horizontal scroll`, async ({ page }) => {
       await page.goto(path)
       await expectNoHorizontalScroll(page)

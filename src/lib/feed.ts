@@ -16,7 +16,7 @@ export async function buildFeed(lang: Lang): Promise<Response> {
   return rss({
     title: CHANNEL_TITLE[lang],
     description: home?.data.description ?? CHANNEL_TITLE[lang],
-    site: SITE.url,
+    site: lang === 'fr' ? `${SITE.url}/fr/` : SITE.url,
     customData: `<language>${lang}</language>`,
     items: articles.map((article) => ({
       title: article.data.title,
