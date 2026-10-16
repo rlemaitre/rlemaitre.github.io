@@ -23,9 +23,6 @@
 
 .prose h2 {
   counter-increment: section;
-  display: flex;
-  gap: 12px;
-  align-items: baseline;
   margin: 2em 0 0.6em;
   font-family: var(--font-display);
   font-weight: 900;
@@ -40,7 +37,9 @@
 /* Section number, hidden from assistive tech (the heading text is enough). */
 .prose h2::before {
   content: counter(section, decimal-leading-zero) / '';
-  flex: none;
+  display: inline-block;
+  margin-right: 12px;
+  vertical-align: baseline;
   font-family: var(--font-mono);
   font-size: 12px;
   font-weight: 500;

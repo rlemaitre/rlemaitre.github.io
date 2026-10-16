@@ -38,3 +38,15 @@ test('table of contents links jump to their section', async ({ page }) => {
   await expect(page).toHaveURL(new RegExp(`${href}$`))
   await expect(page.locator(`h2${href}`)).toBeInViewport()
 })
+
+// Injected into a real article so the fixtures go through the same prose CSS.
+test('a heading with inline code keeps its spaces', async ({ page }) => {
+  await page.goto(XDG)
+  const text = await page.evaluate(() => {
+    const h2 = document.createElement('h2')
+    h2.innerHTML = 'Using <code>val</code> and <em>more</em> today'
+    document.querySelector('.prose')?.append(h2)
+    return h2.innerText
+  })
+  expect(text.toLowerCase()).toBe('using val and more today')
+})
