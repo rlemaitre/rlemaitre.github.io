@@ -1,3 +1,9 @@
-public
+dist
+.astro
 node_modules
-.quartz-cache
+test-results
+playwright-report
+package-lock.json
+.superpowers
+src/content
+tests/fixtures
