@@ -70,7 +70,7 @@ Plusieurs facteurs contribuent à un diagnostic tardif :
   L'agitation et la difficulté à se concentrer associées au TDAH peuvent conduire à un diagnostic erroné, surtout si d'autres symptômes comme l'impulsivité sont moins évidents.
   Une évaluation approfondie est essentielle pour obtenir un diagnostic précis.
 
-## Illustration d’un homme en noir en équilibre sur un poteau, un sabre dans chaque main, avec des fleurs et des visages calmes d’un côté, des vagues sombres et des visages furieux de l’autre pour les développeurs
+## Le TDAH, une arme à double tranchant pour les développeurs
 
 Le TDAH est souvent perçu de manière négative, mais il est important de reconnaître que ce trouble apporte non seulement des défis, mais également son lot d'avantages.
 
