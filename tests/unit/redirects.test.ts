@@ -35,6 +35,10 @@ describe('buildRedirects', () => {
     expect(redirect('/C-V')).toBe('/resume/')
   })
 
+  it('does not send /resumeXYZ to the resume by the resume rule', () => {
+    expect(() => buildRedirects(['/resumeXYZ'], newPaths, titles)).toThrow(/\/resumeXYZ/)
+  })
+
   it('sends notes to /articles/', () => {
     expect(redirect('/notes/web/POSSE')).toBe('/articles/')
     expect(redirect('/notes/')).toBe('/articles/')

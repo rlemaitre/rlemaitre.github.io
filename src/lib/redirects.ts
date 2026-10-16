@@ -36,7 +36,7 @@ function matchArticle(path: string, articles: Article[]): string | undefined {
 }
 
 function target(path: string, articles: Article[]): string | undefined {
-  if (path === '/C-V' || path === '/k8s' || path.startsWith('/resume')) return '/resume/'
+  if (path === '/C-V' || path === '/k8s' || path === '/resume' || path.startsWith('/resume/')) return '/resume/'
   if (TIL_ALIAS.test(path) || POSTS_PATH.test(path)) {
     const article = matchArticle(path, articles)
     return article && toCanonical(article)
