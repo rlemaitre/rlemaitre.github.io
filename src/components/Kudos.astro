@@ -1,24 +1,23 @@
 ---
 // Tinylytics replaces the button's content with "<wave emoji> <count>" (the symbol is hard-coded in its embed script
 // and has no option), and the design bans emoji. The script below swaps the symbol for the word "Kudos".
-// The text in the button is what visitors see until then (or when the script is blocked).
-interface Props {
-  label: string
-}
-
-const { label } = Astro.props
+// The text in the button is what visitors see until then (or when the script is blocked). It is also the accessible
+// name, so the count is announced once Tinylytics has loaded it.
 ---
 
-<button type="button" class="tinylytics_kudos mono" aria-label={label}>Kudos</button>
+<button type="button" class="tinylytics_kudos mono">Kudos</button>
 
 <script>
-  const SYMBOL = '\u{1F44B}'
+  import { replaceKudosEmoji } from '../lib/kudos'
+
   document.querySelectorAll<HTMLElement>('.tinylytics_kudos').forEach((button) => {
-    new MutationObserver(() => {
-      if (button.textContent?.includes(SYMBOL)) {
-        button.textContent = button.textContent.replace(SYMBOL, 'Kudos').trim()
-      }
-    }).observe(button, { childList: true, characterData: true, subtree: true })
+    const swap = () => {
+      const text = button.textContent ?? ''
+      const next = replaceKudosEmoji(text, 'Kudos')
+      if (next !== text) button.textContent = next
+    }
+    swap()
+    new MutationObserver(swap).observe(button, { childList: true, characterData: true, subtree: true })
   })
 </script>
 

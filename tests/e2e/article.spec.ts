@@ -67,3 +67,14 @@ test.describe('long inline tokens at phone width', () => {
     await expectNoHorizontalScroll(page)
   })
 })
+
+test('the kudos button never shows the Tinylytics emoji', async ({ page }) => {
+  await page.goto(XDG)
+  const button = page.locator('button.tinylytics_kudos')
+  await button.evaluate((el) => {
+    el.textContent = '\u{1F44B} 3'
+  })
+  await expect(button).toHaveText('Kudos 3')
+  expect(await button.textContent()).not.toContain('\u{1F44B}')
+  await expect(button).toHaveAccessibleName('Kudos 3')
+})
