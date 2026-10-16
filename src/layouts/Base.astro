@@ -11,12 +11,13 @@ import '../styles/base.css'
 import Head from '../components/Head.astro'
 import ThemeToggle from '../components/ThemeToggle.astro'
 import TopBar from '../components/TopBar.astro'
+import { t, type Lang } from '../lib/i18n'
 import { SITE, SOCIALS } from '../lib/site'
 
 interface Props {
   title: string
   description: string
-  lang: 'en' | 'fr'
+  lang: Lang
   section?: 'writing' | 'talks' | 'projects' | 'resume'
   altLangUrl: string
   ogImage?: string
@@ -24,7 +25,7 @@ interface Props {
 }
 
 const { title, description, lang, section, altLangUrl, ogImage, ogType } = Astro.props
-const skipLabel = lang === 'fr' ? 'Aller au contenu' : 'Skip to content'
+const skipLabel = t(lang, 'skipToContent')
 const socialLabel = lang === 'fr' ? 'Profils' : 'Profiles'
 ---
 

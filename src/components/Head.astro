@@ -1,10 +1,11 @@
 ---
+import { type Lang } from '../lib/i18n'
 import { SITE } from '../lib/site'
 
 interface Props {
   title: string
   description: string
-  lang: 'en' | 'fr'
+  lang: Lang
   ogImage?: string
   ogType?: 'website' | 'article'
 }
