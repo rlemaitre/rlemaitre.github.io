@@ -2,7 +2,7 @@
 title: "Hacker le TDAH – Stratégies pour le Développeur Moderne"
 description: "Diagnostiqué TDAH à 44 ans, je raconte les stratégies et les outils qui m’aident à travailler comme développeur."
 published: 2023-11-17
-tags: ["ADHD","mental-health","productivity"]
+tags: ["adhd","mental-health","productivity"]
 originallyPublished:
   site: "Ledger blog"
   url: "https://www.ledger.com/blog/hacking-adhd-strategies-for-the-modern-developer"
