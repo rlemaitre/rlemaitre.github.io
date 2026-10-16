@@ -32,9 +32,9 @@ describe('head of the home page', () => {
     expect(github?.getAttribute('rel')).toBe('me authn')
   })
 
-  it('loads Tinylytics with kudos, deferred', () => {
+  it('loads Tinylytics with custom kudos markup (count only), deferred', () => {
     const script = document.querySelector(
-      'script[src="https://tinylytics.app/embed/UKo7ysT1y9ouVGcZtHMp.js?kudos"]',
+      'script[src="https://tinylytics.app/embed/UKo7ysT1y9ouVGcZtHMp.js?kudos=custom"]',
     )
     expect(script).not.toBeNull()
     expect(script?.hasAttribute('defer')).toBe(true)

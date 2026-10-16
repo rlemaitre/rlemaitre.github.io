@@ -68,13 +68,22 @@ test.describe('long inline tokens at phone width', () => {
   })
 })
 
-test('the kudos button never shows the Tinylytics emoji', async ({ page }) => {
+test('the kudos button uses Tinylytics custom markup, shows KUDOS and no emoji', async ({ page, context }) => {
+  await context.route('https://tinylytics.app/**', (route) => route.fulfill({ status: 200, body: '' }))
   await page.goto(XDG)
+  await expect(page.locator('script[src$=".js?kudos=custom"]')).toHaveCount(1)
   const button = page.locator('button.tinylytics_kudos')
+  const label = await button.evaluate((el) => getComputedStyle(el, '::before').content)
+  expect(label).toBe('"KUDOS"')
+  expect(await button.textContent()).not.toMatch(/\p{Extended_Pictographic}/u)
+  await expect(button).toHaveCSS('color', 'rgb(208, 20, 20)')
+  await expect(button).toHaveAccessibleName('KUDOS')
+
+  // Tinylytics writes the count and adds `did_select` after a tap.
   await button.evaluate((el) => {
-    el.textContent = '\u{1F44B} 3'
+    el.textContent = ' 3'
+    el.classList.add('did_select')
   })
-  await expect(button).toHaveText('Kudos 3')
-  expect(await button.textContent()).not.toContain('\u{1F44B}')
-  await expect(button).toHaveAccessibleName('Kudos 3')
+  await expect(button).toHaveCSS('background-color', 'rgb(208, 20, 20)')
+  await expect(button).toHaveCSS('color', 'rgb(244, 244, 240)')
 })
