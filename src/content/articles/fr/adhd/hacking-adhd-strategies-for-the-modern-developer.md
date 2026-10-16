@@ -9,6 +9,7 @@ originallyPublished:
   date: 2023-11-14
 cover: ../../../../assets/articles/hacking-adhd-cover.webp
 coverAlt: "Illustration d’un personnage à capuche en position de combat avec un bâton devant une affiche intitulée Hacking ADHD, entre nuages d’orage, ampoules et flèches"
+talk: hacking-adhd-strategies-for-the-modern-developer
 ---
 
 ## Introduction

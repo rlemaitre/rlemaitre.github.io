@@ -1,0 +1,161 @@
+---
+import { getCollection, render } from 'astro:content'
+import VideoEmbed from '../../components/VideoEmbed.astro'
+import '../../styles/prose.css'
+import Base from '../../layouts/Base.astro'
+import { formatDate } from '../../lib/dates'
+import { sortedVenues, venueSummary } from '../../lib/talks'
+
+export async function getStaticPaths() {
+  return (await getCollection('talks')).map((talk) => ({ params: { slug: talk.id }, props: { talk } }))
+}
+
+const { talk } = Astro.props
+const { Content } = await render(talk)
+const { title, lang, venues } = talk.data
+const summary = venueSummary(venues)
+const sorted = sortedVenues(venues)
+const iso = (d: Date) => d.toISOString().slice(0, 10)
+const place = (v: (typeof venues)[number]) => (v.online ? 'Online' : [v.city, v.country].filter(Boolean).join(', '))
+const colon = title.indexOf(':')
+const [head, tail] = colon === -1 ? [title, ''] : [title.slice(0, colon), title.slice(colon + 1)]
+const description = `Given ${summary.count} ${summary.count === 1 ? 'time' : 'times'} between ${summary.firstYear} and ${summary.lastYear}.`
+---
+
+<Base title={title} description={description} lang="en" section="talks" altLangUrl="/fr/">
+  <article>
+    <header class="head">
+      <p class="mono kicker">/// Talk — {lang === 'fr' ? 'given in French' : 'given in English'}</p>
+      <h1>{head}{colon !== -1 && <em>:</em>}{tail}</h1>
+    </header>
+    <div class="body">
+      <section class="column" aria-labelledby="abstract">
+        <h2 id="abstract" class="mono label">Abstract</h2>
+        <div class="prose"><Content /></div>
+      </section>
+      <section class="column" aria-labelledby="venues">
+        <h2 id="venues" class="mono label">Venues ({summary.count})</h2>
+        <ol class="venues">
+          {
+            sorted.map((venue) => (
+              <li>
+                <p class="mono when">
+                  <time datetime={iso(venue.date)}>{formatDate(venue.date)}</time> / {place(venue)}
+                </p>
+                <p class="where">
+                  <a href={venue.url}>{venue.conference}</a>
+                </p>
+                {venue.sessionTitle && <p class="mono session">{venue.sessionTitle}</p>}
+                {venue.video && <VideoEmbed url={venue.video} title={`${title}, ${venue.conference}`} />}
+              </li>
+            ))
+          }
+        </ol>
+      </section>
+    </div>
+  </article>
+</Base>
+
+<style>
+  .head {
+    padding: 18px var(--gutter);
+    border-bottom: var(--rule-thick) solid var(--ink);
+  }
+
+  .kicker {
+    margin: 0;
+    color: var(--accent);
+  }
+
+  h1 {
+    margin: 10px 0 0;
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(36px, 5.2vw, 72px);
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    text-wrap: balance;
+    overflow-wrap: anywhere;
+  }
+
+  h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .body {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    font-size: 18px;
+  }
+
+  .column {
+    min-width: 0;
+    padding: 22px var(--gutter) 48px;
+  }
+
+  .column + .column {
+    border-left: var(--rule) solid var(--ink);
+  }
+
+  .label {
+    margin: 0 0 14px;
+    font-weight: 400;
+    color: var(--muted);
+  }
+
+  .venues {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .venues li {
+    padding: 14px 0;
+    border-top: var(--rule) solid var(--ink);
+  }
+
+  .venues li:first-child {
+    border-top: 0;
+    padding-top: 0;
+  }
+
+  .venues p {
+    margin: 0;
+  }
+
+  .when,
+  .session {
+    color: var(--muted);
+  }
+
+  .where {
+    margin: 2px 0 10px;
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+  }
+
+  .where a {
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+
+  .session {
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 720px) {
+    .body {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .column + .column {
+      border-left: 0;
+      border-top: var(--rule-thick) solid var(--ink);
+    }
+  }
+</style>

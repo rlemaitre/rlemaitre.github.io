@@ -9,6 +9,7 @@ originallyPublished:
   date: 2023-11-14
 cover: ../../../../assets/articles/hacking-adhd-cover.webp
 coverAlt: "Illustration of a hooded figure striking a pose with a staff in front of a poster titled Hacking ADHD, among storm clouds, light bulbs and arrows"
+talk: hacking-adhd-strategies-for-the-modern-developer
 ---
 
 ## Introduction

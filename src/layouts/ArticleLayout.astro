@@ -5,6 +5,7 @@ import '../styles/prose.css'
 import Kudos from '../components/Kudos.astro'
 import Toc from '../components/Toc.astro'
 import { articleCategory } from '../lib/articles'
+import { getEntry } from 'astro:content'
 import type { Article } from '../lib/collections'
 import { formatDate } from '../lib/dates'
 import { articleLang, articleUrl, homeUrl, t, type Lang } from '../lib/i18n'
@@ -19,7 +20,8 @@ interface Props {
 }
 
 const { article, headings, altLangUrl } = Astro.props
-const { title, description, published, updated, originallyPublished, cover, coverAlt } = article.data
+const { title, description, published, updated, originallyPublished, cover, coverAlt, talk: talkRef } = article.data
+const talk = talkRef ? await getEntry(talkRef) : undefined
 const lang = articleLang(article.id)
 const other: Lang = lang === 'en' ? 'fr' : 'en'
 const hasTranslation = altLangUrl !== homeUrl(other)
@@ -73,7 +75,14 @@ const [titleHead, titleTail] = colon === -1 ? [title, ''] : [title.slice(0, colo
             </>
           )
         }
-        {/* Linked talk row ("Talk") arrives with the talks collection in Task 5. */}
+        {
+          talk && (
+            <>
+              <dt>{t(lang, 'linkedTalk')}</dt>
+              <dd><a href={`/talks/${talk.id}`}>{talk.data.title}</a></dd>
+            </>
+          )
+        }
       </dl>
     </header>
 
