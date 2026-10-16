@@ -1,0 +1,88 @@
+---
+import Base from '../layouts/Base.astro'
+
+const sections = [
+  { label: 'Writing', href: '/articles/', note: 'Articles and notes' },
+  { label: 'Talks', href: '/talks/', note: 'Conference talks' },
+  { label: 'Projects', href: '/projects/', note: 'Open source work' },
+  { label: 'Resume', href: '/resume/', note: 'Experience' },
+]
+---
+
+<Base title="Page not found" description="This page does not exist." lang="en" altLangUrl="/fr/">
+  <div class="lost">
+    <p class="mono muted">Error 404</p>
+    <h1 class="display">Page not<br />found<em>.</em></h1>
+    <p class="lede">This page does not exist, or it moved when I rebuilt the site. Try one of these sections, or start from the <a href="/">home page</a>.</p>
+  </div>
+  <ul class="sections grid">
+    {
+      sections.map((s, i) => (
+        <li>
+          <a class="cell" href={s.href}>
+            <span class="mono muted">{String(i + 1).padStart(2, '0')}</span>
+            <span class="label">{s.label}</span>
+            <span class="mono muted">{s.note}</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</Base>
+
+<style>
+  .lost {
+    padding: 18px var(--gutter) 28px;
+  }
+
+  .lost .display {
+    font-size: clamp(56px, 12vw, 128px);
+    margin: 8px 0 22px;
+  }
+
+  .lede {
+    max-width: var(--measure);
+    margin: 0;
+  }
+
+  .lede a {
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+
+  .sections {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: var(--rule-thick) solid var(--ink);
+  }
+
+  .sections .cell {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    height: 100%;
+    padding: 14px var(--gutter) 18px;
+  }
+
+  .sections a.cell:hover .muted {
+    color: inherit;
+  }
+
+  .label {
+    font-family: var(--font-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+    line-height: 0.95;
+    font-size: clamp(28px, 4vw, 40px);
+  }
+
+  @media (max-width: 720px) {
+    .sections {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+</style>

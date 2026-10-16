@@ -1,12 +1,8 @@
 ---
+import Base from '../layouts/Base.astro'
+import { SITE } from '../lib/site'
 ---
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Raphaël Lemaitre</title>
-  </head>
-  <body>
-    <h1>Raphaël Lemaitre</h1>
-  </body>
-</html>
+
+<Base title={SITE.name} description="Scala engineer, speaker and writer." lang="en" altLangUrl="/fr/">
+  <h1 class="display">{SITE.name}</h1>
+</Base>

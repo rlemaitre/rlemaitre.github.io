@@ -1,0 +1,71 @@
+---
+type Lang = 'en' | 'fr'
+type Section = 'writing' | 'talks' | 'projects' | 'resume'
+
+interface Props {
+  lang: Lang
+  section?: Section
+  altLangUrl: string
+}
+
+const { lang, section, altLangUrl } = Astro.props
+
+const LABELS: Record<Lang, Record<Section, string> & { nav: string; home: string }> = {
+  en: { nav: 'Main', home: 'Home', writing: 'Writing', talks: 'Talks', projects: 'Projects', resume: 'Resume' },
+  fr: { nav: 'Principale', home: 'Accueil', writing: 'Articles', talks: 'Talks', projects: 'Projets', resume: 'CV' },
+}
+
+const labels = LABELS[lang]
+const home = lang === 'fr' ? '/fr/' : '/'
+const items: { section: Section; href: string }[] = [
+  { section: 'writing', href: lang === 'fr' ? '/fr/articles/' : '/articles/' },
+  { section: 'talks', href: '/talks/' },
+  { section: 'projects', href: '/projects/' },
+  { section: 'resume', href: '/resume/' },
+]
+const other: Lang = lang === 'en' ? 'fr' : 'en'
+const langName: Record<Lang, string> = { en: 'English', fr: 'Français' }
+---
+
+<nav class="bar grid mono" aria-label={labels.nav}>
+  <a class="cell home" href={home} aria-label={`R. Lemaitre, ${labels.home.toLowerCase()}`}>R. Lemaitre ®</a>
+  {
+    items.map((item) => (
+      <a class="cell" href={item.href} aria-current={item.section === section ? 'true' : undefined}>
+        {labels[item.section]}
+      </a>
+    ))
+  }
+  <span class="cell lang">
+    {
+      lang === 'en' ? (
+        <>
+          <span aria-current="true">EN</span> / <a href={altLangUrl} hreflang={other} lang={other} title={langName[other]}>FR</a>
+        </>
+      ) : (
+        <>
+          <a href={altLangUrl} hreflang={other} lang={other} title={langName[other]}>EN</a> / <span aria-current="true">FR</span>
+        </>
+      )
+    }
+  </span>
+</nav>
+
+<style>
+  .bar {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    border-bottom: var(--rule-thick) solid var(--ink);
+  }
+
+  .lang a {
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+
+  @media (max-width: 720px) {
+    .bar {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+</style>
