@@ -1,0 +1,66 @@
+{
+  "name": "rlemaitre-light",
+  "type": "light",
+  "colors": {
+    "editor.background": "#E9E8E2",
+    "editor.foreground": "#0B0B0B"
+  },
+  "tokenColors": [
+    {
+      "name": "Keywords",
+      "scope": [
+        "keyword",
+        "storage",
+        "storage.type",
+        "keyword.control",
+        "keyword.operator.new"
+      ],
+      "settings": {
+        "foreground": "#D01414"
+      }
+    },
+    {
+      "name": "Operators stay in ink",
+      "scope": [
+        "keyword.operator"
+      ],
+      "settings": {
+        "foreground": "#0B0B0B"
+      }
+    },
+    {
+      "name": "Types and classes",
+      "scope": [
+        "entity.name.type",
+        "entity.name.class",
+        "support.type",
+        "support.class"
+      ],
+      "settings": {
+        "foreground": "#1F5FA8"
+      }
+    },
+    {
+      "name": "Strings, numbers and constants",
+      "scope": [
+        "string",
+        "constant.numeric",
+        "constant.language",
+        "constant.character"
+      ],
+      "settings": {
+        "foreground": "#8A5A00"
+      }
+    },
+    {
+      "name": "Comments",
+      "scope": [
+        "comment"
+      ],
+      "settings": {
+        "foreground": "#696962",
+        "fontStyle": "italic"
+      }
+    }
+  ]
+}
