@@ -84,4 +84,9 @@ const resume = defineCollection({
   }),
 })
 
-export const collections = { articles, talks, projects, resume }
+const home = defineCollection({
+  loader: glob({ base: './src/content/home', pattern: '*.md' }),
+  schema: z.object({ description: z.string() }),
+})
+
+export const collections = { articles, talks, projects, resume, home }
