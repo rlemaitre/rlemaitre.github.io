@@ -15,7 +15,7 @@ function distFile(path: string): string | undefined {
 const document = (file: string): Document => parseHTML(readFileSync(file, 'utf8')).document as unknown as Document
 const sitemapPaths = (): string[] =>
   [...readFileSync('dist/sitemap-0.xml', 'utf8').matchAll(/<loc>(.*?)<\/loc>/g)].map(
-    (match) => new URL(match[1] ?? '').pathname,
+    (match) => decodeURI(new URL(match[1] ?? '').pathname).normalize('NFC'),
   )
 
 describe('legacy URLs', () => {
@@ -46,7 +46,7 @@ describe('legacy URLs', () => {
     })
     expect(sources.length).toBeGreaterThan(100)
     const inSitemap = new Set(sitemapPaths().map((path) => path.replace(/\/+$/, '')))
-    const leaked = sources.filter((path) => inSitemap.has(decodeURI(path).replace(/\/+$/, '')) || inSitemap.has(path.replace(/\/+$/, '')))
+    const leaked = sources.filter((path) => inSitemap.has(path.normalize('NFC').replace(/\/+$/, '')))
     expect(leaked).toEqual([])
   })
 })

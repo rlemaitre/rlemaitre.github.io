@@ -12,6 +12,12 @@ describe('makeSitemapFilter', () => {
     expect(keep(url('/legacy/page/'))).toBe(false)
   })
 
+  it('excludes a redirect key with accents and spaces when the sitemap URL is percent-encoded', () => {
+    const keepAccented = makeSitemapFilter({ '/resume/Experiences/Équipe @ Café (1)': '/resume/' })
+    expect(keepAccented(url('/resume/Experiences/%C3%89quipe%20@%20Caf%C3%A9%20(1)/'))).toBe(false)
+    expect(keepAccented(url('/resume/Experiences/Caf%C3%A9/'))).toBe(true)
+  })
+
   it('excludes the 404 page', () => {
     expect(keep(url('/404'))).toBe(false)
     expect(keep(url('/404/'))).toBe(false)
