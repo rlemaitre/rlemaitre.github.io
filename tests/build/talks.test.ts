@@ -67,4 +67,13 @@ describe('articles linked to a talk', () => {
     const doc = load('fr/articles/adhd/hacking-adhd-strategies-for-the-modern-developer')
     expect([...doc.querySelectorAll('dl a')].some((a) => a.getAttribute('href')?.startsWith(ADHD_TALK))).toBe(true)
   })
+
+  it('drops the date column from the talks index', () => {
+    const rows = load('talks').querySelectorAll('.rows a.row')
+    expect(rows.length).toBeGreaterThan(0)
+    for (const row of rows) {
+      expect(row.classList.contains('no-date')).toBe(true)
+      expect(row.querySelector('.date')).toBeNull()
+    }
+  })
 })

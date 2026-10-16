@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test'
+import { expect, test, type Page } from '@playwright/test'
 import { expectNoHorizontalScroll } from './helpers'
 
 test.describe('layout at phone width', () => {
@@ -31,5 +31,22 @@ test.describe('reduced motion', () => {
       () => document.getAnimations().filter((a) => a.playState === 'running').length,
     )
     expect(running).toBe(0)
+  })
+})
+
+test.describe('index rows without a date', () => {
+  const titleLeft = (page: Page, path: string) =>
+    page.goto(path).then(() => page.locator('.rows a.row .title').first().evaluate((el) => el.getBoundingClientRect().left))
+
+  for (const width of [1280, 375]) {
+    test(`talks rows start at the gutter at ${width}px`, async ({ page }) => {
+      await page.setViewportSize({ width, height: 800 })
+      expect(await titleLeft(page, '/talks/')).toBeLessThan(40)
+    })
+  }
+
+  test('dated rows keep the date column on desktop', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 800 })
+    expect(await titleLeft(page, '/articles/')).toBeGreaterThan(120)
   })
 })

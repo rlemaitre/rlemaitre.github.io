@@ -13,8 +13,12 @@ const { href, date, title, meta, tag } = Astro.props
 ---
 
 <li>
-  <a class="row" href={href}>
-    <span class="mono date">{date && <time datetime={date.toISOString().slice(0, 10)}>{formatDate(date)}</time>}</span>
+  <a class:list={['row', { 'no-date': !date }]} href={href}>
+    {date && (
+      <span class="mono date">
+        <time datetime={date.toISOString().slice(0, 10)}>{formatDate(date)}</time>
+      </span>
+    )}
     <span class="title">
       {title}
       {meta && <span class="mono meta">{meta}</span>}
@@ -36,6 +40,10 @@ const { href, date, title, meta, tag } = Astro.props
     transition:
       background-color 0.15s,
       color 0.15s;
+  }
+
+  .row.no-date {
+    grid-template-columns: minmax(0, 1fr) 140px 40px;
   }
 
   li:first-child .row {
@@ -78,7 +86,8 @@ const { href, date, title, meta, tag } = Astro.props
   }
 
   @media (max-width: 720px) {
-    .row {
+    .row,
+    .row.no-date {
       grid-template-columns: minmax(0, 1fr) auto;
       gap: 4px var(--gutter);
     }
@@ -101,6 +110,11 @@ const { href, date, title, meta, tag } = Astro.props
 
     .go {
       display: none;
+    }
+
+    .row.no-date .title {
+      grid-column: 1;
+      grid-row: 1;
     }
   }
 </style>
