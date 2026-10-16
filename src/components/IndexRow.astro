@@ -1,0 +1,106 @@
+---
+import { formatDate } from '../lib/dates'
+
+interface Props {
+  href: string
+  date?: Date
+  title: string
+  meta?: string
+  tag?: string
+}
+
+const { href, date, title, meta, tag } = Astro.props
+---
+
+<li>
+  <a class="row" href={href}>
+    <span class="mono date">{date && <time datetime={date.toISOString().slice(0, 10)}>{formatDate(date)}</time>}</span>
+    <span class="title">
+      {title}
+      {meta && <span class="mono meta">{meta}</span>}
+    </span>
+    <span class="mono tag">{tag && `/// ${tag}`}</span>
+    <span class="mono go" aria-hidden="true">&gt;&gt;</span>
+  </a>
+</li>
+
+<style>
+  .row {
+    display: grid;
+    grid-template-columns: 120px minmax(0, 1fr) 140px 40px;
+    gap: 0 var(--gutter);
+    align-items: baseline;
+    padding: 12px var(--gutter);
+    border-top: var(--rule) solid var(--ink);
+    text-decoration: none;
+    transition:
+      background-color 0.15s,
+      color 0.15s;
+  }
+
+  li:first-child .row {
+    border-top: 0;
+  }
+
+  .row:hover {
+    background: var(--ink);
+    color: var(--bg);
+  }
+
+  .date,
+  .tag,
+  .meta {
+    color: var(--muted);
+  }
+
+  .row:hover .date,
+  .row:hover .tag,
+  .row:hover .meta {
+    color: inherit;
+  }
+
+  .title {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+  }
+
+  .meta {
+    display: block;
+    margin-top: 4px;
+  }
+
+  .go {
+    color: var(--accent);
+    text-align: right;
+  }
+
+  @media (max-width: 720px) {
+    .row {
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 4px var(--gutter);
+    }
+
+    .date {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .tag {
+      grid-column: 2;
+      grid-row: 1;
+      text-align: right;
+    }
+
+    .title {
+      grid-column: 1 / -1;
+      grid-row: 2;
+    }
+
+    .go {
+      display: none;
+    }
+  }
+</style>

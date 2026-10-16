@@ -1,0 +1,28 @@
+---
+// Tinylytics replaces the button's content with its kudos counter; the script is loaded in Head with `?kudos`.
+// The text below is what visitors see until then (or when the script is blocked).
+interface Props {
+  label: string
+}
+
+const { label } = Astro.props
+---
+
+<button type="button" class="tinylytics_kudos mono" aria-label={label}>Kudos</button>
+
+<style>
+  .tinylytics_kudos {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 8px 12px;
+    border: 1.5px solid var(--ink);
+    background: transparent;
+    color: var(--ink);
+    cursor: pointer;
+  }
+
+  .tinylytics_kudos:hover {
+    background: var(--ink);
+    color: var(--bg);
+  }
+</style>

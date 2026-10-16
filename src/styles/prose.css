@@ -1,0 +1,207 @@
+/* Article reading text. Scoped to .prose so the site frame keeps its own type. */
+.prose {
+  counter-reset: section;
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.prose > :first-child {
+  margin-top: 0;
+}
+
+.prose p,
+.prose ul,
+.prose ol {
+  margin: 0 0 1em;
+}
+
+.prose strong,
+.prose b {
+  font-weight: 600;
+}
+
+.prose h2 {
+  counter-increment: section;
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  margin: 2em 0 0.6em;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(24px, 3vw, 30px);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  text-wrap: balance;
+  scroll-margin-top: 16px;
+}
+
+/* Section number, hidden from assistive tech (the heading text is enough). */
+.prose h2::before {
+  content: counter(section, decimal-leading-zero) / '';
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+}
+
+.prose h3 {
+  margin: 1.6em 0 0.4em;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 19px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  scroll-margin-top: 16px;
+}
+
+.prose a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.prose a:hover {
+  background: var(--ink);
+  color: var(--bg);
+  text-decoration: none;
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.3em;
+}
+
+.prose li {
+  margin: 0.25em 0;
+}
+
+.prose ul > li::marker {
+  content: '— ';
+  color: var(--accent);
+}
+
+.prose ol > li::marker {
+  font-family: var(--font-mono);
+  font-size: 0.8em;
+  color: var(--accent);
+}
+
+.prose blockquote {
+  margin: 1.4em 0;
+  padding: 0 0 0 18px;
+  border-left: 6px solid var(--accent);
+  font-size: 1.1em;
+  font-style: italic;
+}
+
+.prose blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.prose hr {
+  margin: 2em 0;
+  border: 0;
+  border-top: var(--rule-thick) solid var(--ink);
+}
+
+.prose img {
+  display: block;
+  margin: 1.4em 0;
+  border: var(--rule) solid var(--ink);
+}
+
+.prose table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 1.4em 0;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+
+.prose th,
+.prose td {
+  padding: 6px 10px;
+  border: var(--rule) solid var(--ink);
+  text-align: left;
+  vertical-align: top;
+}
+
+.prose th {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* "Originally published" box. */
+.prose .note {
+  margin: 0 0 24px;
+  padding: 10px 12px;
+  border: 1.5px solid var(--ink);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+.prose .note b {
+  color: var(--accent);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* Code */
+.prose code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  padding: 1px 5px;
+  background: var(--code-bg);
+}
+
+.prose pre {
+  margin: 1.4em 0;
+  padding: 14px 16px;
+  overflow-x: auto;
+  border: var(--rule) solid var(--ink);
+  background: var(--code-bg);
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  line-height: 1.55;
+  tab-size: 2;
+}
+
+.prose pre code {
+  padding: 0;
+  background: none;
+  font-size: inherit;
+}
+
+/* Shiki dual themes: tokens carry --shiki-light and --shiki-dark, we pick one per site theme. */
+.prose pre,
+.prose pre span {
+  color: var(--shiki-light);
+  font-style: var(--shiki-light-font-style, normal);
+}
+
+:root[data-theme='dark'] .prose pre,
+:root[data-theme='dark'] .prose pre span {
+  color: var(--shiki-dark);
+  font-style: var(--shiki-dark-font-style, normal);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .prose pre,
+  :root:not([data-theme='light']) .prose pre span {
+    color: var(--shiki-dark);
+    font-style: var(--shiki-dark-font-style, normal);
+  }
+}
