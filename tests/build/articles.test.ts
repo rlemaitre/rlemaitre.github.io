@@ -37,7 +37,7 @@ describe('article pages', () => {
     const entry = doc.querySelector('article.h-entry')
     expect(entry).not.toBeNull()
     expect(entry?.querySelector('.p-name')?.textContent).toMatch(/Hacking ADHD/)
-    expect(entry?.querySelector('time.dt-published[datetime^="2023-11"]')).not.toBeNull()
+    expect(entry?.querySelector('time.dt-published[datetime^="2023-11-14"]')).not.toBeNull()
     expect(entry?.querySelector('.e-content')?.textContent).toMatch(/diagnosed/)
   })
 

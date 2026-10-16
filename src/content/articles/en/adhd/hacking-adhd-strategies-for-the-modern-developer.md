@@ -1,7 +1,7 @@
 ---
 title: "Hacking ADHD: Strategies for the Modern Developer"
 description: "After an ADHD diagnosis at 44, I collected the strategies and tools that help me work as a developer."
-published: 2023-11-17
+published: 2023-11-14
 tags: ["adhd","mental-health","productivity"]
 originallyPublished:
   site: "Ledger blog"
