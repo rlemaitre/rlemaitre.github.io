@@ -1,0 +1,136 @@
+---
+import { getCollection, render } from 'astro:content'
+import '../../styles/prose.css'
+import Base from '../../layouts/Base.astro'
+
+export async function getStaticPaths() {
+  return (await getCollection('projects')).map((project) => ({ params: { slug: project.id }, props: { project } }))
+}
+
+const { project } = Astro.props
+const { Content } = await render(project)
+const { title, summary, repo, docs, tags } = project.data
+const links = [
+  repo && { label: 'GitHub', href: repo },
+  docs && { label: 'Docs', href: docs },
+].filter((link): link is { label: string; href: string } => Boolean(link))
+---
+
+<Base title={title} description={summary} lang="en" section="projects" altLangUrl="/fr/">
+  <article>
+    <header class="head">
+      <p class="mono kicker">/// Project{tags.length > 0 && ` — ${tags.join(' / ')}`}</p>
+      <h1>{title}</h1>
+    </header>
+    <div class="body">
+      <div class="prose">
+        <p class="lede">{summary}</p>
+        <Content />
+      </div>
+      {
+        links.length > 0 && (
+          <ul class="links">
+            {links.map((link) => (
+              <li>
+                <a class="mono" href={link.href}>
+                  <span>{link.label}</span>
+                  <span class="url">{link.href.replace(/^https:\/\//, '')}</span>
+                  <span class="go" aria-hidden="true">&gt;&gt;</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        )
+      }
+    </div>
+  </article>
+</Base>
+
+<style>
+  .head {
+    padding: 18px var(--gutter);
+    border-bottom: var(--rule-thick) solid var(--ink);
+  }
+
+  .kicker {
+    margin: 0;
+    color: var(--accent);
+  }
+
+  h1 {
+    margin: 10px 0 0;
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(48px, 9vw, 112px);
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    text-wrap: balance;
+    overflow-wrap: anywhere;
+  }
+
+  .body {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    font-size: 18px;
+  }
+
+  .prose {
+    min-width: 0;
+    padding: 22px var(--gutter) 48px;
+  }
+
+  .lede {
+    font-weight: 600;
+  }
+
+  .links {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    align-self: start;
+    border-left: var(--rule) solid var(--ink);
+  }
+
+  .links li + li {
+    border-top: var(--rule) solid var(--ink);
+  }
+
+  .links a {
+    display: grid;
+    grid-template-columns: 80px minmax(0, 1fr) auto;
+    gap: var(--gutter);
+    padding: 14px var(--gutter);
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  .links a:hover {
+    background: var(--ink);
+    color: var(--bg);
+  }
+
+  .url {
+    color: var(--muted);
+    overflow-wrap: anywhere;
+  }
+
+  .links a:hover .url {
+    color: inherit;
+  }
+
+  .go {
+    color: var(--accent);
+  }
+
+  @media (max-width: 720px) {
+    .body {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .links {
+      border-left: 0;
+      border-top: var(--rule-thick) solid var(--ink);
+    }
+  }
+</style>

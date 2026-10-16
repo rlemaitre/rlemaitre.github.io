@@ -1,0 +1,48 @@
+---
+import { getCollection } from 'astro:content'
+import IndexRow from '../../components/IndexRow.astro'
+import Base from '../../layouts/Base.astro'
+import { t } from '../../lib/i18n'
+
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order)
+const title = t('en', 'projects')
+const description = 'Open-source projects: Pillars, Mason, Risk Matrix and the FunktionalIO organization.'
+---
+
+<Base title={title} description={description} lang="en" section="projects" altLangUrl="/fr/">
+  <header class="intro">
+    <p class="mono muted">{String(projects.length).padStart(2, '0')} / open source</p>
+    <h1 class="display">{title}<em>.</em></h1>
+  </header>
+  <ul class="rows">
+    {
+      projects.map((project) => (
+        <IndexRow
+          href={`/projects/${project.id}`}
+          title={project.data.title}
+          meta={project.data.summary}
+          tag={project.data.tags[0]}
+        />
+      ))
+    }
+  </ul>
+</Base>
+
+<style>
+  .intro {
+    padding: 18px var(--gutter) 28px;
+  }
+
+  .display {
+    margin-top: 8px;
+    font-size: clamp(56px, 12vw, 128px);
+  }
+
+  .rows {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: var(--rule-thick) solid var(--ink);
+    border-bottom: var(--rule-thick) solid var(--ink);
+  }
+</style>
