@@ -14,7 +14,7 @@ This solves my problem, but the code modification is artificial.
 
 Then, I discovered the `--allow-empty` option of `git commit` thanks to this tweet: 
 
-![Tweet showing that git commit accepts --allow-empty](../../../../assets/articles/tweet-1366466258393161729.png)
+![Tweet by Megan Sullivan (@meganesulli): TIL that you can do git commit --allow-empty to make a new commit with no actual changes to your files. No more random whitespace changes to trigger new builds!](../../../../assets/articles/tweet-1366466258393161729.png)
 
 Eventually, I ran the following command, pushed to our main branch and our staging environment was re-deployed.
 

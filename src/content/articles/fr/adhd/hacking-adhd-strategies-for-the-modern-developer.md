@@ -8,7 +8,7 @@ originallyPublished:
   url: "https://www.ledger.com/blog/hacking-adhd-strategies-for-the-modern-developer"
   date: 2023-11-14
 cover: ../../../../assets/articles/hacking-adhd-cover.webp
-coverAlt: "Hacker le TDAH : stratégies pour le développeur moderne"
+coverAlt: "Illustration d’un personnage à capuche en position de combat avec un bâton devant une affiche intitulée Hacking ADHD, entre nuages d’orage, ampoules et flèches"
 ---
 
 ## Introduction
@@ -38,7 +38,7 @@ Bien que tout le monde puisse parfois faire preuve d'un peu d'inattention, d'act
     les personnes atteintes de TDAH endurent des occurrences plus graves et plus fréquentes de ces comportements.
 Ces manifestations peuvent interférer ou réduire la qualité de leur fonctionnement social, scolaire ou professionnel.
 
-![Aperçu de ce qu’est le TDAH](../../../../assets/articles/what-is-adhd.webp)
+![Peinture d’un homme en costume qui lève les yeux vers des symboles gris flottants d’un côté et un faisceau de fils lumineux de l’autre](../../../../assets/articles/what-is-adhd.webp)
 
 L'absence de diagnostic et de prise en charge du TDAH peut entraîner toute une série de complications, notamment l'anxiété, le burn-out ou la dépression.
 
@@ -70,11 +70,11 @@ Plusieurs facteurs contribuent à un diagnostic tardif :
   L'agitation et la difficulté à se concentrer associées au TDAH peuvent conduire à un diagnostic erroné, surtout si d'autres symptômes comme l'impulsivité sont moins évidents.
   Une évaluation approfondie est essentielle pour obtenir un diagnostic précis.
 
-## Le TDAH, une arme à double tranchant pour les développeurs
+## Illustration d’un homme en noir en équilibre sur un poteau, un sabre dans chaque main, avec des fleurs et des visages calmes d’un côté, des vagues sombres et des visages furieux de l’autre pour les développeurs
 
 Le TDAH est souvent perçu de manière négative, mais il est important de reconnaître que ce trouble apporte non seulement des défis, mais également son lot d'avantages.
 
-![Le TDAH, une arme à double tranchant](../../../../assets/articles/double-edged-sword.webp)
+![Illustration d’un homme en noir en équilibre sur un poteau, un sabre dans chaque main, avec des fleurs et des visages calmes d’un côté, des vagues sombres et des visages furieux de l’autre](../../../../assets/articles/double-edged-sword.webp)
 
 ### Avantages
 
@@ -102,7 +102,7 @@ Il est essentiel de comprendre les complexités du TDAH pour adapter son environ
 
 ## Plongée au coeur du cerveau TDAH
 
-![Illustration du fonctionnement du cerveau TDAH](../../../../assets/articles/understanding-adhd-brain.webp)
+![Illustration d’une personne à lunettes avec un cerveau bleu, qui pointe un bâton vers un tourbillon de nœuds reliés et d’engrenages](../../../../assets/articles/understanding-adhd-brain.webp)
 
 Quand il s'agit de TDAH, comprendre les facteurs neurologiques en jeu peut offrir des perspectives précieuses pour une gestion efficace de ce trouble.
 La dopamine est un neurotransmetteur qui joue un rôle significatif dans le TDAH.
@@ -132,7 +132,7 @@ En reconnaissant ces traits et leurs causes neurochimiques sous-jacentes, nous p
 Dans un domaine comme le développement logiciel, où la concentration et le souci du détail sont essentiels, l'environnement de travail peut favoriser ou détruire votre productivité.
 Lorsque vous souffrez de TDAH, créer un environnement adapté à votre profil cognitif unique n'est pas uniquement bénéfique, mais essentiel.
 
-![Un environnement de travail adapté au TDAH](../../../../assets/articles/adhd-work-environment.webp)
+![Illustration d’un développeur à son bureau avec trois écrans, une lampe et des crayons, dans une pièce avec une fenêtre et des engrenages aux murs](../../../../assets/articles/adhd-work-environment.webp)
 
 ### Mettre en place un espace de travail stimulant
 L'espace de travail idéal pour une personne atteinte de TDAH n'est pas nécessairement minimaliste ou désencombré.
@@ -184,7 +184,7 @@ tout en préservant les avantages de la cohésion d'équipe.
 
 ## Stratégies et outils d'autogestion : Faire face aux symptômes du TDAH
 
-![Résumé des stratégies et outils pour le TDAH](../../../../assets/articles/adhd-strategies-and-tools.webp)
+![Illustration d’un homme en costume qui tape à son bureau, entouré d’écrans, de téléphones, d’un calendrier, de graphiques, d’horloges et de carnets](../../../../assets/articles/adhd-strategies-and-tools.webp)
 
 Pour faire face aux défis et aux avantages uniques du TDAH, je me suis appuyé sur un assortiment d'outils et de stratégies qui constituent ma stack technologique personnelle et mes techniques d'autogestion.
 Plongeons dans le vif du sujet :

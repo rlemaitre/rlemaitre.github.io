@@ -13,7 +13,7 @@ Cette modification déclencherait un build dans Gitlab CI et résulterait à un 
 Le problème serait résolu mais la modification du code est artificielle et superflue.
 
 Puis, j'ai découvert l'option `--allow-empty` de `git commit` grâce à ce tweet:
-![Tweet montrant que git commit accepte --allow-empty](../../../../assets/articles/tweet-1366466258393161729.png)
+![Tweet de Megan Sullivan (@meganesulli) : TIL que git commit --allow-empty crée un nouveau commit sans aucune modification de fichier. Fini les changements d’espaces au hasard pour déclencher de nouveaux builds !](../../../../assets/articles/tweet-1366466258393161729.png)
 
 Ainsi, j'ai exécuté la commande suivante, poussé sur noter branche principale et noter environnement de staging fut déployé.
 

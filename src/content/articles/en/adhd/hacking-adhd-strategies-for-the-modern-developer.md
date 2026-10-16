@@ -8,7 +8,7 @@ originallyPublished:
   url: "https://www.ledger.com/blog/hacking-adhd-strategies-for-the-modern-developer"
   date: 2023-11-14
 cover: ../../../../assets/articles/hacking-adhd-cover.webp
-coverAlt: "Hacking ADHD: strategies for the modern developer"
+coverAlt: "Illustration of a hooded figure striking a pose with a staff in front of a poster titled Hacking ADHD, among storm clouds, light bulbs and arrows"
 ---
 
 ## Introduction
@@ -38,7 +38,7 @@ ADHD manifests differently in individuals:
 While everybody can occasionally experience some inattention, unfocused motor activity, and impulsivity, people with ADHD endure more severe and frequent occurrences of these behaviors.
 These manifestations can interfere with or reduce the quality of how they function socially, at school, or in a job.
 
-![Overview of what ADHD is](../../../../assets/articles/what-is-adhd.webp)
+![Painting of a man in a suit looking up at floating grey symbols on one side and a burst of glowing light threads on the other](../../../../assets/articles/what-is-adhd.webp)
 
 Not diagnosing and managing ADHD can lead to a range of complications, including anxiety, burn-out or depression.
 
@@ -72,7 +72,7 @@ A thorough evaluation is crucial for an accurate diagnosis.
 ## ADHD as a Double-Edged Sword for Developers
 ADHD is often viewed through a negative lens, yet it’s important to acknowledge that the disorder brings not only challenges but also its own set of benefits.
 
-![ADHD as a double-edged sword](../../../../assets/articles/double-edged-sword.webp)
+![Illustration of a man in black balancing on a pole with a sword in each hand, flowers and calm faces on one side, dark waves and angry figures on the other](../../../../assets/articles/double-edged-sword.webp)
 
 ### Benefits
 
@@ -100,7 +100,7 @@ Understanding the complexities of ADHD is crucial for adapting your work environ
 
 ## Understanding the ADHD brain
 
-![Illustration of how the ADHD brain works](../../../../assets/articles/understanding-adhd-brain.webp)
+![Illustration of a person with glasses and a blue brain, pointing a stick at a swirl of connected nodes and gears](../../../../assets/articles/understanding-adhd-brain.webp)
 
 When it comes to ADHD, understanding the neurological factors at play can offer valuable insights into managing the condition effectively.
 One neurotransmitter that plays a significant role in ADHD is dopamine.
@@ -130,7 +130,7 @@ By recognizing these traits and their underlying neurochemical causes, we can de
 In a field like software development, where focus and attention to detail are critical, the work environment can either make or break your productivity.
 When you have ADHD, crafting an environment that suits your unique cognitive profile is not just beneficial but essential.
 
-![An ADHD-friendly work environment](../../../../assets/articles/adhd-work-environment.webp)
+![Illustration of a developer at a desk with three monitors, a desk lamp and pencils, in a room with a window and gears on the walls](../../../../assets/articles/adhd-work-environment.webp)
 
 ### Setting up a Stimulating Workspace
 The ideal workspace for someone with ADHD is not necessarily minimalist or clutter-free.
@@ -182,7 +182,7 @@ By adopting this strategy, we ensure that everyone has the latitude to work in a
 
 ## Self-Management Strategies and Tools: Addressing ADHD Symptoms
 
-![Summary of ADHD strategies and tools](../../../../assets/articles/adhd-strategies-and-tools.webp)
+![Illustration of a man in a suit typing at a desk surrounded by screens, phones, a calendar, charts, clocks and notebooks](../../../../assets/articles/adhd-strategies-and-tools.webp)
 
 Navigating ADHD’s unique challenges and benefits has led me to rely on an assortment of tools and strategies that make up my personal tech stack and self-management techniques.
 Let’s dive in:
