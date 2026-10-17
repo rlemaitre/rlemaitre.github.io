@@ -19,6 +19,11 @@ const load = (path: string): Document =>
   parseHTML(readFileSync(`dist/${path}/index.html`, 'utf8')).document
 
 describe('article pages', () => {
+  it('serves a resized JPEG as the social image of an article with a cover', () => {
+    const og = load(ADHD).querySelector('meta[property="og:image"]')?.getAttribute('content') ?? ''
+    expect(og).toMatch(/^https:\/\/rlemaitre\.com\/_astro\/.+\.jpe?g$/)
+  })
+
   it.each([XDG, ADHD, FR_HEAP])('builds %s', (path) => {
     expect(existsSync(`dist/${path}/index.html`)).toBe(true)
   })

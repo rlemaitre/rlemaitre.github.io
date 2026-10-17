@@ -1,6 +1,6 @@
 ---
 import type { MarkdownHeading } from 'astro'
-import { Image } from 'astro:assets'
+import { getImage, Image } from 'astro:assets'
 import '../styles/prose.css'
 import Kudos from '../components/Kudos.astro'
 import Toc from '../components/Toc.astro'
@@ -25,6 +25,8 @@ const talk = talkRef ? await getEntry(talkRef) : undefined
 const lang = articleLang(article.id)
 const other: Lang = lang === 'en' ? 'fr' : 'en'
 const hasTranslation = altLangUrl !== homeUrl(other)
+// Social crawlers want a small JPEG, not the full-size WebP.
+const ogImage = cover ? (await getImage({ src: cover, width: 1200, format: 'jpeg' })).src : undefined
 const minutes = readingMinutes(article.body ?? '')
 const url = new URL(articleUrl(article.id), Astro.site ?? SITE.url).href
 const isoDay = (d: Date) => d.toISOString().slice(0, 10)
@@ -40,7 +42,7 @@ const [titleHead, titleTail] = colon === -1 ? [title, ''] : [title.slice(0, colo
   lang={lang}
   section="writing"
   altLangUrl={altLangUrl}
-  ogImage={cover?.src}
+  ogImage={ogImage}
   ogType="article"
 >
   <article class="h-entry">
