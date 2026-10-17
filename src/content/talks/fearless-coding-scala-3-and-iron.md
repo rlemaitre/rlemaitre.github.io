@@ -7,7 +7,7 @@ venues:
     url: "https://2024.sunny-tech.io/sessions/codez-sans-crainte-scala-3-et-"
     city: Montpellier
     country: France
-    sessionTitle: "Codez sans craintes avec Scala 3 et Iron"
+    sessionTitle: "Codez sans crainte: Scala 3 et Iron, les Nouveaux Héros de la Fiabilité en Programmation Fonctionnelle"
 ---
 
 Welcome to the world of fearless coding, where Scala 3 and the Iron library are the true heroes of reliability.

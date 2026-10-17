@@ -1,7 +1,11 @@
-Bienvenue dans le monde du code sans crainte, où Scala 3 et la bibliothèque Iron sont les vrais héros de la fiabilité.
-Ce talk montre comment Scala 3 enrichit l’écosystème de la programmation fonctionnelle par des améliorations discrètes, pendant qu’Iron apporte plus de précision et de sûreté dans la gestion des types.
-Ensemble, ils rendent le développement plus intuitif et plus sûr.
-Nous verrons les aspects de Scala 3 qui améliorent la programmation fonctionnelle, en particulier la gestion des types et la syntaxe.
-Iron, de son côté, s’impose comme un outil clé pour garantir la qualité des types : il supprime les validations répétitives et réduit le risque d’erreur.
-À partir de cas d’usage concrets et de retours d’expérience, nous montrerons comment Scala 3 et Iron offrent un cadre de développement où l’on redoute moins les bugs et les erreurs de type.
-Venez voir comment coder avec confiance au quotidien grâce à Scala 3 et Iron.
+---
+title: "Codez sans crainte: Scala 3 et Iron, les Nouveaux Héros de la Fiabilité en Programmation Fonctionnelle"
+---
+
+Bienvenue dans l'univers de la programmation sans peur, où Scala 3 et la bibliothèque Iron se positionnent en véritables héros de la fiabilité. Ce talk explore comment Scala 3 enrichit l'écosystème de la programmation fonctionnelle avec ses améliorations subtiles, tandis qu'Iron apporte une dimension supplémentaire de précision et de sûreté dans la gestion des types. Ensemble, ils forment un duo puissant qui transforme le développement logiciel en une expérience plus intuitive et sécurisée.
+
+Nous aborderons les aspects de Scala 3 qui optimisent l'expérience de programmation fonctionnelle, notamment en termes de gestion de types et de syntaxe améliorée. Iron, de son côté, se révèle être un outil clé pour l'assurance qualité des types, éliminant le besoin de validations répétitives et réduisant les risques d'erreurs.
+
+À travers des cas d'usage concrets et des retours d'expérience, nous illustrerons comment la mise en place de Scala 3 et d'Iron offre un cadre de développement où la crainte des bugs et des erreurs de type s'estompe, laissant place à une programmation plus sereine et assurée.
+
+Rejoignez ce talk pour une plongée dans un monde où coder avec confiance et tranquillité d'esprit est la norme, grâce à l'alliance stratégique de Scala 3 et Iron.

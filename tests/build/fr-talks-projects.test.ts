@@ -11,6 +11,9 @@ const TALKS = [
 const PROJECTS = ['pillars', 'mason', 'riskmatrix', 'funktionalio']
 const IRON = 'armored-type-safety-with-iron'
 const ADHD_FR_TITLE = 'Hacker le TDAH : Stratégies pour le développeur moderne'
+const FEARLESS = 'fearless-coding-scala-3-and-iron'
+const FEARLESS_FR_TITLE =
+  'Codez sans crainte: Scala 3 et Iron, les Nouveaux Héros de la Fiabilité en Programmation Fonctionnelle'
 const ADHD = 'hacking-adhd-strategies-for-the-modern-developer'
 
 const file = (path: string): string => `dist/${path}index.html`
@@ -56,11 +59,26 @@ describe('French talk pages', () => {
     expect(text(load(`talks/${ADHD}/`).querySelector('.kicker'))).toBe('/// Talk — given in French')
   })
 
-  it('keeps the talk title and the French session title of fearless-coding', () => {
-    const doc = load('fr/talks/fearless-coding-scala-3-and-iron/')
-    expect(text(doc.querySelector('h1'))).toMatch(/^Fearless Coding/)
-    expect(text(doc.querySelector('.venues .session'))).toBe('Codez sans craintes avec Scala 3 et Iron')
-    expect(doc.querySelector('meta[name="description"]')?.getAttribute('content')).toBe('Donné une fois, en 2024.')
+  it('shows Raph\'s original French title and abstract on the French fearless-coding page, the English title on the English one', () => {
+    const fr = load(`fr/talks/${FEARLESS}/`)
+    expect(text(fr.querySelector('h1'))).toBe(FEARLESS_FR_TITLE)
+    expect(fr.querySelector('h1')?.getAttribute('lang')).toBeNull()
+    expect(text(fr.querySelector('title'))).toContain('Codez sans crainte')
+    expect(fr.querySelector('meta[property="og:title"]')?.getAttribute('content')).toContain(FEARLESS_FR_TITLE)
+    expect(text(fr.querySelector('.prose'))).toContain('véritables héros de la fiabilité')
+    expect(fr.querySelector('meta[name="description"]')?.getAttribute('content')).toBe('Donné une fois, en 2024.')
+    expect(text(load(`talks/${FEARLESS}/`).querySelector('h1'))).toMatch(/^Fearless Coding/)
+  })
+
+  it('shows the exact SunnyTech session title on the fearless-coding venue, in both languages', () => {
+    for (const path of [`talks/${FEARLESS}/`, `fr/talks/${FEARLESS}/`]) {
+      expect([...load(path).querySelectorAll('.venues .session')].map(text), path).toEqual([FEARLESS_FR_TITLE])
+    }
+  })
+
+  it('uses the original French title in the French index', () => {
+    const row = [...load('fr/talks/').querySelectorAll('.rows a.row')].find((a) => a.getAttribute('href') === `/fr/talks/${FEARLESS}/`)
+    expect(text(row?.querySelector('.title'))).toContain(FEARLESS_FR_TITLE)
   })
 
   it('shows Raph\'s original French title and abstract on the French ADHD page, the English title on the English one', () => {

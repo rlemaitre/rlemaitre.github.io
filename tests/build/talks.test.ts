@@ -44,9 +44,9 @@ describe('talk pages', () => {
     }
   })
 
-  it('keeps the French session title on the fearless-coding venue', () => {
+  it('keeps the exact SunnyTech session title on the fearless-coding venue', () => {
     const html = readFileSync('dist/talks/fearless-coding-scala-3-and-iron/index.html', 'utf8')
-    expect(html).toContain('Codez sans craintes avec Scala 3 et Iron')
+    expect(html).toContain('Codez sans crainte: Scala 3 et Iron, les Nouveaux Héros de la Fiabilité en Programmation Fonctionnelle')
   })
 })
 
