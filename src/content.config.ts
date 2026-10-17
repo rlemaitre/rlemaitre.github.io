@@ -59,6 +59,15 @@ const projects = defineCollection({
   }),
 })
 
+/**
+ * French text of talks and projects: one file per entry, same id as the English file, in a `fr/` folder next to it.
+ * They hold only the translated text. Venues, links, tags and order live in the English entry alone.
+ */
+const talksFr = defineCollection({
+  loader: glob({ base: './src/content/talks/fr', pattern: '*.md' }),
+  schema: z.object({}),
+})
+
 const resume = defineCollection({
   loader: file('./src/content/resume.yaml'),
   schema: z.object({
@@ -89,4 +98,4 @@ const home = defineCollection({
   schema: z.object({ description: z.string() }),
 })
 
-export const collections = { articles, talks, projects, resume, home }
+export const collections = { articles, talks, talksFr, projects, resume, home }
