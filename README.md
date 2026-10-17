@@ -70,7 +70,3 @@ Dates come from the frontmatter, not from git history. Legacy Quartz URLs are ke
 Merging into `v4` runs `.github/workflows/deploy.yaml`: `npm ci`, `npm run build`, then the `dist/` folder is published to
 GitHub Pages. The custom domain comes from `public/CNAME`. Pull requests and pushes to `v4` also run
 `.github/workflows/test.yaml` (unit, build and end-to-end tests).
-
-## License
-
-See `LICENSE.txt`.
