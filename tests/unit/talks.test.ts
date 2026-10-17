@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { talkDescription, talkTotals, venuePlace, venueSummary, type Venue } from '../../src/lib/talks'
+import { countryName, talkDescription, talkTotals, totalsText, venuePlace, venueSummary, type Venue } from '../../src/lib/talks'
 
 const venue = (date: string, over: Partial<Venue> = {}): Venue => ({
   date: new Date(date),
@@ -103,5 +103,32 @@ describe('venuePlace', () => {
   it('says online in the page language', () => {
     expect(venuePlace(venue('2024-12-05', { online: true }), 'en')).toBe('Online')
     expect(venuePlace(venue('2024-12-05', { online: true }), 'fr')).toBe('En ligne')
+  })
+})
+
+describe('totalsText', () => {
+  it('formats the English line and description', () => {
+    expect(totalsText({ venues: 11, countries: 3 }, 'en')).toEqual({
+      line: '11 venues / 3 countries',
+      description: '11 venues in 3 countries.',
+    })
+  })
+
+  it('formats the French line and description', () => {
+    expect(totalsText({ venues: 11, countries: 3 }, 'fr')).toEqual({
+      line: '11 interventions / 3 pays',
+      description: '11 interventions dans 3 pays.',
+    })
+  })
+})
+
+describe('countryName', () => {
+  it('returns the name as is in English and translates it in French', () => {
+    expect(countryName('Poland', 'en')).toBe('Poland')
+    expect(countryName('Poland', 'fr')).toBe('Pologne')
+  })
+
+  it('throws on a country without a French name', () => {
+    expect(() => countryName('Atlantis', 'fr')).toThrow(/No French name for country "Atlantis"/)
   })
 })
