@@ -68,6 +68,11 @@ const talksFr = defineCollection({
   schema: z.object({}),
 })
 
+const projectsFr = defineCollection({
+  loader: glob({ base: './src/content/projects/fr', pattern: '*.md' }),
+  schema: z.object({ summary: z.string() }),
+})
+
 const resume = defineCollection({
   loader: file('./src/content/resume.yaml'),
   schema: z.object({
@@ -98,4 +103,4 @@ const home = defineCollection({
   schema: z.object({ description: z.string() }),
 })
 
-export const collections = { articles, talks, talksFr, projects, resume, home }
+export const collections = { articles, talks, talksFr, projects, projectsFr, resume, home }

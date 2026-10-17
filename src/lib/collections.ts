@@ -11,6 +11,7 @@ export async function getPublishedArticles(lang?: Lang): Promise<Article[]> {
 }
 
 export type Talk = CollectionEntry<'talks'>
+export type Project = CollectionEntry<'projects'>
 
 /** The entry whose body is the talk abstract in `lang`: the talk itself in English, its `fr/` file in French. */
 export async function talkAbstract(talk: Talk, lang: Lang): Promise<Talk | CollectionEntry<'talksFr'>> {
@@ -20,3 +21,13 @@ export async function talkAbstract(talk: Talk, lang: Lang): Promise<Talk | Colle
   return fr
 }
 
+/** The project summary in `lang`, and the entry whose body is the project description in that language. */
+export async function projectText(
+  project: Project,
+  lang: Lang,
+): Promise<{ summary: string; body: Project | CollectionEntry<'projectsFr'> }> {
+  if (lang === 'en') return { summary: project.data.summary, body: project }
+  const fr = await getEntry('projectsFr', project.id)
+  if (!fr) throw new Error(`Missing French text: add src/content/projects/fr/${project.id}.md`)
+  return { summary: fr.data.summary, body: fr }
+}

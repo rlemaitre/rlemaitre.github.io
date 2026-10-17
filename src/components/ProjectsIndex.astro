@@ -1,0 +1,52 @@
+---
+import { getCollection } from 'astro:content'
+import IndexRow from './IndexRow.astro'
+import Base from '../layouts/Base.astro'
+import { projectText } from '../lib/collections'
+import { otherLang, projectsUrl, projectUrl, t, type Lang } from '../lib/i18n'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+const projects = await Promise.all(
+  (await getCollection('projects'))
+    .sort((a, b) => a.data.order - b.data.order)
+    .map(async (project) => ({ project, summary: (await projectText(project, lang)).summary })),
+)
+const title = t(lang, 'projects')
+---
+
+<Base title={title} description={t(lang, 'projectsIntro')} lang={lang} section="projects" altLangUrl={projectsUrl(otherLang(lang))}>
+  <header class="intro">
+    <p class="mono muted">{String(projects.length).padStart(2, '0')} / {t(lang, 'openSource')}</p>
+    <h1 class="display">{title}<em>.</em></h1>
+  </header>
+  <ul class="rows">
+    {
+      projects.map(({ project, summary }) => (
+        <IndexRow href={projectUrl(project.id, lang)} title={project.data.title} meta={summary} tag={project.data.tags[0]} />
+      ))
+    }
+  </ul>
+</Base>
+
+<style>
+  .intro {
+    padding: 18px var(--gutter) 28px;
+  }
+
+  .display {
+    margin-top: 8px;
+    font-size: clamp(56px, 12vw, 128px);
+  }
+
+  .rows {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: var(--rule-thick) solid var(--ink);
+    border-bottom: var(--rule-thick) solid var(--ink);
+  }
+</style>

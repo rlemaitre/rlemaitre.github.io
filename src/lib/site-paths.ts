@@ -1,14 +1,34 @@
 import { readdirSync, readFileSync } from 'node:fs'
-import { basename, join } from 'node:path'
-import { articleUrl } from './i18n'
+import { join } from 'node:path'
+import { articleUrl, projectUrl, talkUrl, type Lang } from './i18n'
 
 const CONTENT = 'src/content'
-const STATIC_PATHS = ['/', '/404', '/index.xml', '/fr', '/fr/index.xml', '/articles', '/fr/articles', '/resume', '/talks', '/projects']
+const STATIC_PATHS = [
+  '/',
+  '/404',
+  '/index.xml',
+  '/fr',
+  '/fr/index.xml',
+  '/articles',
+  '/fr/articles',
+  '/resume',
+  '/talks',
+  '/fr/talks',
+  '/projects',
+  '/fr/projects',
+]
+const LANGS: Lang[] = ['en', 'fr']
 
 const markdownIn = (dir: string): string[] =>
   readdirSync(dir, { recursive: true, encoding: 'utf8' })
     .filter((file) => file.endsWith('.md'))
     .map((file) => file.replace(/\.md$/, ''))
+
+/** Entries of a talks or projects folder: its top-level files only, not the `fr/` translations. */
+const entriesIn = (dir: string): string[] =>
+  readdirSync(dir, { withFileTypes: true })
+    .filter((entry) => entry.isFile() && entry.name.endsWith('.md'))
+    .map((entry) => entry.name.replace(/\.md$/, ''))
 
 const frontmatter = (file: string): string => /^---\n([\s\S]*?)\n---/.exec(readFileSync(file, 'utf8'))?.[1] ?? ''
 
@@ -28,7 +48,10 @@ export function siteContent(root = CONTENT): { newPaths: Set<string>; titles: Ma
     const title = frontmatterTitle(meta)
     if (title) titles.set(path, title)
   }
-  for (const id of markdownIn(join(root, 'talks'))) newPaths.add(`/talks/${basename(id)}`)
-  for (const id of markdownIn(join(root, 'projects'))) newPaths.add(`/projects/${basename(id)}`)
+  // Every talk and project has a page in each language (the French page fails the build without its translation).
+  for (const lang of LANGS) {
+    for (const id of entriesIn(join(root, 'talks'))) newPaths.add(talkUrl(id, lang).replace(/\/$/, ''))
+    for (const id of entriesIn(join(root, 'projects'))) newPaths.add(projectUrl(id, lang).replace(/\/$/, ''))
+  }
   return { newPaths, titles }
 }
