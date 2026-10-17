@@ -116,7 +116,7 @@
   }
 
   .cv.cv .talk {
-    grid-template-columns: 90px minmax(0, 1fr) 150px;
+    grid-template-columns: 120px minmax(0, 1fr) 150px;
     gap: 10px;
   }
 

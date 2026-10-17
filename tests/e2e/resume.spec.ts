@@ -35,4 +35,23 @@ test.describe('resume', () => {
     await page.goto('/resume/')
     await expectNoHorizontalScroll(page)
   })
+
+  for (const media of ['screen', 'print'] as const) {
+    test(`keeps each talk's count and years on one line in ${media}`, async ({ page }) => {
+      await page.setViewportSize({ width: 1280, height: 900 })
+      await page.goto('/resume/')
+      await page.emulateMedia({ media })
+      const cells = await page.locator('.talk .num').evaluateAll((els) =>
+        els.map((el) => ({
+          text: el.textContent?.trim() ?? '',
+          fits: el.scrollWidth <= el.clientWidth,
+          lines: Math.round(el.getBoundingClientRect().height / parseFloat(getComputedStyle(el).lineHeight)),
+        })),
+      )
+      expect(cells.length).toBeGreaterThan(0)
+      for (const cell of cells) {
+        expect(cell, cell.text).toMatchObject({ fits: true, lines: 1 })
+      }
+    })
+  }
 })

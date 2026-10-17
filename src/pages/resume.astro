@@ -335,11 +335,15 @@ const description = 'Backend engineer, 26 years on the JVM. Experience, skills, 
 
   .talk {
     display: grid;
-    grid-template-columns: 110px minmax(0, 1fr) 200px;
+    grid-template-columns: 140px minmax(0, 1fr) 200px;
     gap: 14px;
     align-items: baseline;
     padding: 10px var(--gutter);
     border-top: var(--rule) solid var(--ink);
+  }
+
+  .talk .num {
+    white-space: nowrap;
   }
 
   .talk:first-child {
