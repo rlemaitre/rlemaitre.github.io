@@ -1,5 +1,5 @@
 ---
-import { homeUrl, t, type Lang } from '../lib/i18n'
+import { homeUrl, projectsUrl, t, talksUrl, type Lang } from '../lib/i18n'
 
 type Section = 'writing' | 'talks' | 'projects' | 'resume'
 
@@ -14,9 +14,9 @@ const { lang, section, altLangUrl } = Astro.props
 const home = homeUrl(lang)
 const items: { section: Section; href: string }[] = [
   { section: 'writing', href: lang === 'fr' ? '/fr/articles/' : '/articles/' },
-  { section: 'talks', href: '/talks/' },
-  { section: 'projects', href: '/projects/' },
-  { section: 'resume', href: '/resume/' },
+  { section: 'talks', href: talksUrl(lang) },
+  { section: 'projects', href: projectsUrl(lang) },
+  { section: 'resume', href: '/resume/' }, // English only: there is no French resume
 ]
 const other: Lang = lang === 'en' ? 'fr' : 'en'
 const langName: Record<Lang, string> = { en: 'English', fr: 'Français' }

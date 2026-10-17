@@ -93,7 +93,7 @@ const [titleHead, titleTail] = colon === -1 ? [title, ''] : [title.slice(0, colo
           talk && (
             <>
               <dt>{t(lang, 'linkedTalk')}</dt>
-              <dd><a href={talkUrl(talk.id)}>{talk.data.title}</a></dd>
+              <dd><a href={talkUrl(talk.id, lang)}>{talk.data.title}</a></dd>
             </>
           )
         }

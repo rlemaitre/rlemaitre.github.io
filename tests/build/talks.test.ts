@@ -75,7 +75,7 @@ describe('articles linked to a talk', () => {
 
   it('shows the linked talk on the French ADHD article', () => {
     const doc = load('fr/articles/adhd/hacking-adhd-strategies-for-the-modern-developer')
-    expect([...doc.querySelectorAll('dl a')].some((a) => a.getAttribute('href')?.startsWith(ADHD_TALK))).toBe(true)
+    expect([...doc.querySelectorAll('dl a')].some((a) => a.getAttribute('href')?.startsWith(`/fr${ADHD_TALK}`))).toBe(true)
   })
 
   it('drops the date column from the talks index', () => {
