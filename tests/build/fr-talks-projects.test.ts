@@ -38,7 +38,9 @@ describe('French talk pages', () => {
     expect(places.some((p) => p.endsWith('Warsaw, Pologne'))).toBe(true)
     expect(places.some((p) => p.endsWith('Tokyo, Japon'))).toBe(true)
     expect(places.some((p) => p.endsWith('En ligne'))).toBe(true)
-    expect(doc.querySelector('button[data-video]')?.getAttribute('aria-label')).toMatch(/^Lire la vidéo/)
+    expect(doc.querySelector('button[data-video]')?.getAttribute('aria-label')).toBe(
+      'Lire la vidéo : Armored Type Safety With Iron, Scala Matters',
+    )
   })
 
   it('shows the French abstract, not the English one', () => {

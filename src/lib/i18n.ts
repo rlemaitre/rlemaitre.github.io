@@ -105,6 +105,9 @@ export const ui: Record<Lang, Record<UiKey, string>> = {
 
 export const t = (lang: Lang, key: UiKey): string => ui[lang][key]
 
+/** Separator between a label and its value: French puts a space before the colon. */
+export const colon = (lang: Lang): string => (lang === 'fr' ? ' : ' : ': ')
+
 export const articleLang = (id: string): Lang => (id.startsWith('fr/') ? 'fr' : 'en')
 
 export const articleSlug = (id: string): string => id.slice(id.indexOf('/') + 1)
