@@ -6,7 +6,7 @@ Voici la bibliothèque [Iron](https://github.com/Iltotore/iron).
 
 Iron est une bibliothèque de contraintes de types qui permet d’avoir un modèle sûr, déclaratif et plus intelligent.
 Elle garantit un flux continu de données valides, des endpoints de l’API jusqu’à la base de données, et élimine toute une classe de bugs.
-Grâce aux types opaques, aux inlines et au nouveau système de macros, elle n’a aucun coût à l’exécution, aucune dépendance, et ne ralentit pas la compilation.
+Grâce aux types opaques, aux inlines et au nouveau système de macros, elle n’a aucun coût à l’exécution, aucune dépendance et ne ralentit pas la compilation.
 Dans ce talk, nous voyons d’abord les différentes techniques pour appliquer des contraintes dans nos domaines.
 Nous présentons ensuite Iron, ses fonctionnalités, ses extensions et ses intégrations.
 Nous terminons par la démonstration d’une application complète qui fait respecter ses contraintes de bout en bout.

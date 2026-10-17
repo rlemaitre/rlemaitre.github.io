@@ -9,4 +9,4 @@ Pillars fournit ces briques d’emblée, avec des health checks et un serveur d�
 Nous partons de rien pour construire un service backend complet et prêt pour la production, déployé en direct pendant la session.
 Vous verrez concrètement comment Pillars réduit le code répétitif, accélère le développement et aide à livrer des services robustes qui tiennent la charge.
 Que vous fassiez du Scala depuis des années ou que vous débutiez, vous repartirez avec des idées concrètes et des connaissances pratiques.
-De quoi simplifier vos propres projets et rendre le développement en Scala plus simple et plus efficace avec Pillars.
+De quoi alléger vos propres projets et rendre le développement en Scala plus efficace avec Pillars.

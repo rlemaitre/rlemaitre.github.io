@@ -3,5 +3,5 @@ Ce talk montre comment Scala 3 enrichit l’écosystème de la programmation fon
 Ensemble, ils rendent le développement plus intuitif et plus sûr.
 Nous verrons les aspects de Scala 3 qui améliorent la programmation fonctionnelle, en particulier la gestion des types et la syntaxe.
 Iron, de son côté, s’impose comme un outil clé pour garantir la qualité des types : il supprime les validations répétitives et réduit le risque d’erreur.
-À partir de cas d’usage concrets et de retours d’expérience, nous montrerons comment Scala 3 et Iron offrent un cadre où la peur des bugs et des erreurs de type s’efface, au profit d’une programmation plus sereine.
-Venez voir à quoi ressemble un quotidien où l’on code avec confiance et tranquillité, grâce à Scala 3 et Iron.
+À partir de cas d’usage concrets et de retours d’expérience, nous montrerons comment Scala 3 et Iron offrent un cadre de développement où l’on redoute moins les bugs et les erreurs de type.
+Venez voir comment coder avec confiance au quotidien grâce à Scala 3 et Iron.

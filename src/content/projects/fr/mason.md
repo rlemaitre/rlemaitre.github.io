@@ -1,5 +1,5 @@
 ---
-summary: Un générateur d’applications pour les projets Pillars, pour en démarrer un nouveau avec un minimum de configuration.
+summary: Un générateur d’applications pour démarrer un projet Pillars avec un minimum de configuration.
 ---
 
 Avec Mason, vous créez un projet Scala, mettez en place une API REST et générez sa documentation en quelques minutes.
