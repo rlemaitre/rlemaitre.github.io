@@ -82,7 +82,10 @@ describe('article pages', () => {
   })
 
   it.each(ARTICLE_PAGES)('%s has a kudos button', (path) => {
-    expect(load(path).querySelector('button.tinylytics_kudos')).not.toBeNull()
+    const kudos = load(path).querySelector('button.tinylytics_kudos')
+    expect(kudos).not.toBeNull()
+    // Hidden until the Tinylytics script loads, so blocked visitors never see a dead button.
+    expect(kudos?.hasAttribute('hidden')).toBe(true)
   })
 
   it('lists the headings in the table of contents', () => {

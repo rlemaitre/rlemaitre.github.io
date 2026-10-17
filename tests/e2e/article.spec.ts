@@ -87,3 +87,10 @@ test('the kudos button uses Tinylytics custom markup, shows KUDOS and no emoji',
   await expect(button).toHaveCSS('background-color', 'rgb(208, 20, 20)')
   await expect(button).toHaveCSS('color', 'rgb(244, 244, 240)')
 })
+
+test('the kudos button stays hidden when Tinylytics is blocked', async ({ page, context }) => {
+  await context.route('https://tinylytics.app/**', (route) => route.abort('blockedbyclient'))
+  await page.goto(XDG)
+  await page.waitForLoadState('load')
+  await expect(page.locator('button.tinylytics_kudos')).toBeHidden()
+})

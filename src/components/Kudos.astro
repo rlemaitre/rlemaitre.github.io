@@ -1,9 +1,10 @@
 ---
 // Head loads Tinylytics with `?kudos=custom` (documented: it writes only the count into the button, no emoji).
 // Tinylytics overwrites the button's text, so the "KUDOS" label is generated content that survives it.
+// The button starts hidden; Head reveals it once the script loads, so a content blocker never leaves a dead button.
 ---
 
-<button type="button" class="tinylytics_kudos mono"></button>
+<button type="button" class="tinylytics_kudos mono" hidden></button>
 
 <style>
   .tinylytics_kudos {
@@ -18,6 +19,10 @@
     transition:
       background-color 0.15s,
       color 0.15s;
+  }
+
+  .tinylytics_kudos[hidden] {
+    display: none;
   }
 
   .tinylytics_kudos::before {

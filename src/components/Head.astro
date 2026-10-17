@@ -55,4 +55,9 @@ const ogLocale = lang === 'fr' ? 'fr_FR' : 'en_US'
 <meta property="og:locale" content={ogLocale} />
 <meta name="twitter:card" content="summary_large_image" />
 
-<script is:inline defer src={`https://tinylytics.app/embed/${SITE.tinylyticsId}.js?kudos=custom`}></script>
+<script
+  is:inline
+  defer
+  src={`https://tinylytics.app/embed/${SITE.tinylyticsId}.js?kudos=custom`}
+  onload="document.querySelectorAll('.tinylytics_kudos[hidden]').forEach((b) => b.removeAttribute('hidden'))"
+></script>
