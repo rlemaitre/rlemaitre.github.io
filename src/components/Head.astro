@@ -39,7 +39,9 @@ const ogLocale = lang === 'fr' ? 'fr_FR' : 'en_US'
 <title>{fullTitle}</title>
 <meta name="description" content={description} />
 {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonical} />}
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 <link rel="alternate" type="application/rss+xml" title={`${SITE.name} (${lang.toUpperCase()})`} href={feed} />
 <link rel="webmention" href={SITE.webmention} />
 <link rel="pingback" href={SITE.pingback} />
