@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { talkTotals, venueSummary, type Venue } from '../../src/lib/talks'
+import { talkDescription, talkTotals, venueSummary, type Venue } from '../../src/lib/talks'
 
 const venue = (date: string, over: Partial<Venue> = {}): Venue => ({
   date: new Date(date),
@@ -53,5 +53,21 @@ describe('talkTotals', () => {
       venues: 11,
       countries: 3,
     })
+  })
+})
+
+describe('talkDescription', () => {
+  it('says once for a single venue', () => {
+    expect(talkDescription({ count: 1, firstYear: 2024, lastYear: 2024, places: [] })).toBe('Given once, in 2024.')
+  })
+
+  it('uses a single year when all venues share it', () => {
+    expect(talkDescription({ count: 3, firstYear: 2024, lastYear: 2024, places: [] })).toBe('Given 3 times in 2024.')
+  })
+
+  it('uses a range otherwise', () => {
+    expect(talkDescription({ count: 5, firstYear: 2023, lastYear: 2024, places: [] })).toBe(
+      'Given 5 times between 2023 and 2024.',
+    )
   })
 })

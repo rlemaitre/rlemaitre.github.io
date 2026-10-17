@@ -4,7 +4,7 @@ import VideoEmbed from '../../components/VideoEmbed.astro'
 import '../../styles/prose.css'
 import Base from '../../layouts/Base.astro'
 import { formatDate } from '../../lib/dates'
-import { sortedVenues, venueSummary } from '../../lib/talks'
+import { sortedVenues, talkDescription, venueSummary } from '../../lib/talks'
 
 export async function getStaticPaths() {
   return (await getCollection('talks')).map((talk) => ({ params: { slug: talk.id }, props: { talk } }))
@@ -19,7 +19,7 @@ const iso = (d: Date) => d.toISOString().slice(0, 10)
 const place = (v: (typeof venues)[number]) => (v.online ? 'Online' : [v.city, v.country].filter(Boolean).join(', '))
 const colon = title.indexOf(':')
 const [head, tail] = colon === -1 ? [title, ''] : [title.slice(0, colon), title.slice(colon + 1)]
-const description = `Given ${summary.count} ${summary.count === 1 ? 'time' : 'times'} between ${summary.firstYear} and ${summary.lastYear}.`
+const description = talkDescription(summary)
 ---
 
 <Base title={title} description={description} lang="en" section="talks" altLangUrl="/fr/">

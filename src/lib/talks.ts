@@ -25,6 +25,13 @@ export function venueSummary(venues: Venue[]): VenueSummary {
   }
 }
 
+/** Meta description of a talk page: "Given once, in 2024." / "Given 3 times in 2024." / "Given 3 times between 2023 and 2024." */
+export function talkDescription({ count, firstYear, lastYear }: VenueSummary): string {
+  if (count === 1) return `Given once, in ${firstYear}.`
+  if (firstYear === lastYear) return `Given ${count} times in ${firstYear}.`
+  return `Given ${count} times between ${firstYear} and ${lastYear}.`
+}
+
 /** Total venues and distinct countries across talks. Online venues are not a country. */
 export function talkTotals(talks: { venues: Venue[] }[]): { venues: number; countries: number } {
   const venues = talks.flatMap((talk) => talk.venues)

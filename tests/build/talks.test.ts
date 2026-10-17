@@ -18,6 +18,16 @@ describe('talk pages', () => {
     expect(readFileSync(`dist/${IRON}/index.html`, 'utf8')).not.toMatch(/img\.youtube\.com|i\.ytimg\.com/)
   })
 
+  it('describes the talk in natural words, never "1 time between"', () => {
+    expect(load(IRON).querySelector('meta[name="description"]')?.getAttribute('content')).toBe(
+      'Given 5 times between 2023 and 2024.',
+    )
+    for (const slug of ['fearless-coding-scala-3-and-iron']) {
+      const text = load(`talks/${slug}`).querySelector('meta[name="description"]')?.getAttribute('content')
+      expect(text).not.toMatch(/\b1 time\b|between (\d{4}) and \1/)
+    }
+  })
+
   it('names each video button after the talk and the venue', () => {
     const label = load(IRON).querySelector('button[data-video]')?.getAttribute('aria-label')
     expect(label).toMatch(/Armored Type Safety With Iron/)
