@@ -8,9 +8,10 @@ interface Props {
   lang: Lang
   ogImage?: string
   ogType?: 'website' | 'article'
+  noindex?: boolean
 }
 
-const { title, description, lang, ogImage = '/og-default.png', ogType = 'website' } = Astro.props
+const { title, description, lang, ogImage = '/og-default.png', ogType = 'website', noindex = false } = Astro.props
 const site = Astro.site ?? new URL(SITE.url)
 const fullTitle = title === SITE.name ? title : `${title} | ${SITE.name}`
 const canonical = new URL(Astro.url.pathname, site).href
@@ -37,7 +38,7 @@ const ogLocale = lang === 'fr' ? 'fr_FR' : 'en_US'
 </script>
 <title>{fullTitle}</title>
 <meta name="description" content={description} />
-<link rel="canonical" href={canonical} />
+{noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonical} />}
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate" type="application/rss+xml" title={`${SITE.name} (${lang.toUpperCase()})`} href={feed} />
 <link rel="webmention" href={SITE.webmention} />
@@ -46,7 +47,7 @@ const ogLocale = lang === 'fr' ? 'fr_FR' : 'en_US'
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:type" content={ogType} />
-<meta property="og:url" content={canonical} />
+{!noindex && <meta property="og:url" content={canonical} />}
 <meta property="og:image" content={image} />
 <meta property="og:site_name" content={SITE.name} />
 <meta property="og:locale" content={ogLocale} />

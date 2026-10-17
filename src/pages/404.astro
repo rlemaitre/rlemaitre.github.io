@@ -1,19 +1,22 @@
 ---
 import Base from '../layouts/Base.astro'
+import { t } from '../lib/i18n'
 
 const sections = [
-  { label: 'Writing', href: '/articles/', note: 'Articles and notes' },
+  { label: 'Writing', href: '/articles/', note: 'Articles' },
   { label: 'Talks', href: '/talks/', note: 'Conference talks' },
   { label: 'Projects', href: '/projects/', note: 'Open source work' },
   { label: 'Resume', href: '/resume/', note: 'Experience' },
 ]
+const title = t('en', 'notFoundTitle')
+const split = title.lastIndexOf(' ')
 ---
 
-<Base title="Page not found" description="This page does not exist." lang="en" altLangUrl="/fr/">
+<Base title={title} description="This page does not exist." lang="en" altLangUrl="/fr/" noindex>
   <div class="lost">
     <p class="mono muted">Error 404</p>
-    <h1 class="display">Page not<br />found<em>.</em></h1>
-    <p class="lede">This page does not exist, or it moved when I rebuilt the site. Try one of these sections, or start from the <a href="/">home page</a>.</p>
+    <h1 class="display">{title.slice(0, split)}<br />{title.slice(split + 1)}<em>.</em></h1>
+    <p class="lede">{t('en', 'notFoundText')} Try one of these sections, or start from the <a href="/">home page</a>.</p>
   </div>
   <ul class="sections grid">
     {
