@@ -1,0 +1,42 @@
+/* Swiss print design tokens. Light is the default; dark comes from data-theme or, without JS, the OS. */
+:root {
+  --bg: #f4f4f0;
+  --ink: #0b0b0b;
+  --muted: #5a5a55;
+  --accent: #d01414;
+  --code-bg: #e9e8e2;
+  --grain-blend: multiply;
+  --grain-opacity: 0.05;
+  color-scheme: light;
+
+  --font-display: 'Archivo', 'Arial Black', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-body: 'Atkinson Hyperlegible Next', system-ui, sans-serif;
+
+  --rule: 1px;
+  --rule-thick: 2px;
+  --gutter: 14px;
+  --measure: 66ch;
+}
+
+:root[data-theme='dark'] {
+  --bg: #121212;
+  --ink: #eaeaea;
+  --muted: #9a9a94;
+  --accent: #ff2a2a;
+  --code-bg: #1d1d1d;
+  --grain-blend: screen;
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #121212;
+    --ink: #eaeaea;
+    --muted: #9a9a94;
+    --accent: #ff2a2a;
+    --code-bg: #1d1d1d;
+    --grain-blend: screen;
+    color-scheme: dark;
+  }
+}

@@ -1,0 +1,57 @@
+---
+// A text toggle: pressed means the dark theme is on. Hidden until the script runs, so no-JS visitors
+// never see a control that does nothing (they get the OS theme through CSS).
+import { t, type Lang } from '../lib/i18n'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+---
+
+<button type="button" class="theme-toggle cell mono" aria-pressed="false" data-theme-toggle hidden>{t(lang, 'dark')}</button>
+
+<script>
+  const root = document.documentElement
+  const button = document.querySelector<HTMLButtonElement>('[data-theme-toggle]')
+
+  if (button) {
+    const sync = () => button.setAttribute('aria-pressed', String(root.dataset.theme === 'dark'))
+
+    button.addEventListener('click', () => {
+      const next = root.dataset.theme === 'dark' ? 'light' : 'dark'
+      root.dataset.theme = next
+      try {
+        localStorage.setItem('theme', next)
+      } catch {
+        // Storage blocked: the choice lasts for this page view only.
+      }
+      sync()
+    })
+
+    sync()
+    button.hidden = false
+  }
+</script>
+
+<style>
+  .theme-toggle {
+    width: 100%;
+    border: 0;
+    color: inherit;
+    font-family: var(--font-mono);
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .theme-toggle:hover,
+  .theme-toggle[aria-pressed='true'] {
+    background: var(--ink);
+    color: var(--bg);
+  }
+
+  .theme-toggle[hidden] {
+    display: none;
+  }
+</style>

@@ -1,0 +1,214 @@
+---
+import { getCollection, getEntry, render } from 'astro:content'
+import IndexRow from './IndexRow.astro'
+import Portrait from './Portrait.astro'
+import Base from '../layouts/Base.astro'
+import { articleCategory } from '../lib/articles'
+import { getPublishedArticles } from '../lib/collections'
+import { articleUrl, t, type Lang } from '../lib/i18n'
+import { SITE } from '../lib/site'
+import { homeStats } from '../lib/stats'
+
+interface Props {
+  lang: Lang
+}
+
+const RECENT_LIMIT = 5
+
+const { lang } = Astro.props
+const intro = await getEntry('home', lang)
+if (!intro) throw new Error(`Missing home intro: src/content/home/${lang}.md`)
+const { Content } = await render(intro)
+
+const recent = (await getPublishedArticles(lang)).slice(0, RECENT_LIMIT)
+const stats = homeStats({
+  talks: (await getCollection('talks')).map((talk) => talk.data),
+  projectCount: (await getCollection('projects')).length,
+  now: new Date(),
+})
+const pad = (n: number): string => String(n).padStart(2, '0')
+const statCells = [
+  { value: pad(stats.years), label: t(lang, 'yearsShipping') },
+  { value: pad(stats.talks), label: t(lang, 'talksGiven') },
+  { value: pad(stats.oss), label: t(lang, 'ossProjects') },
+]
+const [firstName, lastName] = SITE.name.split(' ')
+const writingUrl = lang === 'fr' ? '/fr/articles/' : '/articles/'
+const altLangUrl = lang === 'fr' ? '/' : '/fr/'
+---
+
+<Base title={SITE.name} description={intro.data.description} lang={lang} altLangUrl={altLangUrl}>
+  <div class="h-card">
+    <h1 class="display mast">
+      <a class="p-name u-url" href={`${SITE.url}/`}>{firstName}<br /> {lastName}</a><em aria-hidden="true">.</em>
+    </h1>
+    <div class="g grid">
+      <Portrait caption={t(lang, 'portraitCaption')} alt={t(lang, 'portraitAlt')} />
+      <div class="lede p-note"><Content /></div>
+      <p class="status">
+        <span class="mono muted">{t(lang, 'status')}</span>
+        <span class="p-adr"><span class="p-locality">Paris</span>, <abbr class="p-country-name" title="France">FR</abbr></span>
+        <span>{t(lang, 'openToTalk')}</span>
+      </p>
+      {
+        statCells.map((stat) => (
+          <p class="stat">
+            <span class="n">{stat.value}</span>
+            <span class="mono">{stat.label}</span>
+          </p>
+        ))
+      }
+      <section class="recent" aria-labelledby="recent-title">
+        <header class="recent-head">
+          <h2 id="recent-title" class="mono muted">{t(lang, 'recentWriting')}</h2>
+          <a class="mono all" href={writingUrl}>{t(lang, 'allWriting')} <span aria-hidden="true">&gt;&gt;</span></a>
+        </header>
+        <ul class="rows">
+          {
+            recent.map((article) => (
+              <IndexRow
+                href={articleUrl(article.id)}
+                date={article.data.published}
+                title={article.data.title}
+                tag={articleCategory(article.id)}
+              />
+            ))
+          }
+        </ul>
+      </section>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .mast {
+    padding: 18px var(--gutter) 0;
+    /* 15vw keeps LEMAITRE. inside a 320px screen; capped at the mockup's 128px from about 850px up. */
+    font-size: clamp(40px, 15vw, 128px);
+  }
+
+  .mast a {
+    text-decoration: none;
+  }
+
+  .g {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin-top: 22px;
+    border-top: var(--rule-thick) solid var(--ink);
+    border-bottom: var(--rule-thick) solid var(--ink);
+    margin-bottom: 32px;
+  }
+
+  .g > :global(.portrait) {
+    grid-row: span 2;
+  }
+
+  .lede,
+  .status,
+  .stat {
+    margin: 0;
+    padding: var(--gutter);
+  }
+
+  .lede {
+    grid-column: span 2;
+  }
+
+  .lede :global(p) {
+    margin: 0;
+    max-width: var(--measure);
+  }
+
+  .lede :global(a) {
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+
+  .status {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.4;
+  }
+
+  .status .mono {
+    margin-bottom: 6px;
+  }
+
+  .status abbr {
+    text-decoration: none;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .n {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(48px, 5vw, 64px);
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+  }
+
+  .stat .mono {
+    margin-top: 8px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+  }
+
+  .recent {
+    grid-column: 1 / -1;
+  }
+
+  .recent-head {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--gutter);
+    padding: 10px var(--gutter);
+    border-bottom: var(--rule) solid var(--ink);
+  }
+
+  .recent-head h2 {
+    margin: 0;
+    font-size: 11px;
+  }
+
+  .all {
+    text-decoration: none;
+  }
+
+  .all span {
+    color: var(--accent);
+  }
+
+  .all:hover {
+    text-decoration: underline;
+  }
+
+  .rows {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+
+  @media (max-width: 720px) {
+    .g {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .g > :global(.portrait) {
+      grid-row: auto;
+      grid-column: 1 / -1;
+      min-height: 0;
+      aspect-ratio: 1 / 1;
+    }
+
+    .lede,
+    .status {
+      grid-column: 1 / -1;
+    }
+  }
+</style>

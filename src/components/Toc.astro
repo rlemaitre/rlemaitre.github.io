@@ -1,0 +1,78 @@
+---
+import type { MarkdownHeading } from 'astro'
+import { t, type Lang } from '../lib/i18n'
+
+interface Props {
+  headings: MarkdownHeading[]
+  lang: Lang
+}
+
+const { headings, lang } = Astro.props
+const sections = headings.filter((heading) => heading.depth === 2)
+const label = t(lang, 'contents')
+---
+
+{
+  sections.length > 0 && (
+    <nav class="toc mono" aria-label={label}>
+      <p class="label">{label}</p>
+      <ol>
+        {sections.map((heading, i) => (
+          <li>
+            <a href={`#${heading.slug}`}>
+              <span class="num" aria-hidden="true">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <span>{heading.text}</span>
+            </a>
+          </li>
+        ))}
+      </ol>
+    </nav>
+  )
+}
+
+<style>
+  .toc {
+    position: sticky;
+    top: 0;
+    max-height: 100vh;
+    overflow-y: auto;
+    padding: 22px var(--gutter);
+    color: var(--muted);
+  }
+
+  .label {
+    margin: 0;
+  }
+
+  ol {
+    list-style: none;
+    margin: 10px 0 0;
+    padding: 0;
+  }
+
+  li {
+    margin: 0;
+  }
+
+  a {
+    display: grid;
+    grid-template-columns: 2.5ch minmax(0, 1fr);
+    gap: 1ch;
+    padding: 4px 0;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+
+  .num {
+    color: var(--accent);
+  }
+</style>

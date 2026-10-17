@@ -1,0 +1,287 @@
+---
+import type { MarkdownHeading } from 'astro'
+import { getImage, Image } from 'astro:assets'
+import '../styles/prose.css'
+import Kudos from '../components/Kudos.astro'
+import Toc from '../components/Toc.astro'
+import { articleCategory } from '../lib/articles'
+import { getEntry } from 'astro:content'
+import { talkTitle, type Article } from '../lib/collections'
+import { formatDate } from '../lib/dates'
+import { articleLang, articleUrl, homeUrl, t, talkUrl, type Lang } from '../lib/i18n'
+import { readingMinutes } from '../lib/reading-time'
+import { SITE, SOCIALS } from '../lib/site'
+import Base from './Base.astro'
+
+interface Props {
+  article: Article
+  headings: MarkdownHeading[]
+  altLangUrl: string
+}
+
+const { article, headings, altLangUrl } = Astro.props
+const { title, description, published, updated, originallyPublished, cover, coverAlt, tags, talk: talkRef } = article.data
+const talk = talkRef ? await getEntry(talkRef) : undefined
+const lang = articleLang(article.id)
+const linkedTalkTitle = talk ? (await talkTitle(talk, lang)).title : ''
+const other: Lang = lang === 'en' ? 'fr' : 'en'
+const hasTranslation = altLangUrl !== homeUrl(other)
+// Social crawlers want a small JPEG, not the full-size WebP.
+const ogImage = cover ? (await getImage({ src: cover, width: 1200, format: 'jpeg' })).src : undefined
+const minutes = readingMinutes(article.body ?? '')
+const url = new URL(articleUrl(article.id), Astro.site ?? SITE.url).href
+const isoDay = (d: Date) => d.toISOString().slice(0, 10)
+
+// Mockup detail: the first colon of the title is set in red.
+const colon = title.indexOf(':')
+const [titleHead, titleTail] = colon === -1 ? [title, ''] : [title.slice(0, colon), title.slice(colon + 1)]
+---
+
+<Base
+  title={title}
+  description={description}
+  lang={lang}
+  section="writing"
+  altLangUrl={altLangUrl}
+  ogImage={ogImage}
+  ogType="article"
+>
+  <article class="h-entry">
+    <data class="u-url" value={url}></data>
+    <data class="p-author h-card" value={SITE.name}></data>
+    <header class="head grid">
+      <div class="title-cell">
+        <p class="mono kicker">/// {t(lang, 'article')} — {articleCategory(article.id)}</p>
+        <h1 class="p-name">{titleHead}{colon !== -1 && <em>:</em>}{titleTail}</h1>
+      </div>
+      <dl class="meta mono">
+        <dt>{t(lang, 'published')}</dt>
+        <dd><time class="dt-published" datetime={isoDay(published)}>{formatDate(published)}</time></dd>
+        {
+          updated && (
+            <>
+              <dt>{t(lang, 'updated')}</dt>
+              <dd><time class="dt-updated" datetime={isoDay(updated)}>{formatDate(updated)}</time></dd>
+            </>
+          )
+        }
+        <dt>{t(lang, 'readingTime')}</dt>
+        <dd>{minutes} {t(lang, 'min')}</dd>
+        {
+          tags.length > 0 && (
+            <>
+              <dt>{t(lang, 'tags')}</dt>
+              <dd class="tags">
+                {tags.map((tag) => (
+                  <span class="p-category">/// {tag}</span>
+                ))}
+              </dd>
+            </>
+          )
+        }
+        {
+          hasTranslation && (
+            <>
+              <dt>{t(lang, 'language')}</dt>
+              <dd>
+                <span aria-current="true">{lang.toUpperCase()}</span> ·{' '}
+                <a href={altLangUrl} hreflang={other} lang={other}>{other.toUpperCase()}</a>
+              </dd>
+            </>
+          )
+        }
+        {
+          talk && (
+            <>
+              <dt>{t(lang, 'linkedTalk')}</dt>
+              <dd><a href={talkUrl(talk.id, lang)}>{linkedTalkTitle}</a></dd>
+            </>
+          )
+        }
+      </dl>
+    </header>
+
+    <div class="body grid">
+      <aside class="rail-left">
+        <Toc headings={headings} lang={lang} />
+      </aside>
+      <div class="column">
+        {
+          cover && (
+            <figure class="cover">
+              <Image src={cover} alt={coverAlt ?? ''} widths={[640, 1280]} sizes="(max-width: 720px) 100vw, 66ch" loading="eager" />
+            </figure>
+          )
+        }
+        <div class="prose e-content">
+          {
+            originallyPublished && (
+              <p class="note">
+                <b>{t(lang, 'note')} //</b> {t(lang, 'originallyPublished')}{' '}
+                <a href={originallyPublished.url}>{originallyPublished.site}</a>,{' '}
+                <time datetime={isoDay(originallyPublished.date)}>{formatDate(originallyPublished.date)}</time>.
+              </p>
+            )
+          }
+          <slot />
+        </div>
+      </div>
+      <aside class="rail-right mono">
+        <p class="label">{t(lang, 'follow')}</p>
+        <ul class="socials">
+          {
+            SOCIALS.map((social) => (
+              <li>
+                <a href={social.url}>{social.label}</a>
+              </li>
+            ))
+          }
+        </ul>
+        <Kudos />
+      </aside>
+    </div>
+  </article>
+</Base>
+
+<style>
+  .head {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
+    border-bottom: var(--rule-thick) solid var(--ink);
+  }
+
+  .head > * {
+    padding: 18px var(--gutter);
+  }
+
+  .kicker {
+    margin: 0;
+    color: var(--accent);
+  }
+
+  h1 {
+    margin: 10px 0 0;
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(36px, 5.2vw, 72px);
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    text-wrap: balance;
+  }
+
+  h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .meta {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-content: end;
+    gap: 4px 10px;
+    margin: 0;
+  }
+
+  .meta dt {
+    color: var(--muted);
+  }
+
+  .meta dd {
+    margin: 0;
+  }
+
+  .meta .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 10px;
+    overflow-wrap: anywhere;
+  }
+
+  .meta a {
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+
+  .body {
+    grid-template-columns: minmax(0, 1fr) minmax(0, calc(var(--measure) + 64px)) minmax(0, 1fr);
+    font-size: 18px;
+  }
+
+  .column {
+    padding: 22px 32px 48px;
+  }
+
+  .cover {
+    margin: 0 0 24px;
+  }
+
+  .cover img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: var(--rule) solid var(--ink);
+  }
+
+  .rail-right {
+    padding: 22px var(--gutter);
+    color: var(--muted);
+  }
+
+  .label {
+    margin: 0;
+  }
+
+  .socials {
+    list-style: none;
+    margin: 10px 0 18px;
+    padding: 0;
+  }
+
+  .socials a {
+    display: inline-block;
+    padding: 4px 0;
+    color: var(--ink);
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+
+  @media (max-width: 960px) {
+    .body {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+    }
+
+    .rail-left {
+      grid-row: span 2;
+    }
+
+    .rail-right {
+      grid-column: 2;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .head,
+    .body {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .rail-left {
+      grid-row: auto;
+    }
+
+    .rail-right {
+      grid-column: auto;
+    }
+
+    .column {
+      padding: 18px var(--gutter) 36px;
+    }
+
+    .rail-left :global(.toc) {
+      position: static;
+      max-height: none;
+    }
+  }
+</style>

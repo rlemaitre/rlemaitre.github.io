@@ -1,0 +1,388 @@
+---
+import { getCollection, getEntry } from 'astro:content'
+import '../styles/print.css'
+import Base from '../layouts/Base.astro'
+import { formatYearMonth, parseYearMonth } from '../lib/dates'
+import { t, talkUrl } from '../lib/i18n'
+import { SITE, SOCIALS } from '../lib/site'
+import { venueSummary } from '../lib/talks'
+
+const resume = (await getEntry('resume', 'resume'))!.data
+const linkedin = SOCIALS.find((s) => s.label === 'LinkedIn')!
+const github = SOCIALS.find((s) => s.label === 'GitHub')!
+const bare = (url: string) => url.replace(/^https?:\/\/(www\.)?/, '')
+const contacts = [linkedin, github, { label: SITE.name, url: SITE.url, rel: 'me' }]
+
+const talks = (await getCollection('talks'))
+  .map((talk) => ({ talk, summary: venueSummary(talk.data.venues) }))
+  .sort((a, b) => b.summary.lastYear - a.summary.lastYear || a.talk.data.title.localeCompare(b.talk.data.title))
+const span = ({ firstYear, lastYear }: { firstYear: number; lastYear: number }) =>
+  firstYear === lastYear ? String(firstYear) : `${firstYear}–${lastYear}`
+const conferences = (venues: { conference: string }[]) => [...new Set(venues.map((v) => v.conference))].join(' · ')
+const description = 'Backend engineer, 26 years on the JVM. Experience, skills, talks and education.'
+---
+
+<Base title="Resume" description={description} lang="en" section="resume" altLangUrl="/fr/">
+  <div class="cv">
+    <header class="top">
+      <div class="intro">
+        <p class="mono accent">/// Curriculum vitæ</p>
+        <h1 class="display">Raphaël<br />Lemaitre<em>.</em></h1>
+        <p class="pitch">{resume.pitch}</p>
+      </div>
+      <div class="side mono">
+        <div class="facts">
+          <p>{resume.location}<br />{resume.languages.join(' · ')}</p>
+          <ul>
+            {
+              contacts.map((c) => (
+                <li>
+                  <a href={c.url} rel={c.rel}>
+                    {bare(c.url)}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+        <div class="actions no-print">
+          <button type="button" class="btn" data-print hidden>{t('en', 'savePdf')} ↓</button>
+          <a class="btn outline" href={linkedin.url} rel={linkedin.rel}>LinkedIn ↗</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="sec" aria-labelledby="h-exp">
+      <h2 id="h-exp" class="mono"><span aria-hidden="true">01</span>Experience</h2>
+      <ol class="jobs">
+        {
+          resume.experience.map((job) => (
+            <li class:list={['job', { compact: job.compact }]}>
+              <span class="mono when num">
+                <time datetime={job.start}>{formatYearMonth(parseYearMonth(job.start))}</time>
+                {' → '}
+                {job.end ? <time datetime={job.end}>{formatYearMonth(parseYearMonth(job.end))}</time> : <span class="now">now</span>}
+              </span>
+              <div>
+                <h3>{job.role}</h3>
+                <p class="company">{job.company}{job.team && ` — ${job.team}`}</p>
+                {job.bullets.length > 0 && (
+                  <ul>
+                    {job.bullets.map((bullet) => (
+                      <li>{bullet}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+    </section>
+
+    <section class="sec" aria-labelledby="h-skills">
+      <h2 id="h-skills" class="mono"><span aria-hidden="true">02</span>Skills</h2>
+      <div class="skills">
+        {
+          resume.skills.map((skill) => (
+            <div>
+              <h3 class="mono accent">{skill.group}</h3>
+              <p>{skill.items.join(', ')}</p>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="sec" aria-labelledby="h-talks">
+      <h2 id="h-talks" class="mono"><span aria-hidden="true">03</span>Talks</h2>
+      <ul class="talks">
+        {
+          talks.map(({ talk, summary }) => (
+            <li class="talk">
+              <span class="mono num">
+                ×{summary.count} · {span(summary)}
+              </span>
+              <a href={talkUrl(talk.id)}>{talk.data.title}</a>
+              <span class="mono muted venues">{conferences(talk.data.venues)}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section class="sec" aria-labelledby="h-edu">
+      <h2 id="h-edu" class="mono"><span aria-hidden="true">04</span>Education</h2>
+      <div class="education">
+        {
+          resume.education.map((e) => (
+            <div class="job compact">
+              <span class="mono when num">
+                {e.start} → {e.end}
+              </span>
+              <div>
+                <h3>{e.degree}</h3>
+                <p class="company">
+                  <a href={e.url}>{e.school}</a>
+                </p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+  </div>
+</Base>
+
+<script>
+  const button = document.querySelector<HTMLButtonElement>('[data-print]')
+  if (button) {
+    button.addEventListener('click', () => window.print())
+    button.hidden = false
+  }
+</script>
+
+<style>
+  .cv {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .accent {
+    color: var(--accent);
+  }
+
+  .top {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
+    border-bottom: var(--rule-thick) solid var(--ink);
+  }
+
+  .top > * {
+    padding: 18px var(--gutter);
+  }
+
+  .display {
+    font-size: clamp(48px, 9vw, 64px);
+    margin: 8px 0 14px;
+  }
+
+  .pitch {
+    max-width: 62ch;
+    margin: 0;
+    font-size: 16px;
+  }
+
+  .side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 14px;
+    border-left: var(--rule) solid var(--ink);
+  }
+
+  .side p,
+  .side ul {
+    margin: 0 0 14px;
+    padding: 0;
+    list-style: none;
+  }
+
+  .side a {
+    text-decoration: none;
+    overflow-wrap: anywhere;
+  }
+
+  .actions {
+    display: grid;
+    gap: 8px;
+  }
+
+  .btn {
+    display: block;
+    padding: 10px;
+    border: 1.5px solid var(--accent);
+    background: var(--accent);
+    color: var(--bg);
+    font: inherit;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .btn.outline {
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--ink);
+  }
+
+  .btn[hidden] {
+    display: none;
+  }
+
+  .sec {
+    display: grid;
+    grid-template-columns: 200px minmax(0, 1fr);
+    border-bottom: var(--rule) solid var(--ink);
+  }
+
+  .sec > h2 {
+    margin: 0;
+    padding: 16px var(--gutter);
+    border-right: var(--rule) solid var(--ink);
+    font-weight: 500;
+  }
+
+  .sec > h2 span {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--accent);
+    font-family: var(--font-display);
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    line-height: 1;
+  }
+
+  .jobs {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .job {
+    display: grid;
+    grid-template-columns: 150px minmax(0, 1fr);
+    gap: 18px;
+    padding: 16px var(--gutter);
+    border-top: var(--rule) solid var(--ink);
+  }
+
+  .jobs > .job:first-child,
+  .education > .job {
+    border-top: 0;
+  }
+
+  .when {
+    padding-top: 4px;
+    color: var(--muted);
+  }
+
+  .now {
+    color: var(--accent);
+  }
+
+  .job h3 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .job.compact {
+    padding-block: 10px;
+  }
+
+  .job.compact h3 {
+    font-size: 17px;
+  }
+
+  .company {
+    margin: 4px 0 6px;
+    color: var(--muted);
+  }
+
+  .job ul {
+    margin: 6px 0 0;
+    padding-left: 1.1em;
+  }
+
+  .job li::marker {
+    content: '— ';
+    color: var(--accent);
+  }
+
+  .skills {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--rule);
+    background: var(--ink);
+  }
+
+  .skills > div {
+    padding: 14px;
+    background: var(--bg);
+  }
+
+  .skills h3 {
+    margin: 0;
+    font-weight: 500;
+  }
+
+  .skills p {
+    margin: 6px 0 0;
+  }
+
+  .talks {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .talk {
+    display: grid;
+    grid-template-columns: 140px minmax(0, 1fr) 200px;
+    gap: 14px;
+    align-items: baseline;
+    padding: 10px var(--gutter);
+    border-top: var(--rule) solid var(--ink);
+  }
+
+  .talk .num {
+    white-space: nowrap;
+  }
+
+  .talk:first-child {
+    border-top: 0;
+  }
+
+  .venues {
+    text-align: right;
+  }
+
+  .sec:last-of-type {
+    border-bottom: 0;
+  }
+
+  @media (max-width: 720px) {
+    .top,
+    .sec,
+    .job,
+    .talk,
+    .skills {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .side {
+      border-left: 0;
+      border-top: var(--rule) solid var(--ink);
+    }
+
+    .sec > h2 {
+      border-right: 0;
+      border-bottom: var(--rule) solid var(--ink);
+    }
+
+    .job {
+      gap: 4px;
+    }
+
+    .venues {
+      text-align: left;
+    }
+  }
+</style>

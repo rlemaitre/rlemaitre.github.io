@@ -1,0 +1,14 @@
+---
+import { render } from 'astro:content'
+import ArticleLayout from '../../layouts/ArticleLayout.astro'
+import { articlePaths } from '../../lib/article-paths'
+
+export const getStaticPaths = () => articlePaths('en')
+
+const { article, altLangUrl } = Astro.props
+const { Content, headings } = await render(article)
+---
+
+<ArticleLayout article={article} headings={headings} altLangUrl={altLangUrl}>
+  <Content />
+</ArticleLayout>

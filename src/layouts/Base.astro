@@ -1,0 +1,87 @@
+---
+import '@fontsource/archivo/500.css'
+import '@fontsource/archivo/900.css'
+import '@fontsource/jetbrains-mono/400.css'
+import '@fontsource/jetbrains-mono/500.css'
+import '@fontsource/atkinson-hyperlegible-next/400.css'
+import '@fontsource/atkinson-hyperlegible-next/600.css'
+import '@fontsource/atkinson-hyperlegible-next/400-italic.css'
+import '../styles/tokens.css'
+import '../styles/base.css'
+import Head from '../components/Head.astro'
+import ThemeToggle from '../components/ThemeToggle.astro'
+import TopBar from '../components/TopBar.astro'
+import { t, type Lang } from '../lib/i18n'
+import { SITE, SOCIALS } from '../lib/site'
+
+interface Props {
+  title: string
+  description: string
+  lang: Lang
+  section?: 'writing' | 'talks' | 'projects' | 'resume'
+  altLangUrl: string
+  ogImage?: string
+  ogType?: 'website' | 'article'
+  /** Pages that are not real documents (the 404): robots noindex, no canonical. */
+  noindex?: boolean
+}
+
+const { title, description, lang, section, altLangUrl, ogImage, ogType, noindex } = Astro.props
+const skipLabel = t(lang, 'skipToContent')
+const socialLabel = t(lang, 'profiles')
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <Head title={title} description={description} lang={lang} ogImage={ogImage} ogType={ogType} noindex={noindex} />
+    <slot name="head" />
+  </head>
+  <body>
+    <a class="skip-link mono" href="#main">{skipLabel}</a>
+    <TopBar lang={lang} section={section} altLangUrl={altLangUrl} />
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <footer class="footer grid mono">
+      <span class="cell muted">© {SITE.name}</span>
+      <ul class="socials grid" aria-label={socialLabel}>
+        {
+          SOCIALS.map((social) => (
+            <li>
+              <a class="cell" href={social.url} rel={social.rel}>
+                {social.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <ThemeToggle lang={lang} />
+    </footer>
+  </body>
+</html>
+
+<style>
+  .footer {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 4fr) minmax(0, 1fr);
+    border-top: var(--rule-thick) solid var(--ink);
+  }
+
+  .socials {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    background: var(--ink);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  @media (max-width: 720px) {
+    .footer {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .socials {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+</style>

@@ -1,0 +1,45 @@
+---
+// Head loads Tinylytics with `?kudos=custom` (documented: it writes only the count into the button, no emoji).
+// Tinylytics overwrites the button's text, so the "KUDOS" label is generated content that survives it.
+---
+
+<button type="button" class="tinylytics_kudos mono"></button>
+
+<style>
+  .tinylytics_kudos {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 8px 12px;
+    border: 1.5px solid var(--ink);
+    background: transparent;
+    color: var(--accent);
+    cursor: pointer;
+    white-space: pre;
+    transition:
+      background-color 0.15s,
+      color 0.15s;
+  }
+
+  .tinylytics_kudos::before {
+    content: 'KUDOS';
+  }
+
+  .tinylytics_kudos:hover {
+    background: var(--ink);
+    color: var(--bg);
+  }
+
+  /* Tinylytics adds this class and disables the button after a tap. */
+  .tinylytics_kudos.did_select {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--bg);
+    cursor: default;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tinylytics_kudos {
+      transition: none;
+    }
+  }
+</style>

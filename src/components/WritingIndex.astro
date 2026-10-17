@@ -1,0 +1,55 @@
+---
+import IndexRow from './IndexRow.astro'
+import Base from '../layouts/Base.astro'
+import { articleCategory } from '../lib/articles'
+import { getPublishedArticles } from '../lib/collections'
+import { articleUrl, t, type Lang } from '../lib/i18n'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+const articles = await getPublishedArticles(lang)
+const title = t(lang, 'writing')
+const intro = t(lang, 'writingIntro')
+const otherIndex = lang === 'en' ? '/fr/articles/' : '/articles/'
+---
+
+<Base title={title} description={intro} lang={lang} section="writing" altLangUrl={otherIndex}>
+  <header class="intro">
+    <p class="mono muted">{String(articles.length).padStart(2, '0')} / {intro}</p>
+    <h1 class="display">{title}<em>.</em></h1>
+  </header>
+  <ul class="rows">
+    {
+      articles.map((article) => (
+        <IndexRow
+          href={articleUrl(article.id)}
+          date={article.data.published}
+          title={article.data.title}
+          tag={articleCategory(article.id)}
+        />
+      ))
+    }
+  </ul>
+</Base>
+
+<style>
+  .intro {
+    padding: 18px var(--gutter) 28px;
+  }
+
+  .display {
+    margin-top: 8px;
+    font-size: clamp(56px, 12vw, 128px);
+  }
+
+  .rows {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: var(--rule-thick) solid var(--ink);
+    border-bottom: var(--rule-thick) solid var(--ink);
+  }
+</style>

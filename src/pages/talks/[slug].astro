@@ -1,0 +1,12 @@
+---
+import { getCollection } from 'astro:content'
+import TalkPage from '../../components/TalkPage.astro'
+
+export async function getStaticPaths() {
+  return (await getCollection('talks')).map((talk) => ({ params: { slug: talk.id }, props: { talk } }))
+}
+
+const { talk } = Astro.props
+---
+
+<TalkPage talk={talk} lang="en" />
