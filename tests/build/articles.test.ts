@@ -46,6 +46,19 @@ describe('article pages', () => {
     expect(entry?.querySelector('.e-content')?.textContent).toMatch(/diagnosed/)
   })
 
+  it('shows each tag of the article as a p-category in the header', () => {
+    const header = load(ADHD).querySelector('article.h-entry header')
+    const tags = [...(header?.querySelectorAll('.p-category') ?? [])].map((el) => el.textContent?.trim())
+    expect(tags).toEqual(['/// adhd', '/// mental-health', '/// productivity'])
+    expect(header?.textContent).toContain('Tags')
+  })
+
+  it('uses the French label for the tags on the French article', () => {
+    const header = load(`fr/${ADHD}`).querySelector('article.h-entry header')
+    expect(header?.querySelectorAll('.p-category').length).toBe(3)
+    expect(header?.textContent).toContain('Tags')
+  })
+
   it('shows where the article was first published', () => {
     expect(load(ADHD).querySelector('.e-content')?.textContent).toContain('Ledger blog')
   })

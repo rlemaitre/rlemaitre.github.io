@@ -20,7 +20,7 @@ interface Props {
 }
 
 const { article, headings, altLangUrl } = Astro.props
-const { title, description, published, updated, originallyPublished, cover, coverAlt, talk: talkRef } = article.data
+const { title, description, published, updated, originallyPublished, cover, coverAlt, tags, talk: talkRef } = article.data
 const talk = talkRef ? await getEntry(talkRef) : undefined
 const lang = articleLang(article.id)
 const other: Lang = lang === 'en' ? 'fr' : 'en'
@@ -66,6 +66,18 @@ const [titleHead, titleTail] = colon === -1 ? [title, ''] : [title.slice(0, colo
         }
         <dt>{t(lang, 'readingTime')}</dt>
         <dd>{minutes} {t(lang, 'min')}</dd>
+        {
+          tags.length > 0 && (
+            <>
+              <dt>{t(lang, 'tags')}</dt>
+              <dd class="tags">
+                {tags.map((tag) => (
+                  <span class="p-category">/// {tag}</span>
+                ))}
+              </dd>
+            </>
+          )
+        }
         {
           hasTranslation && (
             <>
@@ -175,6 +187,13 @@ const [titleHead, titleTail] = colon === -1 ? [title, ''] : [title.slice(0, colo
 
   .meta dd {
     margin: 0;
+  }
+
+  .meta .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 10px;
+    overflow-wrap: anywhere;
   }
 
   .meta a {
