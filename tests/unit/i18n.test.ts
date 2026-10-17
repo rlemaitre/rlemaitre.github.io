@@ -1,5 +1,17 @@
 import { describe, expect, it } from 'vitest'
-import { altLangUrl, articleLang, articleSlug, articleUrl, homeUrl, t, ui } from '../../src/lib/i18n'
+import {
+  altLangUrl,
+  articleLang,
+  articleSlug,
+  articleUrl,
+  homeUrl,
+  projectUrl,
+  projectsUrl,
+  t,
+  talkUrl,
+  talksUrl,
+  ui,
+} from '../../src/lib/i18n'
 
 describe('article ids', () => {
   it('derives the language', () => {
@@ -49,5 +61,20 @@ describe('ui labels', () => {
   it('does not mention notes in the writing intro', () => {
     expect(t('en', 'writingIntro')).not.toMatch(/note/i)
     expect(t('fr', 'writingIntro')).not.toMatch(/note/i)
+  })
+})
+
+describe('talk and project urls', () => {
+  it('builds English urls by default', () => {
+    expect(talkUrl('x')).toBe('/talks/x/')
+    expect(projectUrl('pillars')).toBe('/projects/pillars/')
+    expect(talksUrl('en')).toBe('/talks/')
+    expect(projectsUrl('en')).toBe('/projects/')
+  })
+  it('builds French urls under /fr/', () => {
+    expect(talkUrl('x', 'fr')).toBe('/fr/talks/x/')
+    expect(projectUrl('pillars', 'fr')).toBe('/fr/projects/pillars/')
+    expect(talksUrl('fr')).toBe('/fr/talks/')
+    expect(projectsUrl('fr')).toBe('/fr/projects/')
   })
 })

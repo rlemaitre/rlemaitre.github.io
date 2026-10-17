@@ -37,6 +37,16 @@ const en = {
   profiles: 'Profiles',
   notFoundTitle: 'Page not found',
   notFoundText: 'This page does not exist, or it moved when I rebuilt the site.',
+  talk: 'Talk',
+  givenInEnglish: 'given in English',
+  givenInFrench: 'given in French',
+  abstract: 'Abstract',
+  venues: 'Venues',
+  online: 'Online',
+  project: 'Project',
+  docs: 'Docs',
+  openSource: 'open source',
+  projectsIntro: 'Open-source projects: Pillars, Mason, Risk Matrix and the FunktionalIO organization.',
 } as const
 
 export type UiKey = keyof typeof en
@@ -80,6 +90,16 @@ export const ui: Record<Lang, Record<UiKey, string>> = {
     profiles: 'Profils',
     notFoundTitle: 'Page introuvable',
     notFoundText: 'Cette page n’existe pas, ou elle a bougé lors de la refonte du site.',
+    talk: 'Talk',
+    givenInEnglish: 'donné en anglais',
+    givenInFrench: 'donné en français',
+    abstract: 'Résumé',
+    venues: 'Interventions',
+    online: 'En ligne',
+    project: 'Projet',
+    docs: 'Doc',
+    openSource: 'open source',
+    projectsIntro: 'Projets open source : Pillars, Mason, Risk Matrix et l’organisation FunktionalIO.',
   },
 }
 
@@ -89,14 +109,22 @@ export const articleLang = (id: string): Lang => (id.startsWith('fr/') ? 'fr' : 
 
 export const articleSlug = (id: string): string => id.slice(id.indexOf('/') + 1)
 
-export const homeUrl = (lang: Lang): string => (lang === 'fr' ? '/fr/' : '/')
+export const otherLang = (lang: Lang): Lang => (lang === 'en' ? 'fr' : 'en')
+
+const prefix = (lang: Lang): string => (lang === 'fr' ? '/fr' : '')
+
+export const homeUrl = (lang: Lang): string => `${prefix(lang)}/`
 
 export const articleUrl = (id: string): string =>
   `${articleLang(id) === 'fr' ? '/fr' : ''}/articles/${articleSlug(id)}/`
 
-export const talkUrl = (id: string): string => `/talks/${id}/`
+export const talksUrl = (lang: Lang): string => `${prefix(lang)}/talks/`
 
-export const projectUrl = (id: string): string => `/projects/${id}/`
+export const talkUrl = (id: string, lang: Lang = 'en'): string => `${talksUrl(lang)}${id}/`
+
+export const projectsUrl = (lang: Lang): string => `${prefix(lang)}/projects/`
+
+export const projectUrl = (id: string, lang: Lang = 'en'): string => `${projectsUrl(lang)}${id}/`
 
 /** URL of the translation of an article, or the other language's home when none exists. */
 export function altLangUrl(id: string, allIds: string[]): string {
