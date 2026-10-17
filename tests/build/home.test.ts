@@ -66,6 +66,11 @@ describe('French home page', () => {
 
   const doc = existsSync('dist/fr/index.html') ? load('fr/') : parseHTML('<html></html>').document
 
+  it('shows the French footer labels', () => {
+    expect(text(doc.querySelector('[data-theme-toggle]'))).toBe('Sombre')
+    expect(doc.querySelector('.socials')?.getAttribute('aria-label')).toBe('Profils')
+  })
+
   it('is in French', () => {
     expect(doc.documentElement.getAttribute('lang')).toBe('fr')
     expect(text(doc.querySelector('.lede'))).toMatch(/\bje\b|\bj’|\bj'/i)

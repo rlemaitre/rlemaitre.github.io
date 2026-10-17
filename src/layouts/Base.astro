@@ -22,17 +22,19 @@ interface Props {
   altLangUrl: string
   ogImage?: string
   ogType?: 'website' | 'article'
+  /** Pages that are not real documents (the 404): robots noindex, no canonical. */
+  noindex?: boolean
 }
 
-const { title, description, lang, section, altLangUrl, ogImage, ogType } = Astro.props
+const { title, description, lang, section, altLangUrl, ogImage, ogType, noindex } = Astro.props
 const skipLabel = t(lang, 'skipToContent')
-const socialLabel = lang === 'fr' ? 'Profils' : 'Profiles'
+const socialLabel = t(lang, 'profiles')
 ---
 
 <!doctype html>
 <html lang={lang}>
   <head>
-    <Head title={title} description={description} lang={lang} ogImage={ogImage} ogType={ogType} />
+    <Head title={title} description={description} lang={lang} ogImage={ogImage} ogType={ogType} noindex={noindex} />
     <slot name="head" />
   </head>
   <body>
@@ -54,7 +56,7 @@ const socialLabel = lang === 'fr' ? 'Profils' : 'Profiles'
           ))
         }
       </ul>
-      <ThemeToggle />
+      <ThemeToggle lang={lang} />
     </footer>
   </body>
 </html>

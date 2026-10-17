@@ -1,9 +1,16 @@
 ---
 // A text toggle: pressed means the dark theme is on. Hidden until the script runs, so no-JS visitors
 // never see a control that does nothing (they get the OS theme through CSS).
+import { t, type Lang } from '../lib/i18n'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
 ---
 
-<button type="button" class="theme-toggle cell mono" aria-pressed="false" data-theme-toggle hidden>Dark</button>
+<button type="button" class="theme-toggle cell mono" aria-pressed="false" data-theme-toggle hidden>{t(lang, 'dark')}</button>
 
 <script>
   const root = document.documentElement

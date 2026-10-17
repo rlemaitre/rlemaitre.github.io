@@ -40,3 +40,14 @@ describe('ui strings', () => {
     expect(t('fr', 'writing')).toBe('Articles')
   })
 })
+
+describe('ui labels', () => {
+  it('translates the footer labels', () => {
+    expect([t('fr', 'dark'), t('fr', 'profiles')]).toEqual(['Sombre', 'Profils'])
+    expect([t('en', 'dark'), t('en', 'profiles')]).toEqual(['Dark', 'Profiles'])
+  })
+  it('does not mention notes in the writing intro', () => {
+    expect(t('en', 'writingIntro')).not.toMatch(/note/i)
+    expect(t('fr', 'writingIntro')).not.toMatch(/note/i)
+  })
+})
