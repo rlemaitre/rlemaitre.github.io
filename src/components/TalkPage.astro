@@ -3,7 +3,7 @@ import { render } from 'astro:content'
 import VideoEmbed from './VideoEmbed.astro'
 import '../styles/prose.css'
 import Base from '../layouts/Base.astro'
-import { talkAbstract, type Talk } from '../lib/collections'
+import { talkAbstract, talkTitle, type Talk } from '../lib/collections'
 import { formatDate } from '../lib/dates'
 import { otherLang, t, talkUrl, type Lang } from '../lib/i18n'
 import { sortedVenues, talkDescription, venuePlace, venueSummary } from '../lib/talks'
@@ -15,7 +15,8 @@ interface Props {
 
 const { talk, lang } = Astro.props
 const { Content } = await render(await talkAbstract(talk, lang))
-const { title, venues } = talk.data
+const { venues } = talk.data
+const { title, translated } = await talkTitle(talk, lang)
 const summary = venueSummary(venues, lang)
 const sorted = sortedVenues(venues)
 const iso = (d: Date) => d.toISOString().slice(0, 10)
@@ -29,7 +30,7 @@ const givenIn = t(lang, talk.data.lang === 'fr' ? 'givenInFrench' : 'givenInEngl
   <article>
     <header class="head">
       <p class="mono kicker">/// {t(lang, 'talk')} — {givenIn}</p>
-      <h1 lang={lang === 'en' ? undefined : 'en'}>{head}{colon !== -1 && <em>:</em>}{tail}</h1>
+      <h1 lang={lang === 'en' || translated ? undefined : 'en'}>{head}{colon !== -1 && <em>:</em>}{tail}</h1>
     </header>
     <div class="body">
       <section class="column" aria-labelledby="abstract">

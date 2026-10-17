@@ -13,6 +13,7 @@ venues:
     url: "https://2024.sunny-tech.io/sessions/hacker-le-tdah-strategies-pour"
     city: Montpellier
     country: France
+    sessionTitle: "Hacker le TDAH : Stratégies pour le développeur moderne"
     video: "https://www.youtube.com/watch?v=qG1ING_RNc4"
 ---
 

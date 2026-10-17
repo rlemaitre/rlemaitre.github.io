@@ -6,7 +6,7 @@ import Kudos from '../components/Kudos.astro'
 import Toc from '../components/Toc.astro'
 import { articleCategory } from '../lib/articles'
 import { getEntry } from 'astro:content'
-import type { Article } from '../lib/collections'
+import { talkTitle, type Article } from '../lib/collections'
 import { formatDate } from '../lib/dates'
 import { articleLang, articleUrl, homeUrl, t, talkUrl, type Lang } from '../lib/i18n'
 import { readingMinutes } from '../lib/reading-time'
@@ -23,6 +23,7 @@ const { article, headings, altLangUrl } = Astro.props
 const { title, description, published, updated, originallyPublished, cover, coverAlt, tags, talk: talkRef } = article.data
 const talk = talkRef ? await getEntry(talkRef) : undefined
 const lang = articleLang(article.id)
+const linkedTalkTitle = talk ? (await talkTitle(talk, lang)).title : ''
 const other: Lang = lang === 'en' ? 'fr' : 'en'
 const hasTranslation = altLangUrl !== homeUrl(other)
 // Social crawlers want a small JPEG, not the full-size WebP.
@@ -93,7 +94,7 @@ const [titleHead, titleTail] = colon === -1 ? [title, ''] : [title.slice(0, colo
           talk && (
             <>
               <dt>{t(lang, 'linkedTalk')}</dt>
-              <dd><a href={talkUrl(talk.id, lang)}>{talk.data.title}</a></dd>
+              <dd><a href={talkUrl(talk.id, lang)}>{linkedTalkTitle}</a></dd>
             </>
           )
         }

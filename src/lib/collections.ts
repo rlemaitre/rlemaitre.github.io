@@ -21,6 +21,15 @@ export async function talkAbstract(talk: Talk, lang: Lang): Promise<Talk | Colle
   return fr
 }
 
+/** The talk title in `lang`, and whether it is the French title (otherwise it is the original, English, one). */
+export async function talkTitle(talk: Talk, lang: Lang): Promise<{ title: string; translated: boolean }> {
+  if (lang === 'fr') {
+    const title = (await getEntry('talksFr', talk.id))?.data.title
+    if (title) return { title, translated: true }
+  }
+  return { title: talk.data.title, translated: false }
+}
+
 /** The project summary in `lang`, and the entry whose body is the project description in that language. */
 export async function projectText(
   project: Project,

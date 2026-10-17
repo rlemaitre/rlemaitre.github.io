@@ -61,11 +61,11 @@ const projects = defineCollection({
 
 /**
  * French text of talks and projects: one file per entry, same id as the English file, in a `fr/` folder next to it.
- * They hold only the translated text. Venues, links, tags and order live in the English entry alone.
+ * They hold only the translated text (an optional French `title` when the talk has an official one). Venues, links, tags and order live in the English entry alone.
  */
 const talksFr = defineCollection({
   loader: glob({ base: './src/content/talks/fr', pattern: '*.md' }),
-  schema: z.object({}),
+  schema: z.object({ title: z.string().optional() }),
 })
 
 const projectsFr = defineCollection({

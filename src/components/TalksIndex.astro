@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content'
 import IndexRow from './IndexRow.astro'
 import Base from '../layouts/Base.astro'
+import { talkTitle } from '../lib/collections'
 import { otherLang, talksUrl, talkUrl, t, type Lang } from '../lib/i18n'
 import { talkTotals, totalsText, venueSummary } from '../lib/talks'
 
@@ -10,9 +11,15 @@ interface Props {
 }
 
 const { lang } = Astro.props
-const talks = (await getCollection('talks'))
-  .map((talk) => ({ talk, summary: venueSummary(talk.data.venues, lang) }))
-  .sort((a, b) => b.summary.lastYear - a.summary.lastYear || a.talk.data.title.localeCompare(b.talk.data.title))
+const talks = (
+  await Promise.all(
+    (await getCollection('talks')).map(async (talk) => ({
+      talk,
+      summary: venueSummary(talk.data.venues, lang),
+      title: (await talkTitle(talk, lang)).title,
+    })),
+  )
+).sort((a, b) => b.summary.lastYear - a.summary.lastYear || a.title.localeCompare(b.title))
 const totals = totalsText(talkTotals(talks.map(({ talk }) => talk.data)), lang)
 const title = t(lang, 'talks')
 const span = ({ firstYear, lastYear }: { firstYear: number; lastYear: number }) =>
@@ -26,10 +33,10 @@ const span = ({ firstYear, lastYear }: { firstYear: number; lastYear: number }) 
   </header>
   <ul class="rows">
     {
-      talks.map(({ talk, summary }) => (
+      talks.map(({ talk, summary, title }) => (
         <IndexRow
           href={talkUrl(talk.id, lang)}
-          title={talk.data.title}
+          title={title}
           meta={`${span(summary)} / ${summary.places.join(', ')}`}
           tag={`×${summary.count}`}
         />

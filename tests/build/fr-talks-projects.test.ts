@@ -10,6 +10,7 @@ const TALKS = [
 ]
 const PROJECTS = ['pillars', 'mason', 'riskmatrix', 'funktionalio']
 const IRON = 'armored-type-safety-with-iron'
+const ADHD_FR_TITLE = 'Hacker le TDAH : Stratégies pour le développeur moderne'
 const ADHD = 'hacking-adhd-strategies-for-the-modern-developer'
 
 const file = (path: string): string => `dist/${path}index.html`
@@ -60,6 +61,30 @@ describe('French talk pages', () => {
     expect(text(doc.querySelector('h1'))).toMatch(/^Fearless Coding/)
     expect(text(doc.querySelector('.venues .session'))).toBe('Codez sans craintes avec Scala 3 et Iron')
     expect(doc.querySelector('meta[name="description"]')?.getAttribute('content')).toBe('Donné une fois, en 2024.')
+  })
+
+  it('shows Raph\'s original French title and abstract on the French ADHD page, the English title on the English one', () => {
+    const fr = load(`fr/talks/${ADHD}/`)
+    expect(text(fr.querySelector('h1'))).toBe(ADHD_FR_TITLE)
+    expect(fr.querySelector('h1')?.getAttribute('lang')).toBeNull()
+    expect(text(fr.querySelector('title'))).toContain(ADHD_FR_TITLE)
+    expect(fr.querySelector('meta[property="og:title"]')?.getAttribute('content')).toContain(ADHD_FR_TITLE)
+    expect(text(fr.querySelector('.prose'))).toContain('un atout inestimable dans le domaine du développement logiciel')
+    expect(text(load(`talks/${ADHD}/`).querySelector('h1'))).toBe('Hacking ADHD: Strategies for the Modern Developer')
+  })
+
+  it('shows the French session title on the SunnyTech venue of the ADHD talk, in both languages', () => {
+    for (const path of [`talks/${ADHD}/`, `fr/talks/${ADHD}/`]) {
+      const sessions = [...load(path).querySelectorAll('.venues .session')].map(text)
+      expect(sessions, path).toEqual([ADHD_FR_TITLE])
+    }
+  })
+
+  it('uses the French ADHD title in the French index and the French article\'s linked talk', () => {
+    const row = [...load('fr/talks/').querySelectorAll('.rows a.row')].find((a) => a.getAttribute('href') === `/fr/talks/${ADHD}/`)
+    expect(text(row?.querySelector('.title'))).toContain(ADHD_FR_TITLE)
+    const link = [...load(`fr/articles/adhd/${ADHD}/`).querySelectorAll('dl a')].find((a) => a.getAttribute('href') === `/fr/talks/${ADHD}/`)
+    expect(text(link)).toBe(ADHD_FR_TITLE)
   })
 
   it('links the language switch both ways', () => {
