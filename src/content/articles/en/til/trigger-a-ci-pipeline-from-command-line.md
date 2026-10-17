@@ -1,5 +1,5 @@
 ---
-title: "Trigger a Ci Pipeline From Command Line"
+title: "Trigger a CI Pipeline From Command Line"
 description: "I redeploy a staging environment with an empty commit instead of a dummy code change."
 published: 2021-03-09
 tags: ["git","ci","today-i-learned"]
