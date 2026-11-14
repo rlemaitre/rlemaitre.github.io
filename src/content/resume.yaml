@@ -31,42 +31,73 @@
       company: Adventori
       start: 2014-06
       end: 2022-03
-      bullets: []
+      bullets:
+        - Served 20 billion ads a year on 15 servers at 99.5% availability, and ingested 400 GB of data a day on 20 servers.
+        - Managed the Tech Lab, a team of 9 developers, DevOps, data engineers and integrators.
+        - Co-designed the product roadmap with the CEO and PM, and aligned the technical roadmap with company objectives.
+        - Mentored the team through peer reviews, katas and coding dojos, and promoted craftsmanship and DevOps practices.
+        - Built an inclusive and selective hiring process for engineering and product.
+        - As Lead Developer, designed and built the ad server, data warehouse, reporting system and customer data integration service.
+        - Introduced Cassandra for high-volume data and Apache Spark for data ingestion and reporting.
+        - Set up advanced CI/CD workflows.
       compact: false
     - role: R&D Senior Developer
       company: Systar
       start: 2010-10
       end: 2014-06
-      bullets: []
+      bullets:
+        - Designed and built a monitoring application on a custom distributed, bi-temporal NoSQL database.
+        - Built calculated fields management and optimized aggregation computations (OLAP cube).
+        - Scrum Master for a team of 4 developers in Paris and Lyon.
+        - Built a JDBC driver for the database and a quantified-self monitoring application during hacking weeks.
       compact: true
     - role: R&D Engineer
       company: Xcalia
       start: 2007-05
       end: 2010-08
-      bullets: []
+      bullets:
+        - Developed a datastore-agnostic persistence and query engine over RDBMS and web services.
+        - Implemented compensation algorithms (joins, sort, union) and datastore-specific query generation.
+        - Built dynamic service orchestration, independent of the service invocation technology.
       compact: true
     - role: Software Architect
       company: Capgemini
       start: 2006-07
       end: 2007-05
-      bullets: []
+      bullets:
+        - Designed a portal and directory architecture for an AP-HP call for bids.
+        - Led the migration of the DGI's FICOBA application from Oracle Application Server to JBoss and from Oracle Reports to JasperReports.
       compact: true
     - role: Team Leader
       company: E-Deal
       start: 2000-01
       end: 2006-06
-      bullets: []
+      bullets:
+        - Managed a team of 4 R&D developers.
+        - Built the first J2EE version of the e-DEAL CRM, with its MVC and persistence frameworks, Sales Force and Admin modules.
+        - Added internationalization, calendar and contact sync with Microsoft Exchange and Lotus Domino, and a J2ME application.
+        - Rewrote the presentation framework (MVC2).
       compact: true
   skills:
     - group: Languages
-      items: [Scala, Kotlin, Java, Groovy, SQL, TypeScript, JavaScript, HTML, CSS]
+      items: [Scala, Kotlin, Java, Groovy, SQL, TypeScript, JavaScript, HTML, CSS, Bash]
     - group: Data
-      items: [PostgreSQL, SQLite, Apache Cassandra, Apache Spark]
+      items: [PostgreSQL, SQLite, Apache Cassandra, Apache Spark, Elasticsearch]
     - group: Ops & tools
-      items: [Kubernetes, Docker, Gatling, Git, GitHub, GitLab, CI/CD]
+      items: [Kubernetes, Docker, Gatling, Git, GitHub, GitLab, CI/CD, Jenkins, Linux, OpenTelemetry, Grafana, Kibana, Datadog, IntelliJ IDEA, VS Code, Metals, Zed]
   education:
     - degree: Master in Engineering, Computer Science
       school: ENSIIE
       url: https://www.ensiie.fr
       start: 1997
       end: 2001
+  certifications:
+    - name: Introduction to Big Data with Apache Spark
+      issuer: edX
+      year: 2015
+    - name: Principles of Reactive Programming
+      issuer: Coursera
+      year: 2013
+    - name: Functional Programming with Scala
+      issuer: Coursera
+      year: 2012

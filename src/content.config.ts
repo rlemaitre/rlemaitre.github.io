@@ -95,6 +95,13 @@ const resume = defineCollection({
     ),
     skills: z.array(z.object({ group: z.enum(['Languages', 'Data', 'Ops & tools']), items: z.array(z.string()) })),
     education: z.array(z.object({ degree: z.string(), school: z.string(), url: z.url(), start: z.number(), end: z.number() })),
+    certifications: z.array(
+      z.object({
+        name: z.string(),
+        issuer: z.string(),
+        year: z.number(),
+      }),
+    ),
   }),
 })
 

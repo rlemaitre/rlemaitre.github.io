@@ -131,6 +131,25 @@ const description = 'Backend engineer, 26 years on the JVM. Experience, skills, 
         }
       </div>
     </section>
+
+    <section class="sec" aria-labelledby="h-certs">
+      <h2 id="h-certs" class="mono"><span aria-hidden="true">05</span>Certifications</h2>
+      <div class="education">
+        {
+          resume.certifications.map((c) => (
+            <div class="job compact">
+              <span class="mono when num">
+                {c.year}
+              </span>
+              <div>
+                <h3>{c.name}</h3>
+                <p class="company">{c.issuer}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </section>
   </div>
 </Base>
 
