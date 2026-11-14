@@ -1,0 +1,455 @@
+---
+/**
+ * The resume laid out for A4 paper, the source of the resume PDFs (`npm run resume:pdf` prints it with WeasyPrint).
+ * Standalone HTML with inline CSS so WeasyPrint needs no site assets; the fonts come from the swiss-print-docs kit.
+ */
+import { formatYearMonth, parseYearMonth } from '../lib/dates'
+import { t, type Lang } from '../lib/i18n'
+import { bareUrl, loadResume, RESUME_CONTACTS, SKILL_LABEL } from '../lib/resume-source'
+import { SITE } from '../lib/site'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+const { resume, talks } = await loadResume(lang)
+const ym = (s: string) => formatYearMonth(parseYearMonth(s))
+const [first, ...rest] = SITE.name.split(' ')
+const sections = ['experience', 'skills', 'talks', 'education', 'certifications'] as const
+const num = (key: (typeof sections)[number]) => String(sections.indexOf(key) + 1).padStart(2, '0')
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <title>{SITE.name} — {t(lang, 'resume')}</title>
+    <meta name="author" content={SITE.name} />
+    <style is:inline>
+      :root {
+        --paper: #fff;
+        --ink: #0b0b0b;
+        --muted: #5a5a55;
+        --accent: #d01414;
+        --hair: #c9c9c2;
+        --font-display: 'Archivo', 'Arial Black', sans-serif;
+        --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+        --font-body: 'Atkinson Hyperlegible Next', system-ui, sans-serif;
+        --rail: 27mm;
+        --when: 30mm;
+      }
+
+      @page {
+        size: A4;
+        margin: 14mm 14mm 16mm;
+
+        @bottom-left {
+          content: 'Raphaël Lemaitre — CV';
+          font-family: var(--font-mono);
+          font-size: 6.5pt;
+          letter-spacing: 0.09em;
+          text-transform: uppercase;
+          color: var(--muted);
+        }
+
+        @bottom-right {
+          content: counter(page, decimal-leading-zero) ' / ' counter(pages, decimal-leading-zero);
+          font-family: var(--font-mono);
+          font-size: 6.5pt;
+          letter-spacing: 0.09em;
+          color: var(--accent);
+        }
+      }
+
+      @page :first {
+        @bottom-left {
+          content: none;
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+      }
+
+      body {
+        font-family: var(--font-body);
+        font-size: 8.5pt;
+        line-height: 1.4;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .mono {
+        font-family: var(--font-mono);
+        font-size: 6.6pt;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        line-height: 1.5;
+      }
+
+      /* Header: the name is the one loud element. */
+      .head {
+        display: grid;
+        grid-template-columns: 1fr 50mm;
+        border-top: 2.4pt solid var(--ink);
+        border-bottom: 2.4pt solid var(--ink);
+      }
+
+      .intro {
+        padding: 7pt 12pt 11pt 0;
+      }
+
+      .kicker {
+        margin: 0;
+        color: var(--accent);
+      }
+
+      h1 {
+        margin: 5pt 0 9pt;
+        font-family: var(--font-display);
+        font-size: 44pt;
+        font-weight: 900;
+        line-height: 0.86;
+        letter-spacing: -0.045em;
+        text-transform: uppercase;
+      }
+
+      h1 .dot {
+        color: var(--accent);
+      }
+
+      .pitch {
+        max-width: 112mm;
+        margin: 0;
+        font-size: 9.4pt;
+        line-height: 1.45;
+      }
+
+      .facts {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 7pt 0 11pt 10pt;
+        border-left: 0.75pt solid var(--ink);
+      }
+
+      .facts p {
+        margin: 0 0 7pt;
+      }
+
+      .facts li {
+        overflow-wrap: anywhere;
+      }
+
+      /* Sections: a rail with the red number, then the content. Floats, not grid: WeasyPrint splits a float's
+         neighbour across pages but never a grid item. */
+      .sec {
+        display: flow-root;
+        border-bottom: 0.75pt solid var(--ink);
+      }
+
+      .sec > .body {
+        min-height: 17mm;
+        margin-left: var(--rail);
+        border-left: 0.75pt solid var(--ink);
+      }
+
+      .sec:last-child {
+        border-bottom: 0;
+      }
+
+      .sec > h2 {
+        float: left;
+        width: var(--rail);
+        margin: 0;
+        padding: 8pt 8pt 8pt 0;
+        font-weight: 400;
+      }
+
+      .sec > h2 .n {
+        display: block;
+        margin-bottom: 2pt;
+        color: var(--accent);
+        font-family: var(--font-display);
+        font-size: 20pt;
+        font-weight: 900;
+        letter-spacing: -0.04em;
+        line-height: 1;
+      }
+
+      .entry {
+        display: grid;
+        grid-template-columns: var(--when) 1fr;
+        gap: 8pt;
+        padding: 6pt 0 6pt 9pt;
+        border-top: 0.5pt solid var(--hair);
+        break-inside: avoid;
+      }
+
+      .entry:first-child {
+        border-top: 0;
+      }
+
+      .when {
+        padding-top: 1.6pt;
+        color: var(--muted);
+      }
+
+      .when span,
+      .skills .item {
+        white-space: nowrap;
+      }
+
+      .now {
+        color: var(--accent);
+      }
+
+      h3 {
+        margin: 0;
+        font-family: var(--font-display);
+        font-size: 11pt;
+        font-weight: 900;
+        letter-spacing: -0.02em;
+        line-height: 1.05;
+        text-transform: uppercase;
+      }
+
+      .compact h3 {
+        font-size: 9.2pt;
+      }
+
+      .org {
+        margin: 1.5pt 0 0;
+        color: var(--muted);
+      }
+
+      .bullets {
+        margin-top: 3pt;
+      }
+
+      .entry.short {
+        padding-block: 4.5pt;
+      }
+
+      .bullets li {
+        position: relative;
+        padding-left: 9pt;
+      }
+
+      .bullets li::before {
+        content: '—';
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+      }
+
+      .compact .bullets {
+        font-size: 8.1pt;
+        line-height: 1.38;
+      }
+
+      /* Skills: 2 by 2, hairline grid. */
+      .skills {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .skills > div {
+        padding: 6pt 9pt;
+        border-top: 0.5pt solid var(--hair);
+        border-left: 0.5pt solid var(--hair);
+      }
+
+      .skills > div:nth-child(-n + 2) {
+        border-top: 0;
+      }
+
+      .skills > div:nth-child(odd) {
+        border-left: 0;
+      }
+
+      .skills h3 {
+        color: var(--accent);
+        font-family: var(--font-mono);
+        font-size: 6.6pt;
+        font-weight: 400;
+        letter-spacing: 0.08em;
+      }
+
+      .skills p {
+        margin: 2.5pt 0 0;
+      }
+
+      /* Talks: count and years, title, venues. */
+      .talk {
+        display: grid;
+        grid-template-columns: var(--when) 1fr;
+        gap: 8pt;
+        align-items: baseline;
+        padding: 4.5pt 0 4.5pt 9pt;
+        border-top: 0.5pt solid var(--hair);
+        break-inside: avoid;
+      }
+
+      .talk:first-child {
+        border-top: 0;
+      }
+
+      .talk .title {
+        font-weight: 600;
+      }
+
+      .talk .venues {
+        display: block;
+        margin-top: 1pt;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="head">
+      <div class="intro">
+        <p class="kicker mono">/// Curriculum vitæ</p>
+        <h1>{first}<br />{rest.join(' ')}<span class="dot">.</span></h1>
+        <p class="pitch">{resume.pitch}</p>
+      </div>
+      <div class="facts mono">
+        <p>{resume.location}<br />{resume.languages.join(' · ')}</p>
+        <ul>
+          {
+            RESUME_CONTACTS.map((c) => (
+              <li>
+                <a href={c.url}>{bareUrl(c.url)}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <section class="sec">
+        <h2 class="mono"><span class="n">{num('experience')}</span>{t(lang, 'experience')}</h2>
+        <div class="body">
+          {
+            resume.experience.map((job) => (
+              <article class:list={['entry', { compact: job.compact }]}>
+                <span class="mono when">
+                  <span>{ym(job.start)}</span> <span class:list={{ now: !job.end }}>→ {job.end ? ym(job.end) : t(lang, 'now')}</span>
+                </span>
+                <div>
+                  <h3>{job.role}</h3>
+                  <p class="org">
+                    {job.company}
+                    {job.team && ` — ${job.team}`}
+                  </p>
+                  {job.bullets.length > 0 && (
+                    <ul class="bullets">
+                      {job.bullets.map((b) => (
+                        <li>{b}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </section>
+
+      <section class="sec">
+        <h2 class="mono"><span class="n">{num('skills')}</span>{t(lang, 'skills')}</h2>
+        <div class="body skills">
+          {
+            resume.skills.map((s) => (
+              <div>
+                <h3>{t(lang, SKILL_LABEL[s.group])}</h3>
+                <p>
+                  {s.items.map((item, i) => (
+                    <>
+                      <span class="item">{item}</span>
+                      {i < s.items.length - 1 && ', '}
+                    </>
+                  ))}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+
+      <section class="sec">
+        <h2 class="mono"><span class="n">{num('talks')}</span>{t(lang, 'talks')}</h2>
+        <ul class="body">
+          {
+            talks.map((talk) => (
+              <li class="talk">
+                <span class="mono when">
+                  ×{talk.count} · {talk.span}
+                </span>
+                <div>
+                  <span class="title">{talk.title}</span>
+                  <span class="mono venues">{talk.conferences}</span>
+                </div>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <section class="sec">
+        <h2 class="mono"><span class="n">{num('education')}</span>{t(lang, 'education')}</h2>
+        <div class="body">
+          {
+            resume.education.map((e) => (
+              <article class="entry compact short">
+                <span class="mono when">
+                  {e.start} → {e.end}
+                </span>
+                <div>
+                  <h3>{e.degree}</h3>
+                  <p class="org">{e.school}</p>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </section>
+
+      <section class="sec">
+        <h2 class="mono"><span class="n">{num('certifications')}</span>{t(lang, 'certifications')}</h2>
+        <div class="body">
+          {
+            resume.certifications.map((c) => (
+              <article class="entry compact short">
+                <span class="mono when">{c.year}</span>
+                <div>
+                  <h3>{c.name}</h3>
+                  <p class="org">{c.issuer}</p>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -13,21 +13,17 @@ test.describe('resume', () => {
     await expect(body).toHaveCSS('color', 'rgb(0, 0, 0)')
     await expect(page.locator('nav.bar')).toBeHidden()
     await expect(page.locator('footer')).toBeHidden()
-    await expect(page.getByRole('button', { name: /save pdf/i })).toBeHidden()
+    await expect(page.getByRole('link', { name: /download pdf/i })).toBeHidden()
     const grain = await page.evaluate(() => getComputedStyle(document.body, '::after').display)
     expect(grain).toBe('none')
   })
 
-  test('Save PDF calls window.print', async ({ page }) => {
+  test('Download PDF serves the PDF', async ({ page, request }) => {
     await page.goto('/resume/')
-    await page.evaluate(() => {
-      ;(window as unknown as { printed: number }).printed = 0
-      window.print = () => {
-        ;(window as unknown as { printed: number }).printed += 1
-      }
-    })
-    await page.getByRole('button', { name: /save pdf/i }).click()
-    expect(await page.evaluate(() => (window as unknown as { printed: number }).printed)).toBe(1)
+    const href = await page.getByRole('link', { name: /download pdf/i }).getAttribute('href')
+    const response = await request.get(href!)
+    expect(response.ok()).toBe(true)
+    expect(response.headers()['content-type']).toContain('application/pdf')
   })
 
   test('has no horizontal scroll at 375px', async ({ page }) => {

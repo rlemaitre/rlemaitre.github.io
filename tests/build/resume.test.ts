@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs'
+import { existsSync, readFileSync } from 'node:fs'
 import { parseHTML } from 'linkedom'
 import { describe, expect, it } from 'vitest'
 
@@ -61,9 +61,12 @@ describe('resume page', () => {
     expect(doc.querySelector('a[href="https://github.com/rlemaitre"]')).not.toBeNull()
   })
 
-  it('has a Save PDF button, not a link', () => {
-    const button = [...doc.querySelectorAll('button')].find((b) => /save pdf/i.test(text(b)))
-    expect(button).toBeDefined()
+  it('links Download PDF to the English PDF, with a download name', () => {
+    const link = [...doc.querySelectorAll('a')].find((a) => /download pdf/i.test(text(a)))
+    expect(link?.getAttribute('href')).toBe('/resume/raphael-lemaitre.pdf')
+    expect(link?.getAttribute('download')).toBe('Raphael-Lemaitre-Resume.pdf')
+    expect(existsSync('dist/resume/raphael-lemaitre.pdf')).toBe(true)
+    expect(doc.querySelector('[data-print]')).toBeNull()
   })
 
   it('groups skills without note-taking tools', () => {
@@ -77,7 +80,15 @@ describe('resume page', () => {
     const groups = [...doc.querySelectorAll('.skills > div')]
     expect(groups.map((g) => text(g.querySelector('h3')))).toEqual(['Languages', 'AI', 'Data', 'Ops & tools'])
     const ai = text(groups[1])
-    for (const item of ['Claude Code', 'Cursor', 'MCP servers', 'Prompt engineering', 'Anthropic', 'OpenAI', 'Gemini']) {
+    for (const item of [
+      'Claude Code',
+      'Cursor',
+      'MCP servers',
+      'Prompt engineering',
+      'Anthropic',
+      'OpenAI',
+      'Gemini',
+    ]) {
       expect(ai).toContain(item)
     }
     expect(ai).toContain('STT (Whisper, Nemotron, Speechmatics, Soniox)')

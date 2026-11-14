@@ -10,6 +10,7 @@
     "dev": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
+    "resume:pdf": "scripts/resume-pdf.sh",
     "test": "vitest run tests/unit",
     "test:build": "vitest run tests/build",
     "test:e2e": "playwright test"

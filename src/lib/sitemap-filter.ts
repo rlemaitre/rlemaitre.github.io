@@ -13,8 +13,8 @@ const comparable = (path: string): string => {
   return stripSlash(decoded.normalize('NFC'))
 }
 
-/** Sitemap `filter`: drops the 404 page and every source path of Astro's `redirects` config. */
+/** Sitemap `filter`: drops the 404 page, the resume print pages and every source path of Astro's `redirects` config. */
 export function makeSitemapFilter(redirects: Redirects): (page: string) => boolean {
-  const excluded = new Set(['/404', ...Object.keys(redirects).map(comparable)])
+  const excluded = new Set(['/404', '/resume/print', '/fr/resume/print', ...Object.keys(redirects).map(comparable)])
   return (page) => !excluded.has(comparable(new URL(page).pathname))
 }

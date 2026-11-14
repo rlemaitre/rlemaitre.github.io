@@ -1,42 +1,19 @@
 ---
-import { getCollection, getEntry } from 'astro:content'
 import '../styles/print.css'
 import Base from '../layouts/Base.astro'
 import { formatYearMonth, parseYearMonth } from '../lib/dates'
-import { talkTitle } from '../lib/collections'
-import { otherLang, resumeUrl, t, talkUrl, type Lang, type UiKey } from '../lib/i18n'
-import { SITE, SOCIALS } from '../lib/site'
-import { venueSummary } from '../lib/talks'
+import { otherLang, resumeUrl, t, talkUrl, type Lang } from '../lib/i18n'
+import { bareUrl, loadResume, RESUME_CONTACTS, resumePdfPath, SKILL_LABEL } from '../lib/resume-source'
+import { SOCIALS } from '../lib/site'
 
 interface Props {
   lang: Lang
 }
 
 const { lang } = Astro.props
-const resume = (await getEntry(lang === 'fr' ? 'resumeFr' : 'resume', 'resume'))!.data
-const skillGroup: Record<(typeof resume.skills)[number]['group'], UiKey> = {
-  Languages: 'skillLanguages',
-  Data: 'skillData',
-  'Ops & tools': 'skillOps',
-  AI: 'skillAi',
-}
+const { resume, talks } = await loadResume(lang)
 const linkedin = SOCIALS.find((s) => s.label === 'LinkedIn')!
-const github = SOCIALS.find((s) => s.label === 'GitHub')!
-const bare = (url: string) => url.replace(/^https?:\/\/(www\.)?/, '')
-const contacts = [linkedin, github, { label: SITE.name, url: SITE.url, rel: 'me' }]
-
-const talks = (
-  await Promise.all(
-    (await getCollection('talks')).map(async (talk) => ({
-      talk,
-      summary: venueSummary(talk.data.venues, lang),
-      title: (await talkTitle(talk, lang)).title,
-    })),
-  )
-).sort((a, b) => b.summary.lastYear - a.summary.lastYear || a.title.localeCompare(b.title))
-const span = ({ firstYear, lastYear }: { firstYear: number; lastYear: number }) =>
-  firstYear === lastYear ? String(firstYear) : `${firstYear}–${lastYear}`
-const conferences = (venues: { conference: string }[]) => [...new Set(venues.map((v) => v.conference))].join(' · ')
+const pdfUrl = resumePdfPath(lang)
 ---
 
 <Base
@@ -58,10 +35,10 @@ const conferences = (venues: { conference: string }[]) => [...new Set(venues.map
           <p>{resume.location}<br />{resume.languages.join(' · ')}</p>
           <ul>
             {
-              contacts.map((c) => (
+              RESUME_CONTACTS.map((c) => (
                 <li>
                   <a href={c.url} rel={c.rel}>
-                    {bare(c.url)}
+                    {bareUrl(c.url)}
                   </a>
                 </li>
               ))
@@ -69,7 +46,9 @@ const conferences = (venues: { conference: string }[]) => [...new Set(venues.map
           </ul>
         </div>
         <div class="actions no-print">
-          <button type="button" class="btn" data-print hidden>{t(lang, 'savePdf')} ↓</button>
+          <a class="btn" href={pdfUrl} download={t(lang, 'resumePdfName')} type="application/pdf">
+            {t(lang, 'savePdf')} ↓
+          </a>
           <a class="btn outline" href={linkedin.url} rel={linkedin.rel}>LinkedIn ↗</a>
         </div>
       </div>
@@ -109,7 +88,7 @@ const conferences = (venues: { conference: string }[]) => [...new Set(venues.map
         {
           resume.skills.map((skill) => (
             <div>
-              <h3 class="mono accent">{t(lang, skillGroup[skill.group])}</h3>
+              <h3 class="mono accent">{t(lang, SKILL_LABEL[skill.group])}</h3>
               <p>{skill.items.join(', ')}</p>
             </div>
           ))
@@ -121,13 +100,13 @@ const conferences = (venues: { conference: string }[]) => [...new Set(venues.map
       <h2 id="h-talks" class="mono"><span aria-hidden="true">03</span>{t(lang, 'talks')}</h2>
       <ul class="talks">
         {
-          talks.map(({ talk, summary, title }) => (
+          talks.map((talk) => (
             <li class="talk">
               <span class="mono num">
-                ×{summary.count} · {span(summary)}
+                ×{talk.count} · {talk.span}
               </span>
-              <a href={talkUrl(talk.id, lang)}>{title}</a>
-              <span class="mono muted venues">{conferences(talk.data.venues)}</span>
+              <a href={talkUrl(talk.id, lang)}>{talk.title}</a>
+              <span class="mono muted venues">{talk.conferences}</span>
             </li>
           ))
         }
@@ -175,14 +154,6 @@ const conferences = (venues: { conference: string }[]) => [...new Set(venues.map
     </section>
   </div>
 </Base>
-
-<script>
-  const button = document.querySelector<HTMLButtonElement>('[data-print]')
-  if (button) {
-    button.addEventListener('click', () => window.print())
-    button.hidden = false
-  }
-</script>
 
 <style>
   .cv {
@@ -257,10 +228,6 @@ const conferences = (venues: { conference: string }[]) => [...new Set(venues.map
     background: transparent;
     color: var(--ink);
     border-color: var(--ink);
-  }
-
-  .btn[hidden] {
-    display: none;
   }
 
   .sec {

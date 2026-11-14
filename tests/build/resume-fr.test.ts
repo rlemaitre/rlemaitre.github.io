@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs'
+import { existsSync, readFileSync } from 'node:fs'
 import { parseHTML } from 'linkedom'
 import { describe, expect, it } from 'vitest'
 
@@ -47,9 +47,11 @@ describe('French resume page', () => {
     for (const href of links) expect(href).toMatch(/^\/fr\/talks\//)
   })
 
-  it('has a French Save PDF button', () => {
-    const button = [...fr.querySelectorAll('button')].find((b) => /enregistrer en pdf/i.test(text(b)))
-    expect(button).toBeDefined()
+  it('links Télécharger le PDF to the French PDF', () => {
+    const link = [...fr.querySelectorAll('a')].find((a) => /télécharger le pdf/i.test(text(a)))
+    expect(link?.getAttribute('href')).toBe('/fr/resume/raphael-lemaitre.pdf')
+    expect(link?.getAttribute('download')).toBe('Raphael-Lemaitre-CV.pdf')
+    expect(existsSync('dist/fr/resume/raphael-lemaitre.pdf')).toBe(true)
   })
 
   it('has no email or phone link', () => {
