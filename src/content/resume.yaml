@@ -84,7 +84,7 @@
     - group: Data
       items: [PostgreSQL, SQLite, Apache Cassandra, Apache Spark, Elasticsearch]
     - group: Ops & tools
-      items: [Kubernetes, Docker, Gatling, Git, GitHub, GitLab, CI/CD, Jenkins, Linux, OpenTelemetry, Grafana, Kibana, Datadog, IntelliJ IDEA, VS Code, Metals, Zed]
+      items: [Kubernetes, Docker, Gatling, Git, GitHub, GitLab, CI/CD, Jenkins, Linux, OpenTelemetry, Grafana, Kibana, Datadog]
   education:
     - degree: Master in Engineering, Computer Science
       school: ENSIIE
