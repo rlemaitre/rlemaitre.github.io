@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Print the resume PDFs into public/ from the A4 print pages (src/pages/resume/print.astro and its French twin).
 # Uses the swiss-print-docs kit: its pinned WeasyPrint and its TTF fonts. Run it after changing the resume, then commit
-# the PDFs.
+# the PDFs and scripts/resume-pdf.lock.json.
 set -euo pipefail
 
 command -v swiss-doc >/dev/null || {
@@ -33,3 +33,9 @@ for prefix in "" "fr/"; do
 		"$PWD/dist/${prefix}resume/print/index.html" "$PWD/$out"
 	echo "$out"
 done
+
+# Fingerprints of the pages just printed: tests/build/resume-pdf-fresh.test.ts fails when they no longer match.
+printf '{\n  "en": "%s",\n  "fr": "%s"\n}\n' \
+	"$(shasum -a 256 dist/resume/print/index.html | cut -d' ' -f1)" \
+	"$(shasum -a 256 dist/fr/resume/print/index.html | cut -d' ' -f1)" >scripts/resume-pdf.lock.json
+echo scripts/resume-pdf.lock.json
