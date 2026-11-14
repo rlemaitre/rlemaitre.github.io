@@ -12,6 +12,7 @@ const STATIC_PATHS = [
   '/articles',
   '/fr/articles',
   '/resume',
+  '/fr/resume',
   '/talks',
   '/fr/talks',
   '/projects',

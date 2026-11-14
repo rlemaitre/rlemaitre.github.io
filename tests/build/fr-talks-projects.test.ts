@@ -161,12 +161,12 @@ describe('French project pages', () => {
 })
 
 describe('French navigation', () => {
-  it('sends the Talks and Projects cells of French pages to the French indexes, the resume to English', () => {
+  it('sends the Talks, Projects and CV cells of French pages to the French pages', () => {
     for (const path of ['fr/', 'fr/articles/', `fr/talks/${IRON}/`, 'fr/projects/pillars/']) {
       const doc = load(path)
       expect(navHref(doc, 'Talks'), path).toBe('/fr/talks/')
       expect(navHref(doc, 'Projets'), path).toBe('/fr/projects/')
-      expect(navHref(doc, 'CV'), path).toBe('/resume/')
+      expect(navHref(doc, 'CV'), path).toBe('/fr/resume/')
     }
   })
 

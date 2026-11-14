@@ -1,0 +1,103 @@
+- id: resume
+  pitch: >-
+    Ingénieur backend, 26 ans sur la JVM, dont une dizaine d’années de Scala fonctionnel. Je suis Senior Backend
+    Engineer chez Nabla, où je construis le backend de dictée en temps réel en Kotlin. J’ai été CTO et je suis revenu
+    au code par choix. Je tiens à la sûreté des types, aux systèmes simples et aux équipes qui livrent. À côté, je
+    donne des talks dans des conférences Scala et je maintiens des bibliothèques Scala open source.
+  location: Région parisienne, FR
+  languages: [EN, FR]
+  experience:
+    - role: Senior Backend Engineer
+      company: Nabla
+      team: squad Dictation
+      start: 2025-11
+      bullets:
+        - Backend du pipeline de transcription de dictée en temps réel.
+        - Post-traitement de mise en forme.
+        - Écrit en Kotlin.
+      compact: false
+    - role: Senior Staff Engineer
+      company: Ledger
+      start: 2022-03
+      end: 2025-10
+      bullets:
+        - Architecte d’ATLAS, la plateforme d’indexation blockchain de Ledger, pour un accès rapide aux transactions et aux soldes.
+        - Construction de services backend Scala haute disponibilité pour les produits phares de Ledger.
+        - Exploitation de PostgreSQL à grande échelle et d’une flotte de nœuds blockchain.
+        - Analyse et optimisation de protocoles de cryptomonnaies pour accélérer l’indexation et les requêtes.
+        - Benchmarks des services pour trouver et corriger les goulets d’étranglement, avec CI/CD et monitoring derrière chaque déploiement.
+      compact: false
+    - role: CTO, auparavant Lead Developer
+      company: Adventori
+      start: 2014-06
+      end: 2022-03
+      bullets:
+        - 20 milliards de publicités servies par an sur 15 serveurs à 99,5 % de disponibilité, et 400 Go de données ingérées par jour sur 20 serveurs.
+        - Management du Tech Lab, une équipe de 9 développeurs, DevOps, data engineers et intégrateurs.
+        - Co-conception de la roadmap produit avec le CEO et le PM, et alignement de la roadmap technique sur les objectifs de l’entreprise.
+        - Accompagnement de l’équipe par les revues de code, les katas et les coding dojos, et promotion du craftsmanship et des pratiques DevOps.
+        - Mise en place d’un processus de recrutement inclusif et sélectif pour l’engineering et le produit.
+        - En tant que Lead Developer, conception et développement de l’ad server, du data warehouse, du système de reporting et du service d’intégration des données clients.
+        - Introduction de Cassandra pour les gros volumes de données et d’Apache Spark pour l’ingestion et le reporting.
+        - Mise en place de workflows CI/CD avancés.
+      compact: false
+    - role: Développeur senior R&D
+      company: Systar
+      start: 2010-10
+      end: 2014-06
+      bullets:
+        - Conception et développement d’une application de monitoring sur une base NoSQL maison, distribuée et bitemporelle.
+        - Gestion des champs calculés et optimisation des calculs d’agrégation (cube OLAP).
+        - Scrum Master d’une équipe de 4 développeurs entre Paris et Lyon.
+        - Pendant les hacking weeks, un driver JDBC pour la base et une application de monitoring du quantified self.
+      compact: true
+    - role: Ingénieur R&D
+      company: Xcalia
+      start: 2007-05
+      end: 2010-08
+      bullets:
+        - Développement d’un moteur de persistance et de requêtes indépendant du datastore, sur SGBDR et web services.
+        - Algorithmes de compensation (jointures, tri, union) et génération de requêtes propres à chaque datastore.
+        - Orchestration dynamique de services, indépendante de la technologie d’invocation.
+      compact: true
+    - role: Architecte logiciel
+      company: Capgemini
+      start: 2006-07
+      end: 2007-05
+      bullets:
+        - Conception de l’architecture d’un portail et d’un annuaire pour un appel d’offres de l’AP-HP.
+        - Pilotage de la migration de l’application FICOBA de la DGI d’Oracle Application Server vers JBoss et d’Oracle Reports vers JasperReports.
+      compact: true
+    - role: Team Leader
+      company: E-Deal
+      start: 2000-01
+      end: 2006-06
+      bullets:
+        - Management d’une équipe de 4 développeurs R&D.
+        - Développement de la première version J2EE du CRM e-DEAL, avec ses frameworks MVC et de persistance et ses modules Sales Force et Admin.
+        - Ajout de l’internationalisation, de la synchronisation d’agenda et de contacts avec Microsoft Exchange et Lotus Domino, et d’une application J2ME.
+        - Réécriture du framework de présentation (MVC2).
+      compact: true
+  skills:
+    - group: Languages
+      items: [Scala, Kotlin, Java, Groovy, SQL, TypeScript, JavaScript, HTML, CSS, Bash]
+    - group: Data
+      items: [PostgreSQL, SQLite, Apache Cassandra, Apache Spark, Elasticsearch]
+    - group: Ops & tools
+      items: [Kubernetes, Docker, Gatling, Git, GitHub, GitLab, CI/CD, Jenkins, Linux, OpenTelemetry, Grafana, Kibana, Datadog]
+  education:
+    - degree: Diplôme d’ingénieur, informatique
+      school: ENSIIE
+      url: https://www.ensiie.fr
+      start: 1997
+      end: 2001
+  certifications:
+    - name: Introduction to Big Data with Apache Spark
+      issuer: edX
+      year: 2015
+    - name: Principles of Reactive Programming
+      issuer: Coursera
+      year: 2013
+    - name: Functional Programming with Scala
+      issuer: Coursera
+      year: 2012

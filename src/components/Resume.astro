@@ -3,26 +3,48 @@ import { getCollection, getEntry } from 'astro:content'
 import '../styles/print.css'
 import Base from '../layouts/Base.astro'
 import { formatYearMonth, parseYearMonth } from '../lib/dates'
-import { t, talkUrl } from '../lib/i18n'
+import { talkTitle } from '../lib/collections'
+import { otherLang, resumeUrl, t, talkUrl, type Lang, type UiKey } from '../lib/i18n'
 import { SITE, SOCIALS } from '../lib/site'
 import { venueSummary } from '../lib/talks'
 
-const resume = (await getEntry('resume', 'resume'))!.data
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+const resume = (await getEntry(lang === 'fr' ? 'resumeFr' : 'resume', 'resume'))!.data
+const skillGroup: Record<(typeof resume.skills)[number]['group'], UiKey> = {
+  Languages: 'skillLanguages',
+  Data: 'skillData',
+  'Ops & tools': 'skillOps',
+}
 const linkedin = SOCIALS.find((s) => s.label === 'LinkedIn')!
 const github = SOCIALS.find((s) => s.label === 'GitHub')!
 const bare = (url: string) => url.replace(/^https?:\/\/(www\.)?/, '')
 const contacts = [linkedin, github, { label: SITE.name, url: SITE.url, rel: 'me' }]
 
-const talks = (await getCollection('talks'))
-  .map((talk) => ({ talk, summary: venueSummary(talk.data.venues) }))
-  .sort((a, b) => b.summary.lastYear - a.summary.lastYear || a.talk.data.title.localeCompare(b.talk.data.title))
+const talks = (
+  await Promise.all(
+    (await getCollection('talks')).map(async (talk) => ({
+      talk,
+      summary: venueSummary(talk.data.venues, lang),
+      title: (await talkTitle(talk, lang)).title,
+    })),
+  )
+).sort((a, b) => b.summary.lastYear - a.summary.lastYear || a.title.localeCompare(b.title))
 const span = ({ firstYear, lastYear }: { firstYear: number; lastYear: number }) =>
   firstYear === lastYear ? String(firstYear) : `${firstYear}–${lastYear}`
 const conferences = (venues: { conference: string }[]) => [...new Set(venues.map((v) => v.conference))].join(' · ')
-const description = 'Backend engineer, 26 years on the JVM. Experience, skills, talks and education.'
 ---
 
-<Base title="Resume" description={description} lang="en" section="resume" altLangUrl="/fr/">
+<Base
+  title={t(lang, 'resume')}
+  description={t(lang, 'resumeDescription')}
+  lang={lang}
+  section="resume"
+  altLangUrl={resumeUrl(otherLang(lang))}
+>
   <div class="cv">
     <header class="top">
       <div class="intro">
@@ -46,14 +68,14 @@ const description = 'Backend engineer, 26 years on the JVM. Experience, skills, 
           </ul>
         </div>
         <div class="actions no-print">
-          <button type="button" class="btn" data-print hidden>{t('en', 'savePdf')} ↓</button>
+          <button type="button" class="btn" data-print hidden>{t(lang, 'savePdf')} ↓</button>
           <a class="btn outline" href={linkedin.url} rel={linkedin.rel}>LinkedIn ↗</a>
         </div>
       </div>
     </header>
 
     <section class="sec" aria-labelledby="h-exp">
-      <h2 id="h-exp" class="mono"><span aria-hidden="true">01</span>Experience</h2>
+      <h2 id="h-exp" class="mono"><span aria-hidden="true">01</span>{t(lang, 'experience')}</h2>
       <ol class="jobs">
         {
           resume.experience.map((job) => (
@@ -61,7 +83,7 @@ const description = 'Backend engineer, 26 years on the JVM. Experience, skills, 
               <span class="mono when num">
                 <time datetime={job.start}>{formatYearMonth(parseYearMonth(job.start))}</time>
                 {' → '}
-                {job.end ? <time datetime={job.end}>{formatYearMonth(parseYearMonth(job.end))}</time> : <span class="now">now</span>}
+                {job.end ? <time datetime={job.end}>{formatYearMonth(parseYearMonth(job.end))}</time> : <span class="now">{t(lang, 'now')}</span>}
               </span>
               <div>
                 <h3>{job.role}</h3>
@@ -81,12 +103,12 @@ const description = 'Backend engineer, 26 years on the JVM. Experience, skills, 
     </section>
 
     <section class="sec" aria-labelledby="h-skills">
-      <h2 id="h-skills" class="mono"><span aria-hidden="true">02</span>Skills</h2>
+      <h2 id="h-skills" class="mono"><span aria-hidden="true">02</span>{t(lang, 'skills')}</h2>
       <div class="skills">
         {
           resume.skills.map((skill) => (
             <div>
-              <h3 class="mono accent">{skill.group}</h3>
+              <h3 class="mono accent">{t(lang, skillGroup[skill.group])}</h3>
               <p>{skill.items.join(', ')}</p>
             </div>
           ))
@@ -95,15 +117,15 @@ const description = 'Backend engineer, 26 years on the JVM. Experience, skills, 
     </section>
 
     <section class="sec" aria-labelledby="h-talks">
-      <h2 id="h-talks" class="mono"><span aria-hidden="true">03</span>Talks</h2>
+      <h2 id="h-talks" class="mono"><span aria-hidden="true">03</span>{t(lang, 'talks')}</h2>
       <ul class="talks">
         {
-          talks.map(({ talk, summary }) => (
+          talks.map(({ talk, summary, title }) => (
             <li class="talk">
               <span class="mono num">
                 ×{summary.count} · {span(summary)}
               </span>
-              <a href={talkUrl(talk.id)}>{talk.data.title}</a>
+              <a href={talkUrl(talk.id, lang)}>{title}</a>
               <span class="mono muted venues">{conferences(talk.data.venues)}</span>
             </li>
           ))
@@ -112,7 +134,7 @@ const description = 'Backend engineer, 26 years on the JVM. Experience, skills, 
     </section>
 
     <section class="sec" aria-labelledby="h-edu">
-      <h2 id="h-edu" class="mono"><span aria-hidden="true">04</span>Education</h2>
+      <h2 id="h-edu" class="mono"><span aria-hidden="true">04</span>{t(lang, 'education')}</h2>
       <div class="education">
         {
           resume.education.map((e) => (
@@ -133,7 +155,7 @@ const description = 'Backend engineer, 26 years on the JVM. Experience, skills, 
     </section>
 
     <section class="sec" aria-labelledby="h-certs">
-      <h2 id="h-certs" class="mono"><span aria-hidden="true">05</span>Certifications</h2>
+      <h2 id="h-certs" class="mono"><span aria-hidden="true">05</span>{t(lang, 'certifications')}</h2>
       <div class="education">
         {
           resume.certifications.map((c) => (

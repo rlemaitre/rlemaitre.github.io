@@ -73,41 +73,44 @@ const projectsFr = defineCollection({
   schema: z.object({ summary: z.string() }),
 })
 
-const resume = defineCollection({
-  loader: file('./src/content/resume.yaml'),
-  schema: z.object({
-    pitch: z.string(),
-    location: z.string(),
-    languages: z.array(z.string()),
-    experience: z.array(
-      z.object({
-        role: z.string(),
-        company: z.string(),
-        team: z.string().optional(),
-        start: z.string().regex(/^\d{4}-\d{2}$/),
-        end: z
-          .string()
-          .regex(/^\d{4}-\d{2}$/)
-          .optional(),
-        bullets: z.array(z.string()),
-        compact: z.boolean(),
-      }),
-    ),
-    skills: z.array(z.object({ group: z.enum(['Languages', 'Data', 'Ops & tools']), items: z.array(z.string()) })),
-    education: z.array(z.object({ degree: z.string(), school: z.string(), url: z.url(), start: z.number(), end: z.number() })),
-    certifications: z.array(
-      z.object({
-        name: z.string(),
-        issuer: z.string(),
-        year: z.number(),
-      }),
-    ),
-  }),
+const resumeSchema = z.object({
+  pitch: z.string(),
+  location: z.string(),
+  languages: z.array(z.string()),
+  experience: z.array(
+    z.object({
+      role: z.string(),
+      company: z.string(),
+      team: z.string().optional(),
+      start: z.string().regex(/^\d{4}-\d{2}$/),
+      end: z
+        .string()
+        .regex(/^\d{4}-\d{2}$/)
+        .optional(),
+      bullets: z.array(z.string()),
+      compact: z.boolean(),
+    }),
+  ),
+  skills: z.array(z.object({ group: z.enum(['Languages', 'Data', 'Ops & tools']), items: z.array(z.string()) })),
+  education: z.array(
+    z.object({ degree: z.string(), school: z.string(), url: z.url(), start: z.number(), end: z.number() }),
+  ),
+  certifications: z.array(
+    z.object({
+      name: z.string(),
+      issuer: z.string(),
+      year: z.number(),
+    }),
+  ),
 })
+
+/** The English resume, and its French translation with the same roles and dates. */
+const resume = defineCollection({ loader: file('./src/content/resume.yaml'), schema: resumeSchema })
+const resumeFr = defineCollection({ loader: file('./src/content/resume.fr.yaml'), schema: resumeSchema })
 
 const home = defineCollection({
   loader: glob({ base: './src/content/home', pattern: '*.md' }),
   schema: z.object({ description: z.string() }),
 })
 
-export const collections = { articles, talks, talksFr, projects, projectsFr, resume, home }
+export const collections = { articles, talks, talksFr, projects, projectsFr, resume, resumeFr, home }

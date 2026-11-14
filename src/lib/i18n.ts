@@ -15,7 +15,8 @@ const en = {
   talksGiven: 'Talks given',
   ossProjects: 'OSS projects',
   portraitCaption: 'Fig. 01 / Iceland',
-  portraitAlt: 'Raphaël Lemaitre in Iceland, wearing a beanie, sunglasses and a parka, in front of dry grass and a blue sky',
+  portraitAlt:
+    'Raphaël Lemaitre in Iceland, wearing a beanie, sunglasses and a parka, in front of dry grass and a blue sky',
   read: 'Read',
   min: 'min',
   originallyPublished: 'Originally published on',
@@ -47,6 +48,15 @@ const en = {
   docs: 'Docs',
   openSource: 'open source',
   projectsIntro: 'Open-source projects: Pillars, Mason, Risk Matrix and the FunktionalIO organization.',
+  experience: 'Experience',
+  skills: 'Skills',
+  education: 'Education',
+  certifications: 'Certifications',
+  now: 'now',
+  skillLanguages: 'Languages',
+  skillData: 'Data',
+  skillOps: 'Ops & tools',
+  resumeDescription: 'Backend engineer, 26 years on the JVM. Experience, skills, talks and education.',
 } as const
 
 export type UiKey = keyof typeof en
@@ -68,7 +78,8 @@ export const ui: Record<Lang, Record<UiKey, string>> = {
     talksGiven: 'Talks donnés',
     ossProjects: 'Projets open source',
     portraitCaption: 'Fig. 01 / Islande',
-    portraitAlt: 'Raphaël Lemaitre en Islande, avec un bonnet, des lunettes de soleil et une parka, devant de l’herbe sèche et un ciel bleu',
+    portraitAlt:
+      'Raphaël Lemaitre en Islande, avec un bonnet, des lunettes de soleil et une parka, devant de l’herbe sèche et un ciel bleu',
     read: 'Lire',
     min: 'min',
     originallyPublished: 'Initialement publié sur',
@@ -100,6 +111,15 @@ export const ui: Record<Lang, Record<UiKey, string>> = {
     docs: 'Doc',
     openSource: 'open source',
     projectsIntro: 'Projets open source : Pillars, Mason, Risk Matrix et l’organisation FunktionalIO.',
+    experience: 'Expérience',
+    skills: 'Compétences',
+    education: 'Formation',
+    certifications: 'Certifications',
+    now: 'aujourd’hui',
+    skillLanguages: 'Langages',
+    skillData: 'Données',
+    skillOps: 'Ops & outils',
+    resumeDescription: 'Ingénieur backend, 26 ans sur la JVM. Expérience, compétences, talks et formation.',
   },
 }
 
@@ -126,6 +146,8 @@ export const talksUrl = (lang: Lang): string => `${prefix(lang)}/talks/`
 export const talkUrl = (id: string, lang: Lang = 'en'): string => `${talksUrl(lang)}${id}/`
 
 export const projectsUrl = (lang: Lang): string => `${prefix(lang)}/projects/`
+
+export const resumeUrl = (lang: Lang): string => `${prefix(lang)}/resume/`
 
 export const projectUrl = (id: string, lang: Lang = 'en'): string => `${projectsUrl(lang)}${id}/`
 
