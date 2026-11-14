@@ -56,6 +56,7 @@ const en = {
   skillLanguages: 'Languages',
   skillData: 'Data',
   skillOps: 'Ops & tools',
+  skillAi: 'AI',
   resumeDescription: 'Backend engineer, 26 years on the JVM. Experience, skills, talks and education.',
 } as const
 
@@ -119,6 +120,7 @@ export const ui: Record<Lang, Record<UiKey, string>> = {
     skillLanguages: 'Langages',
     skillData: 'Données',
     skillOps: 'Ops & outils',
+    skillAi: 'IA',
     resumeDescription: 'Ingénieur backend, 26 ans sur la JVM. Expérience, compétences, talks et formation.',
   },
 }

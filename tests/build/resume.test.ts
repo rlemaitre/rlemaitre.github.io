@@ -66,10 +66,21 @@ describe('resume page', () => {
     expect(button).toBeDefined()
   })
 
-  it('groups skills without editors or note-taking tools', () => {
+  it('groups skills without note-taking tools', () => {
     const skills = text(doc.querySelector('.skills'))
-    for (const group of ['Languages', 'Data', 'Ops & tools']) expect(skills).toContain(group)
-    expect(skills).not.toMatch(/Obsidian|IntelliJ|Zed|Neovim|Visual Studio/)
+    for (const group of ['Languages', 'Data', 'Ops & tools', 'AI']) expect(skills).toContain(group)
+    expect(skills).not.toMatch(/Obsidian/)
+    for (const ide of ['IntelliJ IDEA', 'VS Code', 'Metals', 'Zed']) expect(skills).toContain(ide)
+  })
+
+  it('lists AI tools and models next to languages', () => {
+    const groups = [...doc.querySelectorAll('.skills > div')]
+    expect(groups.map((g) => text(g.querySelector('h3')))).toEqual(['Languages', 'AI', 'Data', 'Ops & tools'])
+    const ai = text(groups[1])
+    for (const item of ['Claude Code', 'Cursor', 'MCP servers', 'Prompt engineering', 'Anthropic', 'OpenAI', 'Gemini']) {
+      expect(ai).toContain(item)
+    }
+    expect(ai).toContain('STT (Whisper, Nemotron, Speechmatics, Soniox)')
   })
 
   it('shows the education', () => {

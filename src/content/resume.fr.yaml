@@ -81,10 +81,12 @@
   skills:
     - group: Languages
       items: [Scala, Kotlin, Java, Groovy, SQL, TypeScript, JavaScript, HTML, CSS, Bash]
+    - group: AI
+      items: [Claude Code, Cursor, serveurs MCP, prompt engineering, Anthropic, OpenAI, Gemini, "STT (Whisper, Nemotron, Speechmatics, Soniox)"]
     - group: Data
       items: [PostgreSQL, SQLite, Apache Cassandra, Apache Spark, Elasticsearch]
     - group: Ops & tools
-      items: [Kubernetes, Docker, Gatling, Git, GitHub, GitLab, CI/CD, Jenkins, Linux, OpenTelemetry, Grafana, Kibana, Datadog]
+      items: [Kubernetes, Docker, Gatling, Git, GitHub, GitLab, CI/CD, Jenkins, Linux, OpenTelemetry, Grafana, Kibana, Datadog, IntelliJ IDEA, VS Code, Metals, Zed]
   education:
     - degree: Diplôme d’ingénieur, informatique
       school: ENSIIE

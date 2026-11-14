@@ -91,7 +91,7 @@ const resumeSchema = z.object({
       compact: z.boolean(),
     }),
   ),
-  skills: z.array(z.object({ group: z.enum(['Languages', 'Data', 'Ops & tools']), items: z.array(z.string()) })),
+  skills: z.array(z.object({ group: z.enum(['Languages', 'Data', 'Ops & tools', 'AI']), items: z.array(z.string()) })),
   education: z.array(
     z.object({ degree: z.string(), school: z.string(), url: z.url(), start: z.number(), end: z.number() }),
   ),
