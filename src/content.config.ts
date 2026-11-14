@@ -87,6 +87,7 @@ const resumeSchema = z.object({
         .string()
         .regex(/^\d{4}-\d{2}$/)
         .optional(),
+      stack: z.array(z.string()).default([]),
       bullets: z.array(z.string()),
       compact: z.boolean(),
     }),

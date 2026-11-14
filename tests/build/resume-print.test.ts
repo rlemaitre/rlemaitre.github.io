@@ -23,6 +23,7 @@ describe('resume print pages, the source of the PDFs', () => {
       const web = load(path.replace('print/', ''))
       expect(doc.querySelectorAll('.sec .entry:not(.short)')).toHaveLength(web.querySelectorAll('.jobs > .job').length)
       expect(text(doc.querySelector('.sec h2'))).toContain(heading)
+      expect(doc.querySelectorAll('.sec .stack')).toHaveLength(web.querySelectorAll('.jobs .stack').length)
     })
   }
 

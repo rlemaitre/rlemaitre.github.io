@@ -11,15 +11,20 @@
       company: Nabla
       team: Dictation squad
       start: 2025-11
+      stack: [Kotlin, PostgreSQL, Google Cloud, "STT models (Whisper, Nemotron, Speechmatics)"]
       bullets:
-        - Real-time dictation transcription pipeline backend.
-        - Formatting post-processing.
-        - Written in Kotlin.
+        - Refactored the transcription pipeline to separate dictation from ambient transcription, by usage type.
+        - Designed and built a layered, rule-based formatter with entity detection, in English and French, replacing the regex-based one.
+        - 'Built transcription A/B testing: each transcription runs on the production pipeline and a candidate one, and an LLM judge compares the results without exposing PHI.'
+        - Wrote an internal API client so the ambient product uses the Dictation API without depending on contracts that may change.
+        - Handled changes of where the dictated text lands without restarting the transcription pipeline.
+        - Design and code reviews, coding and system design interviews, AI-assisted coding workflows.
       compact: false
     - role: Senior Staff Engineer
       company: Ledger
       start: 2022-03
       end: 2025-10
+      stack: [Scala, Cats Effect, PostgreSQL]
       bullets:
         - Architected ATLAS, Ledger's blockchain indexing platform for fast transaction and balance access.
         - Built high-availability Scala backend services for Ledger's core products.
@@ -31,6 +36,7 @@
       company: Adventori
       start: 2014-06
       end: 2022-03
+      stack: [Groovy, Grails, JavaScript, PostgreSQL, Cassandra, Apache Spark]
       bullets:
         - Served 20 billion ads a year on 15 servers at 99.5% availability, and ingested 400 GB of data a day on 20 servers.
         - Managed the Tech Lab, a team of 9 developers, DevOps, data engineers and integrators.
@@ -45,6 +51,7 @@
       company: Systar
       start: 2010-10
       end: 2014-06
+      stack: [Java, Flex (ActionScript)]
       bullets:
         - Designed and built a monitoring application on a custom distributed, bi-temporal NoSQL database.
         - Built calculated fields management and optimized aggregation computations (OLAP cube).
@@ -55,6 +62,7 @@
       company: Xcalia
       start: 2007-05
       end: 2010-08
+      stack: [Java, SQL, XQuery]
       bullets:
         - Developed a datastore-agnostic persistence and query engine over RDBMS and web services.
         - Implemented compensation algorithms (joins, sort, union) and datastore-specific query generation.
@@ -64,6 +72,7 @@
       company: Capgemini
       start: 2006-07
       end: 2007-05
+      stack: [Java, JBoss, JasperReports, Oracle]
       bullets:
         - Designed a portal and directory architecture for an AP-HP call for bids.
         - Led the migration of the DGI's FICOBA application from Oracle Application Server to JBoss and from Oracle Reports to JasperReports.
@@ -72,6 +81,7 @@
       company: E-Deal
       start: 2000-01
       end: 2006-06
+      stack: [Java, J2EE, J2ME, PostgreSQL, Oracle, DB2]
       bullets:
         - Managed a team of 4 R&D developers.
         - Built the first J2EE version of the e-DEAL CRM, with its MVC and persistence frameworks, Sales Force and Admin modules.

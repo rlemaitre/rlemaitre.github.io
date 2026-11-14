@@ -15,8 +15,17 @@ describe('resume page', () => {
     for (const part of ['Senior Backend Engineer', 'Nabla', 'Dictation squad', '2025.11', 'now']) {
       expect(first).toContain(part)
     }
-    expect(first).toContain('Real-time dictation transcription pipeline backend.')
-    expect(first).toContain('Formatting post-processing.')
+    expect(text(jobs[0].querySelector('.stack'))).toBe(
+      'Kotlin · PostgreSQL · Google Cloud · STT models (Whisper, Nemotron, Speechmatics)',
+    )
+    expect(first).not.toContain('Written in Kotlin.')
+    expect(first).toContain('rule-based formatter')
+    expect(first).toContain('LLM judge')
+  })
+
+  it('lists the main technologies of every role', () => {
+    for (const job of jobs) expect(text(job.querySelector('.stack')), text(job.querySelector('h3'))).not.toBe('')
+    expect(text(jobs[1].querySelector('.stack'))).toBe('Scala · Cats Effect · PostgreSQL')
   })
 
   it('says Kotlin at Nabla and Scala on the side in the pitch', () => {

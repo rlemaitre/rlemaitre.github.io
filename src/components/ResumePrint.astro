@@ -43,7 +43,7 @@ const num = (key: (typeof sections)[number]) => String(sections.indexOf(key) + 1
 
       @page {
         size: A4;
-        margin: 14mm 14mm 16mm;
+        margin: 12mm 14mm 14mm;
 
         @bottom-left {
           content: 'Raphaël Lemaitre — CV';
@@ -82,8 +82,8 @@ const num = (key: (typeof sections)[number]) => String(sections.indexOf(key) + 1
 
       body {
         font-family: var(--font-body);
-        font-size: 8.5pt;
-        line-height: 1.4;
+        font-size: 8.2pt;
+        line-height: 1.36;
       }
 
       a {
@@ -114,7 +114,7 @@ const num = (key: (typeof sections)[number]) => String(sections.indexOf(key) + 1
       }
 
       .intro {
-        padding: 7pt 12pt 11pt 0;
+        padding: 6pt 12pt 9pt 0;
       }
 
       .kicker {
@@ -123,9 +123,9 @@ const num = (key: (typeof sections)[number]) => String(sections.indexOf(key) + 1
       }
 
       h1 {
-        margin: 5pt 0 9pt;
+        margin: 4pt 0 7pt;
         font-family: var(--font-display);
-        font-size: 44pt;
+        font-size: 34pt;
         font-weight: 900;
         line-height: 0.86;
         letter-spacing: -0.045em;
@@ -139,15 +139,15 @@ const num = (key: (typeof sections)[number]) => String(sections.indexOf(key) + 1
       .pitch {
         max-width: 112mm;
         margin: 0;
-        font-size: 9.4pt;
-        line-height: 1.45;
+        font-size: 8.8pt;
+        line-height: 1.42;
       }
 
       .facts {
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        padding: 7pt 0 11pt 10pt;
+        padding: 6pt 0 9pt 10pt;
         border-left: 0.75pt solid var(--ink);
       }
 
@@ -167,7 +167,7 @@ const num = (key: (typeof sections)[number]) => String(sections.indexOf(key) + 1
       }
 
       .sec > .body {
-        min-height: 17mm;
+        min-height: 14mm;
         margin-left: var(--rail);
         border-left: 0.75pt solid var(--ink);
       }
@@ -189,7 +189,7 @@ const num = (key: (typeof sections)[number]) => String(sections.indexOf(key) + 1
         margin-bottom: 2pt;
         color: var(--accent);
         font-family: var(--font-display);
-        font-size: 20pt;
+        font-size: 18pt;
         font-weight: 900;
         letter-spacing: -0.04em;
         line-height: 1;
@@ -199,9 +199,23 @@ const num = (key: (typeof sections)[number]) => String(sections.indexOf(key) + 1
         display: grid;
         grid-template-columns: var(--when) 1fr;
         gap: 8pt;
-        padding: 6pt 0 6pt 9pt;
+        padding: 5pt 0 5pt 9pt;
         border-top: 0.5pt solid var(--hair);
+      }
+
+      /* A role never splits across pages. */
+      .entry {
         break-inside: avoid;
+      }
+
+      .org {
+        break-after: avoid;
+      }
+
+      /* Main technologies, on the company line. */
+      .stack {
+        margin-left: 6pt;
+        color: var(--ink);
       }
 
       .entry:first-child {
@@ -246,7 +260,17 @@ const num = (key: (typeof sections)[number]) => String(sections.indexOf(key) + 1
       }
 
       .entry.short {
-        padding-block: 4.5pt;
+        padding-block: 3.5pt;
+      }
+
+      /* Education and certifications: title and school or issuer on one line. */
+      .entry.short h3,
+      .entry.short .org {
+        display: inline;
+      }
+
+      .entry.short .org {
+        margin-left: 6pt;
       }
 
       .bullets li {
@@ -262,8 +286,8 @@ const num = (key: (typeof sections)[number]) => String(sections.indexOf(key) + 1
       }
 
       .compact .bullets {
-        font-size: 8.1pt;
-        line-height: 1.38;
+        font-size: 7.9pt;
+        line-height: 1.34;
       }
 
       /* Skills: 2 by 2, hairline grid. */
@@ -304,7 +328,7 @@ const num = (key: (typeof sections)[number]) => String(sections.indexOf(key) + 1
         grid-template-columns: var(--when) 1fr;
         gap: 8pt;
         align-items: baseline;
-        padding: 4.5pt 0 4.5pt 9pt;
+        padding: 3.5pt 0 3.5pt 9pt;
         border-top: 0.5pt solid var(--hair);
         break-inside: avoid;
       }
@@ -360,6 +384,7 @@ const num = (key: (typeof sections)[number]) => String(sections.indexOf(key) + 1
                   <p class="org">
                     {job.company}
                     {job.team && ` — ${job.team}`}
+                    {job.stack.length > 0 && <span class="mono stack">{job.stack.join(' · ')}</span>}
                   </p>
                   {job.bullets.length > 0 && (
                     <ul class="bullets">

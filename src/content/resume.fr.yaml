@@ -11,15 +11,20 @@
       company: Nabla
       team: squad Dictation
       start: 2025-11
+      stack: [Kotlin, PostgreSQL, Google Cloud, "modèles STT (Whisper, Nemotron, Speechmatics)"]
       bullets:
-        - Backend du pipeline de transcription de dictée en temps réel.
-        - Post-traitement de mise en forme.
-        - Écrit en Kotlin.
+        - Refactoring du pipeline de transcription pour séparer la dictée de la transcription Ambient, selon le type d’usage.
+        - Conception et développement d’un formateur en couches, à base de règles et de détection d’entités, en anglais et en français, à la place de l’ancien formateur à base de regex.
+        - 'Mise en place de tests A/B de transcription : chaque transcription passe à la fois dans le pipeline de production et dans un pipeline candidat, et un LLM juge compare les résultats sans exposer de données de santé (PHI).'
+        - Écriture d’un client d’API interne pour que le produit Ambient utilise l’API Dictation sans dépendre de contrats susceptibles de changer.
+        - Prise en charge du changement de destination du texte dicté sans redémarrer le pipeline de transcription.
+        - Revues de design et de code, entretiens techniques (code et system design), workflows de développement assistés par IA.
       compact: false
     - role: Senior Staff Engineer
       company: Ledger
       start: 2022-03
       end: 2025-10
+      stack: [Scala, Cats Effect, PostgreSQL]
       bullets:
         - Architecte d’ATLAS, la plateforme d’indexation blockchain de Ledger, pour un accès rapide aux transactions et aux soldes.
         - Construction de services backend Scala haute disponibilité pour les produits phares de Ledger.
@@ -31,6 +36,7 @@
       company: Adventori
       start: 2014-06
       end: 2022-03
+      stack: [Groovy, Grails, JavaScript, PostgreSQL, Cassandra, Apache Spark]
       bullets:
         - 20 milliards de publicités servies par an sur 15 serveurs à 99,5 % de disponibilité, et 400 Go de données ingérées par jour sur 20 serveurs.
         - Management du Tech Lab, une équipe de 9 développeurs, DevOps, data engineers et intégrateurs.
@@ -45,6 +51,7 @@
       company: Systar
       start: 2010-10
       end: 2014-06
+      stack: [Java, Flex (ActionScript)]
       bullets:
         - Conception et développement d’une application de monitoring sur une base NoSQL maison, distribuée et bitemporelle.
         - Gestion des champs calculés et optimisation des calculs d’agrégation (cube OLAP).
@@ -55,6 +62,7 @@
       company: Xcalia
       start: 2007-05
       end: 2010-08
+      stack: [Java, SQL, XQuery]
       bullets:
         - Développement d’un moteur de persistance et de requêtes indépendant du datastore, sur SGBDR et web services.
         - Algorithmes de compensation (jointures, tri, union) et génération de requêtes propres à chaque datastore.
@@ -64,6 +72,7 @@
       company: Capgemini
       start: 2006-07
       end: 2007-05
+      stack: [Java, JBoss, JasperReports, Oracle]
       bullets:
         - Conception de l’architecture d’un portail et d’un annuaire pour un appel d’offres de l’AP-HP.
         - Pilotage de la migration de l’application FICOBA de la DGI d’Oracle Application Server vers JBoss et d’Oracle Reports vers JasperReports.
@@ -72,6 +81,7 @@
       company: E-Deal
       start: 2000-01
       end: 2006-06
+      stack: [Java, J2EE, J2ME, PostgreSQL, Oracle, DB2]
       bullets:
         - Management d’une équipe de 4 développeurs R&D.
         - Développement de la première version J2EE du CRM e-DEAL, avec ses frameworks MVC et de persistance et ses modules Sales Force et Admin.

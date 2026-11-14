@@ -68,6 +68,7 @@ const pdfUrl = resumePdfPath(lang)
               <div>
                 <h3>{job.role}</h3>
                 <p class="company">{job.company}{job.team && ` — ${job.team}`}</p>
+                {job.stack.length > 0 && <p class="mono stack">{job.stack.join(' · ')}</p>}
                 {job.bullets.length > 0 && (
                   <ul>
                     {job.bullets.map((bullet) => (
@@ -303,6 +304,11 @@ const pdfUrl = resumePdfPath(lang)
   .company {
     margin: 4px 0 6px;
     color: var(--muted);
+  }
+
+  .stack {
+    margin: 0 0 6px;
+    color: var(--ink);
   }
 
   .job ul {
