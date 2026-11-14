@@ -3,6 +3,7 @@
  * The resume laid out for A4 paper, the source of the resume PDFs (`npm run resume:pdf` prints it with WeasyPrint).
  * Standalone HTML with inline CSS so WeasyPrint needs no site assets; the fonts come from the swiss-print-docs kit.
  */
+import Company from './Company.astro'
 import { formatYearMonth, parseYearMonth } from '../lib/dates'
 import { t, type Lang } from '../lib/i18n'
 import { bareUrl, loadResume, RESUME_CONTACTS, SKILL_LABEL } from '../lib/resume-source'
@@ -212,6 +213,15 @@ const num = (key: (typeof sections)[number]) => String(sections.indexOf(key) + 1
         break-after: avoid;
       }
 
+      .acquired .name {
+        white-space: nowrap;
+      }
+
+      .org a {
+        text-decoration: underline;
+        text-decoration-color: var(--hair);
+      }
+
       /* Main technologies, on the company line. */
       .stack {
         margin-left: 6pt;
@@ -382,8 +392,7 @@ const num = (key: (typeof sections)[number]) => String(sections.indexOf(key) + 1
                 <div>
                   <h3>{job.role}</h3>
                   <p class="org">
-                    {job.company}
-                    {job.team && ` — ${job.team}`}
+                    <Company lang={lang} job={job} />
                     {job.stack.length > 0 && <span class="mono stack">{job.stack.join(' · ')}</span>}
                   </p>
                   {job.bullets.length > 0 && (

@@ -23,6 +23,29 @@ describe('resume page', () => {
     expect(first).toContain('LLM judge')
   })
 
+  it('names the acquirer of companies that were bought', () => {
+    const company = (name: string) =>
+      text(jobs.find((j) => text(j.querySelector('.company')).startsWith(name))?.querySelector('.company'))
+    expect(company('Adventori')).toBe('Adventori, now part of the COOL company')
+    expect(company('Systar')).toBe('Systar, now part of Axway')
+    expect(company('Xcalia')).toBe('Xcalia, now part of Progress Software')
+    expect(company('E-Deal')).toBe('E-Deal, now part of Efficy')
+    expect(company('Ledger')).toBe('Ledger')
+  })
+
+  it('links each company, or its acquirer, to its website when there is one', () => {
+    const links = (name: string) =>
+      [
+        ...(jobs.find((j) => text(j.querySelector('.company')).startsWith(name))?.querySelectorAll('.company a') ?? []),
+      ].map((a) => [text(a), a.getAttribute('href')])
+    expect(links('Nabla')).toEqual([['Nabla', 'https://www.nabla.com']])
+    expect(links('Adventori')).toEqual([['the COOL company', 'https://cool.co']])
+    expect(links('Systar')).toEqual([['Axway', 'https://www.axway.com']])
+    expect(links('Xcalia')).toEqual([['Progress Software', 'https://www.progress.com']])
+    expect(links('Capgemini')).toEqual([['Capgemini', 'https://www.capgemini.com']])
+    expect(links('E-Deal')).toEqual([['Efficy', 'https://www.efficy.com']])
+  })
+
   it('lists the main technologies of every role', () => {
     for (const job of jobs) expect(text(job.querySelector('.stack')), text(job.querySelector('h3'))).not.toBe('')
     expect(text(jobs[1].querySelector('.stack'))).toBe('Scala · Cats Effect · PostgreSQL')

@@ -1,6 +1,7 @@
 ---
 import '../styles/print.css'
 import Base from '../layouts/Base.astro'
+import Company from './Company.astro'
 import { formatYearMonth, parseYearMonth } from '../lib/dates'
 import { otherLang, resumeUrl, t, talkUrl, type Lang } from '../lib/i18n'
 import { bareUrl, loadResume, RESUME_CONTACTS, resumePdfPath, SKILL_LABEL } from '../lib/resume-source'
@@ -67,7 +68,9 @@ const pdfUrl = resumePdfPath(lang)
               </span>
               <div>
                 <h3>{job.role}</h3>
-                <p class="company">{job.company}{job.team && ` — ${job.team}`}</p>
+                <p class="company">
+                  <Company lang={lang} job={job} />
+                </p>
                 {job.stack.length > 0 && <p class="mono stack">{job.stack.join(' · ')}</p>}
                 {job.bullets.length > 0 && (
                   <ul>

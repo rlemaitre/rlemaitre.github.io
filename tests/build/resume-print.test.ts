@@ -24,6 +24,8 @@ describe('resume print pages, the source of the PDFs', () => {
       expect(doc.querySelectorAll('.sec .entry:not(.short)')).toHaveLength(web.querySelectorAll('.jobs > .job').length)
       expect(text(doc.querySelector('.sec h2'))).toContain(heading)
       expect(doc.querySelectorAll('.sec .stack')).toHaveLength(web.querySelectorAll('.jobs .stack').length)
+      expect(doc.querySelectorAll('.sec .acquired')).toHaveLength(4)
+      expect(doc.querySelectorAll('.org a')).toHaveLength(web.querySelectorAll('.jobs .company a').length)
     })
   }
 

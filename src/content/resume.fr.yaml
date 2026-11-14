@@ -9,6 +9,7 @@
   experience:
     - role: Senior Backend Engineer
       company: Nabla
+      url: https://www.nabla.com
       team: squad Dictation
       start: 2025-11
       stack: [Kotlin, PostgreSQL, Google Cloud, "modèles STT (Whisper, Nemotron, Speechmatics)"]
@@ -22,6 +23,7 @@
       compact: false
     - role: Senior Staff Engineer
       company: Ledger
+      url: https://www.ledger.com
       start: 2022-03
       end: 2025-10
       stack: [Scala, Cats Effect, PostgreSQL]
@@ -34,6 +36,8 @@
       compact: false
     - role: CTO, auparavant Lead Developer
       company: Adventori
+      acquiredBy: the COOL company
+      acquiredByUrl: https://cool.co
       start: 2014-06
       end: 2022-03
       stack: [Groovy, Grails, JavaScript, PostgreSQL, Cassandra, Apache Spark]
@@ -49,6 +53,8 @@
       compact: false
     - role: Développeur senior R&D
       company: Systar
+      acquiredBy: Axway
+      acquiredByUrl: https://www.axway.com
       start: 2010-10
       end: 2014-06
       stack: [Java, Flex (ActionScript)]
@@ -60,6 +66,8 @@
       compact: true
     - role: Ingénieur R&D
       company: Xcalia
+      acquiredBy: Progress Software
+      acquiredByUrl: https://www.progress.com
       start: 2007-05
       end: 2010-08
       stack: [Java, SQL, XQuery]
@@ -70,6 +78,7 @@
       compact: true
     - role: Architecte logiciel
       company: Capgemini
+      url: https://www.capgemini.com
       start: 2006-07
       end: 2007-05
       stack: [Java, JBoss, JasperReports, Oracle]
@@ -79,6 +88,8 @@
       compact: true
     - role: Team Leader
       company: E-Deal
+      acquiredBy: Efficy
+      acquiredByUrl: https://www.efficy.com
       start: 2000-01
       end: 2006-06
       stack: [Java, J2EE, J2ME, PostgreSQL, Oracle, DB2]

@@ -82,6 +82,9 @@ const resumeSchema = z.object({
       role: z.string(),
       company: z.string(),
       team: z.string().optional(),
+      url: z.url().optional(),
+      acquiredBy: z.string().optional(),
+      acquiredByUrl: z.url().optional(),
       start: z.string().regex(/^\d{4}-\d{2}$/),
       end: z
         .string()

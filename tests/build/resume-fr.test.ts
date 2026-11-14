@@ -26,6 +26,12 @@ describe('French resume page', () => {
     expect(dates(fr).map((d) => d.replace('aujourd’hui', 'now'))).toEqual(dates(en))
   })
 
+  it('names the acquirer in French', () => {
+    const companies = [...fr.querySelectorAll('.jobs .company')].map(text)
+    expect(companies).toContain('Adventori, aujourd’hui the COOL company')
+    expect(companies).toContain('E-Deal, aujourd’hui Efficy')
+  })
+
   it('marks the current role with aujourd’hui', () => {
     expect(text(fr.querySelector('.jobs .now'))).toBe('aujourd’hui')
   })
