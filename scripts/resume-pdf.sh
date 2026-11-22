@@ -12,10 +12,21 @@ KIT_DIR="$(cd "$(dirname "$(readlink -f "$(command -v swiss-doc)")")/.." && pwd)
 readonly KIT_DIR
 
 cd "$(dirname "$0")/.."
-npx astro build >/dev/null
-
 tmp="$(mktemp -d)"
 trap 'rm -rf "$tmp"' EXIT
+
+# A content file that fails to load is logged as [ERROR] but exits 0, and the build reuses the cached entries:
+# the PDFs would print stale data.
+npx astro build >"$tmp/build.log" 2>&1 || {
+	cat "$tmp/build.log" >&2
+	exit 1
+}
+if grep -q '\[ERROR\]' "$tmp/build.log"; then
+	grep -A5 '\[ERROR\]' "$tmp/build.log" >&2
+	echo "resume-pdf: the build logged errors, no PDF printed" >&2
+	exit 1
+fi
+
 fonts="$tmp/fonts.css"
 face() { # family weight style file
 	printf "@font-face { font-family: '%s'; font-weight: %s; font-style: %s; src: url('file://%s/fonts/%s'); }\n" \
