@@ -74,6 +74,7 @@ const projectsFr = defineCollection({
 })
 
 const resumeSchema = z.object({
+  title: z.string(),
   pitch: z.string(),
   location: z.string(),
   languages: z.array(z.string()),
@@ -83,6 +84,7 @@ const resumeSchema = z.object({
       company: z.string(),
       team: z.string().optional(),
       url: z.url().optional(),
+      about: z.string().optional(),
       acquiredBy: z.string().optional(),
       acquiredByUrl: z.url().optional(),
       start: z.string().regex(/^\d{4}-\d{2}$/),
@@ -99,11 +101,12 @@ const resumeSchema = z.object({
   education: z.array(
     z.object({ degree: z.string(), school: z.string(), url: z.url(), start: z.number(), end: z.number() }),
   ),
-  certifications: z.array(
+  projects: z.array(
     z.object({
       name: z.string(),
-      issuer: z.string(),
-      year: z.number(),
+      url: z.url(),
+      role: z.enum(['creator', 'contributor']),
+      summary: z.string(),
     }),
   ),
 })

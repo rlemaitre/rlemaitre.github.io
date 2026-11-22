@@ -17,7 +17,7 @@ describe('French resume page', () => {
   it('is in French', () => {
     expect(fr.documentElement.getAttribute('lang')).toBe('fr')
     const headings = [...fr.querySelectorAll('.sec > h2')].map(text).join(' ')
-    for (const heading of ['Expérience', 'Compétences', 'Talks', 'Formation', 'Certifications']) {
+    for (const heading of ['Expérience', 'Compétences', 'Projets', 'Conférences', 'Formation']) {
       expect(headings).toContain(heading)
     }
   })
@@ -30,6 +30,39 @@ describe('French resume page', () => {
     const companies = [...fr.querySelectorAll('.jobs .company')].map(text)
     expect(companies).toContain('Adventori, aujourd’hui the COOL company')
     expect(companies).toContain('E-Deal, aujourd’hui Efficy')
+  })
+
+  it('lists spoken languages with their level in French', () => {
+    expect(text(fr.querySelector('.languages .label'))).toBe('Langues')
+    expect([...fr.querySelectorAll('.languages li')].map(text)).toEqual([
+      'Français (langue maternelle)',
+      'Anglais (C1)',
+    ])
+  })
+
+  it('dates roles as MM/YYYY', () => {
+    expect(text(fr.querySelector('.jobs .when'))).toBe('11/2025 – aujourd’hui')
+    expect(text(fr.querySelector('.projects .role'))).toBe('Créateur')
+  })
+
+  it('opens with the target job title and explains internal names in French', () => {
+    expect(text(fr.querySelector('.intro .mono'))).toBe('/// Principal/Staff Engineer')
+    const nabla = text(fr.querySelector('.jobs > .job'))
+    expect(nabla).toContain('Nabla, IA clinique pour les établissements de santé — équipe Dictée')
+    expect(nabla).toContain('transcription Ambient (consultations enregistrées)')
+    expect(nabla).toContain('le produit Ambient (transcription des consultations) utilise l’API de dictée')
+    expect(nabla).not.toMatch(/squad|API Dictation/)
+  })
+
+  it('adds the AI workflow, anonymization, AWS and budget facts in French', () => {
+    const jobs = [...fr.querySelectorAll('.jobs > .job')]
+    expect(text(jobs[0].querySelector('.company'))).toBe(
+      'Nabla, IA clinique pour les établissements de santé — équipe Dictée',
+    )
+    expect(text(jobs[0])).toContain('une douzaine de sous-agents de revue spécialisés')
+    expect(text(jobs[0])).toContain('transforme les remarques de revue récurrentes en règles')
+    expect(text(jobs[0])).toContain('Anonymisation de l’audio dicté et des transcriptions enregistrées.')
+    expect(text(jobs[2])).toContain('Gestion du budget tech et des prestataires avec le CEO.')
   })
 
   it('marks the current role with aujourd’hui', () => {

@@ -23,7 +23,6 @@ export async function loadResume(lang: Lang) {
         return {
           id: talk.id,
           title: (await talkTitle(talk, lang)).title,
-          count: summary.count,
           span: span(summary),
           lastYear: summary.lastYear,
           conferences: conferences(talk.data.venues),

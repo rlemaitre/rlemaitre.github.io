@@ -26,6 +26,10 @@ describe('resume print pages, the source of the PDFs', () => {
       expect(doc.querySelectorAll('.sec .stack')).toHaveLength(web.querySelectorAll('.jobs .stack').length)
       expect(doc.querySelectorAll('.sec .acquired')).toHaveLength(4)
       expect(doc.querySelectorAll('.org a')).toHaveLength(web.querySelectorAll('.jobs .company a').length)
+      expect([...doc.querySelectorAll('.when')].slice(0, 2).map(text)).toEqual(
+        [...web.querySelectorAll('.jobs .when')].slice(0, 2).map(text),
+      )
+      expect(doc.querySelectorAll('.project a')).toHaveLength(4)
     })
 
     it(`${path} lists the talks in the web order, each linked to its page on the site`, () => {

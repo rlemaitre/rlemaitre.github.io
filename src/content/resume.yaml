@@ -1,32 +1,36 @@
 - id: resume
+  title: Principal/Staff Engineer
   pitch: >-
     Backend engineer with 26 years on the JVM, including about ten years of functional Scala. I'm a Senior Backend
     Engineer at Nabla, building the real-time dictation backend in Kotlin. I have been a CTO and went back to coding by
     choice. I care about type safety, simple systems and teams that ship. On the side, I speak at Scala conferences and
     maintain open-source Scala libraries.
   location: Paris area, FR
-  languages: [EN, FR]
+  languages: [French (native), English (C1)]
   experience:
     - role: Senior Backend Engineer
       company: Nabla
       url: https://www.nabla.com
-      team: Dictation squad
+      about: clinical AI for health systems
+      team: Dictation team
       start: 2025-11
       stack: [Kotlin, PostgreSQL, Google Cloud, "STT models (Whisper, Nemotron, Speechmatics)"]
       bullets:
-        - Refactored the transcription pipeline to separate dictation from ambient transcription, by usage type.
+        - Refactored the transcription pipeline to separate dictation from ambient transcription of recorded consultations, by usage type.
         - Designed and built a layered, rule-based formatter with entity detection, in English and French, replacing the regex-based one.
         - 'Built transcription A/B testing: each transcription runs on the production pipeline and a candidate one, and an LLM judge compares the results without exposing PHI.'
-        - Wrote an internal API client so the ambient product uses the Dictation API without depending on contracts that may change.
+        - Wrote an internal API client so the ambient product (consultation transcription) uses the dictation API without depending on contracts that may change.
         - Handled changes of where the dictated text lands without restarting the transcription pipeline.
-        - Design and code reviews, coding and system design interviews, AI-assisted coding workflows.
+        - Anonymized dictation audio and stored transcripts.
+        - Built an AI-agent development workflow, from brainstorm and implementation plan to code, automated review by about 12 specialized review sub-agents (database, security, privacy, simplification, test coverage) and PR follow-up, plus a sub-agent that prepares human reviews; the workflow turns review comments that keep coming back into rules.
+        - Design and code reviews, coding and system design interviews.
       compact: false
     - role: Senior Staff Engineer
       company: Ledger
       url: https://www.ledger.com
       start: 2022-03
       end: 2025-10
-      stack: [Scala, Cats Effect, PostgreSQL]
+      stack: [Scala, Cats Effect, PostgreSQL, "AWS (EC2, RDS, EKS)"]
       bullets:
         - Architected ATLAS, Ledger's blockchain indexing platform for fast transaction and balance access.
         - Built high-availability Scala backend services for Ledger's core products.
@@ -45,6 +49,7 @@
         - Served 20 billion ads a year on 15 servers at 99.5% availability, and ingested 400 GB of data a day on 20 servers.
         - Managed the Tech Lab, a team of 9 developers, DevOps, data engineers and integrators.
         - Co-designed the product roadmap with the CEO and PM, and aligned the technical roadmap with company objectives.
+        - Owned the tech budget and vendors with the CEO.
         - Mentored the team through peer reviews, katas and coding dojos, and promoted craftsmanship and DevOps practices.
         - Built an inclusive and selective hiring process for engineering and product.
         - As Lead Developer, designed and built the ad server, data warehouse, reporting system and customer data integration service.
@@ -60,9 +65,7 @@
       stack: [Java, Flex (ActionScript)]
       bullets:
         - Designed and built a monitoring application on a custom distributed, bi-temporal NoSQL database.
-        - Built calculated fields management and optimized aggregation computations (OLAP cube).
         - Scrum Master for a team of 4 developers in Paris and Lyon.
-        - Built a JDBC driver for the database and a quantified-self monitoring application during hacking weeks.
       compact: true
     - role: R&D Engineer
       company: Xcalia
@@ -74,7 +77,6 @@
       bullets:
         - Developed a datastore-agnostic persistence and query engine over RDBMS and web services.
         - Implemented compensation algorithms (joins, sort, union) and datastore-specific query generation.
-        - Built dynamic service orchestration, independent of the service invocation technology.
       compact: true
     - role: Software Architect
       company: Capgemini
@@ -96,8 +98,6 @@
       bullets:
         - Managed a team of 4 R&D developers.
         - Built the first J2EE version of the e-DEAL CRM, with its MVC and persistence frameworks, Sales Force and Admin modules.
-        - Added internationalization, calendar and contact sync with Microsoft Exchange and Lotus Domino, and a J2ME application.
-        - Rewrote the presentation framework (MVC2).
       compact: true
   skills:
     - group: Languages
@@ -107,20 +107,27 @@
     - group: Data
       items: [PostgreSQL, SQLite, Apache Cassandra, Apache Spark, Elasticsearch]
     - group: Ops & tools
-      items: [Kubernetes, Docker, Gatling, Git, GitHub, GitLab, CI/CD, Jenkins, Linux, OpenTelemetry, Grafana, Kibana, Datadog, IntelliJ IDEA, VS Code, Metals, Zed]
+      items: [AWS, Cloudflare, Kubernetes, Docker, Gatling, Git, GitHub, GitLab, CI/CD, Jenkins, Linux, OpenTelemetry, Grafana, Kibana, Datadog, IntelliJ IDEA, VS Code, Metals, Zed]
   education:
     - degree: Master in Engineering, Computer Science
       school: ENSIIE
       url: https://www.ensiie.fr
       start: 1997
       end: 2001
-  certifications:
-    - name: Introduction to Big Data with Apache Spark
-      issuer: edX
-      year: 2015
-    - name: Principles of Reactive Programming
-      issuer: Coursera
-      year: 2013
-    - name: Functional Programming with Scala
-      issuer: Coursera
-      year: 2012
+  projects:
+    - name: Pillars
+      url: https://github.com/FunktionalIO/pillars
+      role: creator
+      summary: A Scala 3 library for building backend applications, with tools to build, test and document REST endpoints.
+    - name: Mason
+      url: https://github.com/FunktionalIO/mason
+      role: creator
+      summary: An application generator for Pillars projects, to start a new one with minimal configuration.
+    - name: Risk Matrix
+      url: https://github.com/rlemaitre/riskmatrix
+      role: creator
+      summary: A small Vue app to rate risks by likelihood and impact on a grid, inspired by the NASA risk matrix.
+    - name: Iron
+      url: https://github.com/Iltotore/iron
+      role: contributor
+      summary: A Scala 3 library of refined types that checks constraints at compile time and at runtime, so invalid data never gets in.

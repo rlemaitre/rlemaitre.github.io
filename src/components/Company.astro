@@ -1,16 +1,17 @@
 ---
-/** A role's company: name, then its acquirer and team, each linked to its website when it has one. */
+/** A role's company: name, what it does, its acquirer and team; the company and acquirer link to their websites. */
 import { t, type Lang } from '../lib/i18n'
 
 interface Props {
   lang: Lang
-  job: { company: string; url?: string; acquiredBy?: string; acquiredByUrl?: string; team?: string }
+  job: { company: string; url?: string; about?: string; acquiredBy?: string; acquiredByUrl?: string; team?: string }
 }
 
 const { lang, job } = Astro.props
 ---
 
 {job.url ? <a href={job.url}>{job.company}</a> : job.company}
+{job.about && `, ${job.about}`}
 {
   job.acquiredBy && (
     <span class="acquired">
@@ -21,4 +22,4 @@ const { lang, job } = Astro.props
     </span>
   )
 }
-{job.team && ` — ${job.team}`}
+{job.team && <span class="team"> — {job.team}</span>}

@@ -12,7 +12,7 @@ describe('resume page', () => {
 
   it('opens with the current Nabla role', () => {
     const first = text(jobs[0])
-    for (const part of ['Senior Backend Engineer', 'Nabla', 'Dictation squad', '2025.11', 'now']) {
+    for (const part of ['Senior Backend Engineer', 'Nabla', 'Dictation team', '11/2025 – now']) {
       expect(first).toContain(part)
     }
     expect(text(jobs[0].querySelector('.stack'))).toBe(
@@ -48,7 +48,26 @@ describe('resume page', () => {
 
   it('lists the main technologies of every role', () => {
     for (const job of jobs) expect(text(job.querySelector('.stack')), text(job.querySelector('h3'))).not.toBe('')
-    expect(text(jobs[1].querySelector('.stack'))).toBe('Scala · Cats Effect · PostgreSQL')
+    expect(text(jobs[1].querySelector('.stack'))).toBe('Scala · Cats Effect · PostgreSQL · AWS (EC2, RDS, EKS)')
+  })
+
+  it('opens with the target job title and explains internal names', () => {
+    expect(text(doc.querySelector('.intro .mono'))).toBe('/// Principal/Staff Engineer')
+    const nabla = text(jobs[0])
+    expect(nabla).toContain('ambient transcription of recorded consultations')
+    expect(nabla).toContain('the ambient product (consultation transcription)')
+    expect(nabla).not.toMatch(/squad|Dictation API/)
+  })
+
+  it('adds the AI workflow, anonymization, AWS, Cloudflare and budget facts', () => {
+    expect(text(jobs[0].querySelector('.company'))).toBe('Nabla, clinical AI for health systems — Dictation team')
+    const nabla = text(jobs[0])
+    expect(nabla).toContain('about 12 specialized review sub-agents')
+    expect(nabla).toContain('turns review comments that keep coming back into rules')
+    expect(nabla).toContain('Anonymized dictation audio and stored transcripts.')
+    expect(text(jobs[1].querySelector('.stack'))).toBe('Scala · Cats Effect · PostgreSQL · AWS (EC2, RDS, EKS)')
+    expect(text(jobs[2])).toContain('Owned the tech budget and vendors with the CEO.')
+    expect(text(doc.querySelector('.skills'))).toMatch(/AWS, Cloudflare/)
   })
 
   it('says Kotlin at Nabla and Scala on the side in the pitch', () => {
@@ -57,10 +76,9 @@ describe('resume page', () => {
     expect(pitch).not.toMatch(/mostly Scala/)
   })
 
-  it('dates the Ledger role 2022.03 to 2025.10, not as current', () => {
+  it('dates the Ledger role 03/2022 to 10/2025, not as current', () => {
     const ledger = jobs.find((j) => text(j).includes('Ledger'))
-    expect(text(ledger)).toContain('2022.03')
-    expect(text(ledger)).toContain('2025.10')
+    expect(text(ledger?.querySelector('.when'))).toBe('03/2022 – 10/2025')
     expect(text(ledger)).not.toMatch(/\bnow\b/i)
     expect(jobs.filter((j) => /\bnow\b/i.test(text(j.querySelector('.when'))))).toHaveLength(1)
   })
@@ -68,7 +86,7 @@ describe('resume page', () => {
   it('lists every role of the confirmed content, older ones compact', () => {
     expect(jobs).toHaveLength(7)
     expect(text(jobs[2])).toContain('CTO, previously Lead Developer')
-    expect(text(jobs[2])).toContain('2014.06')
+    expect(text(jobs[2])).toContain('06/2014')
     for (const job of jobs.slice(3)) expect(job.classList.contains('compact')).toBe(true)
     expect(text(jobs[6])).toContain('E-Deal')
   })
@@ -81,11 +99,12 @@ describe('resume page', () => {
     expect(html).not.toMatch(/mailto:|tel:/i)
   })
 
-  it('lists the four talks, Iron with x5', () => {
+  it('lists the four talks with their years, without a count', () => {
     const talks = [...doc.querySelectorAll('.talk')]
     expect(talks).toHaveLength(4)
     const iron = talks.find((t) => text(t).includes('Armored Type Safety'))
-    expect(text(iron)).toContain('×5')
+    expect(text(iron?.querySelector('.num'))).toBe('2023–2024')
+    expect(text(doc.querySelector('.talks'))).not.toContain('×')
   })
 
   it('lists Hacking ADHD first', () => {
@@ -112,6 +131,11 @@ describe('resume page', () => {
     for (const ide of ['IntelliJ IDEA', 'VS Code', 'Metals', 'Zed']) expect(skills).toContain(ide)
   })
 
+  it('lists spoken languages with their level, without Spanish', () => {
+    expect(text(doc.querySelector('.languages .label'))).toBe('Languages')
+    expect([...doc.querySelectorAll('.languages li')].map(text)).toEqual(['French (native)', 'English (C1)'])
+  })
+
   it('lists AI tools and models next to languages', () => {
     const groups = [...doc.querySelectorAll('.skills > div')]
     expect(groups.map((g) => text(g.querySelector('h3')))).toEqual(['Languages', 'AI', 'Data', 'Ops & tools'])
@@ -130,10 +154,22 @@ describe('resume page', () => {
     expect(ai).toContain('STT (Whisper, Nemotron, Speechmatics, Soniox)')
   })
 
+  it('lists projects, own and contributed, each linked', () => {
+    const projects = [...doc.querySelectorAll('.projects .project')]
+    expect(projects.map((p) => text(p.querySelector('a')))).toEqual(['Pillars', 'Mason', 'Risk Matrix', 'Iron'])
+    expect(projects[0].querySelector('a')?.getAttribute('href')).toBe('https://github.com/FunktionalIO/pillars')
+    expect(text(projects[0].querySelector('.role'))).toBe('Creator')
+    expect(text(projects[3].querySelector('.role'))).toBe('Contributor')
+  })
+
+  it('has no certifications section', () => {
+    expect(doc.querySelector('#h-certs')).toBeNull()
+    expect(html).not.toMatch(/Coursera|edX/)
+  })
+
   it('shows the education', () => {
     const education = text(doc.querySelector('.education'))
     expect(education).toContain('ENSIIE')
-    expect(education).toContain('1997')
-    expect(education).toContain('2001')
+    expect(education).toContain('1997 – 2001')
   })
 })

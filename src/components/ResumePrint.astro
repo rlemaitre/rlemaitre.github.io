@@ -4,7 +4,7 @@
  * Standalone HTML with inline CSS so WeasyPrint needs no site assets; the fonts come from the swiss-print-docs kit.
  */
 import Company from './Company.astro'
-import { formatYearMonth, parseYearMonth } from '../lib/dates'
+import { formatMonthYear, parseYearMonth } from '../lib/dates'
 import { t, talkUrl, type Lang } from '../lib/i18n'
 import { bareUrl, loadResume, RESUME_CONTACTS, SKILL_LABEL } from '../lib/resume-source'
 import { SITE } from '../lib/site'
@@ -15,9 +15,9 @@ interface Props {
 
 const { lang } = Astro.props
 const { resume, talks } = await loadResume(lang)
-const ym = (s: string) => formatYearMonth(parseYearMonth(s))
+const ym = (s: string) => formatMonthYear(parseYearMonth(s))
 const [first, ...rest] = SITE.name.split(' ')
-const sections = ['experience', 'skills', 'talks', 'education', 'certifications'] as const
+const sections = ['experience', 'skills', 'projects', 'talks', 'education'] as const
 const num = (key: (typeof sections)[number]) => String(sections.indexOf(key) + 1).padStart(2, '0')
 ---
 
@@ -44,7 +44,7 @@ const num = (key: (typeof sections)[number]) => String(sections.indexOf(key) + 1
 
       @page {
         size: A4;
-        margin: 12mm 14mm 14mm;
+        margin: 11mm 14mm 11mm;
 
         @bottom-left {
           content: 'Raphaël Lemaitre — CV';
@@ -152,16 +152,23 @@ const num = (key: (typeof sections)[number]) => String(sections.indexOf(key) + 1
         border-left: 0.75pt solid var(--ink);
       }
 
-      .facts p {
+      .facts p,
+      .facts .languages {
         margin: 0 0 7pt;
+      }
+
+      .facts .languages .label {
+        margin: 0;
+        color: var(--muted);
       }
 
       .facts li {
         overflow-wrap: anywhere;
       }
 
-      /* Sections: a rail with the red number, then the content. Floats, not grid: WeasyPrint splits a float's
-         neighbour across pages but never a grid item. */
+      /* Sections: a rail with the red number, then the content. The heading is an in-flow block of zero height
+         whose text overflows into the rail: unlike a float or a grid item, it is drawn right before its content
+         (parsers read it in place) and the content still splits across pages. */
       .sec {
         display: flow-root;
         border-bottom: 0.75pt solid var(--ink);
@@ -178,15 +185,16 @@ const num = (key: (typeof sections)[number]) => String(sections.indexOf(key) + 1
       }
 
       .sec > h2 {
-        float: left;
+        height: 0;
         width: var(--rail);
         margin: 0;
-        padding: 8pt 8pt 8pt 0;
+        padding: 0 8pt 0 0;
         font-weight: 400;
       }
 
       .sec > h2 .n {
         display: block;
+        padding-top: 8pt;
         margin-bottom: 2pt;
         color: var(--accent);
         font-family: var(--font-display);
@@ -200,25 +208,36 @@ const num = (key: (typeof sections)[number]) => String(sections.indexOf(key) + 1
         display: grid;
         grid-template-columns: var(--when) 1fr;
         gap: 8pt;
-        padding: 5pt 0 5pt 9pt;
+        padding: 4pt 0 4pt 9pt;
         border-top: 0.5pt solid var(--hair);
       }
 
-      /* A role never splits across pages. */
-      .entry {
+      /* Short roles never split across pages. A long role may, but only between bullets, with its heading and at least
+         3 bullets before the break and 3 after it. */
+      .entry.compact,
+      .entry.short,
+      .bullets li {
         break-inside: avoid;
+      }
+
+      .bullets,
+      .bullets li:nth-child(-n + 3),
+      .bullets li:nth-last-child(-n + 2) {
+        break-before: avoid;
       }
 
       .org {
         break-after: avoid;
       }
 
-      .acquired .name {
+      .acquired .name,
+      .org .team {
         white-space: nowrap;
       }
 
       .org a,
-      .talk .title a {
+      .talk .title a,
+      .project .title a {
         text-decoration: underline;
         text-decoration-color: var(--hair);
       }
@@ -271,10 +290,10 @@ const num = (key: (typeof sections)[number]) => String(sections.indexOf(key) + 1
       }
 
       .entry.short {
-        padding-block: 3.5pt;
+        padding-block: 2.5pt;
       }
 
-      /* Education and certifications: title and school or issuer on one line. */
+      /* Education: degree and school on one line. */
       .entry.short h3,
       .entry.short .org {
         display: inline;
@@ -284,15 +303,17 @@ const num = (key: (typeof sections)[number]) => String(sections.indexOf(key) + 1
         margin-left: 6pt;
       }
 
+      /* Inline dash with a hanging indent, so parsers read it with its bullet text. */
       .bullets li {
-        position: relative;
         padding-left: 9pt;
+        text-indent: -9pt;
       }
 
       .bullets li::before {
         content: '—';
-        position: absolute;
-        left: 0;
+        display: inline-block;
+        width: 9pt;
+        text-indent: 0;
         color: var(--accent);
       }
 
@@ -333,8 +354,14 @@ const num = (key: (typeof sections)[number]) => String(sections.indexOf(key) + 1
         margin: 2.5pt 0 0;
       }
 
-      /* Talks: count and years, title, venues. */
-      .talk {
+      /* Talks: years, title, venues. */
+      .talk .title,
+      .project .title {
+        font-weight: 600;
+      }
+
+      /* Projects and talks: one row each, like the roles: a label column, then the content. */
+      .row {
         display: grid;
         grid-template-columns: var(--when) 1fr;
         gap: 8pt;
@@ -344,12 +371,13 @@ const num = (key: (typeof sections)[number]) => String(sections.indexOf(key) + 1
         break-inside: avoid;
       }
 
-      .talk:first-child {
+      .row:first-child {
         border-top: 0;
       }
 
-      .talk .title {
-        font-weight: 600;
+      .project .summary {
+        margin-left: 5pt;
+        color: var(--muted);
       }
 
       .talk .venues {
@@ -362,12 +390,20 @@ const num = (key: (typeof sections)[number]) => String(sections.indexOf(key) + 1
   <body>
     <header class="head">
       <div class="intro">
-        <p class="kicker mono">/// Curriculum vitæ</p>
+        <p class="kicker mono">/// {resume.title}</p>
         <h1>{first}<br />{rest.join(' ')}<span class="dot">.</span></h1>
         <p class="pitch">{resume.pitch}</p>
       </div>
       <div class="facts mono">
-        <p>{resume.location}<br />{resume.languages.join(' · ')}</p>
+        <p>{resume.location}</p>
+        <div class="languages">
+          <p class="label">{t(lang, 'spokenLanguages')}</p>
+          <ul>
+            {resume.languages.map((l) => (
+              <li>{l}</li>
+            ))}
+          </ul>
+        </div>
         <ul>
           {
             RESUME_CONTACTS.map((c) => (
@@ -388,7 +424,7 @@ const num = (key: (typeof sections)[number]) => String(sections.indexOf(key) + 1
             resume.experience.map((job) => (
               <article class:list={['entry', { compact: job.compact }]}>
                 <span class="mono when">
-                  <span>{ym(job.start)}</span> <span class:list={{ now: !job.end }}>→ {job.end ? ym(job.end) : t(lang, 'now')}</span>
+                  <span>{ym(job.start)}</span> <span class:list={{ now: !job.end }}>– {job.end ? ym(job.end) : t(lang, 'now')}</span>
                 </span>
                 <div>
                   <h3>{job.role}</h3>
@@ -432,13 +468,32 @@ const num = (key: (typeof sections)[number]) => String(sections.indexOf(key) + 1
       </section>
 
       <section class="sec">
-        <h2 class="mono"><span class="n">{num('talks')}</span>{t(lang, 'talks')}</h2>
+        <h2 class="mono"><span class="n">{num('projects')}</span>{t(lang, 'projects')}</h2>
+        <ul class="body">
+          {
+            resume.projects.map((p) => (
+              <li class="project row">
+                <span class="mono when">{t(lang, p.role)}</span>
+                <div>
+                  <span class="title">
+                    <a href={p.url}>{p.name}</a>
+                  </span>
+                  <span class="summary">{p.summary}</span>
+                </div>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <section class="sec">
+        <h2 class="mono"><span class="n">{num('talks')}</span>{t(lang, 'resumeTalks')}</h2>
         <ul class="body">
           {
             talks.map((talk) => (
-              <li class="talk">
+              <li class="talk row">
                 <span class="mono when">
-                  ×{talk.count} · {talk.span}
+                  {talk.span}
                 </span>
                 <div>
                   <span class="title">
@@ -459,28 +514,11 @@ const num = (key: (typeof sections)[number]) => String(sections.indexOf(key) + 1
             resume.education.map((e) => (
               <article class="entry compact short">
                 <span class="mono when">
-                  {e.start} → {e.end}
+                  {e.start} – {e.end}
                 </span>
                 <div>
                   <h3>{e.degree}</h3>
                   <p class="org">{e.school}</p>
-                </div>
-              </article>
-            ))
-          }
-        </div>
-      </section>
-
-      <section class="sec">
-        <h2 class="mono"><span class="n">{num('certifications')}</span>{t(lang, 'certifications')}</h2>
-        <div class="body">
-          {
-            resume.certifications.map((c) => (
-              <article class="entry compact short">
-                <span class="mono when">{c.year}</span>
-                <div>
-                  <h3>{c.name}</h3>
-                  <p class="org">{c.issuer}</p>
                 </div>
               </article>
             ))

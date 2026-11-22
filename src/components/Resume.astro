@@ -2,7 +2,7 @@
 import '../styles/print.css'
 import Base from '../layouts/Base.astro'
 import Company from './Company.astro'
-import { formatYearMonth, parseYearMonth } from '../lib/dates'
+import { formatMonthYear, parseYearMonth } from '../lib/dates'
 import { otherLang, resumeUrl, t, talkUrl, type Lang } from '../lib/i18n'
 import { bareUrl, loadResume, RESUME_CONTACTS, resumePdfPath, SKILL_LABEL } from '../lib/resume-source'
 import { SOCIALS } from '../lib/site'
@@ -27,13 +27,21 @@ const pdfUrl = resumePdfPath(lang)
   <div class="cv">
     <header class="top">
       <div class="intro">
-        <p class="mono accent">/// Curriculum vitæ</p>
+        <p class="mono accent">/// {resume.title}</p>
         <h1 class="display">Raphaël<br />Lemaitre<em>.</em></h1>
         <p class="pitch">{resume.pitch}</p>
       </div>
       <div class="side mono">
         <div class="facts">
-          <p>{resume.location}<br />{resume.languages.join(' · ')}</p>
+          <p>{resume.location}</p>
+          <div class="languages">
+            <p class="label">{t(lang, 'spokenLanguages')}</p>
+            <ul>
+              {resume.languages.map((l) => (
+                <li>{l}</li>
+              ))}
+            </ul>
+          </div>
           <ul>
             {
               RESUME_CONTACTS.map((c) => (
@@ -62,9 +70,9 @@ const pdfUrl = resumePdfPath(lang)
           resume.experience.map((job) => (
             <li class:list={['job', { compact: job.compact }]}>
               <span class="mono when num">
-                <time datetime={job.start}>{formatYearMonth(parseYearMonth(job.start))}</time>
-                {' → '}
-                {job.end ? <time datetime={job.end}>{formatYearMonth(parseYearMonth(job.end))}</time> : <span class="now">{t(lang, 'now')}</span>}
+                <time datetime={job.start}>{formatMonthYear(parseYearMonth(job.start))}</time>
+                {' – '}
+                {job.end ? <time datetime={job.end}>{formatMonthYear(parseYearMonth(job.end))}</time> : <span class="now">{t(lang, 'now')}</span>}
               </span>
               <div>
                 <h3>{job.role}</h3>
@@ -100,14 +108,31 @@ const pdfUrl = resumePdfPath(lang)
       </div>
     </section>
 
+    <section class="sec" aria-labelledby="h-projects">
+      <h2 id="h-projects" class="mono"><span aria-hidden="true">03</span>{t(lang, 'projects')}</h2>
+      <ul class="projects">
+        {
+          resume.projects.map((p) => (
+            <li class="project">
+              <span class="mono num role">{t(lang, p.role)}</span>
+              <div>
+                <a href={p.url}>{p.name}</a>
+                <p class="summary">{p.summary}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
     <section class="sec" aria-labelledby="h-talks">
-      <h2 id="h-talks" class="mono"><span aria-hidden="true">03</span>{t(lang, 'talks')}</h2>
+      <h2 id="h-talks" class="mono"><span aria-hidden="true">04</span>{t(lang, 'resumeTalks')}</h2>
       <ul class="talks">
         {
           talks.map((talk) => (
             <li class="talk">
               <span class="mono num">
-                ×{talk.count} · {talk.span}
+                {talk.span}
               </span>
               <a href={talkUrl(talk.id, lang)}>{talk.title}</a>
               <span class="mono muted venues">{talk.conferences}</span>
@@ -118,38 +143,19 @@ const pdfUrl = resumePdfPath(lang)
     </section>
 
     <section class="sec" aria-labelledby="h-edu">
-      <h2 id="h-edu" class="mono"><span aria-hidden="true">04</span>{t(lang, 'education')}</h2>
+      <h2 id="h-edu" class="mono"><span aria-hidden="true">05</span>{t(lang, 'education')}</h2>
       <div class="education">
         {
           resume.education.map((e) => (
             <div class="job compact">
               <span class="mono when num">
-                {e.start} → {e.end}
+                {e.start} – {e.end}
               </span>
               <div>
                 <h3>{e.degree}</h3>
                 <p class="company">
                   <a href={e.url}>{e.school}</a>
                 </p>
-              </div>
-            </div>
-          ))
-        }
-      </div>
-    </section>
-
-    <section class="sec" aria-labelledby="h-certs">
-      <h2 id="h-certs" class="mono"><span aria-hidden="true">05</span>{t(lang, 'certifications')}</h2>
-      <div class="education">
-        {
-          resume.certifications.map((c) => (
-            <div class="job compact">
-              <span class="mono when num">
-                {c.year}
-              </span>
-              <div>
-                <h3>{c.name}</h3>
-                <p class="company">{c.issuer}</p>
               </div>
             </div>
           ))
@@ -203,6 +209,11 @@ const pdfUrl = resumePdfPath(lang)
     margin: 0 0 14px;
     padding: 0;
     list-style: none;
+  }
+
+  .side .languages .label {
+    margin: 0;
+    color: var(--muted);
   }
 
   .side a {
@@ -351,6 +362,30 @@ const pdfUrl = resumePdfPath(lang)
     list-style: none;
   }
 
+  .projects {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .project {
+    display: grid;
+    grid-template-columns: 140px minmax(0, 1fr);
+    gap: 14px;
+    align-items: baseline;
+    padding: 10px var(--gutter);
+    border-top: var(--rule) solid var(--ink);
+  }
+
+  .project:first-child {
+    border-top: 0;
+  }
+
+  .project .summary {
+    margin: 2px 0 0;
+    color: var(--muted);
+  }
+
   .talk {
     display: grid;
     grid-template-columns: 140px minmax(0, 1fr) 200px;
@@ -381,6 +416,7 @@ const pdfUrl = resumePdfPath(lang)
     .sec,
     .job,
     .talk,
+    .project,
     .skills {
       grid-template-columns: minmax(0, 1fr);
     }

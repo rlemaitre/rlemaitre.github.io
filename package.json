@@ -27,6 +27,7 @@
     "@astrojs/check": "^0.9.12",
     "@playwright/test": "^1.65.0",
     "linkedom": "^0.18.15",
+    "pdfjs-dist": "^6.5.438",
     "shiki": "^4.5.0",
     "typescript": "^6.0.3",
     "vitest": "^5.1.0"
