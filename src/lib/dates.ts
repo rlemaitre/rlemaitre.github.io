@@ -10,6 +10,11 @@ export function formatYearMonth(d: Date): string {
   return `${d.getUTCFullYear()}.${pad(d.getUTCMonth() + 1)}`
 }
 
+/** Formats a date as `MM/YYYY` in UTC, the usual resume format. */
+export function formatMonthYear(d: Date): string {
+  return `${pad(d.getUTCMonth() + 1)}/${d.getUTCFullYear()}`
+}
+
 /** Parses a `YYYY-MM` string as the first of that month, in UTC. */
 export function parseYearMonth(s: string): Date {
   if (!/^\d{4}-(0[1-9]|1[0-2])$/.test(s)) throw new Error(`Expected YYYY-MM, got "${s}"`)

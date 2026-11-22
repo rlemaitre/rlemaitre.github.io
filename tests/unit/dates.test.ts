@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { formatDate, formatYearMonth, parseYearMonth } from '../../src/lib/dates'
+import { formatDate, formatMonthYear, formatYearMonth, parseYearMonth } from '../../src/lib/dates'
 
 describe('formatDate', () => {
   it('formats as YYYY.MM.DD in UTC', () => {
@@ -16,5 +16,11 @@ describe('formatYearMonth', () => {
 describe('parseYearMonth', () => {
   it('parses YYYY-MM as the first of the month in UTC', () => {
     expect(parseYearMonth('2025-11').toISOString()).toBe('2025-11-01T00:00:00.000Z')
+  })
+})
+
+describe('formatMonthYear', () => {
+  it('formats as MM/YYYY', () => {
+    expect(formatMonthYear(new Date('2025-11-03'))).toBe('11/2025')
   })
 })
