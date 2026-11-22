@@ -88,6 +88,10 @@ describe('resume page', () => {
     expect(text(iron)).toContain('×5')
   })
 
+  it('lists Hacking ADHD first', () => {
+    expect(text(doc.querySelector('.talk a'))).toBe('Hacking ADHD: Strategies for the Modern Developer')
+  })
+
   it('links to LinkedIn and GitHub', () => {
     expect(doc.querySelector('a[href="https://www.linkedin.com/in/rlemaitre"]')).not.toBeNull()
     expect(doc.querySelector('a[href="https://github.com/rlemaitre"]')).not.toBeNull()

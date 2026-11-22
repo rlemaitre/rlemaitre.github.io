@@ -4,6 +4,9 @@ import type { Lang, UiKey } from './i18n'
 import { SITE, SOCIALS } from './site'
 import { venueSummary } from './talks'
 
+/** The talk the resume lists first; the others follow, newest first. */
+const FIRST_TALK = 'hacking-adhd-strategies-for-the-modern-developer'
+
 const span = ({ firstYear, lastYear }: { firstYear: number; lastYear: number }): string =>
   firstYear === lastYear ? String(firstYear) : `${firstYear}–${lastYear}`
 
@@ -27,7 +30,12 @@ export async function loadResume(lang: Lang) {
         }
       }),
     )
-  ).sort((a, b) => b.lastYear - a.lastYear || a.title.localeCompare(b.title))
+  ).sort(
+    (a, b) =>
+      Number(b.id === FIRST_TALK) - Number(a.id === FIRST_TALK) ||
+      b.lastYear - a.lastYear ||
+      a.title.localeCompare(b.title),
+  )
   return { resume, talks }
 }
 

@@ -27,6 +27,16 @@ describe('resume print pages, the source of the PDFs', () => {
       expect(doc.querySelectorAll('.sec .acquired')).toHaveLength(4)
       expect(doc.querySelectorAll('.org a')).toHaveLength(web.querySelectorAll('.jobs .company a').length)
     })
+
+    it(`${path} lists the talks in the web order, each linked to its page on the site`, () => {
+      const web = load(path.replace('print/', ''))
+      const pdf = [...doc.querySelectorAll('.talk .title a')].map((a) => [text(a), a.getAttribute('href')])
+      const site = [...web.querySelectorAll('.talk a')].map((a) => [
+        text(a),
+        `https://rlemaitre.com${a.getAttribute('href')}`,
+      ])
+      expect(pdf).toEqual(site)
+    })
   }
 
   it('leaves the print pages out of the sitemap', () => {

@@ -53,6 +53,10 @@ describe('French resume page', () => {
     for (const href of links) expect(href).toMatch(/^\/fr\/talks\//)
   })
 
+  it('lists Hacker le TDAH first', () => {
+    expect(text(fr.querySelector('.talk a'))).toBe('Hacker le TDAH : Stratégies pour le développeur moderne')
+  })
+
   it('links Télécharger le PDF to the French PDF', () => {
     const link = [...fr.querySelectorAll('a')].find((a) => /télécharger le pdf/i.test(text(a)))
     expect(link?.getAttribute('href')).toBe('/fr/resume/raphael-lemaitre.pdf')

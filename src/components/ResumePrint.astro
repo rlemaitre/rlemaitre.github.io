@@ -5,7 +5,7 @@
  */
 import Company from './Company.astro'
 import { formatYearMonth, parseYearMonth } from '../lib/dates'
-import { t, type Lang } from '../lib/i18n'
+import { t, talkUrl, type Lang } from '../lib/i18n'
 import { bareUrl, loadResume, RESUME_CONTACTS, SKILL_LABEL } from '../lib/resume-source'
 import { SITE } from '../lib/site'
 
@@ -36,7 +36,7 @@ const num = (key: (typeof sections)[number]) => String(sections.indexOf(key) + 1
         --accent: #d01414;
         --hair: #c9c9c2;
         --font-display: 'Archivo', 'Arial Black', sans-serif;
-        --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+        --font-mono: 'Geist Mono', ui-monospace, monospace;
         --font-body: 'Atkinson Hyperlegible Next', system-ui, sans-serif;
         --rail: 27mm;
         --when: 30mm;
@@ -217,7 +217,8 @@ const num = (key: (typeof sections)[number]) => String(sections.indexOf(key) + 1
         white-space: nowrap;
       }
 
-      .org a {
+      .org a,
+      .talk .title a {
         text-decoration: underline;
         text-decoration-color: var(--hair);
       }
@@ -440,7 +441,9 @@ const num = (key: (typeof sections)[number]) => String(sections.indexOf(key) + 1
                   ×{talk.count} · {talk.span}
                 </span>
                 <div>
-                  <span class="title">{talk.title}</span>
+                  <span class="title">
+                    <a href={new URL(talkUrl(talk.id, lang), SITE.url).href}>{talk.title}</a>
+                  </span>
                   <span class="mono venues">{talk.conferences}</span>
                 </div>
               </li>
