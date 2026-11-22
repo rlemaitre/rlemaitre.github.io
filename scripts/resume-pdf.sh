@@ -24,7 +24,7 @@ face() { # family weight style file
 face 'Archivo' 900 normal archivo-latin-900-normal.ttf
 face 'Atkinson Hyperlegible Next' 400 normal atkinson-hyperlegible-next-latin-400-normal.ttf
 face 'Atkinson Hyperlegible Next' 600 normal atkinson-hyperlegible-next-latin-600-normal.ttf
-face 'JetBrains Mono' 400 normal jetbrains-mono-latin-400-normal.ttf
+face 'Geist Mono' 400 normal geist-mono-latin-400-normal.ttf
 
 for prefix in "" "fr/"; do
 	out="public/${prefix}resume/raphael-lemaitre.pdf"
