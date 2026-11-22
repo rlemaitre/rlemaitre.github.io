@@ -29,7 +29,7 @@ describe('resume print pages, the source of the PDFs', () => {
       expect([...doc.querySelectorAll('.when')].slice(0, 2).map(text)).toEqual(
         [...web.querySelectorAll('.jobs .when')].slice(0, 2).map(text),
       )
-      expect(doc.querySelectorAll('.project a')).toHaveLength(4)
+      expect(doc.querySelectorAll('.project a')).toHaveLength(5)
     })
 
     it(`${path} lists the talks in the web order, each linked to its page on the site`, () => {

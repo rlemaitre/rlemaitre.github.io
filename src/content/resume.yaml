@@ -115,6 +115,10 @@
       start: 1997
       end: 2001
   projects:
+    - name: claude-plugins
+      url: https://github.com/rlemaitre/claude-plugins
+      role: creator
+      summary: "Claude Code plugins for developing with AI agents: a pre-PR review gate, PR follow-up, and repeated review comments turned into rules."
     - name: Pillars
       url: https://github.com/FunktionalIO/pillars
       role: creator

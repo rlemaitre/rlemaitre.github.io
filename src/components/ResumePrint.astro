@@ -360,6 +360,11 @@ const num = (key: (typeof sections)[number]) => String(sections.indexOf(key) + 1
         font-weight: 600;
       }
 
+      /* Keeps a hyphenated name, like claude-plugins, on one line. */
+      .project .title {
+        white-space: nowrap;
+      }
+
       /* Projects and talks: one row each, like the roles: a label column, then the content. */
       .row {
         display: grid;

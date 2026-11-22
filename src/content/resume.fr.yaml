@@ -115,6 +115,10 @@
       start: 1997
       end: 2001
   projects:
+    - name: claude-plugins
+      url: https://github.com/rlemaitre/claude-plugins
+      role: creator
+      summary: "Plugins Claude Code : revue avant PR, suivi de PR, règles tirées des revues."
     - name: Pillars
       url: https://github.com/FunktionalIO/pillars
       role: creator

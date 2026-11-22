@@ -156,10 +156,16 @@ describe('resume page', () => {
 
   it('lists projects, own and contributed, each linked', () => {
     const projects = [...doc.querySelectorAll('.projects .project')]
-    expect(projects.map((p) => text(p.querySelector('a')))).toEqual(['Pillars', 'Mason', 'Risk Matrix', 'Iron'])
-    expect(projects[0].querySelector('a')?.getAttribute('href')).toBe('https://github.com/FunktionalIO/pillars')
+    expect(projects.map((p) => text(p.querySelector('a')))).toEqual([
+      'claude-plugins',
+      'Pillars',
+      'Mason',
+      'Risk Matrix',
+      'Iron',
+    ])
+    expect(projects[0].querySelector('a')?.getAttribute('href')).toBe('https://github.com/rlemaitre/claude-plugins')
     expect(text(projects[0].querySelector('.role'))).toBe('Creator')
-    expect(text(projects[3].querySelector('.role'))).toBe('Contributor')
+    expect(text(projects[4].querySelector('.role'))).toBe('Contributor')
   })
 
   it('has no certifications section', () => {
